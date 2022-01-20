@@ -17,7 +17,7 @@ final public class SeSACButton: UIControl {
     case cancel
   }
 
-  public enum State {
+  public enum ButtonState {
     case inactive
     case disabled
   }
@@ -26,12 +26,13 @@ final public class SeSACButton: UIControl {
     $0.layer.cornerRadius = radius
     $0.clipsToBounds = true
   }
-  private lazy var titleLabel = UILabel().then {
+
+  private lazy var textLabel = UILabel().then {
     $0.textAlignment = .center
     $0.font = .body3r
   }
 
-  private var style: Style = .fill
+  private lazy var style: Style = .fill
 
   public var isInactive: Bool = false {
     didSet {
@@ -49,21 +50,18 @@ final public class SeSACButton: UIControl {
 
   public var title: String = "" {
     didSet {
-      titleLabel.text = title
+      textLabel.text = title
       layoutIfNeeded()
     }
   }
-
-  private var previousStyle: Style
 
   public var animateOn: Bool = true
 
   public var radius: CGFloat = 8
 
   public override init(frame: CGRect) {
-    style = .fill
-    previousStyle = style
     super.init(frame: frame)
+    style = .fill
     viewSetup()
   }
 
@@ -73,7 +71,7 @@ final public class SeSACButton: UIControl {
 
   private func viewSetup() {
     addSubview(containerView)
-    containerView.addSubview(titleLabel)
+    containerView.addSubview(textLabel)
     layoutSetup()
     uiStyleUpdate()
   }
@@ -83,7 +81,7 @@ final public class SeSACButton: UIControl {
       make.edges.equalTo(self)
     }
 
-    titleLabel.snp.makeConstraints { make in
+    textLabel.snp.makeConstraints { make in
       make.edges.equalTo(containerView)
     }
   }
@@ -103,7 +101,7 @@ final public class SeSACButton: UIControl {
     withAnimation { [weak self] in
       self?.containerView.layer.borderWidth = 0
       self?.containerView.backgroundColor = .seSACGreen
-      self?.titleLabel.textColor = .seSACWhite
+      self?.textLabel.textColor = .seSACWhite
     }
   }
 
@@ -112,7 +110,7 @@ final public class SeSACButton: UIControl {
       self?.containerView.layer.borderColor = .seSACGreen
       self?.containerView.layer.borderWidth = 1
       self?.containerView.backgroundColor = .seSACWhite
-      self?.titleLabel.textColor = .seSACGreen
+      self?.textLabel.textColor = .seSACGreen
     }
   }
 
@@ -120,7 +118,7 @@ final public class SeSACButton: UIControl {
     withAnimation { [weak self] in
       self?.containerView.layer.borderWidth = 0
       self?.containerView.backgroundColor = .seSACGray2
-      self?.titleLabel.textColor = .seSACBlack
+      self?.textLabel.textColor = .seSACBlack
     }
   }
 
@@ -130,7 +128,7 @@ final public class SeSACButton: UIControl {
         self?.containerView.layer.borderColor = .seSACGray4
         self?.containerView.layer.borderWidth = 1
         self?.containerView.backgroundColor = .seSACWhite
-        self?.titleLabel.textColor = .seSACBlack
+        self?.textLabel.textColor = .seSACBlack
       }
     } else {
       uiStyleUpdate()
@@ -145,7 +143,7 @@ final public class SeSACButton: UIControl {
         delay: 0,
         options: .transitionCrossDissolve) { [weak self] in
           self?.containerView.backgroundColor = .seSACGray6
-          self?.titleLabel.textColor = .seSACGray3
+          self?.textLabel.textColor = .seSACGray3
       }
     } else {
       uiStyleUpdate()
@@ -162,6 +160,8 @@ final public class SeSACButton: UIControl {
   }
 
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesBegan(touches, with: event)
+    sendActions(for: .touchUpInside)
     guard style == .fill, animateOn else { return }
     UIView.animate(withDuration: 0.1) { [weak self] in
       self?.containerView.backgroundColor = .seSACGreen.withAlphaComponent(0.5)
@@ -169,10 +169,15 @@ final public class SeSACButton: UIControl {
   }
 
   public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesEnded(touches, with: event)
     guard style == .fill, animateOn else { return }
     UIView.animate(withDuration: 0.1) { [weak self] in
       self?.containerView.backgroundColor = .seSACGreen.withAlphaComponent(1)
     }
+  }
+
+  public override func addAction(_ action: UIAction, for controlEvents: UIControl.Event) {
+    super.addAction(action, for: controlEvents)
   }
 }
 
@@ -180,7 +185,6 @@ public extension SeSACButton {
   convenience init(style: Style) {
     self.init()
     self.style = style
-    previousStyle = style
     uiStyleUpdate()
   }
 }

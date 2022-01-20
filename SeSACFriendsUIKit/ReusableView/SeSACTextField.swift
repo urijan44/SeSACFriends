@@ -25,7 +25,7 @@ final public class SeSACTextField: UITextField {
   }
 
   private var bottomBorder = CALayer()
-  private var bottomBorderWidth: CGFloat = 3
+  private var bottomBorderWidth: CGFloat = 1
   private var borderColor: CGColor {
     switch fieldState {
       case .inactive:
@@ -55,11 +55,7 @@ final public class SeSACTextField: UITextField {
     }
   }
 
-  public var subTextisOn: Bool = false {
-    didSet {
-
-    }
-  }
+  private var subTextTopConstraint: Constraint?
 
   public override init(frame: CGRect) {
     super.init(frame: frame)
@@ -71,7 +67,7 @@ final public class SeSACTextField: UITextField {
   }
 
   public override func draw(_ rect: CGRect) {
-    super.draw(rect)
+
     bottomBorder.frame = CGRect(x: 0, y: frame.height - bottomBorderWidth, width: frame.width, height: bottomBorderWidth)
     layer.addSublayer(bottomBorder)
     
@@ -91,12 +87,14 @@ final public class SeSACTextField: UITextField {
   private func layoutSetup() {
     subTextLabel.snp.makeConstraints { make in
       make.leading.trailing.equalTo(snp.leading).inset(12)
-      make.top.equalTo(snp.bottom)
+      self.subTextTopConstraint = make.top.equalTo(snp.top).constraint
     }
   }
 
   private func uiStateUpdate() {
     bottomBorder.borderColor = self.borderColor
+    bottomBorder.borderWidth = 1
+    bottomBorder.backgroundColor = self.borderColor
 
     switch fieldState {
       case .inactive:
@@ -112,6 +110,7 @@ final public class SeSACTextField: UITextField {
       case .success:
         successUIUpdate()
     }
+    subTextLabelToggle()
   }
 
   private func inactiveUIUpdate() {
@@ -147,6 +146,19 @@ final public class SeSACTextField: UITextField {
     layer.cornerRadius = 0
   }
 
+  private func subTextLabelToggle() {
+    let currentState = fieldState == .success || fieldState == .error
+    let offset = currentState ? 8 : 0
+    subTextLabel.snp.updateConstraints { make in
+      subTextTopConstraint?.update(offset: offset)
+    }
+    UIView.animate(withDuration: 0.3) {
+      self.subTextLabel.isHidden = !currentState
+      self.layoutIfNeeded()
+    }
+
+  }
+
 }
 
 #if DEBUG
@@ -158,15 +170,16 @@ fileprivate struct SeSACTextFieldRP: UIViewRepresentable {
 
   func updateUIView(_ uiView: SeSACTextField, context: Context) {
     uiView.text = "내용을 입력"
+    uiView.subText = "출력 메시지 입력"
     uiView.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
-    uiView.fieldState = .inactive
+    uiView.fieldState = .error
   }
 }
 
 struct SeSACTextFieldRP_Previews: PreviewProvider {
   static var previews: some View {
     SeSACTextFieldRP()
-      .frame(width: 343, height: 48)
+      .frame(width: 343, height: 44)
   }
 }
 #endif

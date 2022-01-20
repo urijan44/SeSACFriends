@@ -18,12 +18,13 @@ class PhoneAuthMainView: UIView {
     $0.text = "새싹 서비스 이용을 위해\n휴대폰 번호를 입력해 주세요"
   }
 
-  let button = SeSACButton(style: .fill).then {
+  lazy var button = SeSACButton(style: .fill).then {
     $0.title = "인증 문자 받기"
   }
 
   let textField = SeSACTextField().then {
     $0.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
+    $0.subText = "에러 입력하기"
   }
 
   override init(frame: CGRect) {
@@ -31,7 +32,7 @@ class PhoneAuthMainView: UIView {
     backgroundColor = .seSACWhite
     addSubview(greetingLabel)
     addSubview(button)
-    addSubview(textField)
+//    addSubview(textField)
     greetingLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
       make.top.equalTo(169)
@@ -43,14 +44,16 @@ class PhoneAuthMainView: UIView {
       make.height.equalTo(44)
     }
 
-    textField.snp.makeConstraints { make in
-      make.leading.trailing.equalTo(button)
-      make.top.equalTo(greetingLabel.snp.bottom).offset(64)
-      make.height.equalTo(48)
-      make.centerX.equalToSuperview()
-    }
+//    textField.snp.makeConstraints { make in
+//      make.leading.trailing.equalTo(button)
+//      make.top.equalTo(greetingLabel.snp.bottom).offset(64)
+//      make.height.equalTo(48)
+//      make.centerX.equalToSuperview()
+//    }
 
-    textField.fieldState = .focus
+//    textField.fieldState = .focus
+
+
   }
 
   required init?(coder: NSCoder) {

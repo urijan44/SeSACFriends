@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import Then
-import SnapKit
+import SeSACFriendsUIKit
 
 class PhoneAuthViewController: UIViewController {
 
@@ -19,6 +18,5 @@ class PhoneAuthViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
   }
 }
