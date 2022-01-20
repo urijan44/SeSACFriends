@@ -27,6 +27,7 @@
 		8A4103F12798EAC00039C9FA /* SeSACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103F02798EAC00039C9FA /* SeSACButton.swift */; };
 		8A4103F9279926730039C9FA /* SeSACTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103F8279926730039C9FA /* SeSACTextField.swift */; };
 		8A4103FA279926730039C9FA /* SeSACTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103F8279926730039C9FA /* SeSACTextField.swift */; };
+		8A6DB1EA2799365800477705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6DB1E82799365800477705 /* GoogleService-Info.plist */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
@@ -74,6 +75,8 @@
 		8A4103E22798EA7D0039C9FA /* SeSACFriendsUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeSACFriendsUIKit.h; sourceTree = "<group>"; };
 		8A4103F02798EAC00039C9FA /* SeSACButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACButton.swift; sourceTree = "<group>"; };
 		8A4103F8279926730039C9FA /* SeSACTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTextField.swift; sourceTree = "<group>"; };
+		8A6DB1E82799365800477705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A6DB1E92799365800477705 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
 		8AD2131927965316003DEC53 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD2131C27965316003DEC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD2131E27965316003DEC53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				8AD2131B27965316003DEC53 /* SeSACFriends */,
+				8A6DB1E82799365800477705 /* GoogleService-Info.plist */,
+				8A6DB1E92799365800477705 /* SeSACFriends.entitlements */,
 				8A4103E12798EA7D0039C9FA /* SeSACFriendsUIKit */,
 				8AD2131A27965316003DEC53 /* Products */,
 			);
@@ -340,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A09E6D0279699C5005D98BF /* NotoSansKR-Regular.otf in Resources */,
+				8A6DB1EA2799365800477705 /* GoogleService-Info.plist in Resources */,
 				8AD2132927965318003DEC53 /* LaunchScreen.storyboard in Resources */,
 				8A4103B1279869770039C9FA /* Icons.xcassets in Resources */,
 				8A4103A927985B270039C9FA /* Assets.xcassets in Resources */,
