@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Constant {
+public struct Constant {
   struct Font {
     static let notoSansKRr = "NotoSansKR-Regular"
     static let notoSansKRm = "NotoSansKR-Medium"

@@ -11,45 +11,45 @@
 
 // Deprecated typealiases
 @available(*, deprecated, renamed: "ColorAsset.Color", message: "This typealias will be removed in SwiftGen 7.0")
-internal typealias AssetColorTypeAlias = ColorAsset.Color
+public typealias AssetColorTypeAlias = ColorAsset.Color
 
 // swiftlint:disable superfluous_disable_command file_length implicit_return
 
 // MARK: - Asset Catalogs
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-internal enum Color {
-  internal static let seSACBlack = ColorAsset(name: "SeSACBlack")
-  internal static let seSACError = ColorAsset(name: "SeSACError")
-  internal static let seSACFocus = ColorAsset(name: "SeSACFocus")
-  internal static let seSACGray1 = ColorAsset(name: "SeSACGray1")
-  internal static let seSACGray2 = ColorAsset(name: "SeSACGray2")
-  internal static let seSACGray3 = ColorAsset(name: "SeSACGray3")
-  internal static let seSACGray4 = ColorAsset(name: "SeSACGray4")
-  internal static let seSACGray5 = ColorAsset(name: "SeSACGray5")
-  internal static let seSACGray6 = ColorAsset(name: "SeSACGray6")
-  internal static let seSACGray7 = ColorAsset(name: "SeSACGray7")
-  internal static let seSACGreen = ColorAsset(name: "SeSACGreen")
-  internal static let seSACSuccess = ColorAsset(name: "SeSACSuccess")
-  internal static let seSACWhite = ColorAsset(name: "SeSACWhite")
-  internal static let seSACWhiteGreen = ColorAsset(name: "SeSACWhiteGreen")
-  internal static let seSACYellowGreen = ColorAsset(name: "SeSACYellowGreen")
+public enum SeColor {
+  public static let seSACBlack = ColorAsset(name: "SeSACBlack")
+  public static let seSACError = ColorAsset(name: "SeSACError")
+  public static let seSACFocus = ColorAsset(name: "SeSACFocus")
+  public static let seSACGray1 = ColorAsset(name: "SeSACGray1")
+  public static let seSACGray2 = ColorAsset(name: "SeSACGray2")
+  public static let seSACGray3 = ColorAsset(name: "SeSACGray3")
+  public static let seSACGray4 = ColorAsset(name: "SeSACGray4")
+  public static let seSACGray5 = ColorAsset(name: "SeSACGray5")
+  public static let seSACGray6 = ColorAsset(name: "SeSACGray6")
+  public static let seSACGray7 = ColorAsset(name: "SeSACGray7")
+  public static let seSACGreen = ColorAsset(name: "SeSACGreen")
+  public static let seSACSuccess = ColorAsset(name: "SeSACSuccess")
+  public static let seSACWhite = ColorAsset(name: "SeSACWhite")
+  public static let seSACWhiteGreen = ColorAsset(name: "SeSACWhiteGreen")
+  public static let seSACYellowGreen = ColorAsset(name: "SeSACYellowGreen")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
 // MARK: - Implementation Details
 
-internal final class ColorAsset {
-  internal fileprivate(set) var name: String
+public final class ColorAsset {
+  public fileprivate(set) var name: String
 
   #if os(macOS)
-  internal typealias Color = NSColor
+  public typealias Color = NSColor
   #elseif os(iOS) || os(tvOS) || os(watchOS)
-  internal typealias Color = UIColor
+  public typealias Color = UIColor
   #endif
 
   @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
-  internal private(set) lazy var color: Color = {
+  public private(set) lazy var color: Color = {
     guard let color = Color(asset: self) else {
       fatalError("Unable to load color asset named \(name).")
     }
@@ -58,7 +58,7 @@ internal final class ColorAsset {
 
   #if os(iOS) || os(tvOS)
   @available(iOS 11.0, tvOS 11.0, *)
-  internal func color(compatibleWith traitCollection: UITraitCollection) -> Color {
+  public func color(compatibleWith traitCollection: UITraitCollection) -> Color {
     let bundle = BundleToken.bundle
     guard let color = Color(named: name, in: bundle, compatibleWith: traitCollection) else {
       fatalError("Unable to load color asset named \(name).")
@@ -72,7 +72,7 @@ internal final class ColorAsset {
   }
 }
 
-internal extension ColorAsset.Color {
+public extension ColorAsset.Color {
   @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
   convenience init?(asset: ColorAsset) {
     let bundle = BundleToken.bundle

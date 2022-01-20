@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UILabel {
+public extension UILabel {
 
   enum TypoStyle {
     case display1

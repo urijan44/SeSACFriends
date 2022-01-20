@@ -7,27 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A09E6CF279699C5005D98BF /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A09E6C9279699C5005D98BF /* NotoSansKR-Medium.otf */; };
-		8A09E6D0279699C5005D98BF /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A09E6CA279699C5005D98BF /* NotoSansKR-Regular.otf */; };
-		8A09E6D427969B66005D98BF /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6D327969B66005D98BF /* UIFont+Extension.swift */; };
-		8A09E6D627969E05005D98BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6D527969E05005D98BF /* Constant.swift */; };
 		8A09E6D92796A2FE005D98BF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6D82796A2FE005D98BF /* Then */; };
 		8A09E6DC2796A30A005D98BF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6DB2796A30A005D98BF /* SnapKit */; };
 		8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */; };
-		8A09E6E32796B24E005D98BF /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6E22796B24E005D98BF /* UILabel+extension.swift */; };
 		8A4103A927985B270039C9FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103A827985B270039C9FA /* Assets.xcassets */; };
-		8A4103AB27985EAB0039C9FA /* Icons+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AA27985EAB0039C9FA /* Icons+Generated.swift */; };
-		8A4103AD27985FC10039C9FA /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AC27985FC10039C9FA /* Colors+Generated.swift */; };
-		8A4103AF279869630039C9FA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103AE279869630039C9FA /* Colors.xcassets */; };
-		8A4103B1279869770039C9FA /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B0279869770039C9FA /* Icons.xcassets */; };
-		8A4103B7279874500039C9FA /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B6279874500039C9FA /* swiftgen.yml */; };
 		8A4103E32798EA7D0039C9FA /* SeSACFriendsUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4103E22798EA7D0039C9FA /* SeSACFriendsUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A4103E62798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */; };
 		8A4103E82798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8A4103F12798EAC00039C9FA /* SeSACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103F02798EAC00039C9FA /* SeSACButton.swift */; };
-		8A4103F9279926730039C9FA /* SeSACTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103F8279926730039C9FA /* SeSACTextField.swift */; };
-		8A4103FA279926730039C9FA /* SeSACTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103F8279926730039C9FA /* SeSACTextField.swift */; };
 		8A6DB1EA2799365800477705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6DB1E82799365800477705 /* GoogleService-Info.plist */; };
+		8A6DB1ED2799374C00477705 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8A6DB1EC2799374C00477705 /* Then */; };
+		8A6DB1EF2799374F00477705 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A6DB1EE2799374F00477705 /* SnapKit */; };
+		8A6DB1F42799484400477705 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6D327969B66005D98BF /* UIFont+Extension.swift */; };
+		8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6E22796B24E005D98BF /* UILabel+extension.swift */; };
+		8A6DB1F72799485E00477705 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6D527969E05005D98BF /* Constant.swift */; };
+		8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103F02798EAC00039C9FA /* SeSACButton.swift */; };
+		8A6DB1FC27995ED300477705 /* SeSACTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103F8279926730039C9FA /* SeSACTextField.swift */; };
+		8A6DB1FF27995F7700477705 /* CGColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DB1F8279948C600477705 /* CGColor+Extension.swift */; };
+		8A6DB20027995F7A00477705 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6DB1F0279944B900477705 /* UIColor+Extension.swift */; };
+		8A6DB20127995F9600477705 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A09E6C9279699C5005D98BF /* NotoSansKR-Medium.otf */; };
+		8A6DB20227995F9800477705 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A09E6CA279699C5005D98BF /* NotoSansKR-Regular.otf */; };
+		8A6DB20327995F9B00477705 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B6279874500039C9FA /* swiftgen.yml */; };
+		8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AC27985FC10039C9FA /* Colors+Generated.swift */; };
+		8A6DB20527995FA100477705 /* Icons+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AA27985EAB0039C9FA /* Icons+Generated.swift */; };
+		8A6DB20627995FA300477705 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103AE279869630039C9FA /* Colors.xcassets */; };
+		8A6DB20727995FA600477705 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B0279869770039C9FA /* Icons.xcassets */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
@@ -77,6 +80,8 @@
 		8A4103F8279926730039C9FA /* SeSACTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTextField.swift; sourceTree = "<group>"; };
 		8A6DB1E82799365800477705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A6DB1E92799365800477705 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
+		8A6DB1F0279944B900477705 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		8A6DB1F8279948C600477705 /* CGColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+Extension.swift"; sourceTree = "<group>"; };
 		8AD2131927965316003DEC53 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD2131C27965316003DEC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD2131E27965316003DEC53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A6DB1ED2799374C00477705 /* Then in Frameworks */,
+				8A6DB1EF2799374F00477705 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +128,6 @@
 			children = (
 				8AD2131C27965316003DEC53 /* AppDelegate.swift */,
 				8AD2131E27965316003DEC53 /* SceneDelegate.swift */,
-				8A09E6D527969E05005D98BF /* Constant.swift */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -162,8 +168,9 @@
 		8A4103E12798EA7D0039C9FA /* SeSACFriendsUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				8A4103F62798F4710039C9FA /* Extensions */,
+				8A09E6D527969E05005D98BF /* Constant.swift */,
 				8A4103E22798EA7D0039C9FA /* SeSACFriendsUIKit.h */,
+				8A4103F62798F4710039C9FA /* Extensions */,
 				8A4103EF2798EAA10039C9FA /* ReusableView */,
 				8A4103F32798F43F0039C9FA /* Resources */,
 			);
@@ -197,8 +204,17 @@
 			children = (
 				8A09E6D327969B66005D98BF /* UIFont+Extension.swift */,
 				8A09E6E22796B24E005D98BF /* UILabel+extension.swift */,
+				8A6DB1F0279944B900477705 /* UIColor+Extension.swift */,
+				8A6DB1F8279948C600477705 /* CGColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8A6DB1EB2799374C00477705 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8AD2131027965316003DEC53 = {
@@ -209,6 +225,7 @@
 				8A6DB1E92799365800477705 /* SeSACFriends.entitlements */,
 				8A4103E12798EA7D0039C9FA /* SeSACFriendsUIKit */,
 				8AD2131A27965316003DEC53 /* Products */,
+				8A6DB1EB2799374C00477705 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -254,13 +271,17 @@
 				8A4103DC2798EA7D0039C9FA /* Sources */,
 				8A4103DD2798EA7D0039C9FA /* Frameworks */,
 				8A4103DE2798EA7D0039C9FA /* Resources */,
-				8A4103F72798F4AF0039C9FA /* ShellScript */,
+				8A6DB2082799605500477705 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SeSACFriendsUIKit;
+			packageProductDependencies = (
+				8A6DB1EC2799374C00477705 /* Then */,
+				8A6DB1EE2799374F00477705 /* SnapKit */,
+			);
 			productName = SeSACFriendsUIKit;
 			productReference = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -337,6 +358,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A6DB20227995F9800477705 /* NotoSansKR-Regular.otf in Resources */,
+				8A6DB20627995FA300477705 /* Colors.xcassets in Resources */,
+				8A6DB20127995F9600477705 /* NotoSansKR-Medium.otf in Resources */,
+				8A6DB20327995F9B00477705 /* swiftgen.yml in Resources */,
+				8A6DB20727995FA600477705 /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,14 +370,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A09E6D0279699C5005D98BF /* NotoSansKR-Regular.otf in Resources */,
 				8A6DB1EA2799365800477705 /* GoogleService-Info.plist in Resources */,
 				8AD2132927965318003DEC53 /* LaunchScreen.storyboard in Resources */,
-				8A4103B1279869770039C9FA /* Icons.xcassets in Resources */,
 				8A4103A927985B270039C9FA /* Assets.xcassets in Resources */,
-				8A4103AF279869630039C9FA /* Colors.xcassets in Resources */,
-				8A09E6CF279699C5005D98BF /* NotoSansKR-Medium.otf in Resources */,
-				8A4103B7279874500039C9FA /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +397,7 @@
 			shellScript = "
 ";
 		};
-		8A4103F72798F4AF0039C9FA /* ShellScript */ = {
+		8A6DB2082799605500477705 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -417,7 +438,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A4103FA279926730039C9FA /* SeSACTextField.swift in Sources */,
+				8A6DB20027995F7A00477705 /* UIColor+Extension.swift in Sources */,
+				8A6DB1F42799484400477705 /* UIFont+Extension.swift in Sources */,
+				8A6DB1F72799485E00477705 /* Constant.swift in Sources */,
+				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
+				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
+				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,
+				8A6DB1FC27995ED300477705 /* SeSACTextField.swift in Sources */,
+				8A6DB20527995FA100477705 /* Icons+Generated.swift in Sources */,
+				8A6DB1FF27995F7700477705 /* CGColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,17 +454,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A09E6E32796B24E005D98BF /* UILabel+extension.swift in Sources */,
-				8A09E6D427969B66005D98BF /* UIFont+Extension.swift in Sources */,
-				8A4103F9279926730039C9FA /* SeSACTextField.swift in Sources */,
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
-				8A09E6D627969E05005D98BF /* Constant.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
-				8A4103AB27985EAB0039C9FA /* Icons+Generated.swift in Sources */,
-				8A4103F12798EAC00039C9FA /* SeSACButton.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
-				8A4103AD27985FC10039C9FA /* Colors+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +784,16 @@
 			productName = Then;
 		};
 		8A09E6DB2796A30A005D98BF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A09E6DA2796A30A005D98BF /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		8A6DB1EC2799374C00477705 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A09E6D72796A2FE005D98BF /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		8A6DB1EE2799374F00477705 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8A09E6DA2796A30A005D98BF /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;

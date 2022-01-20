@@ -9,15 +9,15 @@ import UIKit
 import SnapKit
 import Then
 
-open class SeSACButton: UIControl {
+final public class SeSACButton: UIControl {
 
-  enum Style {
+  public enum Style {
     case fill
     case outline
     case cancel
   }
 
-  enum State {
+  public enum State {
     case inactive
     case disabled
   }
@@ -60,7 +60,7 @@ open class SeSACButton: UIControl {
 
   public var radius: CGFloat = 8
 
-  override init(frame: CGRect) {
+  public override init(frame: CGRect) {
     style = .fill
     previousStyle = style
     super.init(frame: frame)
@@ -102,35 +102,35 @@ open class SeSACButton: UIControl {
   private func updateFillView() {
     withAnimation { [weak self] in
       self?.containerView.layer.borderWidth = 0
-      self?.containerView.backgroundColor = Color.seSACGreen.color
-      self?.titleLabel.textColor = Color.seSACWhite.color
+      self?.containerView.backgroundColor = .seSACGreen
+      self?.titleLabel.textColor = .seSACWhite
     }
   }
 
   private func updateOutline() {
     withAnimation { [weak self] in
-      self?.containerView.layer.borderColor = Color.seSACGreen.color.cgColor
+      self?.containerView.layer.borderColor = .seSACGreen
       self?.containerView.layer.borderWidth = 1
-      self?.containerView.backgroundColor = Color.seSACWhite.color
-      self?.titleLabel.textColor = Color.seSACGreen.color
+      self?.containerView.backgroundColor = .seSACWhite
+      self?.titleLabel.textColor = .seSACGreen
     }
   }
 
   private func updateCancel() {
     withAnimation { [weak self] in
       self?.containerView.layer.borderWidth = 0
-      self?.containerView.backgroundColor = Color.seSACGray2.color
-      self?.titleLabel.textColor = Color.seSACBlack.color
+      self?.containerView.backgroundColor = .seSACGray2
+      self?.titleLabel.textColor = .seSACBlack
     }
   }
 
   private func updateInactiveView() {
     if isInactive {
       withAnimation { [weak self] in
-        self?.containerView.layer.borderColor = Color.seSACGray4.color.cgColor
+        self?.containerView.layer.borderColor = .seSACGray4
         self?.containerView.layer.borderWidth = 1
-        self?.containerView.backgroundColor = Color.seSACWhite.color
-        self?.titleLabel.textColor = Color.seSACBlack.color
+        self?.containerView.backgroundColor = .seSACWhite
+        self?.titleLabel.textColor = .seSACBlack
       }
     } else {
       uiStyleUpdate()
@@ -144,8 +144,8 @@ open class SeSACButton: UIControl {
         withDuration: 0.1,
         delay: 0,
         options: .transitionCrossDissolve) { [weak self] in
-          self?.containerView.backgroundColor = Color.seSACGray6.color
-          self?.titleLabel.textColor = Color.seSACGray3.color
+          self?.containerView.backgroundColor = .seSACGray6
+          self?.titleLabel.textColor = .seSACGray3
       }
     } else {
       uiStyleUpdate()
@@ -161,22 +161,22 @@ open class SeSACButton: UIControl {
       }
   }
 
-  open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+  public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     guard style == .fill, animateOn else { return }
     UIView.animate(withDuration: 0.1) { [weak self] in
-      self?.containerView.backgroundColor = Color.seSACGreen.color.withAlphaComponent(0.5)
+      self?.containerView.backgroundColor = .seSACGreen.withAlphaComponent(0.5)
     }
   }
 
-  open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+  public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     guard style == .fill, animateOn else { return }
     UIView.animate(withDuration: 0.1) { [weak self] in
-      self?.containerView.backgroundColor = Color.seSACGreen.color.withAlphaComponent(1)
+      self?.containerView.backgroundColor = .seSACGreen.withAlphaComponent(1)
     }
   }
 }
 
-extension SeSACButton {
+public extension SeSACButton {
   convenience init(style: Style) {
     self.init()
     self.style = style

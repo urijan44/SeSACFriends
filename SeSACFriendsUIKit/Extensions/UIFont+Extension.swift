@@ -6,7 +6,7 @@
 //
 
 import UIKit
-extension UIFont {
+public extension UIFont {
   static var display1: UIFont {
     UIFont(name: Constant.Font.notoSansKRr, size: 20) ?? .systemFont(ofSize: 20)
   }

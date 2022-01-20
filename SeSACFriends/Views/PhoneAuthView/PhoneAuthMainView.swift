@@ -22,11 +22,16 @@ class PhoneAuthMainView: UIView {
     $0.title = "인증 문자 받기"
   }
 
+  let textField = SeSACTextField().then {
+    $0.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
+  }
+
   override init(frame: CGRect) {
     super.init(frame: frame)
-    backgroundColor = Color.seSACWhite.color
+    backgroundColor = .seSACWhite
     addSubview(greetingLabel)
     addSubview(button)
+    addSubview(textField)
     greetingLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
       make.top.equalTo(169)
@@ -37,6 +42,15 @@ class PhoneAuthMainView: UIView {
       make.leading.trailing.equalToSuperview().inset(16)
       make.height.equalTo(44)
     }
+
+    textField.snp.makeConstraints { make in
+      make.leading.trailing.equalTo(button)
+      make.top.equalTo(greetingLabel.snp.bottom).offset(64)
+      make.height.equalTo(48)
+      make.centerX.equalToSuperview()
+    }
+
+    textField.fieldState = .focus
   }
 
   required init?(coder: NSCoder) {
