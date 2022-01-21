@@ -26,34 +26,32 @@ class PhoneAuthMainView: UIView {
     $0.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
     $0.subText = "에러 입력하기"
   }
+  override func layoutSubviews() {
+    super.layoutSubviews()
 
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    backgroundColor = .seSACWhite
-    addSubview(greetingLabel)
-    addSubview(button)
-//    addSubview(textField)
     greetingLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
       make.top.equalTo(169)
     }
 
+    textField.snp.makeConstraints { make in
+      make.leading.trailing.equalToSuperview().inset(16)
+      make.top.equalTo(greetingLabel.snp.bottom).offset(64)
+      make.height.equalTo(88)
+    }
+
     button.snp.makeConstraints { make in
-      make.center.equalToSuperview()
+      make.top.equalTo(snp.top).offset(429)
       make.leading.trailing.equalToSuperview().inset(16)
       make.height.equalTo(44)
     }
-
-//    textField.snp.makeConstraints { make in
-//      make.leading.trailing.equalTo(button)
-//      make.top.equalTo(greetingLabel.snp.bottom).offset(64)
-//      make.height.equalTo(48)
-//      make.centerX.equalToSuperview()
-//    }
-
-//    textField.fieldState = .focus
-
-
+  }
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    backgroundColor = .seSACWhite
+    addSubview(greetingLabel)
+    addSubview(button)
+    addSubview(textField)
   }
 
   required init?(coder: NSCoder) {
