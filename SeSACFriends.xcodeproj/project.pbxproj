@@ -18,6 +18,13 @@
 		8A674BB3279C316F00EDEA3F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BB2279C316F00EDEA3F /* Coordinator.swift */; };
 		8A674BB9279D796600EDEA3F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A674BB8279D796600EDEA3F /* Images.xcassets */; };
 		8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */; };
+		8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */; };
+		8A674BC8279D804200EDEA3F /* WelcomeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BC7279D804200EDEA3F /* WelcomeContainer.swift */; };
+		8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */; };
+		8A674BCD279D844B00EDEA3F /* RepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BCC279D844B00EDEA3F /* RepresentableView.swift */; };
+		8A674BD1279DA95700EDEA3F /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BD0279DA95700EDEA3F /* Font.swift */; };
+		8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BD4279DAF8A00EDEA3F /* WelcomeImageView.swift */; };
+		8A674BD7279DB2D700EDEA3F /* WelcomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BD6279DB2D700EDEA3F /* WelcomePageView.swift */; };
 		8A6C29AB279A52DB004EC855 /* PhoneAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C29AA279A52DB004EC855 /* PhoneAuthViewModel.swift */; };
 		8A6DB1EA2799365800477705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6DB1E82799365800477705 /* GoogleService-Info.plist */; };
 		8A6DB1ED2799374C00477705 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8A6DB1EC2799374C00477705 /* Then */; };
@@ -83,6 +90,13 @@
 		8A674BB2279C316F00EDEA3F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8A674BB8279D796600EDEA3F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
+		8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		8A674BC7279D804200EDEA3F /* WelcomeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeContainer.swift; sourceTree = "<group>"; };
+		8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRootView.swift; sourceTree = "<group>"; };
+		8A674BCC279D844B00EDEA3F /* RepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableView.swift; sourceTree = "<group>"; };
+		8A674BD0279DA95700EDEA3F /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		8A674BD4279DAF8A00EDEA3F /* WelcomeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeImageView.swift; sourceTree = "<group>"; };
+		8A674BD6279DB2D700EDEA3F /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageView.swift; sourceTree = "<group>"; };
 		8A6C29AA279A52DB004EC855 /* PhoneAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewModel.swift; sourceTree = "<group>"; };
 		8A6DB1E82799365800477705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A6DB1E92799365800477705 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
@@ -158,6 +172,7 @@
 		8A09E6D227969B5D005D98BF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8A674BD0279DA95700EDEA3F /* Font.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +202,7 @@
 			children = (
 				8A4103F02798EAC00039C9FA /* SeSACButton.swift */,
 				8A4103F8279926730039C9FA /* SeSACTextField.swift */,
+				8A674BCC279D844B00EDEA3F /* RepresentableView.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -231,9 +247,22 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		8A674BC0279D7EDA00EDEA3F /* WelcomeScene */ = {
+			isa = PBXGroup;
+			children = (
+				8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */,
+				8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */,
+				8A674BD4279DAF8A00EDEA3F /* WelcomeImageView.swift */,
+				8A674BD6279DB2D700EDEA3F /* WelcomePageView.swift */,
+				8A674BC7279D804200EDEA3F /* WelcomeContainer.swift */,
+			);
+			path = WelcomeScene;
+			sourceTree = "<group>";
+		};
 		8A6C29A7279A4FB4004EC855 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8A674BC0279D7EDA00EDEA3F /* WelcomeScene */,
 				8A6C29A8279A507E004EC855 /* LoginScene */,
 			);
 			path = Presentation;
@@ -496,6 +525,7 @@
 				8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */,
 				8A6DB1FC27995ED300477705 /* SeSACTextField.swift in Sources */,
 				8A6DB1FF27995F7700477705 /* CGColor+Extension.swift in Sources */,
+				8A674BCD279D844B00EDEA3F /* RepresentableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,11 +534,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
+				8A674BC8279D804200EDEA3F /* WelcomeContainer.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
+				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
+				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
+				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
+				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
 				8A6C29AB279A52DB004EC855 /* PhoneAuthViewModel.swift in Sources */,
+				8A674BD7279DB2D700EDEA3F /* WelcomePageView.swift in Sources */,
 				8A674BB3279C316F00EDEA3F /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

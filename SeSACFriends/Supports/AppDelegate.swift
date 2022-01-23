@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import SeSACFriendsUIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    UIPageControl.appearance().currentPageIndicatorTintColor = .seSACBlack
+    UIPageControl.appearance().pageIndicatorTintColor = .seSACGray6
     return true
   }
 
