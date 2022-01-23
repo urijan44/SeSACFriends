@@ -8,14 +8,16 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
   var window: UIWindow?
+  public lazy var coordinator = OnboardingCoordinator(router: router)
+  public lazy var router = AppDelegateRouter(window: window!)
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: windowScene)
-
-    window?.rootViewController = WelcomeViewController()
-    window?.makeKeyAndVisible()
+    Thread.sleep(forTimeInterval: 2.0)
+    coordinator.present(animated: true, onDismissed: nil)
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {

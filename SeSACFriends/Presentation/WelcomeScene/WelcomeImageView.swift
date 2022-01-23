@@ -11,7 +11,7 @@ import SeSACFriendsUIKit
 import SnapKit
 import Then
 
-class WelcomeImageView: RepresentableView {
+final class WelcomeImageView: RepresentableView {
 
   let titleImageView = UIImageView().then {
     $0.contentMode = .scaleAspectFit

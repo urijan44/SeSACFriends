@@ -19,7 +19,6 @@
 		8A674BB9279D796600EDEA3F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A674BB8279D796600EDEA3F /* Images.xcassets */; };
 		8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */; };
 		8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */; };
-		8A674BC8279D804200EDEA3F /* WelcomeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BC7279D804200EDEA3F /* WelcomeContainer.swift */; };
 		8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */; };
 		8A674BCD279D844B00EDEA3F /* RepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BCC279D844B00EDEA3F /* RepresentableView.swift */; };
 		8A674BD1279DA95700EDEA3F /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BD0279DA95700EDEA3F /* Font.swift */; };
@@ -41,6 +40,9 @@
 		8A6DB20327995F9B00477705 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B6279874500039C9FA /* swiftgen.yml */; };
 		8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AC27985FC10039C9FA /* Colors+Generated.swift */; };
 		8A6DB20627995FA300477705 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103AE279869630039C9FA /* Colors.xcassets */; };
+		8A961B21279DB9C900CC2163 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */; };
+		8A961B25279DC65500CC2163 /* RepresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B24279DC65500CC2163 /* RepresentableViewController.swift */; };
+		8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
@@ -91,7 +93,6 @@
 		8A674BB8279D796600EDEA3F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		8A674BC7279D804200EDEA3F /* WelcomeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeContainer.swift; sourceTree = "<group>"; };
 		8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRootView.swift; sourceTree = "<group>"; };
 		8A674BCC279D844B00EDEA3F /* RepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableView.swift; sourceTree = "<group>"; };
 		8A674BD0279DA95700EDEA3F /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -102,6 +103,9 @@
 		8A6DB1E92799365800477705 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
 		8A6DB1F0279944B900477705 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8A6DB1F8279948C600477705 /* CGColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+Extension.swift"; sourceTree = "<group>"; };
+		8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		8A961B24279DC65500CC2163 /* RepresentableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
+		8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		8AD2131927965316003DEC53 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD2131C27965316003DEC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD2131E27965316003DEC53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 				8A4103F02798EAC00039C9FA /* SeSACButton.swift */,
 				8A4103F8279926730039C9FA /* SeSACTextField.swift */,
 				8A674BCC279D844B00EDEA3F /* RepresentableView.swift */,
+				8A961B24279DC65500CC2163 /* RepresentableViewController.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				8A674BB2279C316F00EDEA3F /* Coordinator.swift */,
+				8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -243,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				8A674BB0279C30EF00EDEA3F /* Router.swift */,
+				8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -254,7 +261,6 @@
 				8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */,
 				8A674BD4279DAF8A00EDEA3F /* WelcomeImageView.swift */,
 				8A674BD6279DB2D700EDEA3F /* WelcomePageView.swift */,
-				8A674BC7279D804200EDEA3F /* WelcomeContainer.swift */,
 			);
 			path = WelcomeScene;
 			sourceTree = "<group>";
@@ -317,9 +323,9 @@
 		8AD2131B27965316003DEC53 /* SeSACFriends */ = {
 			isa = PBXGroup;
 			children = (
+				8A09E6C327969995005D98BF /* Supports */,
 				8A674BAF279C30E700EDEA3F /* Router */,
 				8A674BAE279C30DF00EDEA3F /* Coordinator */,
-				8A09E6C327969995005D98BF /* Supports */,
 				8A09E6D227969B5D005D98BF /* Extensions */,
 				8A6C29A7279A4FB4004EC855 /* Presentation */,
 				8A09E6C227969960005D98BF /* Resources */,
@@ -517,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A6DB20027995F7A00477705 /* UIColor+Extension.swift in Sources */,
+				8A961B25279DC65500CC2163 /* RepresentableViewController.swift in Sources */,
 				8A6DB1F42799484400477705 /* UIFont+Extension.swift in Sources */,
 				8A6DB1F72799485E00477705 /* Constant.swift in Sources */,
 				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
@@ -534,12 +541,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
-				8A674BC8279D804200EDEA3F /* WelcomeContainer.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
+				8A961B21279DB9C900CC2163 /* OnboardingCoordinator.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
+				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
@@ -770,6 +778,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -800,6 +809,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

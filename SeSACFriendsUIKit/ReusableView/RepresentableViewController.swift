@@ -1,26 +1,13 @@
 //
-//  WelcomView.swift
-//  SeSACFriends
+//  RepresentableViewController.swift
+//  SeSACFriendsUIKit
 //
-//  Created by hoseung Lee on 2022/01/23.
+//  Created by hoseung Lee on 2022/01/24.
 //
 
 import UIKit
-import SnapKit
-import SeSACFriendsUIKit
 
-final class WelcomeViewController: NiblessViewController {
-
-  override func loadView() {
-    view = WelcomeRootView()
-  }
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-}
-
-open class RepresentableViewController: UIViewController {
+open class NiblessViewController: UIViewController {
   public init() {
     super.init(nibName: nil, bundle: nil)
   }
