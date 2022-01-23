@@ -70,10 +70,10 @@ xcassets:
           enumName: SeColor
         output: Colors+Generated.swift
   - inputs:
-    - Icons.xcassets
+    - Images.xcassets
     outputs:
       - templateName: swift5
         params:
           publicAccess: true
           enumName: Icon
-        output: Icons+Generated.swift
+        output: Images+Generated.swift

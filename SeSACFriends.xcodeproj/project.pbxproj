@@ -16,6 +16,8 @@
 		8A4103E82798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BB0279C30EF00EDEA3F /* Router.swift */; };
 		8A674BB3279C316F00EDEA3F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BB2279C316F00EDEA3F /* Coordinator.swift */; };
+		8A674BB9279D796600EDEA3F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A674BB8279D796600EDEA3F /* Images.xcassets */; };
+		8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */; };
 		8A6C29AB279A52DB004EC855 /* PhoneAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C29AA279A52DB004EC855 /* PhoneAuthViewModel.swift */; };
 		8A6DB1EA2799365800477705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6DB1E82799365800477705 /* GoogleService-Info.plist */; };
 		8A6DB1ED2799374C00477705 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8A6DB1EC2799374C00477705 /* Then */; };
@@ -31,9 +33,7 @@
 		8A6DB20227995F9800477705 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A09E6CA279699C5005D98BF /* NotoSansKR-Regular.otf */; };
 		8A6DB20327995F9B00477705 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B6279874500039C9FA /* swiftgen.yml */; };
 		8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AC27985FC10039C9FA /* Colors+Generated.swift */; };
-		8A6DB20527995FA100477705 /* Icons+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AA27985EAB0039C9FA /* Icons+Generated.swift */; };
 		8A6DB20627995FA300477705 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103AE279869630039C9FA /* Colors.xcassets */; };
-		8A6DB20727995FA600477705 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B0279869770039C9FA /* Icons.xcassets */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
@@ -72,10 +72,8 @@
 		8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthMainView.swift; sourceTree = "<group>"; };
 		8A09E6E22796B24E005D98BF /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		8A4103A827985B270039C9FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8A4103AA27985EAB0039C9FA /* Icons+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Icons+Generated.swift"; sourceTree = "<group>"; };
 		8A4103AC27985FC10039C9FA /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		8A4103AE279869630039C9FA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		8A4103B0279869770039C9FA /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		8A4103B6279874500039C9FA /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeSACFriendsUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4103E22798EA7D0039C9FA /* SeSACFriendsUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeSACFriendsUIKit.h; sourceTree = "<group>"; };
@@ -83,6 +81,8 @@
 		8A4103F8279926730039C9FA /* SeSACTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTextField.swift; sourceTree = "<group>"; };
 		8A674BB0279C30EF00EDEA3F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8A674BB2279C316F00EDEA3F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8A674BB8279D796600EDEA3F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		8A6C29AA279A52DB004EC855 /* PhoneAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewModel.swift; sourceTree = "<group>"; };
 		8A6DB1E82799365800477705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A6DB1E92799365800477705 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
@@ -197,9 +197,9 @@
 				8A09E6D1279699C8005D98BF /* Fonts */,
 				8A4103B6279874500039C9FA /* swiftgen.yml */,
 				8A4103AC27985FC10039C9FA /* Colors+Generated.swift */,
-				8A4103AA27985EAB0039C9FA /* Icons+Generated.swift */,
+				8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */,
+				8A674BB8279D796600EDEA3F /* Images.xcassets */,
 				8A4103AE279869630039C9FA /* Colors.xcassets */,
-				8A4103B0279869770039C9FA /* Icons.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -408,10 +408,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A6DB20227995F9800477705 /* NotoSansKR-Regular.otf in Resources */,
+				8A674BB9279D796600EDEA3F /* Images.xcassets in Resources */,
 				8A6DB20627995FA300477705 /* Colors.xcassets in Resources */,
 				8A6DB20127995F9600477705 /* NotoSansKR-Medium.otf in Resources */,
 				8A6DB20327995F9B00477705 /* swiftgen.yml in Resources */,
-				8A6DB20727995FA600477705 /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,8 +493,8 @@
 				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
 				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
 				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,
+				8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */,
 				8A6DB1FC27995ED300477705 /* SeSACTextField.swift in Sources */,
-				8A6DB20527995FA100477705 /* Icons+Generated.swift in Sources */,
 				8A6DB1FF27995F7700477705 /* CGColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
