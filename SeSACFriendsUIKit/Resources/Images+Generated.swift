@@ -27,8 +27,6 @@ public enum Images {
   public static let onboardingText1 = ImageAsset(name: "OnboardingText1")
   public static let onboardingText2 = ImageAsset(name: "OnboardingText2")
   public static let onboardingText3 = ImageAsset(name: "OnboardingText3")
-  public static let splash = ImageAsset(name: "Splash")
-  public static let splashTitle = ImageAsset(name: "SplashTitle")
   public static let onboardingImg1 = ImageAsset(name: "onboarding_img1")
   public static let onboardingImg2 = ImageAsset(name: "onboarding_img2")
   public static let onboardingImg3 = ImageAsset(name: "onboarding_img3")
