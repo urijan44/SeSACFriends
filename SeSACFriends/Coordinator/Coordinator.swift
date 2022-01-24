@@ -20,7 +20,7 @@ protocol Coordinator: AnyObject {
 
 extension Coordinator {
   public func dismiss(animated: Bool) {
-    router.dismiss(anmiated: animated)
+    router.dismiss(animated: animated)
   }
 
   func presentChild(_ child: Coordinator, animated: Bool) {

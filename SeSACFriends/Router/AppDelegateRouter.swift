@@ -24,7 +24,7 @@ class AppDelegateRouter: Router {
       animations: nil)
   }
 
-  func dismiss(anmiated: Bool) {
+  func dismiss(animated: Bool) {
     fatalError("AppDelegateRouter Can not dismiss")
   }
 }
