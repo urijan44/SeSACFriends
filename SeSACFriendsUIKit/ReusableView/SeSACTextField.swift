@@ -192,7 +192,6 @@ final public class SeSACTextField: UIControl {
     sendActions(for: .editingChanged)
     self.text = sender.text ?? ""
   }
-
 }
 
 #if DEBUG

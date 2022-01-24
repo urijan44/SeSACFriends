@@ -28,6 +28,7 @@ final class PhoneAuthUseCase {
 
     let converted = phoneNumberFormat(text)
     convertedPhoneNumber.onNext(converted)
+
   }
 
   private func phoneNumberFormat(_ text: String) -> String {
@@ -48,6 +49,10 @@ final class PhoneAuthUseCase {
         converted.insert("-", at: converted.index(converted.startIndex, offsetBy: 3))
         converted.insert("-", at: converted.index(converted.startIndex, offsetBy: 8))
       }
+    }
+    //123-5678-9ABC
+    if converted.count > 13 {
+      converted.removeLast()
     }
     return converted
 

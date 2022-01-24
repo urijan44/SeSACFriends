@@ -106,6 +106,8 @@ class PhoneAuthMainView: RepresentableView {
       .asDriver()
       .drive(textField.rx.text)
       .disposed(by: bag)
+
+    
   }
 }
 
