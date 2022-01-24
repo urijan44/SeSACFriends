@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final public class SeSACTextField: UIControl {
 
@@ -20,6 +22,7 @@ final public class SeSACTextField: UIControl {
   }
 
   private lazy var textField = UITextField().then {
+    $0.keyboardType = .decimalPad
     $0.font = .title4r
   }
 
@@ -59,6 +62,10 @@ final public class SeSACTextField: UIControl {
     }
   }
 
+  public lazy var rxText: ControlProperty<String?> = {
+    self.textField.rx.text
+  }()
+
   public var placeholder: String = "" {
     didSet {
       textField.placeholder = placeholder
@@ -68,6 +75,12 @@ final public class SeSACTextField: UIControl {
   public var subText: String = "" {
     didSet {
       subTextLabel.text = subText
+    }
+  }
+
+  public var keyboardType: UIKeyboardType = .decimalPad {
+    didSet {
+      textField.keyboardType = self.keyboardType
     }
   }
 
@@ -92,6 +105,9 @@ final public class SeSACTextField: UIControl {
 
   private func setupView() {
     textField.addTarget(self, action: #selector(textFieldChange(_:)), for: .editingChanged)
+    textField.addAction(UIAction() { _ in
+      self.fieldState = .focus
+    }, for: .editingDidBegin)
   }
 
   private func layoutSetup() {

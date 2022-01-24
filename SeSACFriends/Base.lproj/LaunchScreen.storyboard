@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +33,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="SeSACWhite"/>
                         <constraints>
                             <constraint firstItem="db8-bb-WRq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1Tu-w9-6Jb"/>
                             <constraint firstItem="Hs6-MK-9Xt" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.32" id="cgS-Pk-CzH"/>
@@ -51,8 +51,8 @@
     <resources>
         <image name="Splash" width="109.5" height="132"/>
         <image name="SplashTitle" width="290" height="33"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="SeSACWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

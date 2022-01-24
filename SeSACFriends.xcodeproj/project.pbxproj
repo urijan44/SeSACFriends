@@ -14,6 +14,7 @@
 		8A4103E32798EA7D0039C9FA /* SeSACFriendsUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4103E22798EA7D0039C9FA /* SeSACFriendsUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A4103E62798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */; };
 		8A4103E82798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8A44F6EB279E50DF00044C8B /* FakeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A44F6EA279E50DF00044C8B /* FakeCoordinator.swift */; };
 		8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BB0279C30EF00EDEA3F /* Router.swift */; };
 		8A674BB3279C316F00EDEA3F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BB2279C316F00EDEA3F /* Coordinator.swift */; };
 		8A674BB9279D796600EDEA3F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A674BB8279D796600EDEA3F /* Images.xcassets */; };
@@ -43,10 +44,18 @@
 		8A961B21279DB9C900CC2163 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */; };
 		8A961B25279DC65500CC2163 /* RepresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B24279DC65500CC2163 /* RepresentableViewController.swift */; };
 		8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */; };
+		8A961B2D279DCEFC00CC2163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD2132727965318003DEC53 /* LaunchScreen.storyboard */; };
+		8AC317EC279ED5ED00646711 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317EB279ED5ED00646711 /* RxCocoa */; };
+		8AC317EE279ED5F200646711 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317ED279ED5F100646711 /* RxSwift */; };
+		8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
-		8AD2132927965318003DEC53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD2132727965318003DEC53 /* LaunchScreen.storyboard */; };
+		8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */; };
+		8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */; };
+		8AEDF7DF279DD39300E3B16F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AEDF7DE279DD39300E3B16F /* RxCocoa */; };
+		8AEDF7E1279DD39300E3B16F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 8AEDF7E0279DD39300E3B16F /* RxRelay */; };
+		8AEDF7E3279DD39300E3B16F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AEDF7E2279DD39300E3B16F /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +97,7 @@
 		8A4103E22798EA7D0039C9FA /* SeSACFriendsUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeSACFriendsUIKit.h; sourceTree = "<group>"; };
 		8A4103F02798EAC00039C9FA /* SeSACButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACButton.swift; sourceTree = "<group>"; };
 		8A4103F8279926730039C9FA /* SeSACTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTextField.swift; sourceTree = "<group>"; };
+		8A44F6EA279E50DF00044C8B /* FakeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCoordinator.swift; sourceTree = "<group>"; };
 		8A674BB0279C30EF00EDEA3F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8A674BB2279C316F00EDEA3F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8A674BB8279D796600EDEA3F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -106,12 +116,15 @@
 		8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		8A961B24279DC65500CC2163 /* RepresentableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
 		8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
+		8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthUseCase.swift; sourceTree = "<group>"; };
 		8AD2131927965316003DEC53 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD2131C27965316003DEC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD2131E27965316003DEC53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
 		8AD2132827965318003DEC53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AD2132A27965318003DEC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedNavigationRouter.swift; sourceTree = "<group>"; };
+		8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +132,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AC317EC279ED5ED00646711 /* RxCocoa in Frameworks */,
 				8A6DB1ED2799374C00477705 /* Then in Frameworks */,
+				8AC317EE279ED5F200646711 /* RxSwift in Frameworks */,
 				8A6DB1EF2799374F00477705 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,8 +143,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEDF7E3279DD39300E3B16F /* RxSwift in Frameworks */,
+				8AEDF7E1279DD39300E3B16F /* RxRelay in Frameworks */,
 				8A09E6D92796A2FE005D98BF /* Then in Frameworks */,
 				8A4103E62798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Frameworks */,
+				8AEDF7DF279DD39300E3B16F /* RxCocoa in Frameworks */,
 				8A09E6DC2796A30A005D98BF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +158,6 @@
 		8A09E6C227969960005D98BF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8AD2132727965318003DEC53 /* LaunchScreen.storyboard */,
 				8A4103A827985B270039C9FA /* Assets.xcassets */,
 				8AD2132A27965318003DEC53 /* Info.plist */,
 			);
@@ -241,6 +258,7 @@
 			children = (
 				8A674BB2279C316F00EDEA3F /* Coordinator.swift */,
 				8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */,
+				8A44F6EA279E50DF00044C8B /* FakeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -250,6 +268,7 @@
 			children = (
 				8A674BB0279C30EF00EDEA3F /* Router.swift */,
 				8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */,
+				8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -258,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */,
+				8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */,
 				8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */,
 				8A674BD4279DAF8A00EDEA3F /* WelcomeImageView.swift */,
 				8A674BD6279DB2D700EDEA3F /* WelcomePageView.swift */,
@@ -299,6 +319,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8AC317EF279ED7B000646711 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				8AC317F0279ED7BF00646711 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		8AC317F0279ED7BF00646711 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		8AD2131027965316003DEC53 = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +363,9 @@
 				8A674BAF279C30E700EDEA3F /* Router */,
 				8A674BAE279C30DF00EDEA3F /* Coordinator */,
 				8A09E6D227969B5D005D98BF /* Extensions */,
+				8AC317EF279ED7B000646711 /* Domain */,
 				8A6C29A7279A4FB4004EC855 /* Presentation */,
+				8AD2132727965318003DEC53 /* LaunchScreen.storyboard */,
 				8A09E6C227969960005D98BF /* Resources */,
 			);
 			path = SeSACFriends;
@@ -365,6 +403,8 @@
 			packageProductDependencies = (
 				8A6DB1EC2799374C00477705 /* Then */,
 				8A6DB1EE2799374F00477705 /* SnapKit */,
+				8AC317EB279ED5ED00646711 /* RxCocoa */,
+				8AC317ED279ED5F100646711 /* RxSwift */,
 			);
 			productName = SeSACFriendsUIKit;
 			productReference = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */;
@@ -390,6 +430,9 @@
 			packageProductDependencies = (
 				8A09E6D82796A2FE005D98BF /* Then */,
 				8A09E6DB2796A30A005D98BF /* SnapKit */,
+				8AEDF7DE279DD39300E3B16F /* RxCocoa */,
+				8AEDF7E0279DD39300E3B16F /* RxRelay */,
+				8AEDF7E2279DD39300E3B16F /* RxSwift */,
 			);
 			productName = SeSACFriends;
 			productReference = 8AD2131927965316003DEC53 /* SeSACFriends.app */;
@@ -426,6 +469,7 @@
 			packageReferences = (
 				8A09E6D72796A2FE005D98BF /* XCRemoteSwiftPackageReference "Then" */,
 				8A09E6DA2796A30A005D98BF /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 8AD2131A27965316003DEC53 /* Products */;
 			projectDirPath = "";
@@ -454,8 +498,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A961B2D279DCEFC00CC2163 /* LaunchScreen.storyboard in Resources */,
 				8A6DB1EA2799365800477705 /* GoogleService-Info.plist in Resources */,
-				8AD2132927965318003DEC53 /* LaunchScreen.storyboard in Resources */,
 				8A4103A927985B270039C9FA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,14 +584,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */,
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
+				8A44F6EB279E50DF00044C8B /* FakeCoordinator.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
 				8A961B21279DB9C900CC2163 /* OnboardingCoordinator.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
+				8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */,
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
+				8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */,
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
@@ -873,6 +921,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -895,6 +951,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A09E6DA2796A30A005D98BF /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8AC317EB279ED5ED00646711 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		8AC317ED279ED5F100646711 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		8AEDF7DE279DD39300E3B16F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		8AEDF7E0279DD39300E3B16F /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		8AEDF7E2279DD39300E3B16F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
