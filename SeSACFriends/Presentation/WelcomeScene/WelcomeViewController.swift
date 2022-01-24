@@ -9,14 +9,37 @@ import UIKit
 import SnapKit
 import SeSACFriendsUIKit
 
+protocol WelcomeViewControllerDelegate: AnyObject {
+  func startonBoardingButton()
+}
+
 final class WelcomeViewController: NiblessViewController {
 
+  //viewModel
+  //viewModel output->Button
+  let viewModel: WelcomeViewModel
+  lazy var rootView = WelcomeRootView(viewModel: viewModel)
+  weak var delegate: WelcomeViewControllerDelegate?
+
+  init(viewModel: WelcomeViewModel, delegate: WelcomeViewControllerDelegate) {
+    self.viewModel = viewModel
+    self.delegate = delegate
+    super.init()
+  }
+
   override func loadView() {
-    view = WelcomeRootView()
+    view = rootView
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    bind()
+  }
+
+  private func bind() {
+    rootView.startButton.addAction(UIAction() { [weak self] _ in
+      self?.delegate?.startonBoardingButton()
+    }, for: .touchUpInside)
   }
 }
 

@@ -8,9 +8,13 @@
 import UIKit
 import SeSACFriendsUIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class WelcomeRootView: RepresentableView {
 
+  let viewModel: WelcomeViewModel
+  let bag = DisposeBag()
   lazy var pageView = WelcomePageView()
   lazy var hosting = UIHostingController(rootView: pageView)
   lazy var pageViewContainer = UIView()
@@ -19,9 +23,10 @@ final class WelcomeRootView: RepresentableView {
     $0.title = "시작하기"
   }
 
-  override init(frame: CGRect) {
+  init(frame: CGRect = .zero,
+       viewModel: WelcomeViewModel) {
+    self.viewModel = viewModel
     super.init(frame: frame)
-    backgroundColor = .white
   }
 
   required init?(coder: NSCoder) {
@@ -61,7 +66,7 @@ final class WelcomeRootView: RepresentableView {
 import SwiftUI
 fileprivate struct WelcomeRootViewRp: UIViewRepresentable {
   func makeUIView(context: UIViewRepresentableContext<WelcomeRootViewRp>) -> WelcomeRootView {
-    WelcomeRootView()
+    WelcomeRootView(viewModel: .init())
   }
 
   func updateUIView(_ uiView: WelcomeRootView, context: Context) {
@@ -74,5 +79,4 @@ struct WelcomeView_Previews: PreviewProvider {
     WelcomeRootViewRp()
   }
 }
-
 #endif
