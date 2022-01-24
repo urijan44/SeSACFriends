@@ -25,14 +25,10 @@ class PhoneAuthMainView: RepresentableView {
 
   lazy var button = SeSACButton(style: .fill).then {
     $0.title = ""
-    $0.addAction(UIAction() { _ in
-      self.viewModel.phase.accept(.inputValidateNumber)
-    }, for: .touchUpInside)
   }
 
   lazy var textField = SeSACTextField().then {
     $0.placeholder = ""
-    $0.subText = "에러 입력하기"
   }
 
   var bag = DisposeBag()
@@ -106,8 +102,6 @@ class PhoneAuthMainView: RepresentableView {
       .asDriver()
       .drive(textField.rx.text)
       .disposed(by: bag)
-
-    
   }
 }
 

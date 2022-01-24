@@ -1,8 +1,8 @@
 //
-//  SeSACTextField.swift
-//  SeSACFriends
+//  ValidateNumberTextField.swift
+//  SeSACFriendsUIKit
 //
-//  Created by hoseung Lee on 2022/01/20.
+//  Created by hoseung Lee on 2022/01/25.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-public class SeSACTextField: UIControl {
+public class ValidateNumberTextField: UIControl {
 
   public enum FieldState {
     case inactive
@@ -29,6 +29,17 @@ public class SeSACTextField: UIControl {
   private lazy var subTextLabel = UILabel().then {
     $0.font = .body4r
     $0.isHidden = false
+  }
+
+  private lazy var resendingButton = SeSACButton(style: .fill).then {
+    $0.title = "재전송"
+    $0.isDisabled = false
+  }
+
+  private lazy var timeOutLabel = UILabel().then {
+    $0.font = .title3m
+    $0.textColor = .seSACGreen
+    $0.text = "01:00"
   }
 
   private var bottomBorder = UIView()
@@ -99,6 +110,8 @@ public class SeSACTextField: UIControl {
     addSubview(bottomBorder)
     addSubview(textField)
     addSubview(subTextLabel)
+    addSubview(timeOutLabel)
+    addSubview(resendingButton)
     layoutSetup()
     uiStateUpdate()
   }
@@ -111,13 +124,28 @@ public class SeSACTextField: UIControl {
   }
 
   private func layoutSetup() {
+
+    resendingButton.snp.makeConstraints { make in
+      make.width.equalTo(72)
+      make.height.equalTo(40)
+      make.trailing.equalToSuperview().inset(16)
+      make.centerY.equalToSuperview()
+    }
+
+    timeOutLabel.snp.makeConstraints { make in
+      make.trailing.equalTo(resendingButton.snp.leading).offset(-20)
+      make.centerY.equalToSuperview()
+    }
+
     textField.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview().inset(12)
+      make.leading.equalToSuperview().inset(12)
+      make.trailing.equalTo(timeOutLabel.snp.leading).offset(8).priority(.low)
       make.centerY.equalToSuperview()
     }
 
     bottomBorder.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview()
+      make.leading.equalToSuperview()
+      make.trailing.equalTo(resendingButton.snp.leading).offset(-20)
       make.height.equalTo(1)
       make.top.equalTo(textField.snp.bottom).offset(12)
     }
@@ -196,22 +224,21 @@ public class SeSACTextField: UIControl {
 
 #if DEBUG
 import SwiftUI
-fileprivate struct SeSACTextFieldRP: UIViewRepresentable {
-  func makeUIView(context: UIViewRepresentableContext<SeSACTextFieldRP>) -> SeSACTextField {
-    SeSACTextField()
+fileprivate struct ValidateNumberTextFieldRP: UIViewRepresentable {
+  func makeUIView(context: UIViewRepresentableContext<ValidateNumberTextFieldRP>) -> ValidateNumberTextField {
+    ValidateNumberTextField()
   }
 
-  func updateUIView(_ uiView: SeSACTextField, context: Context) {
-    uiView.text = "내용을 입력"
+  func updateUIView(_ uiView: ValidateNumberTextField, context: Context) {
     uiView.subText = "출력 메시지 입력"
-    uiView.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
+    uiView.placeholder = "인증번호 입력"
     uiView.fieldState = .error
   }
 }
 
-struct SeSACTextFieldRP_Previews: PreviewProvider {
+struct ValidateNumberTextField_Previews: PreviewProvider {
   static var previews: some View {
-    SeSACTextFieldRP()
+    ValidateNumberTextFieldRP()
   }
 }
 #endif

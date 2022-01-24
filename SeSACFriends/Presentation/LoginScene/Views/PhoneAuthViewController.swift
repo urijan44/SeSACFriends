@@ -25,6 +25,6 @@ class PhoneAuthViewController: RepresentableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    rootView.textField.becomeFirstResponder()
   }
 }

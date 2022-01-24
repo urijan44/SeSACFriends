@@ -23,11 +23,12 @@ final class OnboardingCoordinator: Coordinator {
     //if has idToken -> Main
     //else dosent have idToken but, Phont Auth -> SignUp
     //Nothing else -> Weolcome -> Phone Auth
-    if let _ = UserDefaults.standard.string(forKey: "idToken") {
-
-    } else {
-      router.present(welcomeView, animated: true)
-    }
+//    if let _ = UserDefaults.standard.string(forKey: "idToken") {
+//
+//    } else {
+//
+//    }
+    router.present(welcomeView, animated: true)
   }
 
   //MARK: - DI Container Class
@@ -44,3 +45,5 @@ extension OnboardingCoordinator: WelcomeViewControllerDelegate {
     router.present(phoneAuthView, animated: true)
   }
 }
+
+//extension OnboardingCoordinator:

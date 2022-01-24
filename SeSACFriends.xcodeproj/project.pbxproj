@@ -48,6 +48,9 @@
 		8AC317EC279ED5ED00646711 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317EB279ED5ED00646711 /* RxCocoa */; };
 		8AC317EE279ED5F200646711 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317ED279ED5F100646711 /* RxSwift */; };
 		8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */; };
+		8AC317F5279F09D200646711 /* VlidateNumberCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F4279F09D200646711 /* VlidateNumberCheckView.swift */; };
+		8AC317F7279F0A4100646711 /* ValidateNumberCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F6279F0A4100646711 /* ValidateNumberCheckViewModel.swift */; };
+		8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
@@ -117,6 +120,9 @@
 		8A961B24279DC65500CC2163 /* RepresentableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
 		8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthUseCase.swift; sourceTree = "<group>"; };
+		8AC317F4279F09D200646711 /* VlidateNumberCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VlidateNumberCheckView.swift; sourceTree = "<group>"; };
+		8AC317F6279F0A4100646711 /* ValidateNumberCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNumberCheckViewModel.swift; sourceTree = "<group>"; };
+		8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNumberTextField.swift; sourceTree = "<group>"; };
 		8AD2131927965316003DEC53 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD2131C27965316003DEC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD2131E27965316003DEC53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +182,9 @@
 		8A09E6C42796999C005D98BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */,
 				8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */,
+				8AC317F4279F09D200646711 /* VlidateNumberCheckView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,14 +206,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		8A09E6DD2796A31F005D98BF /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		8A4103E12798EA7D0039C9FA /* SeSACFriendsUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +223,7 @@
 			children = (
 				8A4103F02798EAC00039C9FA /* SeSACButton.swift */,
 				8A4103F8279926730039C9FA /* SeSACTextField.swift */,
+				8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */,
 				8A674BCC279D844B00EDEA3F /* RepresentableView.swift */,
 				8A961B24279DC65500CC2163 /* RepresentableViewController.swift */,
 			);
@@ -276,11 +277,8 @@
 		8A674BC0279D7EDA00EDEA3F /* WelcomeScene */ = {
 			isa = PBXGroup;
 			children = (
-				8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */,
 				8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */,
-				8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */,
-				8A674BD4279DAF8A00EDEA3F /* WelcomeImageView.swift */,
-				8A674BD6279DB2D700EDEA3F /* WelcomePageView.swift */,
+				8AC317F3279F03EB00646711 /* View */,
 			);
 			path = WelcomeScene;
 			sourceTree = "<group>";
@@ -299,7 +297,6 @@
 			children = (
 				8A6C29A9279A50A0004EC855 /* ViewModel */,
 				8A09E6C42796999C005D98BF /* Views */,
-				8A09E6DD2796A31F005D98BF /* ViewController */,
 			);
 			path = LoginScene;
 			sourceTree = "<group>";
@@ -308,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				8A6C29AA279A52DB004EC855 /* PhoneAuthViewModel.swift */,
+				8AC317F6279F0A4100646711 /* ValidateNumberCheckViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -333,6 +331,17 @@
 				8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		8AC317F3279F03EB00646711 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */,
+				8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */,
+				8A674BD4279DAF8A00EDEA3F /* WelcomeImageView.swift */,
+				8A674BD6279DB2D700EDEA3F /* WelcomePageView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8AD2131027965316003DEC53 = {
@@ -574,6 +583,7 @@
 				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
 				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,
 				8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */,
+				8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */,
 				8A6DB1FC27995ED300477705 /* SeSACTextField.swift in Sources */,
 				8A6DB1FF27995F7700477705 /* CGColor+Extension.swift in Sources */,
 				8A674BCD279D844B00EDEA3F /* RepresentableView.swift in Sources */,
@@ -586,6 +596,7 @@
 			files = (
 				8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */,
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
+				8AC317F7279F0A4100646711 /* ValidateNumberCheckViewModel.swift in Sources */,
 				8A44F6EB279E50DF00044C8B /* FakeCoordinator.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
 				8A961B21279DB9C900CC2163 /* OnboardingCoordinator.swift in Sources */,
@@ -593,6 +604,7 @@
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
 				8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */,
+				8AC317F5279F09D200646711 /* VlidateNumberCheckView.swift in Sources */,
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
 				8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */,
