@@ -17,8 +17,6 @@ final class PhoneAuthUseCase {
   var phoneAuthToastMessage = PublishSubject<ToastMessage.PhoneNumberAuthencication>()
   var buttonEnable = BehaviorRelay<Bool>(value: true)
 
-  private var preReceivecVerificationId: String?
-
   func validatePhoneNumber(_ text: String) {
     let state = !phoneNumberRegexCheck(text)
     phoneNumberValidateState.onNext(state)
@@ -82,19 +80,20 @@ final class PhoneAuthUseCase {
   private func firebaseRequest(_ phoneNumber: String) {
     let converted = "+82" + phoneNumber
     buttonEnable.accept(false)
+
 //    PhoneAuthProvider
     FakePhoneAuthProvider
       .provider()
-      .verifyPhoneNumber(converted, uiDelegate: nil) { [weak self] preReceivecVerificationId, error in
+      .verifyPhoneNumber(converted, uiDelegate: nil) { [weak self] preReceiveVerificationId, error in
         guard let self = self else { return }
       if let error = error {
         let message = FirebaseErrorHandling.PhoneAuthHandling(error)
         self.phoneAuthToastMessage.onNext(.init(messageState: true, success: false, message: .invalideType, sendingMessage: message))
       } else {
         //view transition
-        self.preReceivecVerificationId = preReceivecVerificationId
+        UserSession.savePreReceiveVerifId(preReceiveVerificationId)
       }
-        self.buttonEnable.accept(true)
+      self.buttonEnable.accept(true)
     }
   }
 }
