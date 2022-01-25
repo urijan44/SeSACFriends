@@ -20,6 +20,8 @@ final class WelcomeImageView: RepresentableView {
     $0.contentMode = .scaleAspectFit
   }
 
+  private let screenReader = UIScreen.main.bounds
+
   override init(frame: CGRect) {
     super.init(frame: frame)
   }
@@ -38,13 +40,13 @@ final class WelcomeImageView: RepresentableView {
     super.layoutConfigure()
     titleImageView.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.top.equalTo(72)
+      make.top.equalTo(snp.top).offset(screenReader.height * 0.088)
       make.width.equalTo(205)
       make.height.equalTo(76)
     }
 
     bodyImageView.snp.makeConstraints { make in
-      make.top.equalTo(titleImageView.snp.bottom).offset(56)
+      make.top.equalTo(titleImageView.snp.bottom).offset(screenReader.height * 0.068)
       make.width.height.equalTo(snp.width).multipliedBy(0.96)
     }
   }

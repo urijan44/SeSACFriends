@@ -162,7 +162,7 @@ final public class SeSACButton: UIControl {
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
     sendActions(for: .touchUpInside)
-    guard style == .fill, animateOn else { return }
+    guard style == .fill, animateOn, !isDisabled else { return }
     UIView.animate(withDuration: 0.1) { [weak self] in
       self?.containerView.backgroundColor = .seSACGreen.withAlphaComponent(0.5)
     }
@@ -170,7 +170,7 @@ final public class SeSACButton: UIControl {
 
   public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesEnded(touches, with: event)
-    guard style == .fill, animateOn else { return }
+    guard style == .fill, animateOn, !isDisabled else { return }
     UIView.animate(withDuration: 0.1) { [weak self] in
       self?.containerView.backgroundColor = .seSACGreen.withAlphaComponent(1)
     }

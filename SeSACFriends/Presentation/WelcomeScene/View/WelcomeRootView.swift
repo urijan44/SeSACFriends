@@ -23,6 +23,8 @@ final class WelcomeRootView: RepresentableView {
     $0.title = "시작하기"
   }
 
+  private let screenReader = UIScreen.main.bounds
+
   init(frame: CGRect = .zero,
        viewModel: WelcomeViewModel) {
     self.viewModel = viewModel
@@ -45,13 +47,13 @@ final class WelcomeRootView: RepresentableView {
 
     pageViewContainer.snp.makeConstraints { make in
       make.leading.top.trailing.equalToSuperview()
-      make.bottom.equalTo(startButton.snp.top).offset(-42)
+      make.bottom.equalTo(startButton.snp.top).offset(screenReader.height * -0.058)
     }
 
     startButton.snp.makeConstraints { make in
       make.leading.trailing.equalToSuperview().inset(16)
       make.height.equalTo(48)
-      make.bottom.equalToSuperview().offset(-50)
+      make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-16)
     }
 
     hosting.view.snp.makeConstraints { make in

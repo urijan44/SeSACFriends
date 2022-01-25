@@ -12,6 +12,7 @@ import Then
 import SeSACFriendsUIKit
 import RxSwift
 import RxCocoa
+import Toast
 
 class PhoneAuthMainView: RepresentableView {
 
@@ -73,6 +74,7 @@ class PhoneAuthMainView: RepresentableView {
 
   override func bind() {
     super.bind()
+    
     let input = PhoneAuthViewModel.Input(
       textInput: textField.rxText.orEmpty.asObservable(),
       button: button.rx.controlEvent(.touchUpInside).asObservable())
@@ -102,6 +104,18 @@ class PhoneAuthMainView: RepresentableView {
       .asDriver()
       .drive(textField.rx.text)
       .disposed(by: bag)
+
+    output.phoneNumberValidateState
+      .asDriver()
+      .map {
+        $0
+      }.drive()
+      .disposed(by: bag)
+
+  }
+
+  @objc func showMessage() {
+    self.makeToast("에러메시지!", duration: 3.0, position: .top)
   }
 }
 

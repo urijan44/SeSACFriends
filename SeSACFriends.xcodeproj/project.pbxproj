@@ -51,6 +51,7 @@
 		8AC317F5279F09D200646711 /* VlidateNumberCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F4279F09D200646711 /* VlidateNumberCheckView.swift */; };
 		8AC317F7279F0A4100646711 /* ValidateNumberCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F6279F0A4100646711 /* ValidateNumberCheckViewModel.swift */; };
 		8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */; };
+		8AC317FE279F13F900646711 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317FD279F13F900646711 /* Toast */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
@@ -154,6 +155,7 @@
 				8A09E6D92796A2FE005D98BF /* Then in Frameworks */,
 				8A4103E62798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Frameworks */,
 				8AEDF7DF279DD39300E3B16F /* RxCocoa in Frameworks */,
+				8AC317FE279F13F900646711 /* Toast in Frameworks */,
 				8A09E6DC2796A30A005D98BF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +444,7 @@
 				8AEDF7DE279DD39300E3B16F /* RxCocoa */,
 				8AEDF7E0279DD39300E3B16F /* RxRelay */,
 				8AEDF7E2279DD39300E3B16F /* RxSwift */,
+				8AC317FD279F13F900646711 /* Toast */,
 			);
 			productName = SeSACFriends;
 			productReference = 8AD2131927965316003DEC53 /* SeSACFriends.app */;
@@ -479,6 +482,7 @@
 				8A09E6D72796A2FE005D98BF /* XCRemoteSwiftPackageReference "Then" */,
 				8A09E6DA2796A30A005D98BF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */,
+				8AC317FC279F13F900646711 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 8AD2131A27965316003DEC53 /* Products */;
 			projectDirPath = "";
@@ -933,6 +937,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8AC317FC279F13F900646711 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -973,6 +985,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		8AC317FD279F13F900646711 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AC317FC279F13F900646711 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		8AEDF7DE279DD39300E3B16F /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
