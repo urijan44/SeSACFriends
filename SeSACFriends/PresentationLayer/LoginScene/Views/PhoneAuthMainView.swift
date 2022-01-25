@@ -105,13 +105,18 @@ class PhoneAuthMainView: RepresentableView {
       .drive(textField.rx.text)
       .disposed(by: bag)
 
+    output.buttonEnable
+      .asDriver()
+      .drive(button.rx.isEnabled)
+      .disposed(by: bag)
+
     output.showToast
       .filter { state in
         state.messageState == true
       }
       .subscribe(onNext: { [weak self] toast in
         guard let self = self else { return }
-        let text = toast.message.rawValue
+        let text = toast.sendingMessage
         self.textField.showSubText(text, toast.success)
         self.showToast(text)
       }).disposed(by: bag)

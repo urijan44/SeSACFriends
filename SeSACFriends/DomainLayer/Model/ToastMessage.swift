@@ -20,5 +20,13 @@ struct ToastMessage {
     var messageState: Bool = false
     var success: Bool = false
     var message: MessageType = .none
+    var sendingMessage = ""
+  }
+
+  struct VerificationCode {
+    enum MessageType: String {
+      case timeOut, invalideCode = "전화 번호 인증 실패"
+      case tokenError = "에러가 발생했습니다. 잠시 후 다시 시도해주세요."
+    }
   }
 }

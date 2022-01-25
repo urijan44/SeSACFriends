@@ -7,12 +7,17 @@
 
 import Foundation
 import RxSwift
+import RxRelay
+import FirebaseAuth
 
 final class PhoneAuthUseCase {
-  let bag = DisposeBag()
+  private let bag = DisposeBag()
   var phoneNumberValidateState = BehaviorSubject<Bool>(value: false)
   var convertedPhoneNumber = BehaviorSubject<String>(value: "")
   var phoneAuthToastMessage = PublishSubject<ToastMessage.PhoneNumberAuthencication>()
+  var buttonEnable = BehaviorRelay<Bool>(value: true)
+
+  private var preReceivecVerificationId: String?
 
   func validatePhoneNumber(_ text: String) {
     let state = !phoneNumberRegexCheck(text)
@@ -62,9 +67,10 @@ final class PhoneAuthUseCase {
     }).disposed(by: bag)
 
     let state = phoneNumberRegexCheck(text)
-
     if state {
-      phoneAuthToastMessage.onNext(.init(messageState: true, success: true, message: .valideType))
+      //network check and firebase request!
+      firebaseRequest(text)
+//      phoneAuthToastMessage.onNext(.init(messageState: true, success: true, message: .valideType))
     } else {
       phoneAuthToastMessage.onNext(.init(messageState: true, message: .invalideType))
     }
@@ -72,4 +78,23 @@ final class PhoneAuthUseCase {
   //reqeust auth code //전화번호 검증하기, 결과에 따른 분기
   //phone number is wrong -> not URLRequest!
   //Request success -> View Transition //전화번호가 올바르면, 인증번호 뷰 전환
+
+  private func firebaseRequest(_ phoneNumber: String) {
+    let converted = "+82" + phoneNumber
+    buttonEnable.accept(false)
+//    PhoneAuthProvider
+    FakePhoneAuthProvider
+      .provider()
+      .verifyPhoneNumber(converted, uiDelegate: nil) { [weak self] preReceivecVerificationId, error in
+        guard let self = self else { return }
+      if let error = error {
+        let message = FirebaseErrorHandling.PhoneAuthHandling(error)
+        self.phoneAuthToastMessage.onNext(.init(messageState: true, success: false, message: .invalideType, sendingMessage: message))
+      } else {
+        //view transition
+        self.preReceivecVerificationId = preReceivecVerificationId
+      }
+        self.buttonEnable.accept(true)
+    }
+  }
 }
