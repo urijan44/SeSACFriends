@@ -37,7 +37,7 @@ final class PhoneAuthViewModel {
     let titleText: BehaviorRelay<String> = .init(value: "")
     let convertPhoneNumberText: BehaviorRelay<String> = .init(value: "")
     let phoneNumberValidateState: BehaviorRelay<Bool> = .init(value: false)
-    let showToast: BehaviorRelay<Void> = .init(value: Void())
+    let showToast = PublishRelay<ToastMessage.PhoneNumberAuthencication>()
   }
 
   func transform(_ input: Input) -> Output {
@@ -61,6 +61,10 @@ final class PhoneAuthViewModel {
 
     useCase.convertedPhoneNumber.subscribe(onNext: { converted in
       output.convertPhoneNumberText.accept(converted)
+    }).disposed(by: bag)
+
+    useCase.phoneAuthToastMessage.subscribe(onNext: { message in
+      output.showToast.accept(message)
     }).disposed(by: bag)
     return output
   }

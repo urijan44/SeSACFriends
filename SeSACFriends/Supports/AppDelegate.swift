@@ -7,13 +7,18 @@
 
 import UIKit
 import SeSACFriendsUIKit
+import Toast
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     UIPageControl.appearance().currentPageIndicatorTintColor = .seSACBlack
     UIPageControl.appearance().pageIndicatorTintColor = .seSACGray6
+
+    ToastManager.shared.isTapToDismissEnabled = true
+
     Thread.sleep(forTimeInterval: 2.0)
+
     return true
   }
 

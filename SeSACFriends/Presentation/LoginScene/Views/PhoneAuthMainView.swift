@@ -105,17 +105,16 @@ class PhoneAuthMainView: RepresentableView {
       .drive(textField.rx.text)
       .disposed(by: bag)
 
-    output.phoneNumberValidateState
-      .asDriver()
-      .map {
-        $0
-      }.drive()
-      .disposed(by: bag)
-
-  }
-
-  @objc func showMessage() {
-    self.makeToast("에러메시지!", duration: 3.0, position: .top)
+    output.showToast
+      .filter { state in
+        state.messageState == true
+      }
+      .subscribe(onNext: { [weak self] toast in
+        guard let self = self else { return }
+        let text = toast.message.rawValue
+        self.textField.showSubText(text, toast.success)
+        self.showToast(text)
+      }).disposed(by: bag)
   }
 }
 

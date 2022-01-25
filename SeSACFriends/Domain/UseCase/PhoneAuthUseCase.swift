@@ -12,21 +12,23 @@ final class PhoneAuthUseCase {
   let bag = DisposeBag()
   var phoneNumberValidateState = BehaviorSubject<Bool>(value: false)
   var convertedPhoneNumber = BehaviorSubject<String>(value: "")
+  var phoneAuthToastMessage = PublishSubject<ToastMessage.PhoneNumberAuthencication>()
 
   func validatePhoneNumber(_ text: String) {
-    let phoneRegex = "^01[0-1, 7][0-9]{7,8}$"
-    let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
-
-    let state =
-    !phoneTest.evaluate(with:text)
-    && !(text.count >= 10)
-
+    let state = !phoneNumberRegexCheck(text)
     phoneNumberValidateState.onNext(state)
   }
 
   func convertPhoneNumber(_ text: String) {
     let converted = phoneNumberFormat(text)
     convertedPhoneNumber.onNext(converted)
+  }
+
+  private func phoneNumberRegexCheck(_ text: String) -> Bool {
+    let filtered = text.filter{ $0 != "-" }
+    let phoneRegex = "^01[0-1, 7][0-9]{7,8}$"
+    let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
+    return phoneTest.evaluate(with: filtered) && filtered.count >= 10
   }
 
   private func phoneNumberFormat(_ text: String) -> String {
@@ -59,15 +61,12 @@ final class PhoneAuthUseCase {
       text = phoneNumber
     }).disposed(by: bag)
 
-    let filtered = text.filter{ $0 != "-" }
-    let phoneRegex = "^01[0-1, 7][0-9]{7,8}$"
-    let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
-    let state = phoneTest.evaluate(with: filtered)
+    let state = phoneNumberRegexCheck(text)
 
     if state {
-      //correct
+      phoneAuthToastMessage.onNext(.init(messageState: true, success: true, message: .valideType))
     } else {
-      //wrong
+      phoneAuthToastMessage.onNext(.init(messageState: true, message: .invalideType))
     }
   }
   //reqeust auth code //전화번호 검증하기, 결과에 따른 분기

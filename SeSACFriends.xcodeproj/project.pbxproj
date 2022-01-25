@@ -52,6 +52,8 @@
 		8AC317F7279F0A4100646711 /* ValidateNumberCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F6279F0A4100646711 /* ValidateNumberCheckViewModel.swift */; };
 		8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */; };
 		8AC317FE279F13F900646711 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317FD279F13F900646711 /* Toast */; };
+		8AC31802279FF88800646711 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC31801279FF88800646711 /* ToastMessage.swift */; };
+		8AC31805279FFF8500646711 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC31804279FFF8500646711 /* View+Extension.swift */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
@@ -124,6 +126,8 @@
 		8AC317F4279F09D200646711 /* VlidateNumberCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VlidateNumberCheckView.swift; sourceTree = "<group>"; };
 		8AC317F6279F0A4100646711 /* ValidateNumberCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNumberCheckViewModel.swift; sourceTree = "<group>"; };
 		8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNumberTextField.swift; sourceTree = "<group>"; };
+		8AC31801279FF88800646711 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		8AC31804279FFF8500646711 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		8AD2131927965316003DEC53 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD2131C27965316003DEC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD2131E27965316003DEC53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				8A674BD0279DA95700EDEA3F /* Font.swift */,
+				8AC31804279FFF8500646711 /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				8AC317F0279ED7BF00646711 /* UseCase */,
+				8AC31803279FF88C00646711 /* Constants */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -344,6 +350,14 @@
 				8A674BD6279DB2D700EDEA3F /* WelcomePageView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8AC31803279FF88C00646711 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8AC31801279FF88800646711 /* ToastMessage.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		8AD2131027965316003DEC53 = {
@@ -612,9 +626,11 @@
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
 				8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */,
+				8AC31802279FF88800646711 /* ToastMessage.swift in Sources */,
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
+				8AC31805279FFF8500646711 /* View+Extension.swift in Sources */,
 				8A6C29AB279A52DB004EC855 /* PhoneAuthViewModel.swift in Sources */,
 				8A674BD7279DB2D700EDEA3F /* WelcomePageView.swift in Sources */,
 				8A674BB3279C316F00EDEA3F /* Coordinator.swift in Sources */,

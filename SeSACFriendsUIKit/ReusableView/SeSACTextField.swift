@@ -50,7 +50,7 @@ public class SeSACTextField: UIControl {
     }
   }
 
-  public var fieldState: FieldState = .inactive {
+  private var fieldState: FieldState = .inactive {
     didSet {
       uiStateUpdate()
     }
@@ -72,7 +72,7 @@ public class SeSACTextField: UIControl {
     }
   }
 
-  public var subText: String = "" {
+  private var subText: String = "" {
     didSet {
       subTextLabel.text = subText
     }
@@ -188,6 +188,15 @@ public class SeSACTextField: UIControl {
     }
   }
 
+  public func showSubText(_ text: String, _ type: Bool) {
+    self.subText = text
+    if type {
+      self.fieldState = .success
+    } else {
+      self.fieldState = .error
+    }
+  }
+
   @objc func textFieldChange(_ sender: UITextField) {
     sendActions(for: .editingChanged)
     self.text = sender.text ?? ""
@@ -203,9 +212,7 @@ fileprivate struct SeSACTextFieldRP: UIViewRepresentable {
 
   func updateUIView(_ uiView: SeSACTextField, context: Context) {
     uiView.text = "내용을 입력"
-    uiView.subText = "출력 메시지 입력"
     uiView.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
-    uiView.fieldState = .error
   }
 }
 
