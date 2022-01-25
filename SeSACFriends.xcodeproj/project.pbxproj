@@ -54,6 +54,11 @@
 		8AC317FE279F13F900646711 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317FD279F13F900646711 /* Toast */; };
 		8AC31802279FF88800646711 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC31801279FF88800646711 /* ToastMessage.swift */; };
 		8AC31805279FFF8500646711 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC31804279FFF8500646711 /* View+Extension.swift */; };
+		8AC3180D27A0309400646711 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC3180C27A0309400646711 /* FirebaseAuth */; };
+		8AC3180F27A0309400646711 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC3180E27A0309400646711 /* FirebaseInAppMessagingSwift-Beta */; };
+		8AC3181127A0309400646711 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC3181027A0309400646711 /* FirebaseMessaging */; };
+		8AC3181627A05DB300646711 /* FakeFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3181527A05DB300646711 /* FakeFirebaseManager.swift */; };
+		8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3181727A0604900646711 /* FirebaseErrorHandling.swift */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
@@ -116,7 +121,6 @@
 		8A674BD6279DB2D700EDEA3F /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageView.swift; sourceTree = "<group>"; };
 		8A6C29AA279A52DB004EC855 /* PhoneAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewModel.swift; sourceTree = "<group>"; };
 		8A6DB1E82799365800477705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8A6DB1E92799365800477705 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
 		8A6DB1F0279944B900477705 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8A6DB1F8279948C600477705 /* CGColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+Extension.swift"; sourceTree = "<group>"; };
 		8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNumberTextField.swift; sourceTree = "<group>"; };
 		8AC31801279FF88800646711 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		8AC31804279FFF8500646711 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		8AC3181527A05DB300646711 /* FakeFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeFirebaseManager.swift; sourceTree = "<group>"; };
+		8AC3181727A0604900646711 /* FirebaseErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrorHandling.swift; sourceTree = "<group>"; };
 		8AD2131927965316003DEC53 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD2131C27965316003DEC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD2131E27965316003DEC53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,11 +162,14 @@
 			files = (
 				8AEDF7E3279DD39300E3B16F /* RxSwift in Frameworks */,
 				8AEDF7E1279DD39300E3B16F /* RxRelay in Frameworks */,
+				8AC3181127A0309400646711 /* FirebaseMessaging in Frameworks */,
 				8A09E6D92796A2FE005D98BF /* Then in Frameworks */,
 				8A4103E62798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Frameworks */,
 				8AEDF7DF279DD39300E3B16F /* RxCocoa in Frameworks */,
 				8AC317FE279F13F900646711 /* Toast in Frameworks */,
 				8A09E6DC2796A30A005D98BF /* SnapKit in Frameworks */,
+				8AC3180F27A0309400646711 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				8AC3180D27A0309400646711 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,13 +299,15 @@
 			path = WelcomeScene;
 			sourceTree = "<group>";
 		};
-		8A6C29A7279A4FB4004EC855 /* Presentation */ = {
+		8A6C29A7279A4FB4004EC855 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8A674BAF279C30E700EDEA3F /* Router */,
+				8A674BAE279C30DF00EDEA3F /* Coordinator */,
 				8A674BC0279D7EDA00EDEA3F /* WelcomeScene */,
 				8A6C29A8279A507E004EC855 /* LoginScene */,
 			);
-			path = Presentation;
+			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
 		8A6C29A8279A507E004EC855 /* LoginScene */ = {
@@ -324,13 +335,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8AC317EF279ED7B000646711 /* Domain */ = {
+		8AC317EF279ED7B000646711 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
 				8AC317F0279ED7BF00646711 /* UseCase */,
-				8AC31803279FF88C00646711 /* Constants */,
+				8AC31803279FF88C00646711 /* Model */,
 			);
-			path = Domain;
+			path = DomainLayer;
 			sourceTree = "<group>";
 		};
 		8AC317F0279ED7BF00646711 /* UseCase */ = {
@@ -352,12 +363,45 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8AC31803279FF88C00646711 /* Constants */ = {
+		8AC31803279FF88C00646711 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				8AC31801279FF88800646711 /* ToastMessage.swift */,
+				8AC3181727A0604900646711 /* FirebaseErrorHandling.swift */,
 			);
-			path = Constants;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8AC3180827A0060100646711 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8AC3180927A0062500646711 /* Repository */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		8AC3180927A0062500646711 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8AC3181427A05DA600646711 /* Fake */,
+				8AC3180A27A0062B00646711 /* Remote */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8AC3180A27A0062B00646711 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		8AC3181427A05DA600646711 /* Fake */ = {
+			isa = PBXGroup;
+			children = (
+				8AC3181527A05DB300646711 /* FakeFirebaseManager.swift */,
+			);
+			path = Fake;
 			sourceTree = "<group>";
 		};
 		8AD2131027965316003DEC53 = {
@@ -365,7 +409,6 @@
 			children = (
 				8AD2131B27965316003DEC53 /* SeSACFriends */,
 				8A6DB1E82799365800477705 /* GoogleService-Info.plist */,
-				8A6DB1E92799365800477705 /* SeSACFriends.entitlements */,
 				8A4103E12798EA7D0039C9FA /* SeSACFriendsUIKit */,
 				8AD2131A27965316003DEC53 /* Products */,
 				8A6DB1EB2799374C00477705 /* Frameworks */,
@@ -385,11 +428,10 @@
 			isa = PBXGroup;
 			children = (
 				8A09E6C327969995005D98BF /* Supports */,
-				8A674BAF279C30E700EDEA3F /* Router */,
-				8A674BAE279C30DF00EDEA3F /* Coordinator */,
 				8A09E6D227969B5D005D98BF /* Extensions */,
-				8AC317EF279ED7B000646711 /* Domain */,
-				8A6C29A7279A4FB4004EC855 /* Presentation */,
+				8AC3180827A0060100646711 /* DataLayer */,
+				8AC317EF279ED7B000646711 /* DomainLayer */,
+				8A6C29A7279A4FB4004EC855 /* PresentationLayer */,
 				8AD2132727965318003DEC53 /* LaunchScreen.storyboard */,
 				8A09E6C227969960005D98BF /* Resources */,
 			);
@@ -459,6 +501,9 @@
 				8AEDF7E0279DD39300E3B16F /* RxRelay */,
 				8AEDF7E2279DD39300E3B16F /* RxSwift */,
 				8AC317FD279F13F900646711 /* Toast */,
+				8AC3180C27A0309400646711 /* FirebaseAuth */,
+				8AC3180E27A0309400646711 /* FirebaseInAppMessagingSwift-Beta */,
+				8AC3181027A0309400646711 /* FirebaseMessaging */,
 			);
 			productName = SeSACFriends;
 			productReference = 8AD2131927965316003DEC53 /* SeSACFriends.app */;
@@ -497,6 +542,7 @@
 				8A09E6DA2796A30A005D98BF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */,
 				8AC317FC279F13F900646711 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				8AC3180B27A0309400646711 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8AD2131A27965316003DEC53 /* Products */;
 			projectDirPath = "";
@@ -615,6 +661,7 @@
 				8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */,
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
 				8AC317F7279F0A4100646711 /* ValidateNumberCheckViewModel.swift in Sources */,
+				8AC3181627A05DB300646711 /* FakeFirebaseManager.swift in Sources */,
 				8A44F6EB279E50DF00044C8B /* FakeCoordinator.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
 				8A961B21279DB9C900CC2163 /* OnboardingCoordinator.swift in Sources */,
@@ -625,6 +672,7 @@
 				8AC317F5279F09D200646711 /* VlidateNumberCheckView.swift in Sources */,
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
+				8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */,
 				8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */,
 				8AC31802279FF88800646711 /* ToastMessage.swift in Sources */,
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
@@ -961,6 +1009,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8AC3180B27A0309400646711 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -1006,6 +1062,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8AC317FC279F13F900646711 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		8AC3180C27A0309400646711 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AC3180B27A0309400646711 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8AC3180E27A0309400646711 /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AC3180B27A0309400646711 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
+		8AC3181027A0309400646711 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AC3180B27A0309400646711 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		8AEDF7DE279DD39300E3B16F /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
