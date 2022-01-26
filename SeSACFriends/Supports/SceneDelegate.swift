@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
-  public lazy var coordinator = OnboardingCoordinator(router: router)
+  public lazy var coordinator = AppDelegateCoordinator(router: router)
   public lazy var router = AppDelegateRouter(window: window!)
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

@@ -22,15 +22,15 @@ final class EmbedNavigationRouter: NSObject {
 extension EmbedNavigationRouter: Router {
   func present(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {
     onDismissForViewController[viewController] = onDismissed
-    if navigationController.viewControllers.isEmpty {
-      present(viewController, animated: animated)
-    } else {
-      navigationController.pushViewController(viewController, animated: animated)
+    if navigationController.viewControllers.count == 0 {
+//      navigationController.pushViewController(viewController, animated: animated)
+      presentModally(viewController, animated: true)
     }
   }
 
   func presentModally(_ viewController: UIViewController, animated: Bool) {
-
+    navigationController.setViewControllers([viewController], animated: false)
+    parentViewController.present(navigationController, animated: animated, completion: nil)
   }
 
   func dismiss(animated: Bool) {

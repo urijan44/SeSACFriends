@@ -17,11 +17,11 @@ final class PhoneAuthViewModel {
     case inputValidateNumber
   }
 
-  let coordinator: Coordinator
+  weak var coordinator: AppDelegateCoordinator?
   let useCase: PhoneAuthUseCase
   var bag = DisposeBag()
 
-  init(coordinator: Coordinator, useCase: PhoneAuthUseCase) {
+  init(coordinator: AppDelegateCoordinator, useCase: PhoneAuthUseCase) {
     self.coordinator = coordinator
     self.useCase = useCase
   }
@@ -39,6 +39,7 @@ final class PhoneAuthViewModel {
     let phoneNumberValidateState: BehaviorRelay<Bool> = .init(value: false)
     let showToast = PublishRelay<ToastMessage.PhoneNumberAuthencication>()
     let buttonEnable: BehaviorRelay<Bool> = .init(value: true)
+    let present: BehaviorSubject<Bool> = .init(value: false)
   }
 
   func transform(_ input: Input) -> Output {
@@ -64,14 +65,21 @@ final class PhoneAuthViewModel {
       output.convertPhoneNumberText.accept(converted)
     }).disposed(by: bag)
 
-    useCase.phoneAuthToastMessage.subscribe(onNext: { message in
-      output.showToast.accept(message)
-    }).disposed(by: bag)
-
     useCase.buttonEnable.subscribe(onNext: { state in
       output.buttonEnable.accept(state)
-    }).disposed(by: bag
-    )
+    }).disposed(by: bag)
+
+    useCase.phoneAuthToastMessage.subscribe(onNext: { message in
+      if message.messageState {
+        output.showToast.accept(message)
+      }
+    }).disposed(by: bag)
+
+    useCase.showVerificationCodeCheckView.subscribe(onNext: { show in
+      if show {
+        self.coordinator?.phoneAuthVetificationCodeCheck()
+      }
+    }).disposed(by: bag)
     return output
   }
 }

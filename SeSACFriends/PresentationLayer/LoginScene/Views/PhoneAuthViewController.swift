@@ -10,12 +10,10 @@ import SeSACFriendsUIKit
 
 class PhoneAuthViewController: RepresentableViewController {
 
-  let viewModel: PhoneAuthViewModel
   let rootView: PhoneAuthMainView
 
-  init(viewModel: PhoneAuthViewModel) {
-    self.viewModel = viewModel
-    self.rootView = PhoneAuthMainView(viewModel: viewModel)
+  init(rootView: PhoneAuthMainView) {
+    self.rootView = rootView
     super.init()
   }
 

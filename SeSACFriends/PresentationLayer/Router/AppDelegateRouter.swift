@@ -9,13 +9,14 @@ import UIKit
 
 class AppDelegateRouter: Router {
   let window: UIWindow
-
+  let navigationController = UINavigationController()
   init(window: UIWindow) {
     self.window = window
   }
 
   func present(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {
-    window.rootViewController = viewController
+    navigationController.setViewControllers([viewController], animated: false)
+    window.rootViewController = navigationController
     window.makeKeyAndVisible()
     UIView.transition(
       with: window,

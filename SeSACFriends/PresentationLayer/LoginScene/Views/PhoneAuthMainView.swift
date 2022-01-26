@@ -35,7 +35,8 @@ class PhoneAuthMainView: RepresentableView {
   var bag = DisposeBag()
 
   init(frame: CGRect = .zero,
-       viewModel: PhoneAuthViewModel) {
+       viewModel: PhoneAuthViewModel)
+   {
     self.viewModel = viewModel
     super.init(frame: frame)
     backgroundColor = .seSACWhite
@@ -111,15 +112,17 @@ class PhoneAuthMainView: RepresentableView {
       .disposed(by: bag)
 
     output.showToast
-      .filter { state in
-        state.messageState == true
-      }
       .subscribe(onNext: { [weak self] toast in
         guard let self = self else { return }
         let text = toast.sendingMessage
         self.textField.showSubText(text, toast.success)
         self.showToast(text)
       }).disposed(by: bag)
+
+//    output.present
+//      .subscribe(onNext: { [weak self] _ in
+////        self?.delegate?.phoneAuthVetificationCodeCheck()
+//      }).disposed(by: bag)
   }
 }
 
@@ -127,7 +130,7 @@ class PhoneAuthMainView: RepresentableView {
 import SwiftUI
 fileprivate struct PhoneAuthMainViewRP: UIViewRepresentable {
   func makeUIView(context: UIViewRepresentableContext<PhoneAuthMainViewRP>) -> PhoneAuthMainView {
-    PhoneAuthMainView(viewModel: PhoneAuthViewModel(coordinator: FakeCoordinator(), useCase: PhoneAuthUseCase()))
+    PhoneAuthMainView(viewModel: PhoneAuthViewModel(coordinator: AppDelegateCoordinator(router: AppDelegateRouter(window: UIWindow())), useCase: PhoneAuthUseCase()))
   }
 
   func updateUIView(_ uiView: PhoneAuthMainView, context: Context) {

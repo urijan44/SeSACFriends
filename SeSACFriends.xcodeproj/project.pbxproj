@@ -41,7 +41,7 @@
 		8A6DB20327995F9B00477705 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B6279874500039C9FA /* swiftgen.yml */; };
 		8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AC27985FC10039C9FA /* Colors+Generated.swift */; };
 		8A6DB20627995FA300477705 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103AE279869630039C9FA /* Colors.xcassets */; };
-		8A961B21279DB9C900CC2163 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */; };
+		8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B20279DB9C900CC2163 /* AppDelegateCoordinator.swift */; };
 		8A961B25279DC65500CC2163 /* RepresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B24279DC65500CC2163 /* RepresentableViewController.swift */; };
 		8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */; };
 		8A961B2D279DCEFC00CC2163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD2132727965318003DEC53 /* LaunchScreen.storyboard */; };
@@ -60,6 +60,9 @@
 		8AC3181627A05DB300646711 /* FakeFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3181527A05DB300646711 /* FakeFirebaseManager.swift */; };
 		8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3181727A0604900646711 /* FirebaseErrorHandling.swift */; };
 		8AC3181E27A06D0300646711 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3181D27A06D0300646711 /* UserSession.swift */; };
+		8AC3182027A0716800646711 /* OnBoardingNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3181F27A0716800646711 /* OnBoardingNavigationRouter.swift */; };
+		8AC3182227A0758900646711 /* OnBoardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3182127A0758900646711 /* OnBoardingCoordinator.swift */; };
+		8AC3182427A0F3D500646711 /* ValidateCodeCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3182327A0F3D500646711 /* ValidateCodeCheckViewController.swift */; };
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
@@ -124,7 +127,7 @@
 		8A6DB1E82799365800477705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A6DB1F0279944B900477705 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8A6DB1F8279948C600477705 /* CGColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+Extension.swift"; sourceTree = "<group>"; };
-		8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		8A961B20279DB9C900CC2163 /* AppDelegateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateCoordinator.swift; sourceTree = "<group>"; };
 		8A961B24279DC65500CC2163 /* RepresentableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
 		8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthUseCase.swift; sourceTree = "<group>"; };
@@ -136,6 +139,9 @@
 		8AC3181527A05DB300646711 /* FakeFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeFirebaseManager.swift; sourceTree = "<group>"; };
 		8AC3181727A0604900646711 /* FirebaseErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrorHandling.swift; sourceTree = "<group>"; };
 		8AC3181D27A06D0300646711 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		8AC3181F27A0716800646711 /* OnBoardingNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingNavigationRouter.swift; sourceTree = "<group>"; };
+		8AC3182127A0758900646711 /* OnBoardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCoordinator.swift; sourceTree = "<group>"; };
+		8AC3182327A0F3D500646711 /* ValidateCodeCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeCheckViewController.swift; sourceTree = "<group>"; };
 		8AD2131927965316003DEC53 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD2131C27965316003DEC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD2131E27965316003DEC53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 				8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */,
 				8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */,
 				8AC317F4279F09D200646711 /* VlidateNumberCheckView.swift */,
+				8AC3182327A0F3D500646711 /* ValidateCodeCheckViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,7 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				8A674BB2279C316F00EDEA3F /* Coordinator.swift */,
-				8A961B20279DB9C900CC2163 /* OnboardingCoordinator.swift */,
+				8A961B20279DB9C900CC2163 /* AppDelegateCoordinator.swift */,
+				8AC3182127A0758900646711 /* OnBoardingCoordinator.swift */,
 				8A44F6EA279E50DF00044C8B /* FakeCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -287,6 +295,7 @@
 			children = (
 				8A674BB0279C30EF00EDEA3F /* Router.swift */,
 				8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */,
+				8AC3181F27A0716800646711 /* OnBoardingNavigationRouter.swift */,
 				8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */,
 			);
 			path = Router;
@@ -675,8 +684,9 @@
 				8AC3181627A05DB300646711 /* FakeFirebaseManager.swift in Sources */,
 				8A44F6EB279E50DF00044C8B /* FakeCoordinator.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
+				8AC3182427A0F3D500646711 /* ValidateCodeCheckViewController.swift in Sources */,
 				8AC3181E27A06D0300646711 /* UserSession.swift in Sources */,
-				8A961B21279DB9C900CC2163 /* OnboardingCoordinator.swift in Sources */,
+				8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
@@ -685,6 +695,8 @@
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
 				8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */,
+				8AC3182027A0716800646711 /* OnBoardingNavigationRouter.swift in Sources */,
+				8AC3182227A0758900646711 /* OnBoardingCoordinator.swift in Sources */,
 				8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */,
 				8AC31802279FF88800646711 /* ToastMessage.swift in Sources */,
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
