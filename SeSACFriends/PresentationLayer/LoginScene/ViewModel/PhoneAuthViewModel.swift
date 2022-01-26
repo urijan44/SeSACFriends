@@ -17,12 +17,16 @@ final class PhoneAuthViewModel {
     case inputValidateNumber
   }
 
-  weak var coordinator: AppDelegateCoordinator?
+  //  weak var coordinator: AppDelegateCoordinator?
   let useCase: PhoneAuthUseCase
   var bag = DisposeBag()
 
-  init(coordinator: AppDelegateCoordinator, useCase: PhoneAuthUseCase) {
-    self.coordinator = coordinator
+  //  init(coordinator: AppDelegateCoordinator, useCase: PhoneAuthUseCase) {
+  //    self.coordinator = coordinator
+  //    self.useCase = useCase
+  //  }
+
+  init(useCase: PhoneAuthUseCase) {
     self.useCase = useCase
   }
 
@@ -77,7 +81,7 @@ final class PhoneAuthViewModel {
 
     useCase.showVerificationCodeCheckView.subscribe(onNext: { show in
       if show {
-        self.coordinator?.phoneAuthVetificationCodeCheck()
+        output.present.onNext(true)
       }
     }).disposed(by: bag)
     return output

@@ -14,6 +14,10 @@ import RxSwift
 import RxCocoa
 import Toast
 
+protocol PhoneAuthMainViewDelegate: AnyObject {
+  func phoneAuthMainViewPushVerificationCodeView()
+}
+
 class PhoneAuthMainView: RepresentableView {
 
   let viewModel: PhoneAuthViewModel
@@ -34,10 +38,21 @@ class PhoneAuthMainView: RepresentableView {
 
   var bag = DisposeBag()
 
+  weak var delegate: PhoneAuthMainViewDelegate?
+
   init(frame: CGRect = .zero,
        viewModel: PhoneAuthViewModel)
    {
     self.viewModel = viewModel
+    super.init(frame: frame)
+    backgroundColor = .seSACWhite
+  }
+  init(frame: CGRect = .zero,
+       viewModel: PhoneAuthViewModel,
+       delegate: PhoneAuthMainViewDelegate?)
+   {
+    self.viewModel = viewModel
+     self.delegate = delegate
     super.init(frame: frame)
     backgroundColor = .seSACWhite
   }
@@ -119,10 +134,12 @@ class PhoneAuthMainView: RepresentableView {
         self.showToast(text)
       }).disposed(by: bag)
 
-//    output.present
-//      .subscribe(onNext: { [weak self] _ in
-////        self?.delegate?.phoneAuthVetificationCodeCheck()
-//      }).disposed(by: bag)
+    output.present
+      .subscribe(onNext: { [weak self] state in
+        if state {
+          self?.delegate?.phoneAuthMainViewPushVerificationCodeView()
+        }
+      }).disposed(by: bag)
   }
 }
 
@@ -130,7 +147,8 @@ class PhoneAuthMainView: RepresentableView {
 import SwiftUI
 fileprivate struct PhoneAuthMainViewRP: UIViewRepresentable {
   func makeUIView(context: UIViewRepresentableContext<PhoneAuthMainViewRP>) -> PhoneAuthMainView {
-    PhoneAuthMainView(viewModel: PhoneAuthViewModel(coordinator: AppDelegateCoordinator(router: AppDelegateRouter(window: UIWindow())), useCase: PhoneAuthUseCase()))
+    let viewModel = PhoneAuthViewModel(useCase: PhoneAuthUseCase())
+    return PhoneAuthMainView(viewModel: viewModel, delegate: nil)
   }
 
   func updateUIView(_ uiView: PhoneAuthMainView, context: Context) {
