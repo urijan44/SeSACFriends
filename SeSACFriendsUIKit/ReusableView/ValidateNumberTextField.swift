@@ -31,11 +31,6 @@ public class ValidateNumberTextField: UIControl {
     $0.isHidden = false
   }
 
-  private lazy var resendingButton = SeSACButton(style: .fill).then {
-    $0.title = "재전송"
-    $0.isDisabled = false
-  }
-
   private lazy var timeOutLabel = UILabel().then {
     $0.font = .title3m
     $0.textColor = .seSACGreen
@@ -111,7 +106,6 @@ public class ValidateNumberTextField: UIControl {
     addSubview(textField)
     addSubview(subTextLabel)
     addSubview(timeOutLabel)
-    addSubview(resendingButton)
     layoutSetup()
     uiStateUpdate()
   }
@@ -125,15 +119,8 @@ public class ValidateNumberTextField: UIControl {
 
   private func layoutSetup() {
 
-    resendingButton.snp.makeConstraints { make in
-      make.width.equalTo(72)
-      make.height.equalTo(40)
-      make.trailing.equalToSuperview().inset(16)
-      make.centerY.equalToSuperview()
-    }
-
     timeOutLabel.snp.makeConstraints { make in
-      make.trailing.equalTo(resendingButton.snp.leading).offset(-20)
+      make.trailing.equalToSuperview().offset(-12)
       make.centerY.equalToSuperview()
     }
 
@@ -144,8 +131,7 @@ public class ValidateNumberTextField: UIControl {
     }
 
     bottomBorder.snp.makeConstraints { make in
-      make.leading.equalToSuperview()
-      make.trailing.equalTo(resendingButton.snp.leading).offset(-20)
+      make.leading.trailing.equalToSuperview()
       make.height.equalTo(1)
       make.top.equalTo(textField.snp.bottom).offset(12)
     }

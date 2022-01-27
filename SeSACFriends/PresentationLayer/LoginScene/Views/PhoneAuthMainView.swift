@@ -93,7 +93,7 @@ class PhoneAuthMainView: RepresentableView {
     
     let input = PhoneAuthViewModel.Input(
       textInput: textField.rxText.orEmpty.asObservable(),
-      button: button.rx.controlEvent(.touchUpInside).asObservable())
+      button: button.rxTap.asObservable())
     let output = viewModel.transform(input)
 
     output.placeholder

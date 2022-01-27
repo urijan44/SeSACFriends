@@ -41,6 +41,8 @@
 		8A6DB20327995F9B00477705 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B6279874500039C9FA /* swiftgen.yml */; };
 		8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AC27985FC10039C9FA /* Colors+Generated.swift */; };
 		8A6DB20627995FA300477705 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103AE279869630039C9FA /* Colors.xcassets */; };
+		8A8CDD0127A1BA13006144EA /* CommonViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CDD0027A1BA13006144EA /* CommonViewModelProtocol.swift */; };
+		8A8CDD0427A1BABA006144EA /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CDD0327A1BABA006144EA /* UseCase.swift */; };
 		8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B20279DB9C900CC2163 /* AppDelegateCoordinator.swift */; };
 		8A961B25279DC65500CC2163 /* RepresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B24279DC65500CC2163 /* RepresentableViewController.swift */; };
 		8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */; };
@@ -48,8 +50,8 @@
 		8AC317EC279ED5ED00646711 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317EB279ED5ED00646711 /* RxCocoa */; };
 		8AC317EE279ED5F200646711 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317ED279ED5F100646711 /* RxSwift */; };
 		8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */; };
-		8AC317F5279F09D200646711 /* VlidateNumberCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F4279F09D200646711 /* VlidateNumberCheckView.swift */; };
-		8AC317F7279F0A4100646711 /* ValidateNumberCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F6279F0A4100646711 /* ValidateNumberCheckViewModel.swift */; };
+		8AC317F5279F09D200646711 /* VlidateCodeCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F4279F09D200646711 /* VlidateCodeCheckView.swift */; };
+		8AC317F7279F0A4100646711 /* ValidateCodeCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F6279F0A4100646711 /* ValidateCodeCheckViewModel.swift */; };
 		8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */; };
 		8AC317FE279F13F900646711 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317FD279F13F900646711 /* Toast */; };
 		8AC31802279FF88800646711 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC31801279FF88800646711 /* ToastMessage.swift */; };
@@ -127,12 +129,14 @@
 		8A6DB1E82799365800477705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A6DB1F0279944B900477705 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8A6DB1F8279948C600477705 /* CGColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+Extension.swift"; sourceTree = "<group>"; };
+		8A8CDD0027A1BA13006144EA /* CommonViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModelProtocol.swift; sourceTree = "<group>"; };
+		8A8CDD0327A1BABA006144EA /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		8A961B20279DB9C900CC2163 /* AppDelegateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateCoordinator.swift; sourceTree = "<group>"; };
 		8A961B24279DC65500CC2163 /* RepresentableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
 		8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthUseCase.swift; sourceTree = "<group>"; };
-		8AC317F4279F09D200646711 /* VlidateNumberCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VlidateNumberCheckView.swift; sourceTree = "<group>"; };
-		8AC317F6279F0A4100646711 /* ValidateNumberCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNumberCheckViewModel.swift; sourceTree = "<group>"; };
+		8AC317F4279F09D200646711 /* VlidateCodeCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VlidateCodeCheckView.swift; sourceTree = "<group>"; };
+		8AC317F6279F0A4100646711 /* ValidateCodeCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeCheckViewModel.swift; sourceTree = "<group>"; };
 		8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNumberTextField.swift; sourceTree = "<group>"; };
 		8AC31801279FF88800646711 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		8AC31804279FFF8500646711 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
@@ -207,8 +211,8 @@
 			children = (
 				8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */,
 				8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */,
-				8AC317F4279F09D200646711 /* VlidateNumberCheckView.swift */,
 				8AC3182327A0F3D500646711 /* ValidateCodeCheckViewController.swift */,
+				8AC317F4279F09D200646711 /* VlidateCodeCheckView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +317,7 @@
 		8A6C29A7279A4FB4004EC855 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8A8CDD0527A1BB45006144EA /* Protocol */,
 				8A674BAF279C30E700EDEA3F /* Router */,
 				8A674BAE279C30DF00EDEA3F /* Coordinator */,
 				8A674BC0279D7EDA00EDEA3F /* WelcomeScene */,
@@ -334,7 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				8A6C29AA279A52DB004EC855 /* PhoneAuthViewModel.swift */,
-				8AC317F6279F0A4100646711 /* ValidateNumberCheckViewModel.swift */,
+				8AC317F6279F0A4100646711 /* ValidateCodeCheckViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -344,6 +349,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A8CDD0227A1BAB4006144EA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8A8CDD0327A1BABA006144EA /* UseCase.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		8A8CDD0527A1BB45006144EA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8A8CDD0027A1BA13006144EA /* CommonViewModelProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		8AC317EF279ED7B000646711 /* DomainLayer */ = {
@@ -358,6 +379,7 @@
 		8AC317F0279ED7BF00646711 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				8A8CDD0227A1BAB4006144EA /* Protocol */,
 				8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */,
 			);
 			path = UseCase;
@@ -680,7 +702,7 @@
 			files = (
 				8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */,
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
-				8AC317F7279F0A4100646711 /* ValidateNumberCheckViewModel.swift in Sources */,
+				8AC317F7279F0A4100646711 /* ValidateCodeCheckViewModel.swift in Sources */,
 				8AC3181627A05DB300646711 /* FakeFirebaseManager.swift in Sources */,
 				8A44F6EB279E50DF00044C8B /* FakeCoordinator.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
@@ -691,7 +713,9 @@
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
 				8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */,
-				8AC317F5279F09D200646711 /* VlidateNumberCheckView.swift in Sources */,
+				8A8CDD0127A1BA13006144EA /* CommonViewModelProtocol.swift in Sources */,
+				8AC317F5279F09D200646711 /* VlidateCodeCheckView.swift in Sources */,
+				8A8CDD0427A1BABA006144EA /* UseCase.swift in Sources */,
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
 				8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */,
