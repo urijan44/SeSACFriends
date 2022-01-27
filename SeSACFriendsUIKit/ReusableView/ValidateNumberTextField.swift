@@ -31,7 +31,7 @@ public class ValidateNumberTextField: UIControl {
     $0.isHidden = false
   }
 
-  private lazy var timeOutLabel = UILabel().then {
+  public lazy var timeOutLabel = UILabel().then {
     $0.font = .title3m
     $0.textColor = .seSACGreen
     $0.text = "01:00"

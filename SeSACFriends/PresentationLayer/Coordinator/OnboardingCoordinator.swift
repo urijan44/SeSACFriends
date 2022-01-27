@@ -20,11 +20,19 @@ final class OnBoardingCoordinator: Coordinator {
   }
 
   private func makeValidateCodeCheckView() -> ValidateCodeCheckViewController {
-    let viewModel = ValidateCodeCheckViewModel()
-    let rootView = ValidateCodeCheckView(viewModel: viewModel)
+    let viewModel = ValidateCodeCheckViewModel(useCase: ValidateCodeUseCase())
+    let rootView = ValidateCodeCheckView(viewModel: viewModel, delegate: self)
     let controller = ValidateCodeCheckViewController(rootView: rootView)
     return controller
   }
 }
 
-//MARK: - Factory
+extension OnBoardingCoordinator: ValidateCodeCheckViewDeledage {
+  func navigatorPush() {
+
+  }
+
+  func navigatorPop() {
+    router.dismiss(animated: true)
+  }
+}

@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import RxSwift
 import SeSACFriendsUIKit
+
+protocol ValidateCodeCheckViewDeledage: AnyObject {
+  func navigatorPush()
+  func navigatorPop()
+}
 
 class ValidateCodeCheckView: RepresentableView {
 
   let viewModel: ValidateCodeCheckViewModel
-
+  let bag = DisposeBag()
   lazy var leftBarButtonItem = UIBarButtonItem(image: Images.arrow.image, style: .plain, target: self, action: nil)
 
   lazy var titleLable1 = UILabel(typoStyle: .display1).then {
@@ -39,9 +45,13 @@ class ValidateCodeCheckView: RepresentableView {
     $0.title = "재전송"
   }
 
+  weak var delegate: ValidateCodeCheckViewDeledage?
+
   init(frame: CGRect = .zero,
-       viewModel: ValidateCodeCheckViewModel) {
+       viewModel: ValidateCodeCheckViewModel,
+       delegate: ValidateCodeCheckViewDeledage?) {
     self.viewModel = viewModel
+    self.delegate = delegate
     super.init(frame: frame)
     backgroundColor = .seSACWhite
   }
@@ -96,14 +106,39 @@ class ValidateCodeCheckView: RepresentableView {
       viewAppear: self.rx.methodInvoked(#selector(UIView.didMoveToWindow)).map{_ in},
       codeInput: textField.rxText.orEmpty.asObservable(),
       retryButton: retryButton.rx.tap.asObservable(),
-      tryAuthentication: retryButton.rx.tap.asObservable())
+      tryAuthentication: retryButton.rx.tap.asObservable(),
+      popViewButton: leftBarButtonItem.rx.tap.asObservable()
+    )
+
+    let output = viewModel.transform(input)
+
+    output.timer
+      .asDriver()
+      .drive(textField.timeOutLabel.rx.text)
+      .disposed(by: bag)
+
+    output.tryButtonEnable
+      .asDriver()
+      .drive(checkButton.rx.isDisabled)
+      .disposed(by: bag)
+
+    output.retryButtonEnable
+      .asDriver()
+      .drive(retryButton.rx.isDisabled)
+      .disposed(by: bag)
+
+    leftBarButtonItem.rx.tap
+      .subscribe(onNext: { [weak self] _ in
+        self?.delegate?.navigatorPop()
+      }).disposed(by: bag)
   }
 }
 #if DEBUG
 import SwiftUI
 fileprivate struct ValidateNumberCheckViewRP: UIViewRepresentable {
   func makeUIView(context: UIViewRepresentableContext<ValidateNumberCheckViewRP>) -> ValidateCodeCheckView {
-    ValidateCodeCheckView(viewModel: ValidateCodeCheckViewModel())
+    let viewModel = ValidateCodeCheckViewModel(useCase: ValidateCodeUseCase())
+    return ValidateCodeCheckView(viewModel: viewModel, delegate: nil)
   }
 
   func updateUIView(_ uiView: ValidateCodeCheckView, context: Context) {
