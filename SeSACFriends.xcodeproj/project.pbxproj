@@ -69,6 +69,12 @@
 		8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131C27965316003DEC53 /* AppDelegate.swift */; };
 		8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2131E27965316003DEC53 /* SceneDelegate.swift */; };
 		8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */; };
+		8AD6ADC627A2FB4D002A0283 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD6ADC527A2FB4D002A0283 /* NicknameViewController.swift */; };
+		8AD6ADC827A2FB55002A0283 /* NicknameRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD6ADC727A2FB55002A0283 /* NicknameRootView.swift */; };
+		8AD6ADCA27A2FB9F002A0283 /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD6ADC927A2FB9F002A0283 /* NicknameViewModel.swift */; };
+		8AD6ADCC27A3028B002A0283 /* DateInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD6ADCB27A3028B002A0283 /* DateInputField.swift */; };
+		8AD6ADD227A306C7002A0283 /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD6ADD127A306C7002A0283 /* SignUpUseCase.swift */; };
+		8AD6ADD927A310FA002A0283 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD6ADD827A310FA002A0283 /* UserProfile.swift */; };
 		8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */; };
 		8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */; };
 		8AEDF7DF279DD39300E3B16F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AEDF7DE279DD39300E3B16F /* RxCocoa */; };
@@ -154,6 +160,12 @@
 		8AD2132027965316003DEC53 /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
 		8AD2132827965318003DEC53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AD2132A27965318003DEC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AD6ADC527A2FB4D002A0283 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		8AD6ADC727A2FB55002A0283 /* NicknameRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameRootView.swift; sourceTree = "<group>"; };
+		8AD6ADC927A2FB9F002A0283 /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
+		8AD6ADCB27A3028B002A0283 /* DateInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputField.swift; sourceTree = "<group>"; };
+		8AD6ADD127A306C7002A0283 /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
+		8AD6ADD827A310FA002A0283 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedNavigationRouter.swift; sourceTree = "<group>"; };
 		8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +269,7 @@
 				8AC317FA279F0BF100646711 /* ValidateNumberTextField.swift */,
 				8A674BCC279D844B00EDEA3F /* RepresentableView.swift */,
 				8A961B24279DC65500CC2163 /* RepresentableViewController.swift */,
+				8AD6ADCB27A3028B002A0283 /* DateInputField.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -324,6 +337,7 @@
 				8A674BAE279C30DF00EDEA3F /* Coordinator */,
 				8A674BC0279D7EDA00EDEA3F /* WelcomeScene */,
 				8A6C29A8279A507E004EC855 /* LoginScene */,
+				8AD6ADC427A2FB11002A0283 /* SignUpScene */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -384,6 +398,7 @@
 				8A8CDD0227A1BAB4006144EA /* Protocol */,
 				8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */,
 				8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */,
+				8AD6ADD127A306C7002A0283 /* SignUpUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -419,6 +434,7 @@
 		8AC3180927A0062500646711 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				8AD6ADD727A310EE002A0283 /* Entity */,
 				8AC3181C27A06CC300646711 /* User */,
 				8AC3181427A05DA600646711 /* Fake */,
 				8AC3180A27A0062B00646711 /* Remote */,
@@ -481,6 +497,40 @@
 				8A09E6C227969960005D98BF /* Resources */,
 			);
 			path = SeSACFriends;
+			sourceTree = "<group>";
+		};
+		8AD6ADC427A2FB11002A0283 /* SignUpScene */ = {
+			isa = PBXGroup;
+			children = (
+				8AD6ADCE27A30429002A0283 /* ViewModel */,
+				8AD6ADCD27A30414002A0283 /* Views */,
+			);
+			path = SignUpScene;
+			sourceTree = "<group>";
+		};
+		8AD6ADCD27A30414002A0283 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8AD6ADC527A2FB4D002A0283 /* NicknameViewController.swift */,
+				8AD6ADC727A2FB55002A0283 /* NicknameRootView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8AD6ADCE27A30429002A0283 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8AD6ADC927A2FB9F002A0283 /* NicknameViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		8AD6ADD727A310EE002A0283 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8AD6ADD827A310FA002A0283 /* UserProfile.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -684,6 +734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD6ADCC27A3028B002A0283 /* DateInputField.swift in Sources */,
 				8A6DB20027995F7A00477705 /* UIColor+Extension.swift in Sources */,
 				8A961B25279DC65500CC2163 /* RepresentableViewController.swift in Sources */,
 				8A6DB1F42799484400477705 /* UIFont+Extension.swift in Sources */,
@@ -706,18 +757,22 @@
 				8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */,
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
 				8AC317F7279F0A4100646711 /* ValidateCodeCheckViewModel.swift in Sources */,
+				8AD6ADD227A306C7002A0283 /* SignUpUseCase.swift in Sources */,
 				8AC3181627A05DB300646711 /* FakeFirebaseManager.swift in Sources */,
 				8A44F6EB279E50DF00044C8B /* FakeCoordinator.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
 				8AC3182427A0F3D500646711 /* ValidateCodeCheckViewController.swift in Sources */,
+				8AD6ADD927A310FA002A0283 /* UserProfile.swift in Sources */,
 				8AC3181E27A06D0300646711 /* UserSession.swift in Sources */,
 				8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
+				8AD6ADCA27A2FB9F002A0283 /* NicknameViewModel.swift in Sources */,
 				8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */,
 				8A8CDD0127A1BA13006144EA /* CommonViewModelProtocol.swift in Sources */,
 				8AC317F5279F09D200646711 /* VlidateCodeCheckView.swift in Sources */,
+				8AD6ADC827A2FB55002A0283 /* NicknameRootView.swift in Sources */,
 				8A8CDD0427A1BABA006144EA /* UseCase.swift in Sources */,
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
@@ -731,6 +786,7 @@
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
 				8AC31805279FFF8500646711 /* View+Extension.swift in Sources */,
+				8AD6ADC627A2FB4D002A0283 /* NicknameViewController.swift in Sources */,
 				8A6C29AB279A52DB004EC855 /* PhoneAuthViewModel.swift in Sources */,
 				8A674BD7279DB2D700EDEA3F /* WelcomePageView.swift in Sources */,
 				8A674BB3279C316F00EDEA3F /* Coordinator.swift in Sources */,

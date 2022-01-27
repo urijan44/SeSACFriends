@@ -13,7 +13,6 @@ protocol DefaultToastMessage {
   var success: Bool { get set }
   var message: MessageType { get set }
   var sendingMessage: String { get }
-  mutating func errorCodeConvert(_ code: Int)
 }
 
 extension DefaultToastMessage {
@@ -22,8 +21,12 @@ extension DefaultToastMessage {
   }
 }
 
+protocol FirebaseToastMessage: DefaultToastMessage {
+  mutating func errorCodeConvert(_ code: Int)
+}
+
 struct ToastMessage {
-  struct PhoneNumberAuthencication: DefaultToastMessage {
+  struct PhoneNumberAuthencication: FirebaseToastMessage {
     enum MessageType: String {
       case valideType = "전화 번호 인증 시작"
       case invalideType = "잘못된 전화번호 형식입니다."
@@ -48,7 +51,7 @@ struct ToastMessage {
     }
   }
 
-  struct VerificationCode: DefaultToastMessage {
+  struct VerificationCode: FirebaseToastMessage {
     enum MessageType: String {
       case loadView = "인증번호를 보냈습니다."
       case timeOut, invalideCode = "전화 번호 인증 실패"
@@ -72,5 +75,17 @@ struct ToastMessage {
           message = .tokenError
       }
     }
+  }
+
+  struct Nickname: DefaultToastMessage {
+    enum MessageType: String {
+      case invalidNickname = "닉네임은 1자 이상 10자 이내로 부탁드려요."
+      case cantUseNickname = "해당 닉네임은 사용할 수 없습니다."
+      case none
+    }
+
+    var messageState: Bool = true
+    var success: Bool = false
+    var message: MessageType = .none
   }
 }
