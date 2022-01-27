@@ -8,9 +8,11 @@
 import UIKit
 import SeSACFriendsUIKit
 
-class ValidateNumberCheckView: RepresentableView {
+class ValidateCodeCheckView: RepresentableView {
 
-  let viewModel: ValidateNumberCheckViewModel
+  let viewModel: ValidateCodeCheckViewModel
+
+  lazy var leftBarButtonItem = UIBarButtonItem(image: Images.arrow.image, style: .plain, target: self, action: nil)
 
   lazy var titleLable1 = UILabel(typoStyle: .display1).then {
     $0.numberOfLines = 1
@@ -30,10 +32,15 @@ class ValidateNumberCheckView: RepresentableView {
 
   lazy var textField = ValidateNumberTextField().then {
     $0.placeholder = "인증번호 입력"
+    $0.keyboardType = .decimalPad
+  }
+
+  lazy var retryButton = SeSACButton(style: .fill).then {
+    $0.title = "재전송"
   }
 
   init(frame: CGRect = .zero,
-       viewModel: ValidateNumberCheckViewModel) {
+       viewModel: ValidateCodeCheckViewModel) {
     self.viewModel = viewModel
     super.init(frame: frame)
     backgroundColor = .seSACWhite
@@ -48,6 +55,7 @@ class ValidateNumberCheckView: RepresentableView {
     addSubview(infolabel)
     addSubview(checkButton)
     addSubview(textField)
+    addSubview(retryButton)
   }
 
   override func layoutConfigure() {
@@ -61,8 +69,16 @@ class ValidateNumberCheckView: RepresentableView {
       make.top.equalTo(titleLable1.snp.bottom).offset(8)
     }
 
+    retryButton.snp.makeConstraints { make in
+      make.width.equalTo(72)
+      make.height.equalTo(40)
+      make.centerY.equalTo(textField.snp.centerY)
+      make.trailing.equalToSuperview().offset(-16)
+    }
+
     textField.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview().inset(16)
+      make.leading.equalToSuperview().inset(16)
+      make.trailing.equalTo(retryButton.snp.leading).offset(-8)
       make.top.equalTo(infolabel.snp.bottom).offset(64)
       make.height.equalTo(88)
     }
@@ -73,15 +89,24 @@ class ValidateNumberCheckView: RepresentableView {
       make.height.equalTo(44)
     }
   }
+
+  override func bind() {
+    super.bind()
+    let input = ValidateCodeCheckViewModel.Input(
+      viewAppear: self.rx.methodInvoked(#selector(UIView.didMoveToWindow)).map{_ in},
+      codeInput: textField.rxText.orEmpty.asObservable(),
+      retryButton: retryButton.rx.tap.asObservable(),
+      tryAuthentication: retryButton.rx.tap.asObservable())
+  }
 }
 #if DEBUG
 import SwiftUI
 fileprivate struct ValidateNumberCheckViewRP: UIViewRepresentable {
-  func makeUIView(context: UIViewRepresentableContext<ValidateNumberCheckViewRP>) -> ValidateNumberCheckView {
-    ValidateNumberCheckView(viewModel: ValidateNumberCheckViewModel())
+  func makeUIView(context: UIViewRepresentableContext<ValidateNumberCheckViewRP>) -> ValidateCodeCheckView {
+    ValidateCodeCheckView(viewModel: ValidateCodeCheckViewModel())
   }
 
-  func updateUIView(_ uiView: ValidateNumberCheckView, context: Context) {
+  func updateUIView(_ uiView: ValidateCodeCheckView, context: Context) {
 
   }
 }

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     UIPageControl.appearance().currentPageIndicatorTintColor = .seSACBlack
     UIPageControl.appearance().pageIndicatorTintColor = .seSACGray6
-
+    UIBarButtonItem.appearance().tintColor = .seSACBlack
     ToastManager.shared.isTapToDismissEnabled = true
 
     Thread.sleep(forTimeInterval: 2.0)

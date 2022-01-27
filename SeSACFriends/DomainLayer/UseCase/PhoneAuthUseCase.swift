@@ -10,7 +10,7 @@ import RxSwift
 import RxRelay
 import FirebaseAuth
 
-final class PhoneAuthUseCase {
+final class PhoneAuthUseCase: UseCase {
   private let bag = DisposeBag()
   var phoneNumberValidateState = BehaviorSubject<Bool>(value: false)
   var convertedPhoneNumber = BehaviorSubject<String>(value: "")

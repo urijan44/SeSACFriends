@@ -10,15 +10,14 @@ import RxSwift
 import RxRelay
 import RxCocoa
 
-final class PhoneAuthViewModel {
-
+final class PhoneAuthViewModel: CommonViewModel {
   enum AuthenticationPhase {
     case inputPhoneNumber
     case inputValidateNumber
   }
 
   //  weak var coordinator: AppDelegateCoordinator?
-  let useCase: PhoneAuthUseCase
+  var useCase: PhoneAuthUseCase
   var bag = DisposeBag()
 
   //  init(coordinator: AppDelegateCoordinator, useCase: PhoneAuthUseCase) {

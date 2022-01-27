@@ -10,12 +10,10 @@ import SeSACFriendsUIKit
 
 class ValidateCodeCheckViewController: RepresentableViewController {
 
-  let viewModel: ValidateNumberCheckViewModel
-  let rootView: ValidateNumberCheckView
+  let rootView: ValidateCodeCheckView
 
-  init(viewModel: ValidateNumberCheckViewModel) {
-    self.viewModel = viewModel
-    self.rootView = ValidateNumberCheckView(viewModel: viewModel)
+  init(rootView: ValidateCodeCheckView) {
+    self.rootView = rootView
     super.init()
   }
 
@@ -25,5 +23,7 @@ class ValidateCodeCheckViewController: RepresentableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    navigationItem.leftBarButtonItem = rootView.leftBarButtonItem
   }
 }

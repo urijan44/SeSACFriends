@@ -20,8 +20,9 @@ final class OnBoardingCoordinator: Coordinator {
   }
 
   private func makeValidateCodeCheckView() -> ValidateCodeCheckViewController {
-    let viewModel = ValidateNumberCheckViewModel()
-    let controller = ValidateCodeCheckViewController(viewModel: viewModel)
+    let viewModel = ValidateCodeCheckViewModel()
+    let rootView = ValidateCodeCheckView(viewModel: viewModel)
+    let controller = ValidateCodeCheckViewController(rootView: rootView)
     return controller
   }
 }

@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import RxSwift
 import RxCocoa
 
 final public class SeSACButton: UIControl {
@@ -59,10 +60,6 @@ final public class SeSACButton: UIControl {
   public var animateOn: Bool = true
 
   public var radius: CGFloat = 8
-
-  public lazy var rxTap: ControlEvent<Void> = {
-    self.rx.controlEvent(.touchUpInside)
-  }()
 
   public override init(frame: CGRect) {
     super.init(frame: frame)
@@ -191,6 +188,12 @@ public extension SeSACButton {
     self.init()
     self.style = style
     uiStyleUpdate()
+  }
+}
+
+public extension Reactive where Base: SeSACButton {
+  public var tap: ControlEvent<Void> {
+    controlEvent(.touchUpInside)
   }
 }
 
