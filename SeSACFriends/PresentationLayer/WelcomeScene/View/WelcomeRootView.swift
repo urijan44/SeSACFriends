@@ -59,7 +59,7 @@ final class WelcomeRootView: RepresentableView {
     hosting.view.snp.makeConstraints { make in
       make.leading.trailing.equalToSuperview()
       make.bottom.equalToSuperview()
-      make.top.equalToSuperview()
+      make.top.equalTo(safeAreaLayoutGuide.snp.top)
     }
   }
 }

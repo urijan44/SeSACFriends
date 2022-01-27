@@ -68,10 +68,10 @@ final class PhoneAuthUseCase: UseCase {
     let state = phoneNumberRegexCheck(text)
     if state {
       //network check and firebase request!
-      phoneAuthToastMessage.onNext(.init(messageState: true, success: true, message: .valideType, sendingMessage: ToastMessage.PhoneNumberAuthencication.MessageType.valideType.rawValue))
+      phoneAuthToastMessage.onNext(.init(messageState: true, success: true, message: .valideType))
       firebaseRequest(text)
     } else {
-      phoneAuthToastMessage.onNext(.init(messageState: true, message: .invalideType, sendingMessage: ToastMessage.PhoneNumberAuthencication.MessageType.invalideType.rawValue))
+      phoneAuthToastMessage.onNext(.init(messageState: true, message: .invalideType))
     }
   }
   //reqeust auth code //전화번호 검증하기, 결과에 따른 분기
@@ -83,20 +83,22 @@ final class PhoneAuthUseCase: UseCase {
     buttonEnable.accept(false)
 
 //    PhoneAuthProvider
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       FakePhoneAuthProvider
         .provider()
         .verifyPhoneNumber(converted, uiDelegate: nil) { [weak self] preReceiveVerificationId, error in
           guard let self = self else { return }
         if let error = error {
-          let message = FirebaseErrorHandling.PhoneAuthHandling(error)
-          self.phoneAuthToastMessage.onNext(.init(messageState: true, success: false, message: .none, sendingMessage: message))
+
+          var message = ToastMessage.PhoneNumberAuthencication()
+          message.errorCodeConvert(FirebaseErrorHandling.PhoneAuthHandling(error))
+          message.success = false
+          self.phoneAuthToastMessage.onNext(message)
+          
         } else {
           self.showVerificationCodeCheckView.onNext(true)
           UserSession.savePreReceiveVerifId(preReceiveVerificationId)
         }
         self.buttonEnable.accept(true)
       }
-    }
   }
 }

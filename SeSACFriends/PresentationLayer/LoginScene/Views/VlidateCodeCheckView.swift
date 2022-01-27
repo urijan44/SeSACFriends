@@ -103,14 +103,21 @@ class ValidateCodeCheckView: RepresentableView {
   override func bind() {
     super.bind()
     let input = ValidateCodeCheckViewModel.Input(
-      viewAppear: self.rx.methodInvoked(#selector(UIView.didMoveToWindow)).map{_ in},
+      viewAppear: self.rx.methodInvoked(#selector(didMoveToWindow)).map{_ in},
       codeInput: textField.rxText.orEmpty.asObservable(),
       retryButton: retryButton.rx.tap.asObservable(),
-      tryAuthentication: retryButton.rx.tap.asObservable(),
+      tryAuthentication: checkButton.rx.tap.asObservable(),
       popViewButton: leftBarButtonItem.rx.tap.asObservable()
     )
 
     let output = viewModel.transform(input)
+
+    output.showToast
+      .subscribe(onNext: { [weak self] toast in
+        guard let self = self else { return }
+        let text = toast.sendingMessage
+        self.showToast(text)
+      }).disposed(by: bag)
 
     output.timer
       .asDriver()
@@ -125,6 +132,17 @@ class ValidateCodeCheckView: RepresentableView {
     output.retryButtonEnable
       .asDriver()
       .drive(retryButton.rx.isDisabled)
+      .disposed(by: bag)
+
+    output.retryButtonEnable
+      .asDriver()
+      .map{!$0}
+      .drive(retryButton.rx.isEnabled)
+      .disposed(by: bag)
+
+    output.tryButtonBlock
+      .asDriver()
+      .drive(checkButton.rx.isEnabled)
       .disposed(by: bag)
 
     leftBarButtonItem.rx.tap

@@ -192,7 +192,7 @@ public extension SeSACButton {
 }
 
 public extension Reactive where Base: SeSACButton {
-  public var tap: ControlEvent<Void> {
+  var tap: ControlEvent<Void> {
     controlEvent(.touchUpInside)
   }
 }
