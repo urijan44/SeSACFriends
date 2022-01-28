@@ -44,6 +44,11 @@ final class NicknameRootView: RepresentableView {
 
   weak var delegate: NicknameRootViewDelegate?
 
+  override func didMoveToWindow() {
+    super.didMoveToWindow()
+    nickNameTextField.becomeFirstResponder()
+  }
+
   override func createView() {
     addSubview(titleLabel)
     addSubview(nickNameTextField)

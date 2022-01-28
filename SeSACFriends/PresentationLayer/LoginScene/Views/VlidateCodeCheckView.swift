@@ -145,6 +145,11 @@ class ValidateCodeCheckView: RepresentableView {
       .subscribe(onNext: { [weak self] _ in
         self?.delegate?.navigatorPop()
       }).disposed(by: bag)
+
+    output.present
+      .subscribe(onNext: { [weak self] _ in
+        self?.delegate?.navigatorPush()
+      }).disposed(by: bag)
   }
 }
 #if DEBUG

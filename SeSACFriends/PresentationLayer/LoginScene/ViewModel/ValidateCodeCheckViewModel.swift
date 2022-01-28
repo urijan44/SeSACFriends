@@ -33,6 +33,7 @@ final class ValidateCodeCheckViewModel: CommonViewModel {
     let retryButtonEnable: BehaviorRelay<Bool> = .init(value: false)
     let timer: BehaviorRelay<String> = .init(value: "01:00")
     let showToast: PublishRelay<ToastMessage.VerificationCode> = .init()
+    let present: PublishSubject<Void> = .init()
   }
 
   func transform(_ input: Input) -> Output {
@@ -84,6 +85,10 @@ final class ValidateCodeCheckViewModel: CommonViewModel {
       if message.messageState {
         output.showToast.accept(message)
       }
+    }).disposed(by: bag)
+
+    useCase.present.subscribe(onNext: { _ in
+      output.present.onNext(())
     }).disposed(by: bag)
 
     return output

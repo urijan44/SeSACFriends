@@ -19,6 +19,7 @@ final class ValidateCodeUseCase: UseCase {
   var tryButtonEnabled: BehaviorRelay<Bool> = .init(value: true)
   var retryButtonDisabled: BehaviorRelay<Bool> = .init(value: true)
   var verificationToastMessage: PublishSubject<ToastMessage.VerificationCode> = .init()
+  var present: PublishSubject<Void> = .init()
 
   private lazy var time: Int = initializeTime
 
@@ -74,17 +75,16 @@ final class ValidateCodeUseCase: UseCase {
 //    }
 
     let credential = FakePhoneAuthProvider.provider().credential(withVerificationID: receivedVerifyCode ?? "", verificationCode: preVerifyCode)
-    FakeAuth.auth().signIn(with: credential) { success, error in
+    FakeAuth.auth().signIn(with: credential) { [weak self] success, error in
       if let error = error {
-        print("fail")
         var message = ToastMessage.VerificationCode.init()
         message.success = false
         message.errorCodeConvert(FirebaseErrorHandling.PhoneAuthHandling(error))
-        self.verificationToastMessage.onNext(message)
+        self?.verificationToastMessage.onNext(message)
       } else {
-        print("success")
+        self?.present.onNext(())
       }
-      self.tryButtonEnabled.accept(true)
+      self?.tryButtonEnabled.accept(true)
     }
   }
 }

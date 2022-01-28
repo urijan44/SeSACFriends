@@ -32,7 +32,7 @@ final class SignUpUseCase: UseCase {
 
     if state {
       userSession.saveNickname(nickname: nickname)
-      success.onNext(())
+//      success.onNext(())
     } else {
       var message = ToastMessage.Nickname.init()
       message.message = .invalidNickname
