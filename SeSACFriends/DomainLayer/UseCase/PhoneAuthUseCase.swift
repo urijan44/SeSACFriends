@@ -68,10 +68,14 @@ final class PhoneAuthUseCase: UseCase {
     let state = phoneNumberRegexCheck(text)
     if state {
       //network check and firebase request!
-      phoneAuthToastMessage.onNext(.init(messageState: true, success: true, message: .valideType))
+      phoneAuthToastMessage.onNext(
+        .init(.valideType, messageState: true, success: true))
       firebaseRequest(text)
     } else {
-      phoneAuthToastMessage.onNext(.init(messageState: true, message: .invalideType))
+//      phoneAuthToastMessage.onNext(
+//        .init(messageState: true, message: .invalideType))
+      phoneAuthToastMessage.onNext(
+        .init(.invalideType, messageState: true, success: false))
     }
   }
   //reqeust auth code //전화번호 검증하기, 결과에 따른 분기
@@ -88,10 +92,7 @@ final class PhoneAuthUseCase: UseCase {
         .verifyPhoneNumber(converted, uiDelegate: nil) { [weak self] preReceiveVerificationId, error in
           guard let self = self else { return }
         if let error = error {
-
-          var message = ToastMessage.PhoneNumberAuthencication()
-          message.errorCodeConvert(FirebaseErrorHandling.PhoneAuthHandling(error))
-          message.success = false
+          let message = ToastMessage.PhoneNumberAuthencication(FirebaseErrorHandling.PhoneAuthHandling2(error))
           self.phoneAuthToastMessage.onNext(message)
           
         } else {

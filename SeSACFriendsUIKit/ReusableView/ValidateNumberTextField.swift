@@ -163,7 +163,7 @@ public class ValidateNumberTextField: UIControl {
   }
 
   private func inactiveUIUpdate() {
-    textField.textColor = .seSACGray3
+    textField.textColor = .seSACGray7
     layer.cornerRadius = 0
   }
 

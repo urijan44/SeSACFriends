@@ -95,8 +95,7 @@ final class NicknameRootView: RepresentableView {
     output.present
       .subscribe(onNext: { [weak self] state in
         if state {
-          print("push next")
-          self?.delegate?.navigatorPush()
+//          self?.delegate?.navigatorPush()
         }
       }).disposed(by: bag)
   }

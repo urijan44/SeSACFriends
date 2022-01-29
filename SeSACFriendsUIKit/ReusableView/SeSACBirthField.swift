@@ -1,16 +1,18 @@
 //
-//  SeSACTextField.swift
-//  SeSACFriends
+//  SeSACBirthField.swift
+//  SeSACFriendsUIKit
 //
-//  Created by hoseung Lee on 2022/01/20.
+//  Created by hoseung Lee on 2022/01/28.
 //
+
+import UIKit
 
 import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
 
-public class SeSACTextField: UIControl {
+public class SeSACBirthField: UIControl {
 
   public enum FieldState {
     case inactive
@@ -22,13 +24,17 @@ public class SeSACTextField: UIControl {
   }
 
   private lazy var textField = UITextField().then {
-    $0.keyboardType = .decimalPad
+    $0.isEnabled = false
     $0.font = .title4r
   }
 
   private lazy var subTextLabel = UILabel().then {
     $0.font = .body4r
     $0.isHidden = false
+  }
+
+  private lazy var unitLabel = UILabel().then {
+    $0.font = .title2r
   }
 
   private var bottomBorder = UIView()
@@ -84,6 +90,12 @@ public class SeSACTextField: UIControl {
     }
   }
 
+  public var unitText: String = "" {
+    didSet {
+      unitLabel.text = unitText
+    }
+  }
+
   public override init(frame: CGRect) {
     super.init(frame: frame)
     setupView()
@@ -99,6 +111,7 @@ public class SeSACTextField: UIControl {
     addSubview(bottomBorder)
     addSubview(textField)
     addSubview(subTextLabel)
+    addSubview(unitLabel)
     layoutSetup()
     uiStateUpdate()
   }
@@ -111,13 +124,20 @@ public class SeSACTextField: UIControl {
   }
 
   private func layoutSetup() {
+    unitLabel.snp.makeConstraints { make in
+      make.centerY.equalToSuperview()
+      make.trailing.equalToSuperview().priority(.low)
+    }
+
     textField.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview().inset(12)
+      make.leading.equalToSuperview().inset(12)
+      make.trailing.equalTo(unitLabel.snp.leading).offset(-12)
       make.centerY.equalToSuperview()
     }
 
     bottomBorder.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview()
+      make.leading.equalToSuperview()
+      make.trailing.equalTo(unitLabel.snp.leading).offset(-4)
       make.height.equalTo(1)
       make.top.equalTo(textField.snp.bottom).offset(12)
     }
@@ -205,20 +225,20 @@ public class SeSACTextField: UIControl {
 
 #if DEBUG
 import SwiftUI
-fileprivate struct SeSACTextFieldRP: UIViewRepresentable {
-  func makeUIView(context: UIViewRepresentableContext<SeSACTextFieldRP>) -> SeSACTextField {
-    SeSACTextField()
+fileprivate struct SeSACBirthFieldRP: UIViewRepresentable {
+  func makeUIView(context: UIViewRepresentableContext<SeSACBirthFieldRP>) -> SeSACBirthField {
+    SeSACBirthField()
   }
 
-  func updateUIView(_ uiView: SeSACTextField, context: Context) {
-    uiView.text = "내용을 입력"
-    uiView.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
+  func updateUIView(_ uiView: SeSACBirthField, context: Context) {
+    uiView.text = "1992"
+    uiView.unitText = "년"
   }
 }
 
-struct SeSACTextFieldRP_Previews: PreviewProvider {
+struct SeSACBirthFieldRP_Previews: PreviewProvider {
   static var previews: some View {
-    SeSACTextFieldRP()
+    SeSACBirthFieldRP()
   }
 }
 #endif

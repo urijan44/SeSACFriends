@@ -37,7 +37,6 @@ final class FakePhoneAuthProvider {
         completion(testId, nil)
       }
     }
-
   }
 
   func credential(withVerificationID verificationID: String, verificationCode: String) -> FakePhoneAuthCredential {

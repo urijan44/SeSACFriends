@@ -49,6 +49,10 @@ struct ToastMessage {
           message = .unknownError
       }
     }
+
+    init(_ messageType: MessageType, messageState: Bool = true, success: Bool = false) {
+      self.message = messageType
+    }
   }
 
   struct VerificationCode: FirebaseToastMessage {

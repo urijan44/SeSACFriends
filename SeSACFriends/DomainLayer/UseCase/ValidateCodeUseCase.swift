@@ -80,6 +80,7 @@ final class ValidateCodeUseCase: UseCase {
         var message = ToastMessage.VerificationCode.init()
         message.success = false
         message.errorCodeConvert(FirebaseErrorHandling.PhoneAuthHandling(error))
+
         self?.verificationToastMessage.onNext(message)
       } else {
         self?.present.onNext(())
