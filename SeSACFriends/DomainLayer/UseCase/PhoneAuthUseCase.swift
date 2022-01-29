@@ -92,7 +92,7 @@ final class PhoneAuthUseCase: UseCase {
         .verifyPhoneNumber(converted, uiDelegate: nil) { [weak self] preReceiveVerificationId, error in
           guard let self = self else { return }
         if let error = error {
-          let message = ToastMessage.PhoneNumberAuthencication(FirebaseErrorHandling.PhoneAuthHandling2(error))
+          let message = ToastMessage.PhoneNumberAuthencication(FirebaseErrorHandling.PhoneAuthHandling(error))
           self.phoneAuthToastMessage.onNext(message)
           
         } else {
@@ -101,5 +101,6 @@ final class PhoneAuthUseCase: UseCase {
         }
         self.buttonEnable.accept(true)
       }
+
   }
 }

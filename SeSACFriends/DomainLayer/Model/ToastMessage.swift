@@ -21,12 +21,8 @@ extension DefaultToastMessage {
   }
 }
 
-protocol FirebaseToastMessage: DefaultToastMessage {
-  mutating func errorCodeConvert(_ code: Int)
-}
-
 struct ToastMessage {
-  struct PhoneNumberAuthencication: FirebaseToastMessage {
+  struct PhoneNumberAuthencication: DefaultToastMessage {
     enum MessageType: String {
       case valideType = "전화 번호 인증 시작"
       case invalideType = "잘못된 전화번호 형식입니다."
@@ -39,23 +35,12 @@ struct ToastMessage {
     var success: Bool = false
     var message: MessageType = .none
 
-    mutating func errorCodeConvert(_ code: Int) {
-      switch code {
-        case 17042:
-          message = .invalideType
-        case 17010:
-          message = .excessiveRequest
-        default:
-          message = .unknownError
-      }
-    }
-
     init(_ messageType: MessageType, messageState: Bool = true, success: Bool = false) {
       self.message = messageType
     }
   }
 
-  struct VerificationCode: FirebaseToastMessage {
+  struct VerificationCode: DefaultToastMessage {
     enum MessageType: String {
       case loadView = "인증번호를 보냈습니다."
       case timeOut, invalideCode = "전화 번호 인증 실패"
@@ -64,20 +49,11 @@ struct ToastMessage {
     }
 
     var messageState: Bool = true
-
     var success: Bool = false
-
     var message: MessageType = .none
 
-    mutating func errorCodeConvert(_ code: Int) {
-      switch code {
-        case 17051:
-          message = .timeOut
-        case 17044, 17045, 17046:
-          message = .invalideCode
-        default:
-          message = .tokenError
-      }
+    init(_ messageType: MessageType, messageState: Bool = true, success: Bool = false) {
+      self.message = messageType
     }
   }
 

@@ -24,7 +24,7 @@ final class ValidateCodeUseCase: UseCase {
   private lazy var time: Int = initializeTime
 
   func sendCodeShowToast() {
-    let message = ToastMessage.VerificationCode(messageState: true, success: true, message: .loadView)
+    let message = ToastMessage.VerificationCode(.loadView, success: true)
     verificationToastMessage.onNext(message)
   }
 
@@ -77,10 +77,7 @@ final class ValidateCodeUseCase: UseCase {
     let credential = FakePhoneAuthProvider.provider().credential(withVerificationID: receivedVerifyCode ?? "", verificationCode: preVerifyCode)
     FakeAuth.auth().signIn(with: credential) { [weak self] success, error in
       if let error = error {
-        var message = ToastMessage.VerificationCode.init()
-        message.success = false
-        message.errorCodeConvert(FirebaseErrorHandling.PhoneAuthHandling(error))
-
+        let message = ToastMessage.VerificationCode(FirebaseErrorHandling.VerificationCode(error))
         self?.verificationToastMessage.onNext(message)
       } else {
         self?.present.onNext(())
