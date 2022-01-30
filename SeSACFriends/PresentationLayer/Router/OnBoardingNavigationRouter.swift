@@ -9,7 +9,7 @@ import UIKit
 
 final class OnBoardingNavigationRouter: NSObject {
   private let navigationController: UINavigationController
-  private let routerRootController: UIViewController?
+  private var routerRootController: UIViewController?
   private var onDismissForViewController: [UIViewController: (() -> Void)] = [:]
 
   init(navigationController: UINavigationController) {
@@ -21,9 +21,24 @@ final class OnBoardingNavigationRouter: NSObject {
 }
 
 extension OnBoardingNavigationRouter: Router {
+  func start(_ viewController: UIViewController, animated: Bool) {
+    routerRootController = viewController
+    navigationController.setViewControllers([viewController], animated: animated)
+  }
+
   func present(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {
-    onDismissForViewController[viewController] = onDismissed
-    navigationController.pushViewController(viewController, animated: animated)
+    if navigationController.viewControllers.isEmpty {
+      start(viewController, animated: animated)
+    } else {
+      onDismissForViewController[viewController] = onDismissed
+      navigationController.pushViewController(viewController, animated: animated)
+    }
+  }
+
+  func changeRootPresent(_ viewController: UIViewController, animated: Bool = false, onDismissed: (() -> Void)?) {
+//    UIView.transition(with: viewController, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+
+    navigationController.setViewControllers([viewController], animated: true)
   }
 
   func dismiss(animated: Bool) {

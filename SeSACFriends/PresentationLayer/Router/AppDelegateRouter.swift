@@ -14,8 +14,7 @@ class AppDelegateRouter: Router {
     self.window = window
   }
 
-  func present(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {
-    navigationController.setViewControllers([viewController], animated: false)
+  func start() {
     window.rootViewController = navigationController
     window.makeKeyAndVisible()
     UIView.transition(
@@ -23,6 +22,9 @@ class AppDelegateRouter: Router {
       duration: 0.5,
       options: .transitionCrossDissolve,
       animations: nil)
+  }
+
+  func present(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {
   }
 
   func dismiss(animated: Bool) {
