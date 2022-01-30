@@ -36,8 +36,6 @@ extension OnBoardingNavigationRouter: Router {
   }
 
   func changeRootPresent(_ viewController: UIViewController, animated: Bool = false, onDismissed: (() -> Void)?) {
-//    UIView.transition(with: viewController, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
-
     navigationController.setViewControllers([viewController], animated: true)
   }
 

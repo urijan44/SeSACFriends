@@ -21,7 +21,7 @@ final class OnBoardingCoordinator: Coordinator {
   }
 
   func present(animated: Bool, onDismissed: (() -> Void)?) {
-    var test = -2
+    var test = 1
     switch test {
       case -2:
         router.present(welcomeView, animated: true)

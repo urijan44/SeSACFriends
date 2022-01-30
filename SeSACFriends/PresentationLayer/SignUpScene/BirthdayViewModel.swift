@@ -12,10 +12,13 @@ import UIKit
 
 final class BirthdayViewModel: CommonViewModel {
 
+  let datePickerSize = UIScreen.main.bounds.height * 0.266
+
   let bag = DisposeBag()
 
   struct Input {
-//    let viewTap: Observable<UITapGestureRecognizer>
+    let view: UIView
+    let viewTap: Observable<UITapGestureRecognizer>
     let tapTextField: Observable<UITapGestureRecognizer>
     let dateInput: Observable<Date>
     let nextButton: Observable<Void>
@@ -39,12 +42,17 @@ final class BirthdayViewModel: CommonViewModel {
     }).disposed(by: bag)
 
     input.tapTextField.subscribe(onNext: { _ in
+      output.showDatePicker.onNext(())
       output.birthFieldActiveState.accept(true)
     }).disposed(by: bag)
 
-//    input.viewTap.subscribe(onNext: { _ in
-//      output.birthFieldActiveState.accept(false)
-//    }).disposed(by: bag)
+    input.viewTap.subscribe(onNext: { [weak self] gesture in
+      guard let self = self else { return }
+      if gesture.location(in: input.view).y < input.view.bounds.maxY - self.datePickerSize {
+        output.birthFieldActiveState.accept(false)
+        output.hideDatePicker.onNext(())
+      }
+    }).disposed(by: bag)
 
     return output
   }

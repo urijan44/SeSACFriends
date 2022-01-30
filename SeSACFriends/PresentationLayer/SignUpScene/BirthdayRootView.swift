@@ -86,7 +86,7 @@ final class BirthdayRootView: RepresentableView {
   }
 
   private func showDatePicker() {
-    pickersHeight?.update(offset: UIScreen.main.bounds.height * 0.266)
+    pickersHeight?.update(offset: viewModel.datePickerSize)
     withAnimate()
   }
 
@@ -103,7 +103,8 @@ final class BirthdayRootView: RepresentableView {
 
   override func bind() {
     let input = BirthdayViewModel.Input(
-//      viewTap: self.rx.tapGesture().asObservable(),
+      view: self,
+      viewTap: self.rx.tapGesture().asObservable(),
       tapTextField: birthdayInputField.rx.tapGesture().asObservable(),
       dateInput: datePicker.rx.date.asObservable(),
       nextButton: nextButton.rx.tap.asObservable())
