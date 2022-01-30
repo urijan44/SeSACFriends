@@ -8,8 +8,7 @@
 import Foundation
 import RxSwift
 
-final class BirthdayUseCase: UseCase {
-  let userSession = UserSession.shared
+final class BirthdayUseCase: UserSessionUseCase {
   let bag = DisposeBag()
 
   let birthdayValidateState: BehaviorSubject<Bool> = .init(value: false)

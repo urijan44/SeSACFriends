@@ -10,4 +10,5 @@ import Foundation
 struct UserProfile: Codable {
   var nickname: String
   var birthday: Date
+  var email: String
 }

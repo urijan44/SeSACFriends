@@ -8,13 +8,15 @@
 import UIKit
 
 final class OnBoardingCoordinator: Coordinator {
+  let container = OnBoardingContainer()
   var children: [Coordinator] = []
   var router: Router
   lazy var welcomeView = WelcomeViewController(viewModel: WelcomeViewModel(), delegate: self)
-  lazy var phoneAuthView = makePhoneAuthView()
-  lazy var validateCodeCheckView = makeValidateCodeCheckView()
-  lazy var nicknameView = makeNicknameView()
-  lazy var birthdayView = makeBirthdayView()
+  lazy var phoneAuthView = container.makePhoneAuthView(delegate: self)
+  lazy var validateCodeCheckView = container.makeValidateCodeCheckView(delegate: self)
+  lazy var nicknameView = container.makeNicknameView(delegate: self)
+  lazy var birthdayView = container.makeBirthdayView(delegate: self)
+  lazy var emailView = container.makeEmailView(delegate: self)
 
   init(router: Router) {
     self.router = router
@@ -33,37 +35,11 @@ final class OnBoardingCoordinator: Coordinator {
         router.present(nicknameView, animated: true)
       case 2:
         router.present(birthdayView, animated: true)
+      case 3:
+        router.present(emailView, animated: true)
       default:
         fatalError("Unsupport view")
     }
-  }
-
-  private func makePhoneAuthView() -> PhoneAuthViewController {
-    let viewModel = PhoneAuthViewModel(useCase: PhoneAuthUseCase())
-    let rootView = PhoneAuthMainView(viewModel: viewModel, delegate: nil)
-    let controller = PhoneAuthViewController(rootView: rootView)
-    return controller
-  }
-
-  private func makeValidateCodeCheckView() -> ValidateCodeCheckViewController {
-    let viewModel = ValidateCodeCheckViewModel(useCase: ValidateCodeUseCase())
-    let rootView = ValidateCodeCheckView(viewModel: viewModel, delegate: self)
-    let controller = ValidateCodeCheckViewController(rootView: rootView)
-    return controller
-  }
-
-  private func makeNicknameView() -> NicknameViewController {
-    let viewModel = NicknameViewModel(useCase: SignUpUseCase())
-    let rootView = NicknameRootView(viewModel: viewModel, delegate: self)
-    let controller = NicknameViewController(rootView: rootView)
-    return controller
-  }
-
-  private func makeBirthdayView() -> BirthdayViewController {
-    let viewModel = BirthdayViewModel(useCase: BirthdayUseCase())
-    let rootView = BirthdayRootView(viewModel: viewModel, delegate: self)
-    let controller = BirthdayViewController(rootView: rootView)
-    return controller
   }
 }
 
@@ -85,7 +61,6 @@ extension OnBoardingCoordinator: ValidateCodeCheckViewDeledage {
   }
 
   func cancelValidateCodeCheck() {
-//    router.dismiss(animated: true)
     validateCodeCheckView.navigationController?.popViewController(animated: true)
   }
 }
@@ -96,18 +71,26 @@ extension OnBoardingCoordinator: NicknameRootViewDelegate {
   }
 
   func cancelNicknameCheck() {
-//    router.dismiss(animated: true)
     nicknameView.navigationController?.popViewController(animated: true)
   }
 }
 
 extension OnBoardingCoordinator: BirthdayRootViewDelegate {
   func birthdayCheck() {
-
+    router.present(emailView, animated: true)
   }
 
   func cancelBirthdayCheck() {
-//    router.dismiss(animated: true)
     birthdayView.navigationController?.popViewController(animated: true)
+  }
+}
+
+extension OnBoardingCoordinator: EmailRootViewDelegate {
+  func emailCheck() {
+
+  }
+
+  func cancelEmailCheck() {
+    emailView.navigationController?.popViewController(animated: true)
   }
 }

@@ -86,4 +86,14 @@ struct ToastMessage {
     var success: Bool = false
     var message: MessageType = .toYoung
   }
+
+  struct Email: DefaultToastMessage {
+    enum MessageType: String {
+      case invalidEmail = "이메일 형식이 올바르지 않습니다."
+    }
+
+    var messageState: Bool = true
+    var success: Bool = false
+    var message: MessageType = .invalidEmail
+  }
 }

@@ -8,9 +8,8 @@
 import Foundation
 import RxSwift
 
-final class SignUpUseCase: UseCase {
+final class SignUpUseCase: UserSessionUseCase {
 
-  let userSession = UserSession.shared
   let bag = DisposeBag()
 
   let nicknameValidateState: BehaviorSubject<Bool> = .init(value: false)

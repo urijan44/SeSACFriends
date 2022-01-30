@@ -30,7 +30,7 @@ final class UserSession {
   }
 
   private init() {
-    userProfile = UserProfile(nickname: "", birthday: Date())
+    userProfile = UserProfile(nickname: "", birthday: Date(), email: "")
     load()
   }
 
@@ -50,6 +50,14 @@ final class UserSession {
     userProfile.birthday
   }
 
+  func saveEmail(email: String) {
+    userProfile.email = email
+  }
+
+  func loadEmail() -> String {
+    userProfile.email
+  }
+
   private func save() {
     guard let data = try? JSONEncoder().encode(userProfile) else { return }
     try? data.write(to: userProfileURL, options: .atomic)
@@ -62,7 +70,7 @@ final class UserSession {
       let decoded = try JSONDecoder().decode(UserProfile.self, from: data)
       self.userProfile = decoded
     } catch {
-      self.userProfile = UserProfile(nickname: "", birthday: Date())
+      self.userProfile = UserProfile(nickname: "", birthday: Date(), email: "")
     }
   }
 }

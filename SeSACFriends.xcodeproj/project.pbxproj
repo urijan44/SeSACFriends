@@ -49,6 +49,9 @@
 		8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */; };
 		8A961B2D279DCEFC00CC2163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD2132727965318003DEC53 /* LaunchScreen.storyboard */; };
 		8A97EBCD27A6E52700C33BDE /* BirthdayUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97EBCC27A6E52700C33BDE /* BirthdayUseCase.swift */; };
+		8A97EBCF27A6EC4C00C33BDE /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97EBCE27A6EC4C00C33BDE /* EmailViewController.swift */; };
+		8A97EBD127A6EC8600C33BDE /* EmailRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97EBD027A6EC8600C33BDE /* EmailRootView.swift */; };
+		8A97EBD327A6ECBE00C33BDE /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97EBD227A6ECBE00C33BDE /* EmailViewModel.swift */; };
 		8AA697B827A3F30D002A6638 /* SeSACUnitField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */; };
 		8AC317EC279ED5ED00646711 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317EB279ED5ED00646711 /* RxCocoa */; };
 		8AC317EE279ED5F200646711 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317ED279ED5F100646711 /* RxSwift */; };
@@ -86,6 +89,10 @@
 		8AEDF7DF279DD39300E3B16F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AEDF7DE279DD39300E3B16F /* RxCocoa */; };
 		8AEDF7E1279DD39300E3B16F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 8AEDF7E0279DD39300E3B16F /* RxRelay */; };
 		8AEDF7E3279DD39300E3B16F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AEDF7E2279DD39300E3B16F /* RxSwift */; };
+		8AF5DA9227A6F61A00AE3537 /* OnBoardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9127A6F61A00AE3537 /* OnBoardingContainer.swift */; };
+		8AF5DA9527A6FB8700AE3537 /* RxKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF5DA9427A6FB8700AE3537 /* RxKeyboard */; };
+		8AF5DA9927A7068A00AE3537 /* EmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */; };
+		8AF5DA9B27A706DD00AE3537 /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +156,9 @@
 		8A961B24279DC65500CC2163 /* RepresentableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
 		8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		8A97EBCC27A6E52700C33BDE /* BirthdayUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayUseCase.swift; sourceTree = "<group>"; };
+		8A97EBCE27A6EC4C00C33BDE /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		8A97EBD027A6EC8600C33BDE /* EmailRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRootView.swift; sourceTree = "<group>"; };
+		8A97EBD227A6ECBE00C33BDE /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACUnitField.swift; sourceTree = "<group>"; };
 		8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthUseCase.swift; sourceTree = "<group>"; };
 		8AC317F4279F09D200646711 /* VlidateCodeCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VlidateCodeCheckView.swift; sourceTree = "<group>"; };
@@ -179,6 +189,9 @@
 		8AD6ADD827A310FA002A0283 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedNavigationRouter.swift; sourceTree = "<group>"; };
 		8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		8AF5DA9127A6F61A00AE3537 /* OnBoardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainer.swift; sourceTree = "<group>"; };
+		8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUseCase.swift; sourceTree = "<group>"; };
+		8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AEDF7E3279DD39300E3B16F /* RxSwift in Frameworks */,
+				8AF5DA9527A6FB8700AE3537 /* RxKeyboard in Frameworks */,
 				8AEDF7E1279DD39300E3B16F /* RxRelay in Frameworks */,
 				8AC3181127A0309400646711 /* FirebaseMessaging in Frameworks */,
 				8A09E6D92796A2FE005D98BF /* Then in Frameworks */,
@@ -317,6 +331,7 @@
 				8A674BB2279C316F00EDEA3F /* Coordinator.swift */,
 				8A961B20279DB9C900CC2163 /* AppDelegateCoordinator.swift */,
 				8AC3182127A0758900646711 /* OnBoardingCoordinator.swift */,
+				8AF5DA9127A6F61A00AE3537 /* OnBoardingContainer.swift */,
 				8A44F6EA279E50DF00044C8B /* FakeCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -410,9 +425,11 @@
 			children = (
 				8A8CDD0227A1BAB4006144EA /* Protocol */,
 				8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */,
+				8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */,
 				8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */,
 				8AD6ADD127A306C7002A0283 /* SignUpUseCase.swift */,
 				8A97EBCC27A6E52700C33BDE /* BirthdayUseCase.swift */,
+				8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -529,6 +546,8 @@
 				8AD6ADC727A2FB55002A0283 /* NicknameRootView.swift */,
 				8AD1305727A591DB00E482BC /* BirthdayRootView.swift */,
 				8AD1305927A593EF00E482BC /* BirthdayViewController.swift */,
+				8A97EBD027A6EC8600C33BDE /* EmailRootView.swift */,
+				8A97EBCE27A6EC4C00C33BDE /* EmailViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -538,6 +557,7 @@
 			children = (
 				8AD6ADC927A2FB9F002A0283 /* NicknameViewModel.swift */,
 				8AD1305E27A59C9F00E482BC /* BirthdayViewModel.swift */,
+				8A97EBD227A6ECBE00C33BDE /* EmailViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -617,6 +637,7 @@
 				8AC3180E27A0309400646711 /* FirebaseInAppMessagingSwift-Beta */,
 				8AC3181027A0309400646711 /* FirebaseMessaging */,
 				8AD1305C27A599E200E482BC /* RxGesture */,
+				8AF5DA9427A6FB8700AE3537 /* RxKeyboard */,
 			);
 			productName = SeSACFriends;
 			productReference = 8AD2131927965316003DEC53 /* SeSACFriends.app */;
@@ -657,6 +678,7 @@
 				8AC317FC279F13F900646711 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				8AC3180B27A0309400646711 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8AD1305B27A599E200E482BC /* XCRemoteSwiftPackageReference "RxGesture" */,
+				8AF5DA9327A6FB8700AE3537 /* XCRemoteSwiftPackageReference "RxKeyboard" */,
 			);
 			productRefGroup = 8AD2131A27965316003DEC53 /* Products */;
 			projectDirPath = "";
@@ -786,6 +808,7 @@
 				8AC3182427A0F3D500646711 /* ValidateCodeCheckViewController.swift in Sources */,
 				8AD6ADD927A310FA002A0283 /* UserProfile.swift in Sources */,
 				8AC3181E27A06D0300646711 /* UserSession.swift in Sources */,
+				8A97EBD327A6ECBE00C33BDE /* EmailViewModel.swift in Sources */,
 				8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
@@ -793,11 +816,14 @@
 				8AD6ADCA27A2FB9F002A0283 /* NicknameViewModel.swift in Sources */,
 				8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */,
 				8A8CDD0127A1BA13006144EA /* CommonViewModelProtocol.swift in Sources */,
+				8A97EBD127A6EC8600C33BDE /* EmailRootView.swift in Sources */,
 				8AC317F5279F09D200646711 /* VlidateCodeCheckView.swift in Sources */,
 				8AD6ADC827A2FB55002A0283 /* NicknameRootView.swift in Sources */,
 				8A8CDD0427A1BABA006144EA /* UseCase.swift in Sources */,
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
+				8AF5DA9927A7068A00AE3537 /* EmailUseCase.swift in Sources */,
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
+				8AF5DA9227A6F61A00AE3537 /* OnBoardingContainer.swift in Sources */,
 				8A97EBCD27A6E52700C33BDE /* BirthdayUseCase.swift in Sources */,
 				8A12FAA927A2307100DD362A /* ValidateCodeUseCase.swift in Sources */,
 				8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */,
@@ -809,7 +835,9 @@
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
+				8AF5DA9B27A706DD00AE3537 /* UserSessionUseCase.swift in Sources */,
 				8AC31805279FFF8500646711 /* View+Extension.swift in Sources */,
+				8A97EBCF27A6EC4C00C33BDE /* EmailViewController.swift in Sources */,
 				8AD6ADC627A2FB4D002A0283 /* NicknameViewController.swift in Sources */,
 				8A6C29AB279A52DB004EC855 /* PhoneAuthViewModel.swift in Sources */,
 				8A674BD7279DB2D700EDEA3F /* WelcomePageView.swift in Sources */,
@@ -1294,6 +1322,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		8AF5DA9327A6FB8700AE3537 /* XCRemoteSwiftPackageReference "RxKeyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxKeyboard.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1366,6 +1402,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8AEDF7DD279DD39300E3B16F /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		8AF5DA9427A6FB8700AE3537 /* RxKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF5DA9327A6FB8700AE3537 /* XCRemoteSwiftPackageReference "RxKeyboard" */;
+			productName = RxKeyboard;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,3 +10,5 @@ import Foundation
 protocol UseCase {
   
 }
+
+

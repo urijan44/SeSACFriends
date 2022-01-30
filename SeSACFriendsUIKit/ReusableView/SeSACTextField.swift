@@ -201,6 +201,20 @@ public class SeSACTextField: UIControl {
     sendActions(for: .editingChanged)
     self.text = sender.text ?? ""
   }
+
+  @discardableResult
+  public override func becomeFirstResponder() -> Bool {
+    self.fieldState = .active
+    textField.becomeFirstResponder()
+    return true
+  }
+  
+  @discardableResult
+  public override func resignFirstResponder() -> Bool {
+    self.fieldState = .inactive
+    textField.resignFirstResponder()
+    return true
+  }
 }
 
 #if DEBUG
