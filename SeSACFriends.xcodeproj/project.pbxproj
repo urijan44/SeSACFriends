@@ -48,6 +48,7 @@
 		8A961B25279DC65500CC2163 /* RepresentableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B24279DC65500CC2163 /* RepresentableViewController.swift */; };
 		8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */; };
 		8A961B2D279DCEFC00CC2163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD2132727965318003DEC53 /* LaunchScreen.storyboard */; };
+		8A97EBCD27A6E52700C33BDE /* BirthdayUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97EBCC27A6E52700C33BDE /* BirthdayUseCase.swift */; };
 		8AA697B827A3F30D002A6638 /* SeSACUnitField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */; };
 		8AC317EC279ED5ED00646711 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317EB279ED5ED00646711 /* RxCocoa */; };
 		8AC317EE279ED5F200646711 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317ED279ED5F100646711 /* RxSwift */; };
@@ -147,6 +148,7 @@
 		8A961B20279DB9C900CC2163 /* AppDelegateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateCoordinator.swift; sourceTree = "<group>"; };
 		8A961B24279DC65500CC2163 /* RepresentableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableViewController.swift; sourceTree = "<group>"; };
 		8A961B28279DC8A500CC2163 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
+		8A97EBCC27A6E52700C33BDE /* BirthdayUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayUseCase.swift; sourceTree = "<group>"; };
 		8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACUnitField.swift; sourceTree = "<group>"; };
 		8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthUseCase.swift; sourceTree = "<group>"; };
 		8AC317F4279F09D200646711 /* VlidateCodeCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VlidateCodeCheckView.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 				8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */,
 				8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */,
 				8AD6ADD127A306C7002A0283 /* SignUpUseCase.swift */,
+				8A97EBCC27A6E52700C33BDE /* BirthdayUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				8A8CDD0427A1BABA006144EA /* UseCase.swift in Sources */,
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
+				8A97EBCD27A6E52700C33BDE /* BirthdayUseCase.swift in Sources */,
 				8A12FAA927A2307100DD362A /* ValidateCodeUseCase.swift in Sources */,
 				8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */,
 				8AC3182027A0716800646711 /* OnBoardingNavigationRouter.swift in Sources */,

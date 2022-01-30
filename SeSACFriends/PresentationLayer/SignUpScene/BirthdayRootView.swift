@@ -104,12 +104,22 @@ final class BirthdayRootView: RepresentableView {
   override func bind() {
     let input = BirthdayViewModel.Input(
       view: self,
+      viewAppear: self.rx.methodInvoked(#selector(UIView.didMoveToWindow)).map{_ in},
       viewTap: self.rx.tapGesture().asObservable(),
       tapTextField: birthdayInputField.rx.tapGesture().asObservable(),
       dateInput: datePicker.rx.date.asObservable(),
       nextButton: nextButton.rx.tap.asObservable())
 
     let output = viewModel.transform(input)
+
+    output.nextButtonDisabled.asDriver()
+      .drive(nextButton.rx.isDisabled)
+      .disposed(by: bag)
+
+    output.showToast.subscribe(onNext: { [weak self] toast in
+      let text = toast.sendingMessage
+      self?.showToast(text)
+    }).disposed(by: bag)
 
     output.hideDatePicker.subscribe(onNext: { [weak self] _ in
       self?.hideDatePicker()
@@ -134,9 +144,9 @@ final class BirthdayRootView: RepresentableView {
       .drive(birthdayInputField.rx.fieldState)
       .disposed(by: bag)
 
-    output.nextButtonDisabled.asDriver()
-      .drive(nextButton.rx.isDisabled)
-      .disposed(by: bag)
+    output.present.subscribe(onNext: { [weak self] _ in
+      self?.delegate?.birthdayCheck()
+    }).disposed(by: bag)
 
     leftBarButtonItem.rx.tap
       .subscribe(onNext: { [weak self] _ in

@@ -76,4 +76,14 @@ struct ToastMessage {
       self.success = success
     }
   }
+
+  struct Birthday: DefaultToastMessage {
+    enum MessageType: String {
+      case toYoung = "새싹친구는 만 17세 이상만 사용할 수 있습니다."
+    }
+
+    var messageState: Bool = true
+    var success: Bool = false
+    var message: MessageType = .toYoung
+  }
 }

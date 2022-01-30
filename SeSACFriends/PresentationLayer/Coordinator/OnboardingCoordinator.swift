@@ -21,7 +21,7 @@ final class OnBoardingCoordinator: Coordinator {
   }
 
   func present(animated: Bool, onDismissed: (() -> Void)?) {
-    var test = 1
+    var test = 2
     switch test {
       case -2:
         router.present(welcomeView, animated: true)
@@ -60,7 +60,7 @@ final class OnBoardingCoordinator: Coordinator {
   }
 
   private func makeBirthdayView() -> BirthdayViewController {
-    let viewModel = BirthdayViewModel()
+    let viewModel = BirthdayViewModel(useCase: BirthdayUseCase())
     let rootView = BirthdayRootView(viewModel: viewModel, delegate: self)
     let controller = BirthdayViewController(rootView: rootView)
     return controller
