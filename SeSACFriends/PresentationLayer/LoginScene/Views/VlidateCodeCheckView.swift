@@ -10,8 +10,8 @@ import RxSwift
 import SeSACFriendsUIKit
 
 protocol ValidateCodeCheckViewDeledage: AnyObject {
-  func navigatorPush()
-  func navigatorPop()
+  func validateCodeCheck()
+  func cancelValidateCodeCheck()
 }
 
 class ValidateCodeCheckView: RepresentableView {
@@ -143,12 +143,12 @@ class ValidateCodeCheckView: RepresentableView {
 
     leftBarButtonItem.rx.tap
       .subscribe(onNext: { [weak self] _ in
-        self?.delegate?.navigatorPop()
+        self?.delegate?.cancelValidateCodeCheck()
       }).disposed(by: bag)
 
     output.present
       .subscribe(onNext: { [weak self] _ in
-        self?.delegate?.navigatorPush()
+        self?.delegate?.validateCodeCheck()
       }).disposed(by: bag)
   }
 }

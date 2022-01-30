@@ -37,6 +37,8 @@ struct ToastMessage {
 
     init(_ messageType: MessageType, messageState: Bool = true, success: Bool = false) {
       self.message = messageType
+      self.messageState = messageState
+      self.success = success
     }
   }
 
@@ -64,8 +66,14 @@ struct ToastMessage {
       case none
     }
 
-    var messageState: Bool = true
-    var success: Bool = false
-    var message: MessageType = .none
+    var messageState: Bool
+    var success: Bool
+    var message: MessageType
+
+    init(_ messageType: MessageType = .none, messageState: Bool = true, success: Bool = false) {
+      self.message = messageType
+      self.messageState = messageState
+      self.success = success
+    }
   }
 }

@@ -67,13 +67,10 @@ final class PhoneAuthUseCase: UseCase {
 
     let state = phoneNumberRegexCheck(text)
     if state {
-      //network check and firebase request!
       phoneAuthToastMessage.onNext(
         .init(.valideType, messageState: true, success: true))
       firebaseRequest(text)
     } else {
-//      phoneAuthToastMessage.onNext(
-//        .init(messageState: true, message: .invalideType))
       phoneAuthToastMessage.onNext(
         .init(.invalideType, messageState: true, success: false))
     }

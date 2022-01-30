@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxGesture
 
 open class RepresentableView: UIView {
 

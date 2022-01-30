@@ -10,8 +10,8 @@ import SeSACFriendsUIKit
 import RxSwift
 
 protocol NicknameRootViewDelegate: AnyObject {
-  func navigatorPush()
-  func navigatorPop()
+  func nicknameCheck()
+  func cancelNicknameCheck()
 }
 
 final class NicknameRootView: RepresentableView {
@@ -95,7 +95,7 @@ final class NicknameRootView: RepresentableView {
     output.present
       .subscribe(onNext: { [weak self] state in
         if state {
-//          self?.delegate?.navigatorPush()
+          self?.delegate?.nicknameCheck()
         }
       }).disposed(by: bag)
   }
