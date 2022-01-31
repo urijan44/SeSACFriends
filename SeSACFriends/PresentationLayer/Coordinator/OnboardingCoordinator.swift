@@ -55,7 +55,7 @@ extension OnBoardingCoordinator: WelcomeViewControllerDelegate {
 
 extension OnBoardingCoordinator: PhoneAuthMainViewDelegate {
   func phoneAuthMainViewPushVerificationCodeView() {
-    router.present(phoneAuthView, animated: true)
+    router.present(validateCodeCheckView, animated: true)
   }
 }
 
