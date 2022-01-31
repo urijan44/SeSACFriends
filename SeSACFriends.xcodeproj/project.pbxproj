@@ -11,6 +11,8 @@
 		8A09E6DC2796A30A005D98BF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6DB2796A30A005D98BF /* SnapKit */; };
 		8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */; };
 		8A12FAA927A2307100DD362A /* ValidateCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */; };
+		8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15287327A7840800B958EB /* SeSACGenderPicker.swift */; };
+		8A15287627A7849D00B958EB /* SeSACGenderIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */; };
 		8A4103A927985B270039C9FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103A827985B270039C9FA /* Assets.xcassets */; };
 		8A4103E32798EA7D0039C9FA /* SeSACFriendsUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4103E22798EA7D0039C9FA /* SeSACFriendsUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A4103E62798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */; };
@@ -127,6 +129,8 @@
 		8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthMainView.swift; sourceTree = "<group>"; };
 		8A09E6E22796B24E005D98BF /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeUseCase.swift; sourceTree = "<group>"; };
+		8A15287327A7840800B958EB /* SeSACGenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACGenderPicker.swift; sourceTree = "<group>"; };
+		8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACGenderIndicator.swift; sourceTree = "<group>"; };
 		8A4103A827985B270039C9FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4103AC27985FC10039C9FA /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		8A4103AE279869630039C9FA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 				8A961B24279DC65500CC2163 /* RepresentableViewController.swift */,
 				8AD6ADCB27A3028B002A0283 /* SeSACBirthField.swift */,
 				8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */,
+				8A15287327A7840800B958EB /* SeSACGenderPicker.swift */,
+				8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -781,9 +787,11 @@
 				8A6DB1F42799484400477705 /* UIFont+Extension.swift in Sources */,
 				8AA697B827A3F30D002A6638 /* SeSACUnitField.swift in Sources */,
 				8A6DB1F72799485E00477705 /* Constant.swift in Sources */,
+				8A15287627A7849D00B958EB /* SeSACGenderIndicator.swift in Sources */,
 				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
 				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
 				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,
+				8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */,
 				8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */,
 				8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */,
 				8A6DB1FC27995ED300477705 /* SeSACTextField.swift in Sources */,

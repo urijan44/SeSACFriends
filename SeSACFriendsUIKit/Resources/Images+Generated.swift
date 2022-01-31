@@ -20,11 +20,13 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Images {
   public static let arrow = ImageAsset(name: "arrow")
+  public static let man = ImageAsset(name: "man")
   public static let siren = ImageAsset(name: "siren")
   public static let tabFriends = ImageAsset(name: "tabFriends")
   public static let tabHome = ImageAsset(name: "tabHome")
   public static let tabMyinfo = ImageAsset(name: "tabMyinfo")
   public static let tabShop = ImageAsset(name: "tabShop")
+  public static let woman = ImageAsset(name: "woman")
   public static let onboardingText1 = ImageAsset(name: "OnboardingText1")
   public static let onboardingText2 = ImageAsset(name: "OnboardingText2")
   public static let onboardingText3 = ImageAsset(name: "OnboardingText3")
