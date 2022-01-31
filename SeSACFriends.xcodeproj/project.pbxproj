@@ -73,6 +73,10 @@
 		8AC3182027A0716800646711 /* OnBoardingNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3181F27A0716800646711 /* OnBoardingNavigationRouter.swift */; };
 		8AC3182227A0758900646711 /* OnBoardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3182127A0758900646711 /* OnBoardingCoordinator.swift */; };
 		8AC3182427A0F3D500646711 /* ValidateCodeCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC3182327A0F3D500646711 /* ValidateCodeCheckViewController.swift */; };
+		8AC5D7C327A7D8F300FE83BF /* GenderRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5D7C227A7D8F300FE83BF /* GenderRootView.swift */; };
+		8AC5D7C527A7D8FA00FE83BF /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5D7C427A7D8FA00FE83BF /* GenderViewController.swift */; };
+		8AC5D7C727A7D8FE00FE83BF /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5D7C627A7D8FE00FE83BF /* GenderViewModel.swift */; };
+		8AC5D7C927A7EE0800FE83BF /* GenderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5D7C827A7EE0800FE83BF /* GenderUseCase.swift */; };
 		8AD1305827A591DB00E482BC /* BirthdayRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1305727A591DB00E482BC /* BirthdayRootView.swift */; };
 		8AD1305A27A593EF00E482BC /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1305927A593EF00E482BC /* BirthdayViewController.swift */; };
 		8AD1305D27A599E200E482BC /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 8AD1305C27A599E200E482BC /* RxGesture */; };
@@ -176,6 +180,10 @@
 		8AC3181F27A0716800646711 /* OnBoardingNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingNavigationRouter.swift; sourceTree = "<group>"; };
 		8AC3182127A0758900646711 /* OnBoardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCoordinator.swift; sourceTree = "<group>"; };
 		8AC3182327A0F3D500646711 /* ValidateCodeCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeCheckViewController.swift; sourceTree = "<group>"; };
+		8AC5D7C227A7D8F300FE83BF /* GenderRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderRootView.swift; sourceTree = "<group>"; };
+		8AC5D7C427A7D8FA00FE83BF /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		8AC5D7C627A7D8FE00FE83BF /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
+		8AC5D7C827A7EE0800FE83BF /* GenderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderUseCase.swift; sourceTree = "<group>"; };
 		8AD1305727A591DB00E482BC /* BirthdayRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayRootView.swift; sourceTree = "<group>"; };
 		8AD1305927A593EF00E482BC /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 		8AD1305E27A59C9F00E482BC /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
@@ -436,6 +444,7 @@
 				8AD6ADD127A306C7002A0283 /* SignUpUseCase.swift */,
 				8A97EBCC27A6E52700C33BDE /* BirthdayUseCase.swift */,
 				8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */,
+				8AC5D7C827A7EE0800FE83BF /* GenderUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -554,6 +563,8 @@
 				8AD1305927A593EF00E482BC /* BirthdayViewController.swift */,
 				8A97EBD027A6EC8600C33BDE /* EmailRootView.swift */,
 				8A97EBCE27A6EC4C00C33BDE /* EmailViewController.swift */,
+				8AC5D7C227A7D8F300FE83BF /* GenderRootView.swift */,
+				8AC5D7C427A7D8FA00FE83BF /* GenderViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -564,6 +575,7 @@
 				8AD6ADC927A2FB9F002A0283 /* NicknameViewModel.swift */,
 				8AD1305E27A59C9F00E482BC /* BirthdayViewModel.swift */,
 				8A97EBD227A6ECBE00C33BDE /* EmailViewModel.swift */,
+				8AC5D7C627A7D8FE00FE83BF /* GenderViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -812,6 +824,8 @@
 				8AD1305827A591DB00E482BC /* BirthdayRootView.swift in Sources */,
 				8A44F6EB279E50DF00044C8B /* FakeCoordinator.swift in Sources */,
 				8AD2131D27965316003DEC53 /* AppDelegate.swift in Sources */,
+				8AC5D7C327A7D8F300FE83BF /* GenderRootView.swift in Sources */,
+				8AC5D7C527A7D8FA00FE83BF /* GenderViewController.swift in Sources */,
 				8AD1305F27A59C9F00E482BC /* BirthdayViewModel.swift in Sources */,
 				8AC3182427A0F3D500646711 /* ValidateCodeCheckViewController.swift in Sources */,
 				8AD6ADD927A310FA002A0283 /* UserProfile.swift in Sources */,
@@ -824,6 +838,7 @@
 				8AD6ADCA27A2FB9F002A0283 /* NicknameViewModel.swift in Sources */,
 				8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */,
 				8A8CDD0127A1BA13006144EA /* CommonViewModelProtocol.swift in Sources */,
+				8AC5D7C927A7EE0800FE83BF /* GenderUseCase.swift in Sources */,
 				8A97EBD127A6EC8600C33BDE /* EmailRootView.swift in Sources */,
 				8AC317F5279F09D200646711 /* VlidateCodeCheckView.swift in Sources */,
 				8AD6ADC827A2FB55002A0283 /* NicknameRootView.swift in Sources */,
@@ -844,6 +859,7 @@
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
 				8AF5DA9B27A706DD00AE3537 /* UserSessionUseCase.swift in Sources */,
+				8AC5D7C727A7D8FE00FE83BF /* GenderViewModel.swift in Sources */,
 				8AC31805279FFF8500646711 /* View+Extension.swift in Sources */,
 				8A97EBCF27A6EC4C00C33BDE /* EmailViewController.swift in Sources */,
 				8AD6ADC627A2FB4D002A0283 /* NicknameViewController.swift in Sources */,

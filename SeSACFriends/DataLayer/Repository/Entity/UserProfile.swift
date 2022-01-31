@@ -11,4 +11,5 @@ struct UserProfile: Codable {
   var nickname: String
   var birthday: Date
   var email: String
+  var gender: Int
 }

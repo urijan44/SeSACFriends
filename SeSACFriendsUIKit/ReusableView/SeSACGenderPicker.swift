@@ -10,28 +10,52 @@ import RxSwift
 import RxCocoa
 
 final public class SeSACGenderPicker: UIControl {
-  public enum Gender {
-    case man
-    case woman
-    case none
+  public enum Gender: Int {
+    case male = 1
+    case female = 0
+    case none = -1
   }
 
-  public var gender: Gender = .none {
+  public var selectedGender: Gender = .none {
     didSet {
+      gender.accept(selectedGender.rawValue)
       updateUI()
     }
   }
 
-  private lazy var manIndicator = SeSACGenderIndicator(gender: .man).then {
-    $0.addAction(.init(handler: { _ in
-      self.gender = self.gender == .man ? .none : .man
-    }), for: .touchUpInside)
+  public lazy var gender: BehaviorRelay<Int> = .init(value: -1)
+
+  private lazy var manIndicator = SeSACGenderIndicator(gender: .male).then {
+    $0.addTarget(self, action: #selector(tapManIndicator), for: .touchUpInside)
   }
 
-  private lazy var womanIndicator = SeSACGenderIndicator(gender: .woman).then {
-    $0.addAction(.init(handler: { _ in
-      self.gender = self.gender == .woman ? .none : .woman
-    }), for: .touchUpInside)
+  private lazy var womanIndicator = SeSACGenderIndicator(gender: .female).then {
+    $0.addTarget(self, action: #selector(tapWomanIndicator), for: .touchUpInside)
+  }
+
+  public func setGender(_ gender: Gender) {
+    self.selectedGender = gender
+  }
+
+  public func setGender(_ gender: Int) {
+    switch gender {
+      case -1:
+        setGender(.none)
+      case 0:
+        setGender(.female)
+      default:
+        setGender(.male)
+    }
+  }
+
+  @objc private func tapManIndicator() {
+    manIndicator.isSelected = !manIndicator.isSelected
+    self.selectedGender = self.selectedGender == .male ? .none : .male
+  }
+
+  @objc private func tapWomanIndicator() {
+    womanIndicator.isSelected = !womanIndicator.isSelected
+    self.selectedGender = self.selectedGender == .female ? .none : .female
   }
 
   public override init(frame: CGRect) {
@@ -62,30 +86,16 @@ final public class SeSACGenderPicker: UIControl {
   }
 
   private func updateUI() {
-    switch gender {
-      case .man:
+    switch selectedGender {
+      case .male:
         manIndicator.isSelected = true
         womanIndicator.isSelected = false
-      case .woman:
+      case .female:
         womanIndicator.isSelected = true
         manIndicator.isSelected = false
       case .none:
         manIndicator.isSelected = false
         womanIndicator.isSelected = false
-    }
-  }
-}
-
-extension Reactive where Base: SeSACGenderPicker {
-  public var gender: ControlProperty<SeSACGenderPicker.Gender> {
-    value
-  }
-
-  public var value: ControlProperty<SeSACGenderPicker.Gender> {
-    return base.rx.controlProperty(editingEvents: .touchUpInside) { picker in
-      picker.gender
-    } setter: { picker, value in
-      picker.gender = value
     }
   }
 }

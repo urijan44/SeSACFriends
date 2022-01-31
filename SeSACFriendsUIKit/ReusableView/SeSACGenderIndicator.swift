@@ -9,12 +9,13 @@ import UIKit
 import Then
 import SnapKit
 import RxSwift
+import RxCocoa
 
 final public class SeSACGenderIndicator: UIControl {
 
-  public enum Gender {
-    case man
-    case woman
+  public enum Gender: Int{
+    case male = 1
+    case female = -1
   }
 
   public override var isSelected: Bool {
@@ -37,7 +38,7 @@ final public class SeSACGenderIndicator: UIControl {
   }
 
   override init(frame: CGRect) {
-    gender = .man
+    gender = .female
     super.init(frame: frame)
     createView()
     updateUI()
@@ -55,7 +56,7 @@ final public class SeSACGenderIndicator: UIControl {
   }
 
   private func updateUI() {
-    if gender == .man {
+    if gender == .female {
       genderImage.image = Images.man.image
       label.text = "남자"
     } else {
@@ -99,6 +100,12 @@ final public class SeSACGenderIndicator: UIControl {
     super.layoutSubviews()
     layer.cornerRadius = 8
     layer.borderColor = .seSACGray3
+  }
+}
+
+extension Reactive where Base: SeSACGenderIndicator {
+  public var tap: ControlEvent<Void> {
+    return base.rx.controlEvent(.touchUpInside)
   }
 }
 

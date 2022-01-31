@@ -44,4 +44,11 @@ final class OnBoardingContainer {
     return controller
   }
 
+  func makeGenderView(delegate: GenderRootViewDelegate) -> GenderViewController {
+    let viewModel = GenderViewModel(useCase: GenderUseCase())
+    let rootView = GenderRootView(viewModel: viewModel, delegate: delegate)
+    let controller = GenderViewController(rootView: rootView)
+    return controller
+  }
+
 }
