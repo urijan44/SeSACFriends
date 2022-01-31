@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final public class SeSACGenderPicker: UIControl {
   public enum Gender {
@@ -70,6 +72,20 @@ final public class SeSACGenderPicker: UIControl {
       case .none:
         manIndicator.isSelected = false
         womanIndicator.isSelected = false
+    }
+  }
+}
+
+extension Reactive where Base: SeSACGenderPicker {
+  public var gender: ControlProperty<SeSACGenderPicker.Gender> {
+    value
+  }
+
+  public var value: ControlProperty<SeSACGenderPicker.Gender> {
+    return base.rx.controlProperty(editingEvents: .touchUpInside) { picker in
+      picker.gender
+    } setter: { picker, value in
+      picker.gender = value
     }
   }
 }
