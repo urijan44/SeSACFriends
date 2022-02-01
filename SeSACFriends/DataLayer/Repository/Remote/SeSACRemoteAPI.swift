@@ -42,7 +42,7 @@ final class SeSACRemoteAPI {
     request.addValue(idToken, forHTTPHeaderField: HeaderField.idToken.rawValue)
 
     session.dataTask(with: request) { data, response, error in
-      if let error = error {
+      if error != nil {
         completion(.failure(APIError.unknown))
         return
       }
