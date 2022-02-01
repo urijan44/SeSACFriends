@@ -34,8 +34,10 @@ final class AppDelegateCoordinator: Coordinator {
           case .tokenError:
             self?.startOnBoardingCoordinator(skip: .phoneAuth)
           case .unregistered:
+            UserSession.shared.removeUserSession()
             self?.startOnBoardingCoordinator(skip: .signUp)
           case .unknown:
+            UserSession.shared.removeUserSession()
             self?.startOnBoardingCoordinator()
         }
         //계정 정보 없으면 -> 온보딩 코디

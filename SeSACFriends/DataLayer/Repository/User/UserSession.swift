@@ -81,6 +81,11 @@ final class UserSession {
     userProfile.fcmToken = signInUserDTO.fcMtoken
   }
 
+  func removeUserSession() {
+    userProfile = UserProfile()
+    save()
+  }
+
   private func save() {
     guard let data = try? JSONEncoder().encode(userProfile) else { return }
     try? data.write(to: userProfileURL, options: .atomic)
