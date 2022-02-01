@@ -82,6 +82,10 @@
 		8AC5D7C527A7D8FA00FE83BF /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5D7C427A7D8FA00FE83BF /* GenderViewController.swift */; };
 		8AC5D7C727A7D8FE00FE83BF /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5D7C627A7D8FE00FE83BF /* GenderViewModel.swift */; };
 		8AC5D7C927A7EE0800FE83BF /* GenderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5D7C827A7EE0800FE83BF /* GenderUseCase.swift */; };
+		8ACB7FC727A983210068125B /* EndPointContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACB7FC627A983210068125B /* EndPointContainer.swift */; };
+		8ACB7FC927A9847A0068125B /* RequestContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACB7FC827A9847A0068125B /* RequestContainer.swift */; };
+		8ACB7FCD27A988080068125B /* RequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACB7FCC27A988080068125B /* RequestBody.swift */; };
+		8ACB7FCF27A98EC50068125B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACB7FCE27A98EC50068125B /* Date+Extension.swift */; };
 		8AD1305827A591DB00E482BC /* BirthdayRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1305727A591DB00E482BC /* BirthdayRootView.swift */; };
 		8AD1305A27A593EF00E482BC /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1305927A593EF00E482BC /* BirthdayViewController.swift */; };
 		8AD1305D27A599E200E482BC /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 8AD1305C27A599E200E482BC /* RxGesture */; };
@@ -194,6 +198,10 @@
 		8AC5D7C427A7D8FA00FE83BF /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		8AC5D7C627A7D8FE00FE83BF /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
 		8AC5D7C827A7EE0800FE83BF /* GenderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderUseCase.swift; sourceTree = "<group>"; };
+		8ACB7FC627A983210068125B /* EndPointContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointContainer.swift; sourceTree = "<group>"; };
+		8ACB7FC827A9847A0068125B /* RequestContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestContainer.swift; sourceTree = "<group>"; };
+		8ACB7FCC27A988080068125B /* RequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBody.swift; sourceTree = "<group>"; };
+		8ACB7FCE27A98EC50068125B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		8AD1305727A591DB00E482BC /* BirthdayRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayRootView.swift; sourceTree = "<group>"; };
 		8AD1305927A593EF00E482BC /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 		8AD1305E27A59C9F00E482BC /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
@@ -293,6 +301,7 @@
 			children = (
 				8A674BD0279DA95700EDEA3F /* Font.swift */,
 				8AC31804279FFF8500646711 /* View+Extension.swift */,
+				8ACB7FCE27A98EC50068125B /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -514,6 +523,9 @@
 			isa = PBXGroup;
 			children = (
 				8AB37F9E27A94AE20053D0A9 /* SeSACRemoteAPI.swift */,
+				8ACB7FC627A983210068125B /* EndPointContainer.swift */,
+				8ACB7FC827A9847A0068125B /* RequestContainer.swift */,
+				8ACB7FCC27A988080068125B /* RequestBody.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -861,11 +873,14 @@
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
 				8AD6ADCA27A2FB9F002A0283 /* NicknameViewModel.swift in Sources */,
 				8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */,
+				8ACB7FC727A983210068125B /* EndPointContainer.swift in Sources */,
 				8A8CDD0127A1BA13006144EA /* CommonViewModelProtocol.swift in Sources */,
 				8AC5D7C927A7EE0800FE83BF /* GenderUseCase.swift in Sources */,
 				8A97EBD127A6EC8600C33BDE /* EmailRootView.swift in Sources */,
 				8AB37F9F27A94AE20053D0A9 /* SeSACRemoteAPI.swift in Sources */,
+				8ACB7FC927A9847A0068125B /* RequestContainer.swift in Sources */,
 				8AC317F5279F09D200646711 /* VlidateCodeCheckView.swift in Sources */,
+				8ACB7FCD27A988080068125B /* RequestBody.swift in Sources */,
 				8AD6ADC827A2FB55002A0283 /* NicknameRootView.swift in Sources */,
 				8A8CDD0427A1BABA006144EA /* UseCase.swift in Sources */,
 				8A674BD1279DA95700EDEA3F /* Font.swift in Sources */,
@@ -879,6 +894,7 @@
 				8AC3182027A0716800646711 /* OnBoardingNavigationRouter.swift in Sources */,
 				8AC3182227A0758900646711 /* OnBoardingCoordinator.swift in Sources */,
 				8AD1305A27A593EF00E482BC /* BirthdayViewController.swift in Sources */,
+				8ACB7FCF27A98EC50068125B /* Date+Extension.swift in Sources */,
 				8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */,
 				8AC31802279FF88800646711 /* ToastMessage.swift in Sources */,
 				8AB37FA327A958110053D0A9 /* SignInUseCase.swift in Sources */,

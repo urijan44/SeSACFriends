@@ -31,6 +31,20 @@ final class UserSession {
     userProfile = load()
   }
 
+  func savePhoneNumber(phoneNumber: String) {
+
+    var convert = phoneNumber
+    if !convert.hasPrefix("+82") {
+      convert = convert.replacingOccurrences(of: "01", with: "+821")
+    }
+    userProfile.phoneNumber = convert
+    save()
+  }
+
+  func loadPhoneNumber() -> String? {
+    userProfile.phoneNumber
+  }
+
   func saveNickname(nickname text: String) {
     userProfile.nickname = text
     save()
@@ -84,6 +98,20 @@ final class UserSession {
   func removeUserSession() {
     userProfile = UserProfile()
     save()
+  }
+
+  func signUpBody() -> Data {
+    var body = RequestBody()
+    body.append(contentsOf: [
+      .init(key: "phoneNumber", value: userProfile.phoneNumber ?? ""),
+      .init(key: "FCMtoken", value: userProfile.fcmToken ?? ""),
+      .init(key: "nick", value: userProfile.nickname ?? ""),
+      .init(key: "birth", value: userProfile.birthday?.birthday ?? ""),
+      .init(key: "email", value: userProfile.email ?? ""),
+      .init(key: "gender", value: userProfile.gender?.description ?? "")
+    ])
+
+    return body.convertData()
   }
 
   private func save() {

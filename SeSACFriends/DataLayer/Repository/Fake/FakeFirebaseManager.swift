@@ -74,4 +74,3 @@ final class CurrentUser {
     completion("verylongtokengjsdklgjadkljglk4q", nil)
   }
 }
-

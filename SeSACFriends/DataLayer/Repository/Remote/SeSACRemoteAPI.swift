@@ -15,32 +15,15 @@ final class SeSACRemoteAPI {
     case tokenError
   }
 
-  enum HTTPMethod: String {
-    case GET
-  }
-
-  enum Header: String {
-    case application = "application/x-www-form-urlencoded"
-  }
-
-  enum HeaderField: String {
-    case contentType = "Content-Type"
-    case idToken = "idtoken"
-  }
+  private lazy var endPoint = EndPointContainer(domain: domain)
+  private lazy var requestContainer = RequestContainer()
 
   private let domain = "http://test.monocoding.com:35484"
   private let session = URLSession.shared
 
   func signIn(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
-    guard let url = URL(string: "\(domain)/user") else {
-      completion(.failure(APIError.unknown))
-      return
-    }
-    var request = URLRequest(url: url)
-    request.httpMethod = HTTPMethod.GET.rawValue
-    request.addValue(Header.application.rawValue, forHTTPHeaderField: HeaderField.contentType.rawValue)
-    request.addValue(idToken, forHTTPHeaderField: HeaderField.idToken.rawValue)
 
+    let request = requestContainer.signInRequest(url: endPoint.signInURL(), idToken: idToken)
     session.dataTask(with: request) { data, response, error in
       if error != nil {
         completion(.failure(APIError.unknown))
@@ -82,5 +65,18 @@ final class SeSACRemoteAPI {
         //no data
       }
     }.resume()
+  }
+
+  func signUp(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+
+    let request = requestContainer.signUpRequest(
+      url: endPoint.signUpURL(),
+      idToken: idToken,
+      requestBody: UserSession.shared.signUpBody())
+
+    session.dataTask(with: request) { data, response, error in
+
+    }.resume()
+
   }
 }
