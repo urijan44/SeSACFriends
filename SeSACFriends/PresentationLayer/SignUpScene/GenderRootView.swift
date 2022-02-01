@@ -102,6 +102,10 @@ final class GenderRootView: RepresentableView {
       self?.delegate?.nicknameFailure()
     }).disposed(by: bag)
 
+    output.showToast.subscribe(onNext: { [weak self] toast in
+      self?.showToast(toast.sendingMessage)
+    }).disposed(by: bag)
+
     leftBarButtonItem.rx.tap.subscribe(onNext: { [weak self] _ in
       self?.delegate?.cancelGenderCheck()
     }).disposed(by: bag)

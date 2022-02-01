@@ -51,36 +51,38 @@ final class SeSACRemoteAPI {
 
   func task(request: URLRequest, requestType: RequestType, completion: @escaping (Result<Void, APIError>) -> Void) {
     let task = session.dataTask(with: request) { [weak self] data, response, error in
-      if error != nil {
-        completion(.failure(APIError.unknown))
-        return
-      }
-
-      guard let response = response as? HTTPURLResponse else {
-        completion(.failure(APIError.unknown))
-        return
-      }
-
-      self?.reponseCodeHandling(statusCode: response.statusCode, requestType: requestType) { result in
-        switch result {
-          case .success():
-            return
-          case .failure:
-            completion(result)
-            return
-        }
-      }
-      if let data = data {
-        do {
-          try self?.dataHandling(data: data, requestType: .signIn)
-          completion(.success(()))
-        } catch {
-          //invalid data
+      DispatchQueue.main.async {
+        if error != nil {
           completion(.failure(APIError.unknown))
+          return
         }
-      } else {
-        completion(.failure(APIError.unknown))
-        //no data
+
+        guard let response = response as? HTTPURLResponse else {
+          completion(.failure(APIError.unknown))
+          return
+        }
+
+        self?.reponseCodeHandling(statusCode: response.statusCode, requestType: requestType) { result in
+          switch result {
+            case .success():
+              return
+            case .failure:
+              completion(result)
+              return
+          }
+        }
+        if let data = data {
+          do {
+            try self?.dataHandling(data: data, requestType: .signIn)
+            completion(.success(()))
+          } catch {
+            //invalid data
+            completion(.failure(APIError.unknown))
+          }
+        } else {
+          completion(.failure(APIError.unknown))
+          //no data
+        }
       }
     }
 

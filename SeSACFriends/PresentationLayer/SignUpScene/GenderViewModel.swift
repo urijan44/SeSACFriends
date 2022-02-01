@@ -26,6 +26,7 @@ final class GenderViewModel: CommonViewModel {
     let nextButtonDisabled: BehaviorRelay<Bool> = .init(value: true)
     let present: PublishSubject<Void> = .init()
     let nicknameFailure: PublishSubject<Void> = .init()
+    let showToast: PublishSubject<ToastMessage.Nickname> = .init()
   }
 
   func transform(_ input: Input) -> Output {
@@ -45,6 +46,10 @@ final class GenderViewModel: CommonViewModel {
 
     useCase.nicknameFailure.subscribe(onNext: {
       output.nicknameFailure.onNext(())
+    }).disposed(by: bag)
+
+    useCase.showToast.subscribe(onNext: {
+      output.showToast.onNext($0)
     }).disposed(by: bag)
 
     return output
