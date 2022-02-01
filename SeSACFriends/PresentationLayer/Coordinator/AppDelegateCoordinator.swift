@@ -36,9 +36,12 @@ final class AppDelegateCoordinator: Coordinator {
           case .unregistered:
             //token이 있는데, 등록된 적이 없는 경우
             self?.startOnBoardingCoordinator(skip: .signUp)
-          case .unknown:
+          case .alreadyRegistered:
+            self?.startOnBoardingCoordinator(skip: .phoneAuth)
+          default:
             UserSession.shared.removeUserSession()
             self?.startOnBoardingCoordinator()
+
         }
         //계정 정보 없으면 -> 온보딩 코디
       }).disposed(by: bag)
