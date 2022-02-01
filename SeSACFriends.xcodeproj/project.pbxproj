@@ -86,6 +86,7 @@
 		8ACB7FC927A9847A0068125B /* RequestContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACB7FC827A9847A0068125B /* RequestContainer.swift */; };
 		8ACB7FCD27A988080068125B /* RequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACB7FCC27A988080068125B /* RequestBody.swift */; };
 		8ACB7FCF27A98EC50068125B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACB7FCE27A98EC50068125B /* Date+Extension.swift */; };
+		8ACB7FD127A99D710068125B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8ACB7FD027A99D710068125B /* FirebaseAnalytics */; };
 		8AD1305827A591DB00E482BC /* BirthdayRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1305727A591DB00E482BC /* BirthdayRootView.swift */; };
 		8AD1305A27A593EF00E482BC /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD1305927A593EF00E482BC /* BirthdayViewController.swift */; };
 		8AD1305D27A599E200E482BC /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 8AD1305C27A599E200E482BC /* RxGesture */; };
@@ -244,6 +245,7 @@
 				8AF5DA9527A6FB8700AE3537 /* RxKeyboard in Frameworks */,
 				8AEDF7E1279DD39300E3B16F /* RxRelay in Frameworks */,
 				8AC3181127A0309400646711 /* FirebaseMessaging in Frameworks */,
+				8ACB7FD127A99D710068125B /* FirebaseAnalytics in Frameworks */,
 				8A09E6D92796A2FE005D98BF /* Then in Frameworks */,
 				8A4103E62798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Frameworks */,
 				8AEDF7DF279DD39300E3B16F /* RxCocoa in Frameworks */,
@@ -691,6 +693,7 @@
 				8AC3181027A0309400646711 /* FirebaseMessaging */,
 				8AD1305C27A599E200E482BC /* RxGesture */,
 				8AF5DA9427A6FB8700AE3537 /* RxKeyboard */,
+				8ACB7FD027A99D710068125B /* FirebaseAnalytics */,
 			);
 			productName = SeSACFriends;
 			productReference = 8AD2131927965316003DEC53 /* SeSACFriends.app */;
@@ -1450,6 +1453,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8AC3180B27A0309400646711 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		8ACB7FD027A99D710068125B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AC3180B27A0309400646711 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 		8AD1305C27A599E200E482BC /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;

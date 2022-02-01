@@ -90,6 +90,15 @@ final class UserSession {
     userProfile.idToken
   }
 
+  func saveFCMToken(fcmToken: String) {
+    userProfile.fcmToken = fcmToken
+    save()
+  }
+
+  func loadFCMToken() -> String? {
+    userProfile.fcmToken
+  }
+
   func signIn(signInUserDTO: SignInRemoteUserDTO) {
     userProfile.phoneNumber = signInUserDTO.phoneNumber
     userProfile.fcmToken = signInUserDTO.fcMtoken
