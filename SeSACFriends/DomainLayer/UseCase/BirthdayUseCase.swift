@@ -35,6 +35,17 @@ final class BirthdayUseCase: UserSessionUseCase {
     } else {
       showToastMessage.onNext(ToastMessage.Birthday.init())
     }
+  }
 
+  func initBirthday() -> Maybe<Date> {
+    let birthday = UserSession.shared.loadBirthDay()
+    return Maybe<Date>.create { maybe in
+      guard let birthday = birthday else {
+        maybe(.completed)
+        return Disposables.create()
+      }
+      maybe(.success(birthday))
+      return Disposables.create()
+    }
   }
 }

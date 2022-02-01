@@ -30,7 +30,7 @@ final class UserSession {
   }
 
   private init() {
-    userProfile = UserProfile(nickname: "", birthday: Date(), email: "", gender: -1)
+    userProfile = UserProfile()
     load()
   }
 
@@ -38,7 +38,7 @@ final class UserSession {
     userProfile.nickname = text
   }
 
-  func loadNickname() -> String {
+  func loadNickname() -> String? {
     userProfile.nickname
   }
 
@@ -46,7 +46,7 @@ final class UserSession {
     userProfile.birthday = date
   }
 
-  func loadBirthDay() -> Date {
+  func loadBirthDay() -> Date? {
     userProfile.birthday
   }
 
@@ -54,7 +54,7 @@ final class UserSession {
     userProfile.email = email
   }
 
-  func loadEmail() -> String {
+  func loadEmail() -> String? {
     userProfile.email
   }
 
@@ -62,7 +62,7 @@ final class UserSession {
     userProfile.gender = gender
   }
 
-  func loadGender() -> Int {
+  func loadGender() -> Int? {
     userProfile.gender
   }
 
@@ -78,7 +78,7 @@ final class UserSession {
       let decoded = try JSONDecoder().decode(UserProfile.self, from: data)
       self.userProfile = decoded
     } catch {
-      self.userProfile = UserProfile(nickname: "", birthday: Date(), email: "", gender: -1)
+      self.userProfile = UserProfile()
     }
   }
 }

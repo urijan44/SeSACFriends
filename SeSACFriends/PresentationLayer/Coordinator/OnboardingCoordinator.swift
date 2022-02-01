@@ -25,7 +25,7 @@ final class OnBoardingCoordinator: Coordinator {
   }
 
   func present(animated: Bool, onDismissed: (() -> Void)?) {
-    var test = 4
+    var test = 1
     switch test {
       case -2:
         router.present(welcomeView, animated: true)
@@ -109,6 +109,7 @@ extension OnBoardingCoordinator: GenderRootViewDelegate {
   }
 
   func nicknameFailure() {
+    nicknameView.rootView.viewModel.useCase.showToastMessage.onNext(ToastMessage.Nickname.init(.cantUseNickname, messageState: true))
     genderView.navigationController?.popToViewController(nicknameView, animated: true)
   }
 }

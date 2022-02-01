@@ -18,6 +18,6 @@ final class GenderUseCase: UserSessionUseCase {
   }
 
   private func signUpRequest() {
-
+    nicknameFailure.onNext(())
   }
 }

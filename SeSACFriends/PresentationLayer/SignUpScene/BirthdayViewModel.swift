@@ -44,7 +44,7 @@ final class BirthdayViewModel: CommonViewModel {
     let output = Output()
 
     input.viewAppear.subscribe(onNext: { _ in
-      output.nextButtonDisabled.accept(true)
+//      output.nextButtonDisabled.accept(true)
     }).disposed(by: bag)
 
     input.viewTap.subscribe(onNext: { [weak self] gesture in
@@ -68,6 +68,10 @@ final class BirthdayViewModel: CommonViewModel {
     input.nextButton.withLatestFrom(input.dateInput)
       .subscribe(onNext: { [weak self] date in
         self?.useCase.tryInputBirthday(date)
+    }).disposed(by: bag)
+
+    useCase.initBirthday().subscribe(onSuccess: {
+      output.selectedDate.accept($0)
     }).disposed(by: bag)
 
     useCase.birthdayValidateState.subscribe(onNext: {

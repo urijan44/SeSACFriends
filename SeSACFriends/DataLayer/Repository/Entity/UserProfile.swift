@@ -8,8 +8,8 @@
 import Foundation
 
 struct UserProfile: Codable {
-  var nickname: String
-  var birthday: Date
-  var email: String
-  var gender: Int
+  var nickname: String?
+  var birthday: Date?
+  var email: String?
+  var gender: Int?
 }
