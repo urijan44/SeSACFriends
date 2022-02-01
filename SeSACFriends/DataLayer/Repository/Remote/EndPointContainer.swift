@@ -12,6 +12,7 @@ final class EndPointContainer {
 
   private enum EndPoint: String {
     case user
+    case withdraw
   }
 
   init(domain: String) {
@@ -25,5 +26,9 @@ final class EndPointContainer {
 
   func signInURL() -> URL {
     signUpURL()
+  }
+
+  func withdrawURL() -> URL {
+    signInURL().appendingPathComponent(EndPoint.withdraw.rawValue)
   }
 }

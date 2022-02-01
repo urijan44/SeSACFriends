@@ -40,4 +40,8 @@ final class RequestContainer {
     request.httpBody = requestBody
     return request
   }
+
+  func withdrawRequst(url: URL, idToken: String) -> URLRequest {
+    defaultRequest(url: url, method: .POST, idToken: idToken)
+  }
 }

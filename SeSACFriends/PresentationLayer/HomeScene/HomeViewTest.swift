@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeViewTest: View {
+  @Environment(\.presentationMode) var presentationMode
   let user = UserSession.shared.userProfile
   var body: some View {
     VStack {
@@ -15,6 +16,21 @@ struct HomeViewTest: View {
       Text(user.phoneNumber ?? "")
       Text(user.nickname ?? "")
       Text(user.fcmToken ?? "")
+      Button {
+        let api = SeSACRemoteAPI()
+        api.withdraw(
+          idToken: UserSession.shared.loadIdToken() ?? "") { result in
+            switch result {
+              case .success:
+                presentationMode.wrappedValue.dismiss()
+              case .failure(let error):
+                print(error)
+            }
+          }
+      } label: {
+        Text("탈퇴하기")
+      }
+
     }
   }
 }

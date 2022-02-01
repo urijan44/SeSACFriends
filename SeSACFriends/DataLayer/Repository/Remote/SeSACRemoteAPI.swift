@@ -17,6 +17,7 @@ final class SeSACRemoteAPI {
     case cannotUseNickname
     case serverError
     case clientError
+    case alreadyWithdraw
   }
 
   private lazy var endPoint = EndPointContainer(domain: domain)
@@ -46,10 +47,19 @@ final class SeSACRemoteAPI {
     self.task(request: request, requestType: .signUp) { result in
       completion(result)
     }
-
   }
 
-  func task(request: URLRequest, requestType: RequestType, completion: @escaping (Result<Void, APIError>) -> Void) {
+  func withdraw(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+    let request = requestContainer.withdrawRequst(
+      url: endPoint.withdrawURL(),
+      idToken: idToken)
+
+    self.task(request: request, requestType: .withdraw) { result in
+      completion(result)
+    }
+  }
+
+  private func task(request: URLRequest, requestType: RequestType, completion: @escaping (Result<Void, APIError>) -> Void) {
     let task = session.dataTask(with: request) { [weak self] data, response, error in
       DispatchQueue.main.async {
         if error != nil {
@@ -73,7 +83,7 @@ final class SeSACRemoteAPI {
         }
         if let data = data {
           do {
-            try self?.dataHandling(data: data, requestType: .signIn)
+            try self?.dataHandling(data: data, requestType: requestType)
             completion(.success(()))
           } catch {
             //invalid data
@@ -105,12 +115,15 @@ final class SeSACRemoteAPI {
         } catch {
           throw APIError.unknown
         }
+      case .withdraw:
+        let payload = "delete"
     }
   }
 
   enum RequestType {
     case signIn
     case signUp
+    case withdraw
   }
 
   private func reponseCodeHandling(statusCode: Int, requestType: RequestType, completion: @escaping (Result<Void, APIError>) -> Void) {
@@ -122,6 +135,10 @@ final class SeSACRemoteAPI {
         }
       case .signUp:
         signUpErrorContainer(code: statusCode) { result in
+          completion(result)
+        }
+      case .withdraw:
+        withdrawErrorContainer(code: statusCode) { result in
           completion(result)
         }
     }
@@ -161,6 +178,23 @@ final class SeSACRemoteAPI {
           completion(.failure(.serverError))
         case 501:
           completion(.failure(.clientError))
+        default:
+          completion(.failure(.unknown))
+      }
+    }
+  }
+
+  private func withdrawErrorContainer(code: Int, completion: @escaping (Result<Void, APIError>) -> Void) {
+    if code == 200 {
+      completion(.success(()))
+    } else {
+      switch code {
+        case 401:
+          completion(.failure(.tokenError))
+        case 406:
+          completion(.failure(.alreadyWithdraw))
+        case 500:
+          completion(.failure(.serverError))
         default:
           completion(.failure(.unknown))
       }
