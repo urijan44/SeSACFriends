@@ -41,23 +41,6 @@ final class OnBoardingCoordinator: Coordinator {
     case .signUp:
       router.present(nicknameView, animated: true, onDismissed: onDismissed)
     }
-//    switch skip {
-//      case -2:
-//        router.present(welcomeView, animated: true)
-//      case -1:
-//        router.present(phoneAuthView, animated: true)
-//      case 0:
-//        router.present(validateCodeCheckView, animated: true)
-//      case 1:
-//        router.present(nicknameView, animated: true)
-//      case 2:
-//        router.present(birthdayView, animated: true)
-//      case 3:
-//        router.present(emailView, animated: true)
-//      case 4:
-//        router.present(genderView, animated: true)
-//      default:
-//        fatalError("Unsupport view")
   }
 }
 

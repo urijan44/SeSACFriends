@@ -29,6 +29,7 @@ final class UserSession {
   private init() {
     userProfile = UserProfile()
     userProfile = load()
+    userProfile.fcmToken = UserDefaults.standard.string(forKey: "FCMToken")
   }
 
   func savePhoneNumber(phoneNumber: String) {
