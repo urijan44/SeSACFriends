@@ -65,22 +65,26 @@ final class ValidateCodeUseCase: UseCase {
     tryButtonEnabled.accept(false)
     let preVerifyCode = UserSession.loadPreReceiveVerifId() ?? ""
 
-//    let credential = PhoneAuthProvider.provider().credential(withVerificationID: reveicedVerifyCode ?? "", verificationCode: preVerifyCode)
-//    Auth.auth().signIn(with: credential) { success, error in
-//      if let error = error {
-//        print(error)
-//      } else {
-//        print(success)
-//      }
-//    }
-
     let credential = FakePhoneAuthProvider.provider().credential(withVerificationID: receivedVerifyCode ?? "", verificationCode: preVerifyCode)
     FakeAuth.auth().signIn(with: credential) { [weak self] success, error in
       if let error = error {
         let message = ToastMessage.VerificationCode(FirebaseErrorHandling.VerificationCode(error))
         self?.verificationToastMessage.onNext(message)
       } else {
-        self?.present.onNext(())
+        //firebase register success
+        //save idToken
+        FakeAuth.auth().currentUser?.getIDTokenForcingRefresh(true, completion: { idToken, error in
+          if let error = error, let code = AuthErrorCode(rawValue: (error as NSError).code)  {
+            print(code)
+            return
+          }
+
+          if let idToken = idToken {
+            UserSession.shared.saveIdToken(idToken: idToken)
+            self?.present.onNext(())
+            return
+          }
+        })
       }
       self?.tryButtonEnabled.accept(true)
     }

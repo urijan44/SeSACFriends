@@ -11,10 +11,10 @@ import RxRelay
 
 final class NicknameViewModel: CommonViewModel {
 
-  var useCase: SignUpUseCase
+  var useCase: NicknameUseCase
   let bag = DisposeBag()
 
-  init(useCase: SignUpUseCase) {
+  init(useCase: NicknameUseCase) {
     self.useCase = useCase
   }
 

@@ -50,6 +50,10 @@ final class FakeAuth {
     return FakeAuth()
   }
 
+  init() {
+    self.currentUser = CurrentUser()
+  }
+
   func signIn(with credential: FakePhoneAuthCredential, completion: ((Int?, Error?) -> Void)? = nil) {
     let testError = NSError(domain: "뿌에에엑", code: 17044, userInfo: ["NSLocalizedDescription=Invalid": "ERROR_INVALID_PHONE_NUMBER"])
 
@@ -61,4 +65,13 @@ final class FakeAuth {
       }
     }
   }
+
+  var currentUser: CurrentUser?
 }
+
+final class CurrentUser {
+  func getIDTokenForcingRefresh(_ bool: Bool, completion: @escaping (String?, Error?) -> Void) {
+    completion("verylongtokengjsdklgjadkljglk4q", nil)
+  }
+}
+

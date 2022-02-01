@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-final class SignUpUseCase: UserSessionUseCase {
+final class NicknameUseCase: UserSessionUseCase {
 
   let bag = DisposeBag()
 

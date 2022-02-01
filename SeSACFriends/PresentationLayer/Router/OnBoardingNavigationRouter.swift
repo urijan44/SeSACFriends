@@ -21,14 +21,15 @@ final class OnBoardingNavigationRouter: NSObject {
 }
 
 extension OnBoardingNavigationRouter: Router {
-  func start(_ viewController: UIViewController, animated: Bool) {
+  func start(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {
     routerRootController = viewController
     navigationController.setViewControllers([viewController], animated: animated)
+    onDismissForViewController[viewController] = onDismissed
   }
 
   func present(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {
     if navigationController.viewControllers.isEmpty {
-      start(viewController, animated: animated)
+      start(viewController, animated: animated, onDismissed: onDismissed)
     } else {
       onDismissForViewController[viewController] = onDismissed
       navigationController.pushViewController(viewController, animated: animated)
@@ -45,7 +46,6 @@ extension OnBoardingNavigationRouter: Router {
       return
     }
     performOnDismissed(for: routerRootController)
-    navigationController.popToViewController(routerRootController, animated: animated)
   }
 
   private func performOnDismissed(for viewController: UIViewController) {

@@ -24,7 +24,7 @@ final class OnBoardingContainer {
   }
 
   func makeNicknameView(delegate: NicknameRootViewDelegate) -> NicknameViewController {
-    let viewModel = NicknameViewModel(useCase: SignUpUseCase())
+    let viewModel = NicknameViewModel(useCase: NicknameUseCase())
     let rootView = NicknameRootView(viewModel: viewModel, delegate: delegate)
     let controller = NicknameViewController(rootView: rootView)
     return controller
