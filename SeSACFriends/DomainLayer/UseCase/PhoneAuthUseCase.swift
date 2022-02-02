@@ -10,7 +10,7 @@ import RxSwift
 import RxRelay
 import FirebaseAuth
 
-final class PhoneAuthUseCase: UseCase {
+final class PhoneAuthUseCase: UserSessionUseCase {
   private let bag = DisposeBag()
   var phoneNumberValidateState = BehaviorSubject<Bool>(value: false)
   var convertedPhoneNumber = BehaviorSubject<String>(value: "")
@@ -80,14 +80,17 @@ final class PhoneAuthUseCase: UseCase {
   //Request success -> View Transition //전화번호가 올바르면, 인증번호 뷰 전환
 
   private func firebaseRequest(_ phoneNumber: String) {
-    let converted = "+82" + phoneNumber
+    var converted = phoneNumber
+    if !converted.hasPrefix("+82") {
+      converted = converted.replacingOccurrences(of: "01", with: "+821")
+    }
     buttonEnable.accept(false)
 
-//    PhoneAuthProvider
-      FakePhoneAuthProvider
-        .provider()
-        .verifyPhoneNumber(converted, uiDelegate: nil) { [weak self] preReceiveVerificationId, error in
-          guard let self = self else { return }
+//    FakePhoneAuthProvider
+    PhoneAuthProvider
+      .provider()
+      .verifyPhoneNumber(converted, uiDelegate: nil) { [weak self] preReceiveVerificationId, error in
+        guard let self = self else { return }
         if let error = error {
           let message = ToastMessage.PhoneNumberAuthencication(FirebaseErrorHandling.PhoneAuthHandling(error))
           self.phoneAuthToastMessage.onNext(message)
@@ -96,8 +99,8 @@ final class PhoneAuthUseCase: UseCase {
           self.showVerificationCodeCheckView.onNext(true)
           UserSession.savePreReceiveVerifId(preReceiveVerificationId)
         }
+        self.userSession.savePhoneNumber(phoneNumber: converted)
         self.buttonEnable.accept(true)
       }
-
   }
 }

@@ -14,13 +14,11 @@ final class SignInUseCase {
       .create { single in
       let remote = SeSACRemoteAPI()
       remote.signIn(idToken: idToken) { result in
-        DispatchQueue.main.async {
-          switch result {
-            case .success(()):
-              single(.success(()))
-            case .failure(let error):
-              single(.failure(error))
-          }
+        switch result {
+          case .success(()):
+            single(.success(()))
+          case .failure(let error):
+            single(.failure(error))
         }
       }
       return Disposables.create()

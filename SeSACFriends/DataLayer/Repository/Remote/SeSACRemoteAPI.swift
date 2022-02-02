@@ -60,8 +60,8 @@ final class SeSACRemoteAPI {
   }
 
   private func task(request: URLRequest, requestType: RequestType, completion: @escaping (Result<Void, APIError>) -> Void) {
-    let task = session.dataTask(with: request) { [weak self] data, response, error in
-      DispatchQueue.main.async {
+    let task = session.dataTask(with: request) { data, response, error in
+      DispatchQueue.main.async { 
         if error != nil {
           completion(.failure(APIError.unknown))
           return
@@ -72,18 +72,14 @@ final class SeSACRemoteAPI {
           return
         }
 
-        self?.reponseCodeHandling(statusCode: response.statusCode, requestType: requestType) { result in
-          switch result {
-            case .success():
-              return
-            case .failure:
-              completion(result)
-              return
-          }
+        if let responseResult = self.reponseCodeHandling(statusCode: response.statusCode, requestType: requestType) {
+          completion(.failure(responseResult))
+          return
         }
+
         if let data = data {
           do {
-            try self?.dataHandling(data: data, requestType: requestType)
+            try self.dataHandling(data: data, requestType: requestType)
             completion(.success(()))
           } catch {
             //invalid data
@@ -109,12 +105,7 @@ final class SeSACRemoteAPI {
           throw APIError.unknown
         }
       case .signUp:
-        do {
-          let payload = try JSONDecoder().decode(SignInRemoteUserDTO.self, from: data)
-          UserSession.shared.signIn(signInUserDTO: payload)
-        } catch {
-          throw APIError.unknown
-        }
+        let payload = "OK"
       case .withdraw:
         let payload = "delete"
     }
@@ -126,77 +117,71 @@ final class SeSACRemoteAPI {
     case withdraw
   }
 
-  private func reponseCodeHandling(statusCode: Int, requestType: RequestType, completion: @escaping (Result<Void, APIError>) -> Void) {
+  private func reponseCodeHandling(statusCode: Int, requestType: RequestType) -> APIError? {
 
     switch requestType {
       case .signIn:
-        signInErrorContainer(code: statusCode) { result in
-          completion(result)
-        }
+        return signInErrorContainer(code: statusCode)
       case .signUp:
-        signUpErrorContainer(code: statusCode) { result in
-          completion(result)
-        }
+        return signUpErrorContainer(code: statusCode)
       case .withdraw:
-        withdrawErrorContainer(code: statusCode) { result in
-          completion(result)
-        }
+        return withdrawErrorContainer(code: statusCode)
     }
   }
 
-  private func signInErrorContainer(code: Int, completion: @escaping (Result<Void, APIError>) -> Void) {
+  private func signInErrorContainer(code: Int) -> APIError? {
     if code == 200 {
-      completion(.success(()))
+      return nil
     } else {
       switch code {
         case 201:
-          completion(.failure(.unregistered))
+          return .unregistered
         case 401:
-          completion(.failure(.tokenError))
+          return .tokenError
         case 500:
-          completion(.failure(.serverError))
+          return .serverError
         case 501:
-          completion(.failure(.clientError))
+          return .clientError
         default:
-          completion(.failure(.unknown))
+          return .unknown
       }
     }
   }
 
-  private func signUpErrorContainer(code: Int, completion: @escaping (Result<Void, APIError>) -> Void) {
+  private func signUpErrorContainer(code: Int) -> APIError? {
     if code == 200 {
-      completion(.success(()))
+      return nil
     } else {
       switch code {
         case 201:
-          completion(.failure(.alreadyRegistered))
+          return .alreadyRegistered
         case 202:
-          completion(.failure(.cannotUseNickname))
+          return .cannotUseNickname
         case 401:
-          completion(.failure(.tokenError))
+          return .tokenError
         case 500:
-          completion(.failure(.serverError))
+          return .serverError
         case 501:
-          completion(.failure(.clientError))
+          return .clientError
         default:
-          completion(.failure(.unknown))
+          return .unknown
       }
     }
   }
 
-  private func withdrawErrorContainer(code: Int, completion: @escaping (Result<Void, APIError>) -> Void) {
+  private func withdrawErrorContainer(code: Int) -> APIError? {
     if code == 200 {
-      completion(.success(()))
+      return nil
     } else {
       switch code {
         case 401:
-          completion(.failure(.tokenError))
+          return .tokenError
         case 406:
-          completion(.failure(.alreadyWithdraw))
+          return .alreadyWithdraw
         case 500:
-          completion(.failure(.serverError))
+          return .serverError
         default:
-          completion(.failure(.unknown))
+          return .unknown
       }
     }
   }

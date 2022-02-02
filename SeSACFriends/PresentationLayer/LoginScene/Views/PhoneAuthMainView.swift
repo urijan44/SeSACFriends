@@ -135,9 +135,9 @@ class PhoneAuthMainView: RepresentableView {
       }).disposed(by: bag)
 
     output.present
-      .subscribe(onNext: { [weak self] state in
+      .subscribe(onNext: { [unowned self] state in
         if state {
-          self?.delegate?.phoneAuthMainViewPushVerificationCodeView()
+          self.delegate?.phoneAuthMainViewPushVerificationCodeView()
         }
       }).disposed(by: bag)
   }

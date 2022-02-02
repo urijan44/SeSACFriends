@@ -469,14 +469,14 @@
 			isa = PBXGroup;
 			children = (
 				8A8CDD0227A1BAB4006144EA /* Protocol */,
-				8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */,
-				8AB37FA227A958110053D0A9 /* SignInUseCase.swift */,
 				8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */,
+				8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */,
 				8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */,
 				8AD6ADD127A306C7002A0283 /* NicknameUseCase.swift */,
 				8A97EBCC27A6E52700C33BDE /* BirthdayUseCase.swift */,
 				8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */,
 				8AC5D7C827A7EE0800FE83BF /* GenderUseCase.swift */,
+				8AB37FA227A958110053D0A9 /* SignInUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";

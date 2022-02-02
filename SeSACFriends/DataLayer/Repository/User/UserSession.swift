@@ -9,6 +9,11 @@ import Foundation
 
 final class UserSession {
 
+  enum SessionState {
+    case login
+    case logout
+  }
+
   static let shared = UserSession()
 
   var userProfile: UserProfile
@@ -31,6 +36,8 @@ final class UserSession {
     userProfile = load()
     userProfile.fcmToken = UserDefaults.standard.string(forKey: "FCMToken")
   }
+
+  public var sessionState: SessionState = .logout
 
   func savePhoneNumber(phoneNumber: String) {
 
@@ -107,6 +114,7 @@ final class UserSession {
 
   func removeUserSession() {
     userProfile = UserProfile()
+    userProfile.fcmToken = UserDefaults.standard.string(forKey: "FCMToken")
     save()
   }
 

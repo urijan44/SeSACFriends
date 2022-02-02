@@ -22,7 +22,9 @@ struct HomeViewTest: View {
           idToken: UserSession.shared.loadIdToken() ?? "") { result in
             switch result {
               case .success:
-                presentationMode.wrappedValue.dismiss()
+                UserSession.shared.removeUserSession()
+                UserSession.shared.sessionState = .logout
+                fatalError("app down")
               case .failure(let error):
                 print(error)
             }

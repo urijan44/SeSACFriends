@@ -23,6 +23,7 @@ final class GenderUseCase: UserSessionUseCase {
     api.signUp(idToken: userSession.loadIdToken() ?? "") { [weak self] result in
       switch result {
         case .success:
+          self?.userSession.sessionState = .login
           self?.success.onNext(())
         case .failure(let error):
           switch error {

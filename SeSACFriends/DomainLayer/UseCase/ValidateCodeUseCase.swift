@@ -11,7 +11,7 @@ import RxRelay
 import FirebaseAuth
 
 final class ValidateCodeUseCase: UseCase {
-  private let initializeTime = 5
+  private let initializeTime = 60
   private var timer = Timer()
 
   var timeOut: BehaviorRelay<String> = .init(value: "01:00")
@@ -65,15 +65,15 @@ final class ValidateCodeUseCase: UseCase {
     tryButtonEnabled.accept(false)
     let preVerifyCode = UserSession.loadPreReceiveVerifId() ?? ""
 
-    let credential = FakePhoneAuthProvider.provider().credential(withVerificationID: receivedVerifyCode ?? "", verificationCode: preVerifyCode)
-    FakeAuth.auth().signIn(with: credential) { [weak self] success, error in
+    let credential = PhoneAuthProvider.provider().credential(withVerificationID: preVerifyCode, verificationCode: receivedVerifyCode ?? "")
+    Auth.auth().signIn(with: credential) { [weak self] success, error in
       if let error = error {
         let message = ToastMessage.VerificationCode(FirebaseErrorHandling.VerificationCode(error))
         self?.verificationToastMessage.onNext(message)
       } else {
         //firebase register success
         //save idToken
-        FakeAuth.auth().currentUser?.getIDTokenForcingRefresh(true, completion: { idToken, error in
+        Auth.auth().currentUser?.getIDTokenForcingRefresh(true, completion: { idToken, error in
           if let error = error, let code = AuthErrorCode(rawValue: (error as NSError).code)  {
             print(code)
             return
@@ -81,6 +81,7 @@ final class ValidateCodeUseCase: UseCase {
 
           if let idToken = idToken {
             UserSession.shared.saveIdToken(idToken: idToken)
+            self?.timer.invalidate()
             self?.present.onNext(())
             return
           }
