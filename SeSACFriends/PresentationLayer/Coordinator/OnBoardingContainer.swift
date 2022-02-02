@@ -14,7 +14,7 @@ final class OnBoardingContainer {
     let rootView = PhoneAuthMainView(viewModel: viewModel, delegate: delegate)
     let controller = PhoneAuthViewController(rootView: rootView)
     return controller
-  }
+  }                                    
 
   func makeValidateCodeCheckView(delegate: ValidateCodeCheckViewDeledage) -> ValidateCodeCheckViewController {
     let viewModel = ValidateCodeCheckViewModel(useCase: ValidateCodeUseCase())

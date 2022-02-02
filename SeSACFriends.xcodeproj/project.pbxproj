@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A063BBA27AA474E007F446B /* TempTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A063BB927AA474E007F446B /* TempTap.swift */; };
 		8A09E6D92796A2FE005D98BF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6D82796A2FE005D98BF /* Then */; };
 		8A09E6DC2796A30A005D98BF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6DB2796A30A005D98BF /* SnapKit */; };
 		8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */; };
 		8A12FAA927A2307100DD362A /* ValidateCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */; };
 		8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15287327A7840800B958EB /* SeSACGenderPicker.swift */; };
 		8A15287627A7849D00B958EB /* SeSACGenderIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */; };
+		8A1A10D527AA3FB300E57106 /* MyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D427AA3FB300E57106 /* MyInfoTableViewCell.swift */; };
+		8A1A10D727AA40A500E57106 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D627AA40A500E57106 /* MyInfoView.swift */; };
+		8A1A10D927AA426100E57106 /* MyInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D827AA426100E57106 /* MyInfoListView.swift */; };
+		8A1A10DB27AA45D900E57106 /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */; };
 		8A4103A927985B270039C9FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103A827985B270039C9FA /* Assets.xcassets */; };
 		8A4103E32798EA7D0039C9FA /* SeSACFriendsUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4103E22798EA7D0039C9FA /* SeSACFriendsUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A4103E62798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */; };
@@ -136,6 +141,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A063BB927AA474E007F446B /* TempTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTap.swift; sourceTree = "<group>"; };
 		8A09E6C9279699C5005D98BF /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		8A09E6CA279699C5005D98BF /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		8A09E6D327969B66005D98BF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -145,6 +151,10 @@
 		8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeUseCase.swift; sourceTree = "<group>"; };
 		8A15287327A7840800B958EB /* SeSACGenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACGenderPicker.swift; sourceTree = "<group>"; };
 		8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACGenderIndicator.swift; sourceTree = "<group>"; };
+		8A1A10D427AA3FB300E57106 /* MyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewCell.swift; sourceTree = "<group>"; };
+		8A1A10D627AA40A500E57106 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
+		8A1A10D827AA426100E57106 /* MyInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoListView.swift; sourceTree = "<group>"; };
+		8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
 		8A4103A827985B270039C9FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4103AC27985FC10039C9FA /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		8A4103AE279869630039C9FA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -308,6 +318,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8A1A10D127AA3F4300E57106 /* MyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8A1A10D427AA3FB300E57106 /* MyInfoTableViewCell.swift */,
+				8A1A10D627AA40A500E57106 /* MyInfoView.swift */,
+				8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */,
+				8A063BB927AA474E007F446B /* TempTap.swift */,
+			);
+			path = MyInfo;
+			sourceTree = "<group>";
+		};
 		8A4103E12798EA7D0039C9FA /* SeSACFriendsUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +353,7 @@
 				8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */,
 				8A15287327A7840800B958EB /* SeSACGenderPicker.swift */,
 				8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */,
+				8A1A10D827AA426100E57106 /* MyInfoListView.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -452,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				8AB37FA727A967850053D0A9 /* HomeViewTest.swift */,
+				8A1A10D127AA3F4300E57106 /* MyInfo */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -459,6 +482,7 @@
 		8AC317EF279ED7B000646711 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8AD6ADD727A310EE002A0283 /* Entity */,
 				8AC317F0279ED7BF00646711 /* UseCase */,
 				8AC31803279FF88C00646711 /* Model */,
 			);
@@ -513,7 +537,6 @@
 			isa = PBXGroup;
 			children = (
 				8AB37FA027A94C330053D0A9 /* RemoteUserDTO.swift */,
-				8AD6ADD727A310EE002A0283 /* Entity */,
 				8AC3181C27A06CC300646711 /* User */,
 				8AC3181427A05DA600646711 /* Fake */,
 				8AC3180A27A0062B00646711 /* Remote */,
@@ -841,6 +864,7 @@
 				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
 				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
 				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,
+				8A1A10D927AA426100E57106 /* MyInfoListView.swift in Sources */,
 				8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */,
 				8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */,
 				8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */,
@@ -855,6 +879,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */,
+				8A063BBA27AA474E007F446B /* TempTap.swift in Sources */,
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
 				8AC317F7279F0A4100646711 /* ValidateCodeCheckViewModel.swift in Sources */,
 				8AD6ADD227A306C7002A0283 /* NicknameUseCase.swift in Sources */,
@@ -871,6 +896,7 @@
 				8AC3181E27A06D0300646711 /* UserSession.swift in Sources */,
 				8A97EBD327A6ECBE00C33BDE /* EmailViewModel.swift in Sources */,
 				8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */,
+				8A1A10D527AA3FB300E57106 /* MyInfoTableViewCell.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
@@ -895,6 +921,7 @@
 				8A12FAA927A2307100DD362A /* ValidateCodeUseCase.swift in Sources */,
 				8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */,
 				8AC3182027A0716800646711 /* OnBoardingNavigationRouter.swift in Sources */,
+				8A1A10D727AA40A500E57106 /* MyInfoView.swift in Sources */,
 				8AC3182227A0758900646711 /* OnBoardingCoordinator.swift in Sources */,
 				8AD1305A27A593EF00E482BC /* BirthdayViewController.swift in Sources */,
 				8ACB7FCF27A98EC50068125B /* Date+Extension.swift in Sources */,
@@ -902,6 +929,7 @@
 				8AC31802279FF88800646711 /* ToastMessage.swift in Sources */,
 				8AB37FA327A958110053D0A9 /* SignInUseCase.swift in Sources */,
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
+				8A1A10DB27AA45D900E57106 /* MyInfoViewModel.swift in Sources */,
 				8AB37FA827A967850053D0A9 /* HomeViewTest.swift in Sources */,
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,

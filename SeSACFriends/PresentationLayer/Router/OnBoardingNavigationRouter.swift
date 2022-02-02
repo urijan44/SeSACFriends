@@ -36,8 +36,10 @@ extension OnBoardingNavigationRouter: Router {
     }
   }
 
-  func changeRootPresent(_ viewController: UIViewController, animated: Bool = false, onDismissed: (() -> Void)?) {
+  func changeRootPresent(from: UIViewController, _ viewController: UIViewController, animated: Bool = false) {
     navigationController.setViewControllers([viewController], animated: true)
+    routerRootController = viewController
+    copyOnDismissHandler(from: from, to: viewController)
   }
 
   func dismiss(animated: Bool) {
@@ -54,6 +56,13 @@ extension OnBoardingNavigationRouter: Router {
     }
     onDismiss()
     onDismissForViewController[viewController] = nil
+  }
+
+  func copyOnDismissHandler(from: UIViewController, to: UIViewController) {
+    if let action = onDismissForViewController[from] {
+      onDismissForViewController[to] = action
+      onDismissForViewController[from] = nil
+    }
   }
 }
 

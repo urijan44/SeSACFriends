@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftUI
+
 public extension UIFont {
   static var display1: UIFont {
     UIFont(name: Constant.Font.notoSansKRr, size: 20) ?? .systemFont(ofSize: 20)
@@ -56,5 +58,11 @@ public extension UIFont {
 
   static var captionR: UIFont {
     UIFont(name: Constant.Font.notoSansKRr, size: 10) ?? .systemFont(ofSize: 10)
+  }
+}
+
+public extension Font {
+  init(uiFont: UIFont) {
+    self = Font(uiFont as CTFont)
   }
 }
