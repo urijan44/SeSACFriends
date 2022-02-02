@@ -41,11 +41,12 @@ final class UserSession {
 
   func savePhoneNumber(phoneNumber: String) {
 
-    var convert = phoneNumber
-    if !convert.hasPrefix("+82") {
-      convert = convert.replacingOccurrences(of: "01", with: "+821")
+    var converted = phoneNumber
+    if converted.hasPrefix("+82"), let range = converted.range(of: "010-") {
+      converted = converted.replacingCharacters(in: range, with: "+8210")
     }
-    userProfile.phoneNumber = convert
+    converted = converted.filter { $0 != "-" }
+    userProfile.phoneNumber = converted
     save()
   }
 

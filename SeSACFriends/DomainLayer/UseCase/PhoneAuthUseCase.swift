@@ -81,9 +81,10 @@ final class PhoneAuthUseCase: UserSessionUseCase {
 
   private func firebaseRequest(_ phoneNumber: String) {
     var converted = phoneNumber
-    if !converted.hasPrefix("+82") {
-      converted = converted.replacingOccurrences(of: "01", with: "+821")
+    if !converted.hasPrefix("+82"), let range = converted.range(of: "010-") {
+      converted = converted.replacingCharacters(in: range, with: "+8210")
     }
+    converted = converted.filter { $0 != "-" }
     buttonEnable.accept(false)
 
 //    FakePhoneAuthProvider

@@ -38,21 +38,14 @@ class PhoneAuthMainView: RepresentableView {
 
   var bag = DisposeBag()
 
-  weak var delegate: PhoneAuthMainViewDelegate?
+  var delegate: PhoneAuthMainViewDelegate
 
   init(frame: CGRect = .zero,
-       viewModel: PhoneAuthViewModel)
-   {
-    self.viewModel = viewModel
-    super.init(frame: frame)
-    backgroundColor = .seSACWhite
-  }
-  init(frame: CGRect = .zero,
        viewModel: PhoneAuthViewModel,
-       delegate: PhoneAuthMainViewDelegate?)
+       delegate: PhoneAuthMainViewDelegate)
    {
-    self.viewModel = viewModel
      self.delegate = delegate
+    self.viewModel = viewModel
     super.init(frame: frame)
     backgroundColor = .seSACWhite
   }
@@ -135,30 +128,10 @@ class PhoneAuthMainView: RepresentableView {
       }).disposed(by: bag)
 
     output.present
-      .subscribe(onNext: { [unowned self] state in
+      .subscribe(onNext: { state in
         if state {
-          self.delegate?.phoneAuthMainViewPushVerificationCodeView()
+          self.delegate.phoneAuthMainViewPushVerificationCodeView()
         }
       }).disposed(by: bag)
   }
 }
-
-#if DEBUG
-import SwiftUI
-fileprivate struct PhoneAuthMainViewRP: UIViewRepresentable {
-  func makeUIView(context: UIViewRepresentableContext<PhoneAuthMainViewRP>) -> PhoneAuthMainView {
-    let viewModel = PhoneAuthViewModel(useCase: PhoneAuthUseCase())
-    return PhoneAuthMainView(viewModel: viewModel, delegate: nil)
-  }
-
-  func updateUIView(_ uiView: PhoneAuthMainView, context: Context) {
-
-  }
-}
-
-struct PhoneAuthMainView_Previews: PreviewProvider {
-  static var previews: some View {
-    PhoneAuthMainViewRP()
-  }
-}
-#endif
