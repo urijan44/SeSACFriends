@@ -59,7 +59,9 @@ final class AppDelegateCoordinator: Coordinator {
     let coordinator = OnBoardingCoordinator(router: childRouter)
     coordinator.skip = skip
     presentChild(coordinator, animated: true) {
-      self.startHomeCoordinator()
+      if UserSession.shared.sessionState == .login {
+        self.startHomeCoordinator()
+      }
     }
   }
 
