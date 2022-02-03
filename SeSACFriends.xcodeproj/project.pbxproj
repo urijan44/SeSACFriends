@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A063BBA27AA474E007F446B /* TempTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A063BB927AA474E007F446B /* TempTap.swift */; };
+		8A063BBE27AA6E14007F446B /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A063BBD27AA6E14007F446B /* Images+Generated.swift */; };
 		8A09E6D92796A2FE005D98BF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6D82796A2FE005D98BF /* Then */; };
 		8A09E6DC2796A30A005D98BF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6DB2796A30A005D98BF /* SnapKit */; };
 		8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */; };
@@ -26,7 +27,6 @@
 		8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BB0279C30EF00EDEA3F /* Router.swift */; };
 		8A674BB3279C316F00EDEA3F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BB2279C316F00EDEA3F /* Coordinator.swift */; };
 		8A674BB9279D796600EDEA3F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A674BB8279D796600EDEA3F /* Images.xcassets */; };
-		8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */; };
 		8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */; };
 		8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */; };
 		8A674BCD279D844B00EDEA3F /* RepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BCC279D844B00EDEA3F /* RepresentableView.swift */; };
@@ -142,6 +142,7 @@
 
 /* Begin PBXFileReference section */
 		8A063BB927AA474E007F446B /* TempTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTap.swift; sourceTree = "<group>"; };
+		8A063BBD27AA6E14007F446B /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		8A09E6C9279699C5005D98BF /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		8A09E6CA279699C5005D98BF /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		8A09E6D327969B66005D98BF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -167,7 +168,6 @@
 		8A674BB0279C30EF00EDEA3F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8A674BB2279C316F00EDEA3F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8A674BB8279D796600EDEA3F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		8A674BC1279D7EEA00EDEA3F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8A674BC9279D823A00EDEA3F /* WelcomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRootView.swift; sourceTree = "<group>"; };
 		8A674BCC279D844B00EDEA3F /* RepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableView.swift; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 				8A09E6D1279699C8005D98BF /* Fonts */,
 				8A4103B6279874500039C9FA /* swiftgen.yml */,
 				8A4103AC27985FC10039C9FA /* Colors+Generated.swift */,
-				8A674BBE279D7CDC00EDEA3F /* Images+Generated.swift */,
+				8A063BBD27AA6E14007F446B /* Images+Generated.swift */,
 				8A674BB8279D796600EDEA3F /* Images.xcassets */,
 				8A4103AE279869630039C9FA /* Colors.xcassets */,
 			);
@@ -866,7 +866,7 @@
 				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,
 				8A1A10D927AA426100E57106 /* MyInfoListView.swift in Sources */,
 				8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */,
-				8A674BBF279D7CDC00EDEA3F /* Images+Generated.swift in Sources */,
+				8A063BBE27AA6E14007F446B /* Images+Generated.swift in Sources */,
 				8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */,
 				8A6DB1FC27995ED300477705 /* SeSACTextField.swift in Sources */,
 				8A6DB1FF27995F7700477705 /* CGColor+Extension.swift in Sources */,

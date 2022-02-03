@@ -12,14 +12,14 @@ struct WelcomePageView: View {
   var body: some View {
     TabView {
       WelcomeImageViewRP(
-        titleImage: Images.onboardingText1.image,
-        bodyImage: Images.onboardingImg1.image)
+        titleImage: AssetImage.onboardingText1.image,
+        bodyImage: AssetImage.onboardingImg1.image)
       WelcomeImageViewRP(
-        titleImage: Images.onboardingText2.image,
-        bodyImage: Images.onboardingImg2.image)
+        titleImage: AssetImage.onboardingText2.image,
+        bodyImage: AssetImage.onboardingImg2.image)
       WelcomeImageViewRP(
-        titleImage: Images.onboardingText3.image,
-        bodyImage: Images.onboardingImg3.image)
+        titleImage: AssetImage.onboardingText3.image,
+        bodyImage: AssetImage.onboardingImg3.image)
     }
     .tabViewStyle(.page(indexDisplayMode: .always))
   }

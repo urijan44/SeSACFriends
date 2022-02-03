@@ -75,5 +75,5 @@ xcassets:
       - templateName: swift5
         params:
           publicAccess: true
-          enumName: Images
+          enumName: AssetImage
         output: Images+Generated.swift

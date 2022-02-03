@@ -57,10 +57,10 @@ final public class SeSACGenderIndicator: UIControl {
 
   private func updateUI() {
     if gender == .male {
-      genderImage.image = Images.man.image
+      genderImage.image = AssetImage.man.image
       label.text = "남자"
     } else {
-      genderImage.image = Images.woman.image
+      genderImage.image = AssetImage.woman.image
       label.text = "여자"
     }
 

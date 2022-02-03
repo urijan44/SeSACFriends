@@ -20,7 +20,7 @@ final class BirthdayRootView: RepresentableView {
   let viewModel: BirthdayViewModel
   let bag = DisposeBag()
 
-  lazy var leftBarButtonItem = UIBarButtonItem(image: Images.arrow.image, style: .plain, target: self, action: nil)
+  lazy var leftBarButtonItem = UIBarButtonItem(image: AssetImage.arrow.image, style: .plain, target: self, action: nil)
 
   lazy var titleLabel = UILabel(typoStyle: .display1).then {
     $0.text = "생년월일을 알려주세요"

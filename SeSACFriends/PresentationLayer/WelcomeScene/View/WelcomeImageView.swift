@@ -74,10 +74,10 @@ struct WelcomeImageViewRP: UIViewRepresentable {
   }
 }
 
-struct WelcomeImageView_Previews: PreviewProvider {
-  static var previews: some View {
-    WelcomeImageViewRP(
-      titleImage: Images.onboardingText1.image,
-      bodyImage: Images.onboardingImg1.image)
-  }
-}
+//struct WelcomeImageView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    WelcomeImageViewRP(
+//      titleImage: .onboardingText1.image,
+//      bodyImage: AssetImage.onboardingImg1.image)
+//  }
+//}

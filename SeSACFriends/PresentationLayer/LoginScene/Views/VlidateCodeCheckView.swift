@@ -18,7 +18,7 @@ class ValidateCodeCheckView: RepresentableView {
 
   let viewModel: ValidateCodeCheckViewModel
   let bag = DisposeBag()
-  lazy var leftBarButtonItem = UIBarButtonItem(image: Images.arrow.image, style: .plain, target: self, action: nil)
+  lazy var leftBarButtonItem = UIBarButtonItem(image: AssetImage.arrow.image, style: .plain, target: self, action: nil)
 
   lazy var titleLable1 = UILabel(typoStyle: .display1).then {
     $0.numberOfLines = 1

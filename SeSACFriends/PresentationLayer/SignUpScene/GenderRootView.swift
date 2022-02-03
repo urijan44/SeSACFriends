@@ -21,7 +21,7 @@ final class GenderRootView: RepresentableView {
   let viewModel: GenderViewModel
   let bag = DisposeBag()
 
-  lazy var leftBarButtonItem = UIBarButtonItem(image: Images.arrow.image, style: .plain, target: self, action: nil)
+  lazy var leftBarButtonItem = UIBarButtonItem(image: AssetImage.arrow.image, style: .plain, target: self, action: nil)
 
   lazy var titleLabel = UILabel(typoStyle: .display1).then {
     $0.text = "성별을 선택해 주세요"
