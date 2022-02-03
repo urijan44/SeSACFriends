@@ -46,7 +46,7 @@ final class OnBoardingCoordinator: Coordinator {
 
 extension OnBoardingCoordinator: WelcomeViewControllerDelegate {
   func startonBoardingButton() {
-    (router as? OnBoardingNavigationRouter)?.changeRootPresent(phoneAuthView, onDismissed: nil)
+    (router as? OnBoardingNavigationRouter)?.changeRootPresent(from: welcomeView, phoneAuthView)
   }
 }
 
