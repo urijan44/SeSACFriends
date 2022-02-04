@@ -35,6 +35,7 @@ public enum AssetImage {
   public static let plus = ImageAsset(name: "plus")
   public static let qna = ImageAsset(name: "qna")
   public static let search = ImageAsset(name: "search")
+  public static let sesacFace1 = ImageAsset(name: "sesac_face_1")
   public static let settingAlarm = ImageAsset(name: "setting_alarm")
   public static let siren = ImageAsset(name: "siren")
   public static let tabFriends = ImageAsset(name: "tabFriends")
