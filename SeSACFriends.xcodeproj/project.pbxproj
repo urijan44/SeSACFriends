@@ -15,7 +15,7 @@
 		8A12FAA927A2307100DD362A /* ValidateCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */; };
 		8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15287327A7840800B958EB /* SeSACGenderPicker.swift */; };
 		8A15287627A7849D00B958EB /* SeSACGenderIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */; };
-		8A1A10D527AA3FB300E57106 /* MyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D427AA3FB300E57106 /* MyInfoTableViewCell.swift */; };
+		8A191CA927ADA2C800723FD8 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A191CA827ADA2C800723FD8 /* MyInfoViewController.swift */; };
 		8A1A10D727AA40A500E57106 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D627AA40A500E57106 /* MyInfoView.swift */; };
 		8A1A10D927AA426100E57106 /* MyInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D827AA426100E57106 /* MyInfoListView.swift */; };
 		8A1A10DB27AA45D900E57106 /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */; };
@@ -152,7 +152,7 @@
 		8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeUseCase.swift; sourceTree = "<group>"; };
 		8A15287327A7840800B958EB /* SeSACGenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACGenderPicker.swift; sourceTree = "<group>"; };
 		8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACGenderIndicator.swift; sourceTree = "<group>"; };
-		8A1A10D427AA3FB300E57106 /* MyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewCell.swift; sourceTree = "<group>"; };
+		8A191CA827ADA2C800723FD8 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		8A1A10D627AA40A500E57106 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		8A1A10D827AA426100E57106 /* MyInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoListView.swift; sourceTree = "<group>"; };
 		8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
@@ -321,10 +321,10 @@
 		8A1A10D127AA3F4300E57106 /* MyInfo */ = {
 			isa = PBXGroup;
 			children = (
-				8A1A10D427AA3FB300E57106 /* MyInfoTableViewCell.swift */,
 				8A1A10D627AA40A500E57106 /* MyInfoView.swift */,
 				8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */,
 				8A063BB927AA474E007F446B /* TempTap.swift */,
+				8A191CA827ADA2C800723FD8 /* MyInfoViewController.swift */,
 			);
 			path = MyInfo;
 			sourceTree = "<group>";
@@ -896,7 +896,6 @@
 				8AC3181E27A06D0300646711 /* UserSession.swift in Sources */,
 				8A97EBD327A6ECBE00C33BDE /* EmailViewModel.swift in Sources */,
 				8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */,
-				8A1A10D527AA3FB300E57106 /* MyInfoTableViewCell.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
@@ -931,6 +930,7 @@
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
 				8A1A10DB27AA45D900E57106 /* MyInfoViewModel.swift in Sources */,
 				8AB37FA827A967850053D0A9 /* HomeViewTest.swift in Sources */,
+				8A191CA927ADA2C800723FD8 /* MyInfoViewController.swift in Sources */,
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
 				8AF5DA9B27A706DD00AE3537 /* UserSessionUseCase.swift in Sources */,
