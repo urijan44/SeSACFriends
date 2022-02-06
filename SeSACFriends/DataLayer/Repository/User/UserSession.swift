@@ -133,6 +133,14 @@ final class UserSession {
     return body.convertData()
   }
 
+  func updateFMCBody() -> Data {
+    var body = RequestBody()
+    body.append(contentsOf: [
+      .init(key: "FCMtoken", value: userProfile.fcmToken ?? "")
+    ])
+    return body.convertData()
+  }
+
   private func save() {
     guard let data = try? JSONEncoder().encode(userProfile) else { return }
     try? data.write(to: userProfileURL, options: .atomic)

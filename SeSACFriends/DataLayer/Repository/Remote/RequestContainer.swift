@@ -12,6 +12,7 @@ final class RequestContainer {
   private enum HTTPMethod: String {
     case GET
     case POST
+    case PUT
   }
 
   private enum Header: String {
@@ -43,5 +44,11 @@ final class RequestContainer {
 
   func withdrawRequst(url: URL, idToken: String) -> URLRequest {
     defaultRequest(url: url, method: .POST, idToken: idToken)
+  }
+
+  func updateFCMTokenRequest(url: URL, idToken: String, requestBody: Data) -> URLRequest {
+    var request = defaultRequest(url: url, method: .PUT, idToken: idToken)
+    request.httpBody = requestBody
+    return request
   }
 }

@@ -28,12 +28,19 @@ final class SeSACRemoteAPI {
 
   func signIn(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
 
-    let request = requestContainer.signInRequest(
-      url: endPoint.signInURL(),
-      idToken: idToken
-    )
-    task(request: request, requestType: .signIn) { result in
-      completion(result)
+    updateFCMtoken(idToken: idToken) { [unowned self] updateResult in
+      switch updateResult {
+        case .success:
+          let request = requestContainer.signInRequest(
+            url: endPoint.signInURL(),
+            idToken: idToken
+          )
+          task(request: request, requestType: .signIn) { result in
+            completion(result)
+          }
+        case .failure(let error):
+          completion(.failure(error))
+      }
     }
   }
 
@@ -55,6 +62,18 @@ final class SeSACRemoteAPI {
       idToken: idToken)
 
     self.task(request: request, requestType: .withdraw) { result in
+      completion(result)
+    }
+  }
+
+  func updateFCMtoken(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+    let request = requestContainer
+      .updateFCMTokenRequest(
+        url: endPoint.updateFCMTokenURL(),
+        idToken: idToken,
+        requestBody: UserSession.shared.updateFMCBody())
+
+    self.task(request: request, requestType: .updateFCMToken) { result in
       completion(result)
     }
   }
@@ -108,6 +127,8 @@ final class SeSACRemoteAPI {
         let payload = "OK"
       case .withdraw:
         let payload = "delete"
+      case .updateFCMToken:
+        let payload = "OK"
     }
   }
 
@@ -115,6 +136,7 @@ final class SeSACRemoteAPI {
     case signIn
     case signUp
     case withdraw
+    case updateFCMToken
   }
 
   private func reponseCodeHandling(statusCode: Int, requestType: RequestType) -> APIError? {
@@ -126,6 +148,8 @@ final class SeSACRemoteAPI {
         return signUpErrorContainer(code: statusCode)
       case .withdraw:
         return withdrawErrorContainer(code: statusCode)
+      case .updateFCMToken:
+        return updateFCMTokenErrorContainer(code: statusCode)
     }
   }
 
@@ -183,6 +207,23 @@ final class SeSACRemoteAPI {
         default:
           return .unknown
       }
+    }
+  }
+
+  private func updateFCMTokenErrorContainer(code: Int) -> APIError? {
+    switch code {
+      case 200:
+        return nil
+      case 401:
+        return .tokenError
+      case 406:
+        return .unregistered
+      case 500:
+        return .serverError
+      case 501:
+        return .clientError
+      default:
+        return .unknown
     }
   }
 }

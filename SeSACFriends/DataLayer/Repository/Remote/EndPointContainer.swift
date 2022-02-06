@@ -13,6 +13,7 @@ final class EndPointContainer {
   private enum EndPoint: String {
     case user
     case withdraw
+    case updateFCMToken = "update_fcm_token"
   }
 
   init(domain: String) {
@@ -30,5 +31,11 @@ final class EndPointContainer {
 
   func withdrawURL() -> URL {
     signInURL().appendingPathComponent(EndPoint.withdraw.rawValue)
+  }
+
+  func updateFCMTokenURL() -> URL {
+    domain
+      .appendingPathComponent(EndPoint.user.rawValue)
+      .appendingPathComponent(EndPoint.updateFCMToken.rawValue)
   }
 }
