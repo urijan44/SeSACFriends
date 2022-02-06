@@ -18,7 +18,7 @@ final class HomeRootView: RepresentableView {
 
   override func layoutConfigure() {
     hosting.view.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+      make.edges.equalTo(safeAreaLayoutGuide.snp.edges)
     }
   }
 }
