@@ -12,7 +12,7 @@ final class HomeCoordinator: Coordinator {
   var children: [Coordinator] = []
   var router: Router
 
-  lazy var homeView = UIHostingController(rootView: HomeViewTest())
+  lazy var homeView = HomeViewController()
 
   init(router: Router) {
     self.router = router

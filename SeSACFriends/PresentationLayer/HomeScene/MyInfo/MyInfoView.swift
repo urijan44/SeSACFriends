@@ -44,7 +44,6 @@ struct MyInfoView: View {
       }
       .navigationTitle("내정보")
       .navigationBarTitleDisplayMode(.inline)
-      .navigationBarHidden(true)
     }
   }
 }

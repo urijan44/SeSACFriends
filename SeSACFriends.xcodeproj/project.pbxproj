@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0004B127B0092000C288E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0004B027B0092000C288E0 /* HomeViewController.swift */; };
 		8A063BBA27AA474E007F446B /* TempTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A063BB927AA474E007F446B /* TempTap.swift */; };
 		8A063BBE27AA6E14007F446B /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A063BBD27AA6E14007F446B /* Images+Generated.swift */; };
 		8A09E6D92796A2FE005D98BF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6D82796A2FE005D98BF /* Then */; };
@@ -141,6 +142,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A0004B027B0092000C288E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A063BB927AA474E007F446B /* TempTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempTap.swift; sourceTree = "<group>"; };
 		8A063BBD27AA6E14007F446B /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		8A09E6C9279699C5005D98BF /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				8AB37FA727A967850053D0A9 /* HomeViewTest.swift */,
+				8A0004B027B0092000C288E0 /* HomeViewController.swift */,
 				8A1A10D127AA3F4300E57106 /* MyInfo */,
 			);
 			path = HomeScene;
@@ -937,6 +940,7 @@
 				8AC5D7C727A7D8FE00FE83BF /* GenderViewModel.swift in Sources */,
 				8AC31805279FFF8500646711 /* View+Extension.swift in Sources */,
 				8A97EBCF27A6EC4C00C33BDE /* EmailViewController.swift in Sources */,
+				8A0004B127B0092000C288E0 /* HomeViewController.swift in Sources */,
 				8AD6ADC627A2FB4D002A0283 /* NicknameViewController.swift in Sources */,
 				8A6C29AB279A52DB004EC855 /* PhoneAuthViewModel.swift in Sources */,
 				8A674BD7279DB2D700EDEA3F /* WelcomePageView.swift in Sources */,
