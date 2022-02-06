@@ -34,6 +34,7 @@ final class ValidateCodeCheckViewModel: CommonViewModel {
     let timer: BehaviorRelay<String> = .init(value: "01:00")
     let showToast: PublishRelay<ToastMessage.VerificationCode> = .init()
     let present: PublishSubject<Void> = .init()
+    let login: PublishSubject<Void> = .init()
   }
 
   func transform(_ input: Input) -> Output {
@@ -79,6 +80,10 @@ final class ValidateCodeCheckViewModel: CommonViewModel {
 
     useCase.tryButtonEnabled.subscribe(onNext: {
       output.tryButtonBlock.accept($0)
+    }).disposed(by: bag)
+
+    useCase.login.subscribe(onNext: {
+      output.login.onNext(())
     }).disposed(by: bag)
 
     useCase.verificationToastMessage.subscribe(onNext: { message in

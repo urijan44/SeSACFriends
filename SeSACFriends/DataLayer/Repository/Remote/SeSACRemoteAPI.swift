@@ -28,20 +28,20 @@ final class SeSACRemoteAPI {
 
   func signIn(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
 
-    updateFCMtoken(idToken: idToken) { [unowned self] updateResult in
-      switch updateResult {
-        case .success:
-          let request = requestContainer.signInRequest(
-            url: endPoint.signInURL(),
-            idToken: idToken
-          )
-          task(request: request, requestType: .signIn) { result in
-            completion(result)
-          }
-        case .failure(let error):
-          completion(.failure(error))
-      }
+    let request = requestContainer.signInRequest(
+      url: endPoint.signInURL(),
+      idToken: idToken
+    )
+    task(request: request, requestType: .signIn) { result in
+      completion(result)
     }
+//    updateFCMtoken(idToken: idToken) { [unowned self] updateResult in
+//      switch updateResult {
+//        case .success:
+//        case .failure(let error):
+//          completion(.failure(error))
+//      }
+//    }
   }
 
   func signUp(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {

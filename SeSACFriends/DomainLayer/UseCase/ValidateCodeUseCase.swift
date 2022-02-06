@@ -20,6 +20,7 @@ final class ValidateCodeUseCase: UseCase {
   var retryButtonDisabled: BehaviorRelay<Bool> = .init(value: true)
   var verificationToastMessage: PublishSubject<ToastMessage.VerificationCode> = .init()
   var present: PublishSubject<Void> = .init()
+  var login: PublishSubject<Void> = .init()
 
   private lazy var time: Int = initializeTime
 
@@ -75,14 +76,23 @@ final class ValidateCodeUseCase: UseCase {
         //save idToken
         Auth.auth().currentUser?.getIDTokenForcingRefresh(true, completion: { idToken, error in
           if let error = error, let code = AuthErrorCode(rawValue: (error as NSError).code)  {
-            print(code)
+            print("showerrortoast\(code)")
             return
           }
 
           if let idToken = idToken {
             UserSession.shared.saveIdToken(idToken: idToken)
             self?.timer.invalidate()
-            self?.present.onNext(())
+
+            let api = SeSACRemoteAPI()
+            api.signIn(idToken: idToken) { result in
+              switch result {
+                case .success:
+                  self?.login.onNext(())
+                case .failure:
+                  self?.present.onNext(())
+              }
+            }
             return
           }
         })

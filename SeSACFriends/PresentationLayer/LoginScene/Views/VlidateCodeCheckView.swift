@@ -12,6 +12,7 @@ import SeSACFriendsUIKit
 protocol ValidateCodeCheckViewDeledage: AnyObject {
   func validateCodeCheck()
   func cancelValidateCodeCheck()
+  func presentLogin()
 }
 
 class ValidateCodeCheckView: RepresentableView {
@@ -149,6 +150,12 @@ class ValidateCodeCheckView: RepresentableView {
     output.present
       .subscribe(onNext: { [weak self] _ in
         self?.delegate?.validateCodeCheck()
+      }).disposed(by: bag)
+
+    output.login
+      .take(1)
+      .subscribe(onNext: { [weak self] _ in
+        self?.delegate?.presentLogin()
       }).disposed(by: bag)
   }
 }
