@@ -64,6 +64,10 @@ extension OnBoardingCoordinator: ValidateCodeCheckViewDeledage {
   func cancelValidateCodeCheck() {
     validateCodeCheckView.navigationController?.popViewController(animated: true)
   }
+
+  func presentLogin() {
+    dismiss(animated: false)
+  }
 }
 
 extension OnBoardingCoordinator: NicknameRootViewDelegate {

@@ -124,11 +124,11 @@ final class SeSACRemoteAPI {
           throw APIError.unknown
         }
       case .signUp:
-        let payload = "OK"
+        let _ = "OK"
       case .withdraw:
-        let payload = "delete"
+        let _ = "delete"
       case .updateFCMToken:
-        let payload = "OK"
+        let _ = "OK"
     }
   }
 
