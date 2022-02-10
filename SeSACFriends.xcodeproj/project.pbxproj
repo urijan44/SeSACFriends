@@ -66,6 +66,9 @@
 		8AB37FA327A958110053D0A9 /* SignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA227A958110053D0A9 /* SignInUseCase.swift */; };
 		8AB37FA827A967850053D0A9 /* HomeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA727A967850053D0A9 /* HomeViewTest.swift */; };
 		8AB37FAA27A9697C0053D0A9 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA927A9697C0053D0A9 /* HomeCoordinator.swift */; };
+		8AC281EC27B5228600C83223 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281EB27B5228600C83223 /* CardView.swift */; };
+		8AC281EE27B5229700C83223 /* CardViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281ED27B5229700C83223 /* CardViewButton.swift */; };
+		8AC281F127B5296F00C83223 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281F027B5296F00C83223 /* ProfileView.swift */; };
 		8AC317EC279ED5ED00646711 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317EB279ED5ED00646711 /* RxCocoa */; };
 		8AC317EE279ED5F200646711 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317ED279ED5F100646711 /* RxSwift */; };
 		8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */; };
@@ -195,6 +198,9 @@
 		8AB37FA227A958110053D0A9 /* SignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCase.swift; sourceTree = "<group>"; };
 		8AB37FA727A967850053D0A9 /* HomeViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTest.swift; sourceTree = "<group>"; };
 		8AB37FA927A9697C0053D0A9 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		8AC281EB27B5228600C83223 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8AC281ED27B5229700C83223 /* CardViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewButton.swift; sourceTree = "<group>"; };
+		8AC281F027B5296F00C83223 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthUseCase.swift; sourceTree = "<group>"; };
 		8AC317F4279F09D200646711 /* VlidateCodeCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VlidateCodeCheckView.swift; sourceTree = "<group>"; };
 		8AC317F6279F0A4100646711 /* ValidateCodeCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeCheckViewModel.swift; sourceTree = "<group>"; };
@@ -327,6 +333,7 @@
 				8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */,
 				8A063BB927AA474E007F446B /* TempTap.swift */,
 				8A191CA827ADA2C800723FD8 /* MyInfoViewController.swift */,
+				8AC281EF27B5296700C83223 /* ProfileView */,
 			);
 			path = MyInfo;
 			sourceTree = "<group>";
@@ -356,6 +363,8 @@
 				8A15287327A7840800B958EB /* SeSACGenderPicker.swift */,
 				8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */,
 				8A1A10D827AA426100E57106 /* MyInfoListView.swift */,
+				8AC281EB27B5228600C83223 /* CardView.swift */,
+				8AC281ED27B5229700C83223 /* CardViewButton.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -480,6 +489,14 @@
 				8A1A10D127AA3F4300E57106 /* MyInfo */,
 			);
 			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		8AC281EF27B5296700C83223 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				8AC281F027B5296F00C83223 /* ProfileView.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		8AC317EF279ED7B000646711 /* DomainLayer */ = {
@@ -864,9 +881,11 @@
 				8AA697B827A3F30D002A6638 /* SeSACUnitField.swift in Sources */,
 				8A6DB1F72799485E00477705 /* Constant.swift in Sources */,
 				8A15287627A7849D00B958EB /* SeSACGenderIndicator.swift in Sources */,
+				8AC281EE27B5229700C83223 /* CardViewButton.swift in Sources */,
 				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
 				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
 				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,
+				8AC281EC27B5228600C83223 /* CardView.swift in Sources */,
 				8A1A10D927AA426100E57106 /* MyInfoListView.swift in Sources */,
 				8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */,
 				8A063BBE27AA6E14007F446B /* Images+Generated.swift in Sources */,
@@ -908,6 +927,7 @@
 				8A8CDD0127A1BA13006144EA /* CommonViewModelProtocol.swift in Sources */,
 				8AC5D7C927A7EE0800FE83BF /* GenderUseCase.swift in Sources */,
 				8A97EBD127A6EC8600C33BDE /* EmailRootView.swift in Sources */,
+				8AC281F127B5296F00C83223 /* ProfileView.swift in Sources */,
 				8AB37F9F27A94AE20053D0A9 /* SeSACRemoteAPI.swift in Sources */,
 				8ACB7FC927A9847A0068125B /* RequestContainer.swift in Sources */,
 				8AC317F5279F09D200646711 /* VlidateCodeCheckView.swift in Sources */,

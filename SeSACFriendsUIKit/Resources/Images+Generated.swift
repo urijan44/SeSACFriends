@@ -37,7 +37,6 @@ public enum AssetImage {
   public static let profileImg = ImageAsset(name: "profile_img")
   public static let qna = ImageAsset(name: "qna")
   public static let search = ImageAsset(name: "search")
-  public static let sesacFace1 = ImageAsset(name: "sesac_face_1")
   public static let settingAlarm = ImageAsset(name: "setting_alarm")
   public static let siren = ImageAsset(name: "siren")
   public static let tabFriends = ImageAsset(name: "tabFriends")
@@ -52,6 +51,19 @@ public enum AssetImage {
   public static let onboardingImg1 = ImageAsset(name: "onboarding_img1")
   public static let onboardingImg2 = ImageAsset(name: "onboarding_img2")
   public static let onboardingImg3 = ImageAsset(name: "onboarding_img3")
+  public static let sesacBackground1 = ImageAsset(name: "sesac_background_1")
+  public static let sesacBackground2 = ImageAsset(name: "sesac_background_2")
+  public static let sesacBackground3 = ImageAsset(name: "sesac_background_3")
+  public static let sesacBackground4 = ImageAsset(name: "sesac_background_4")
+  public static let sesacBackground5 = ImageAsset(name: "sesac_background_5")
+  public static let sesacBackground6 = ImageAsset(name: "sesac_background_6")
+  public static let sesacBackground7 = ImageAsset(name: "sesac_background_7")
+  public static let sesacBackground8 = ImageAsset(name: "sesac_background_8")
+  public static let sesacFace1 = ImageAsset(name: "sesac_face_1")
+  public static let sesacFace2 = ImageAsset(name: "sesac_face_2")
+  public static let sesacFace3 = ImageAsset(name: "sesac_face_3")
+  public static let sesacFace4 = ImageAsset(name: "sesac_face_4")
+  public static let sesacFace5 = ImageAsset(name: "sesac_face_5")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

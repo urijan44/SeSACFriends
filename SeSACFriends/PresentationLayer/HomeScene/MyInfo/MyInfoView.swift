@@ -17,7 +17,7 @@ struct MyInfoView: View {
     NavigationView {
       VStack {
         NavigationLink {
-          TempTap()
+          ProfileView()
         } label: {
           HStack(alignment: .center, spacing: 13) {
             Image(uiImage: AssetImage.profileImg.image)
