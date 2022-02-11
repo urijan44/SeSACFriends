@@ -8,30 +8,26 @@
 import SwiftUI
 
 struct WantHobbyView: View {
-
-  private var hobbies: [String] = ["코딩", "클라이밍",
-                                   "엄청나게 긴 취미 이 취미는 도대체 무슨 취미일까취미일까취미일까취미일까취미일까취미일까",
-                                   "테니스", "싸이클","게임", "만화", "춤"]
+  var hobbies: [String]
+  var viewWidth: CGFloat
   var body: some View {
-    GeometryReader { proxy in
-      VStack() {
-        Text("하고 싶은 취미")
-          .font(Font(uiFont: .title6r))
-          .foregroundColor(Color(.seSACBlack))
-          .frame(maxWidth: .infinity, alignment: .leading)
-        VStack(alignment: .leading) {
-          ForEach(convertedHobbies(viewWidth: proxy.size.width), id: \.self) { rows in
-            HStack {
-              ForEach(rows, id: \.self) { hobby in
-                HobbyTag(hobby: hobby)
-              }
+    VStack() {
+      Text("하고 싶은 취미")
+        .font(Font(uiFont: .title6r))
+        .foregroundColor(Color(.seSACBlack))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.bottom, 16)
+      VStack(alignment: .leading) {
+        ForEach(convertedHobbies(viewWidth: viewWidth), id: \.self) { rows in
+          HStack {
+            ForEach(rows, id: \.self) { hobby in
+              HobbyTag(hobby: hobby)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
           }
+          .frame(maxWidth: .infinity, alignment: .leading)
         }
       }
     }
-    .padding(16)
   }
 
   func convertedHobbies(viewWidth: CGFloat) -> [[String]] {
@@ -98,16 +94,10 @@ struct WantHobbyView_Previews: PreviewProvider {
       backgroundImage: Image(uiImage: AssetImage.sesacBackground1.image),
       faceImage: Image(uiImage: AssetImage.sesacFace1.image),
       name: "김새싹",
-      title: [
-        .init(title: "좋은 매너"),
-        .init(title: "정확한 시간 약속"),
-        .init(title: "빠른 응답"),
-        .init(title: "친절한 성격"),
-        .init(title: "능숙한 취미 실력"),
-        .init(title: "유익한 시간"),
-      ],
-      hobby: ["달리기", "뜨개질", "산책"],
-      review: []
+      title: .constant([]),
+      hobbies: ["달리기", "뜨개질", "산책"],
+      reviews: ["나이키 에어맥스 96 운동화 구매후기 데일리룩 리뷰 이번주는 정말 상당히 추운 날씨가 계속해서 이어지고... 신발 리뷰입니다 구매는 사실 2021년도 7월에 해주게 되었던 제품인데 언제 올려야 하나 고민고민했다."],
+      isSearchView: true
     )
   }
 }
