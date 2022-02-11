@@ -99,6 +99,7 @@ final class SeSACRemoteAPI {
         if let data = data {
           do {
             try self.dataHandling(data: data, requestType: requestType)
+            UserSession.shared.sessionState = .login
             completion(.success(()))
           } catch {
             //invalid data

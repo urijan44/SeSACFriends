@@ -69,6 +69,16 @@
 		8AC281EC27B5228600C83223 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281EB27B5228600C83223 /* CardView.swift */; };
 		8AC281EE27B5229700C83223 /* CardViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281ED27B5229700C83223 /* CardViewButton.swift */; };
 		8AC281F127B5296F00C83223 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281F027B5296F00C83223 /* ProfileView.swift */; };
+		8AC281F627B58B4C00C83223 /* CardDetailVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281F527B58B4C00C83223 /* CardDetailVIew.swift */; };
+		8AC281F827B58B7A00C83223 /* SeSACTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281F727B58B7A00C83223 /* SeSACTitleView.swift */; };
+		8AC281FA27B58BCF00C83223 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281F927B58BCF00C83223 /* TitleButton.swift */; };
+		8AC281FC27B58BE900C83223 /* WantHobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281FB27B58BE900C83223 /* WantHobbyView.swift */; };
+		8AC2821327B5F31900C83223 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2821227B5F31900C83223 /* ReviewView.swift */; };
+		8AC2821527B65DD000C83223 /* MyGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2821427B65DD000C83223 /* MyGenderView.swift */; };
+		8AC2821727B660D900C83223 /* SeSACButtonSU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2821627B660D900C83223 /* SeSACButtonSU.swift */; };
+		8AC2821927B66C3300C83223 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2821827B66C3300C83223 /* ProfileViewModel.swift */; };
+		8AC2821B27B66D9200C83223 /* SeSACTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2821A27B66D9200C83223 /* SeSACTitle.swift */; };
+		8AC2821E27B6701A00C83223 /* TitleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2821D27B6701A00C83223 /* TitleProtocol.swift */; };
 		8AC317EC279ED5ED00646711 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317EB279ED5ED00646711 /* RxCocoa */; };
 		8AC317EE279ED5F200646711 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC317ED279ED5F100646711 /* RxSwift */; };
 		8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */; };
@@ -201,6 +211,16 @@
 		8AC281EB27B5228600C83223 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8AC281ED27B5229700C83223 /* CardViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewButton.swift; sourceTree = "<group>"; };
 		8AC281F027B5296F00C83223 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8AC281F527B58B4C00C83223 /* CardDetailVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailVIew.swift; sourceTree = "<group>"; };
+		8AC281F727B58B7A00C83223 /* SeSACTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTitleView.swift; sourceTree = "<group>"; };
+		8AC281F927B58BCF00C83223 /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		8AC281FB27B58BE900C83223 /* WantHobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantHobbyView.swift; sourceTree = "<group>"; };
+		8AC2821227B5F31900C83223 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		8AC2821427B65DD000C83223 /* MyGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGenderView.swift; sourceTree = "<group>"; };
+		8AC2821627B660D900C83223 /* SeSACButtonSU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACButtonSU.swift; sourceTree = "<group>"; };
+		8AC2821827B66C3300C83223 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8AC2821A27B66D9200C83223 /* SeSACTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTitle.swift; sourceTree = "<group>"; };
+		8AC2821D27B6701A00C83223 /* TitleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleProtocol.swift; sourceTree = "<group>"; };
 		8AC317F1279ED7CC00646711 /* PhoneAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthUseCase.swift; sourceTree = "<group>"; };
 		8AC317F4279F09D200646711 /* VlidateCodeCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VlidateCodeCheckView.swift; sourceTree = "<group>"; };
 		8AC317F6279F0A4100646711 /* ValidateCodeCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeCheckViewModel.swift; sourceTree = "<group>"; };
@@ -363,7 +383,7 @@
 				8A15287327A7840800B958EB /* SeSACGenderPicker.swift */,
 				8A15287527A7849D00B958EB /* SeSACGenderIndicator.swift */,
 				8A1A10D827AA426100E57106 /* MyInfoListView.swift */,
-				8AC281EB27B5228600C83223 /* CardView.swift */,
+				8AC281F427B58B2D00C83223 /* CardView */,
 				8AC281ED27B5229700C83223 /* CardViewButton.swift */,
 			);
 			path = ReusableView;
@@ -495,8 +515,25 @@
 			isa = PBXGroup;
 			children = (
 				8AC281F027B5296F00C83223 /* ProfileView.swift */,
+				8AC2821827B66C3300C83223 /* ProfileViewModel.swift */,
 			);
 			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		8AC281F427B58B2D00C83223 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				8AC281EB27B5228600C83223 /* CardView.swift */,
+				8AC281F527B58B4C00C83223 /* CardDetailVIew.swift */,
+				8AC2821427B65DD000C83223 /* MyGenderView.swift */,
+				8AC281F727B58B7A00C83223 /* SeSACTitleView.swift */,
+				8AC2821D27B6701A00C83223 /* TitleProtocol.swift */,
+				8AC281F927B58BCF00C83223 /* TitleButton.swift */,
+				8AC2821627B660D900C83223 /* SeSACButtonSU.swift */,
+				8AC281FB27B58BE900C83223 /* WantHobbyView.swift */,
+				8AC2821227B5F31900C83223 /* ReviewView.swift */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 		8AC317EF279ED7B000646711 /* DomainLayer */ = {
@@ -664,6 +701,7 @@
 			isa = PBXGroup;
 			children = (
 				8AD6ADD827A310FA002A0283 /* UserProfile.swift */,
+				8AC2821A27B66D9200C83223 /* SeSACTitle.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -878,6 +916,8 @@
 				8A6DB20027995F7A00477705 /* UIColor+Extension.swift in Sources */,
 				8A961B25279DC65500CC2163 /* RepresentableViewController.swift in Sources */,
 				8A6DB1F42799484400477705 /* UIFont+Extension.swift in Sources */,
+				8AC281FA27B58BCF00C83223 /* TitleButton.swift in Sources */,
+				8AC2821E27B6701A00C83223 /* TitleProtocol.swift in Sources */,
 				8AA697B827A3F30D002A6638 /* SeSACUnitField.swift in Sources */,
 				8A6DB1F72799485E00477705 /* Constant.swift in Sources */,
 				8A15287627A7849D00B958EB /* SeSACGenderIndicator.swift in Sources */,
@@ -885,14 +925,20 @@
 				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
 				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
 				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,
+				8AC281FC27B58BE900C83223 /* WantHobbyView.swift in Sources */,
 				8AC281EC27B5228600C83223 /* CardView.swift in Sources */,
 				8A1A10D927AA426100E57106 /* MyInfoListView.swift in Sources */,
 				8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */,
+				8AC2821327B5F31900C83223 /* ReviewView.swift in Sources */,
+				8AC281F827B58B7A00C83223 /* SeSACTitleView.swift in Sources */,
 				8A063BBE27AA6E14007F446B /* Images+Generated.swift in Sources */,
+				8AC281F627B58B4C00C83223 /* CardDetailVIew.swift in Sources */,
 				8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */,
 				8A6DB1FC27995ED300477705 /* SeSACTextField.swift in Sources */,
 				8A6DB1FF27995F7700477705 /* CGColor+Extension.swift in Sources */,
 				8A674BCD279D844B00EDEA3F /* RepresentableView.swift in Sources */,
+				8AC2821527B65DD000C83223 /* MyGenderView.swift in Sources */,
+				8AC2821727B660D900C83223 /* SeSACButtonSU.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,6 +964,7 @@
 				8AC3181E27A06D0300646711 /* UserSession.swift in Sources */,
 				8A97EBD327A6ECBE00C33BDE /* EmailViewModel.swift in Sources */,
 				8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */,
+				8AC2821927B66C3300C83223 /* ProfileViewModel.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8AD2131F27965316003DEC53 /* SceneDelegate.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
@@ -939,6 +986,7 @@
 				8A961B29279DC8A600CC2163 /* AppDelegateRouter.swift in Sources */,
 				8AB37FAA27A9697C0053D0A9 /* HomeCoordinator.swift in Sources */,
 				8AF5DA9227A6F61A00AE3537 /* OnBoardingContainer.swift in Sources */,
+				8AC2821B27B66D9200C83223 /* SeSACTitle.swift in Sources */,
 				8A97EBCD27A6E52700C33BDE /* BirthdayUseCase.swift in Sources */,
 				8A12FAA927A2307100DD362A /* ValidateCodeUseCase.swift in Sources */,
 				8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */,
