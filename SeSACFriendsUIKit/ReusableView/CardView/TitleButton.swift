@@ -14,23 +14,12 @@ struct TitleButton: View {
     Button {
       check.toggle()
     } label: {
-      ButtonStyle()
+      SeSACButtonSU(check: $check)
         .overlay(
           Text(text)
             .font(Font(uiFont: .title4r))
             .foregroundColor(check ? Color(.seSACWhite) : Color(.seSACBlack))
         )
-    }
-  }
-
-  @ViewBuilder
-  private func ButtonStyle() -> some View {
-    if check {
-      RoundedRectangle(cornerRadius: 8)
-        .foregroundColor(Color(.seSACGreen))
-    } else {
-      RoundedRectangle(cornerRadius: 8)
-        .strokeBorder(Color(.seSACGray4), lineWidth: 1)
     }
   }
 
