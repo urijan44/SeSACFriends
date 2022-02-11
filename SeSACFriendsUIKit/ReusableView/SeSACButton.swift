@@ -71,6 +71,11 @@ final public class SeSACButton: UIControl {
     fatalError("init(coder:) has not been implemented")
   }
 
+  public init(frame: CGRect = .zero, title: String) {
+    self.title = title
+    super.init(frame: frame)
+  }
+
   private func viewSetup() {
     addSubview(containerView)
     containerView.addSubview(textLabel)
@@ -197,15 +202,19 @@ public extension Reactive where Base: SeSACButton {
   }
 }
 
-#if DEBUG
 import SwiftUI
-fileprivate struct SeSACButtonRP: UIViewRepresentable {
+internal struct SeSACButtonRP: UIViewRepresentable {
+  let title: String
   func makeUIView(context: UIViewRepresentableContext<SeSACButtonRP>) -> SeSACButton {
-    SeSACButton()
+    SeSACButton(title: title)
   }
 
   func updateUIView(_ uiView: SeSACButton, context: Context) {
     uiView.title = "버튼 내용"
+  }
+
+  init(title: String = "") {
+    self.title = title
   }
 }
 
@@ -215,4 +224,3 @@ fileprivate struct MyPreviewProvider_Previews: PreviewProvider {
       .frame(width: 343, height: 48)
   }
 }
-#endif
