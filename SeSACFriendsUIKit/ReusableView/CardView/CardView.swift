@@ -8,37 +8,27 @@
 import SwiftUI
 import Combine
 
-public struct SeSACTitle: Identifiable, Hashable {
-  public var id = UUID().uuidString
-  var title: String
-  var check: Bool = false
-}
-
 public struct CardView: View {
 
   private var backgroundImage: Image
   private var faceImage: Image
   private var name: String
-  @State public var title: [SeSACTitle] = [
-   .init(title: "좋은 매너"),
-   .init(title: "정확한 시간 약속"),
-   .init(title: "빠른 응답"),
-   .init(title: "친절한 성격"),
-   .init(title: "능숙한 취미 실력"),
-   .init(title: "유익한 시간"),
-  ]
-  private var hobby: [String]
-  private var review: [String]
-  
+  @Binding public var title: [ConvertedTitle]
+  private var hobbies: [String]
+  private var reviews: [String]
+  private var isSearchView: Bool
   public var body: some View {
     VStack {
       ZStack(alignment: .bottom) {
         backgroundImage
+          .resizable()
+          .aspectRatio(contentMode: .fit)
         faceImage
+          .aspectRatio(contentMode: .fit)
           .offset(y: 4)
       }
       .cornerRadius(8)
-      CardDetailView(titles: $title, isSearchView: true)
+      CardDetailView(titles: $title, hobbies: hobbies, reviews: reviews, isSearchView: isSearchView)
     }
   }
 
@@ -46,16 +36,18 @@ public struct CardView: View {
     backgroundImage: Image,
     faceImage: Image,
     name: String,
-    title: [SeSACTitle],
-    hobby: [String],
-    review: [String]
+    title: Binding<[ConvertedTitle]>,
+    hobbies: [String],
+    reviews: [String],
+    isSearchView: Bool
   ) {
     self.backgroundImage = backgroundImage
     self.faceImage = faceImage
     self.name = name
-    self.title = title
-    self.hobby = hobby
-    self.review = review
+    self._title = title
+    self.hobbies = hobbies
+    self.reviews = reviews
+    self.isSearchView = isSearchView
   }
 }
 
@@ -65,16 +57,10 @@ struct CardView_Previews: PreviewProvider {
       backgroundImage: Image(uiImage: AssetImage.sesacBackground1.image),
       faceImage: Image(uiImage: AssetImage.sesacFace1.image),
       name: "김새싹",
-      title: [
-        .init(title: "좋은 매너"),
-        .init(title: "정확한 시간 약속"),
-        .init(title: "빠른 응답"),
-        .init(title: "친절한 성격"),
-        .init(title: "능숙한 취미 실력"),
-        .init(title: "유익한 시간"),
-       ],
-      hobby: ["달리기", "뜨개질", "산책"],
-      review: []
+      title: .constant([]),
+      hobbies: ["달리기", "뜨개질", "산책", "굉장히 굉장히 긴 취미 생활입니다"],
+      reviews: ["리뷰를 썼습니다!"],
+      isSearchView: true
     )
   }
 }
