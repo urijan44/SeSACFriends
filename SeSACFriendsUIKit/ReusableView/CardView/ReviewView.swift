@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReviewView: View {
-  @Binding var review: String
+  let review: String
   var body: some View {
     VStack {
       HStack {
@@ -22,6 +22,7 @@ struct ReviewView: View {
         }
       }
       ReviewText()
+        .font(Font(uiFont: .body3r))
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     .padding(16)
@@ -41,6 +42,6 @@ struct ReviewView: View {
 
 struct ReviewView_Previews: PreviewProvider {
   static var previews: some View {
-    ReviewView(review: .constant(""))
+    ReviewView(review: "")
   }
 }
