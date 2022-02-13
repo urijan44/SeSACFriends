@@ -53,6 +53,8 @@
 		8A6DB20327995F9B00477705 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103B6279874500039C9FA /* swiftgen.yml */; };
 		8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4103AC27985FC10039C9FA /* Colors+Generated.swift */; };
 		8A6DB20627995FA300477705 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103AE279869630039C9FA /* Colors.xcassets */; };
+		8A7A72EF27B94C4200692051 /* DoubleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A72EE27B94C4200692051 /* DoubleSlider.swift */; };
+		8A7A72F127B94C5200692051 /* DoubleSliderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7A72F027B94C5200692051 /* DoubleSliderViewModel.swift */; };
 		8A8CDD0127A1BA13006144EA /* CommonViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CDD0027A1BA13006144EA /* CommonViewModelProtocol.swift */; };
 		8A8CDD0427A1BABA006144EA /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8CDD0327A1BABA006144EA /* UseCase.swift */; };
 		8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A961B20279DB9C900CC2163 /* AppDelegateCoordinator.swift */; };
@@ -199,6 +201,8 @@
 		8A6DB1E82799365800477705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A6DB1F0279944B900477705 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8A6DB1F8279948C600477705 /* CGColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+Extension.swift"; sourceTree = "<group>"; };
+		8A7A72EE27B94C4200692051 /* DoubleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSlider.swift; sourceTree = "<group>"; };
+		8A7A72F027B94C5200692051 /* DoubleSliderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSliderViewModel.swift; sourceTree = "<group>"; };
 		8A8CDD0027A1BA13006144EA /* CommonViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModelProtocol.swift; sourceTree = "<group>"; };
 		8A8CDD0327A1BABA006144EA /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		8A961B20279DB9C900CC2163 /* AppDelegateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateCoordinator.swift; sourceTree = "<group>"; };
@@ -391,6 +395,7 @@
 				8A1A10D827AA426100E57106 /* MyInfoListView.swift */,
 				8AC281F427B58B2D00C83223 /* CardView */,
 				8AC281ED27B5229700C83223 /* CardViewButton.swift */,
+				8A7A72ED27B94C2D00692051 /* DoubleSlider */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -489,6 +494,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A7A72ED27B94C2D00692051 /* DoubleSlider */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A72EE27B94C4200692051 /* DoubleSlider.swift */,
+				8A7A72F027B94C5200692051 /* DoubleSliderViewModel.swift */,
+			);
+			path = DoubleSlider;
 			sourceTree = "<group>";
 		};
 		8A8CDD0227A1BAB4006144EA /* Protocol */ = {
@@ -937,9 +951,11 @@
 				8AC281FA27B58BCF00C83223 /* TitleButton.swift in Sources */,
 				8AC2821E27B6701A00C83223 /* TitleProtocol.swift in Sources */,
 				8AA697B827A3F30D002A6638 /* SeSACUnitField.swift in Sources */,
+				8A7A72F127B94C5200692051 /* DoubleSliderViewModel.swift in Sources */,
 				8A6DB1F72799485E00477705 /* Constant.swift in Sources */,
 				8A15287627A7849D00B958EB /* SeSACGenderIndicator.swift in Sources */,
 				8AC281EE27B5229700C83223 /* CardViewButton.swift in Sources */,
+				8A7A72EF27B94C4200692051 /* DoubleSlider.swift in Sources */,
 				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
 				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
 				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,
