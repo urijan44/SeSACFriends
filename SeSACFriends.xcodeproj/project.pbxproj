@@ -71,6 +71,7 @@
 		8AB37FA327A958110053D0A9 /* SignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA227A958110053D0A9 /* SignInUseCase.swift */; };
 		8AB37FA827A967850053D0A9 /* HomeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA727A967850053D0A9 /* HomeViewTest.swift */; };
 		8AB37FAA27A9697C0053D0A9 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA927A9697C0053D0A9 /* HomeCoordinator.swift */; };
+		8ABD81B827B9EDD70050FAC9 /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABD81B727B9EDD70050FAC9 /* ProfileUseCase.swift */; };
 		8AC281EC27B5228600C83223 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281EB27B5228600C83223 /* CardView.swift */; };
 		8AC281EE27B5229700C83223 /* CardViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281ED27B5229700C83223 /* CardViewButton.swift */; };
 		8AC281F127B5296F00C83223 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281F027B5296F00C83223 /* ProfileView.swift */; };
@@ -218,6 +219,7 @@
 		8AB37FA227A958110053D0A9 /* SignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCase.swift; sourceTree = "<group>"; };
 		8AB37FA727A967850053D0A9 /* HomeViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTest.swift; sourceTree = "<group>"; };
 		8AB37FA927A9697C0053D0A9 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		8ABD81B727B9EDD70050FAC9 /* ProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUseCase.swift; sourceTree = "<group>"; };
 		8AC281EB27B5228600C83223 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8AC281ED27B5229700C83223 /* CardViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewButton.swift; sourceTree = "<group>"; };
 		8AC281F027B5296F00C83223 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 				8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */,
 				8AC5D7C827A7EE0800FE83BF /* GenderUseCase.swift */,
 				8AB37FA227A958110053D0A9 /* SignInUseCase.swift */,
+				8ABD81B727B9EDD70050FAC9 /* ProfileUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1038,6 +1041,7 @@
 				8A1A10DB27AA45D900E57106 /* MyInfoViewModel.swift in Sources */,
 				8AB37FA827A967850053D0A9 /* HomeViewTest.swift in Sources */,
 				8A191CA927ADA2C800723FD8 /* MyInfoViewController.swift in Sources */,
+				8ABD81B827B9EDD70050FAC9 /* ProfileUseCase.swift in Sources */,
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
 				8AF5DA9B27A706DD00AE3537 /* UserSessionUseCase.swift in Sources */,

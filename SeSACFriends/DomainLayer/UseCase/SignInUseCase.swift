@@ -15,7 +15,7 @@ final class SignInUseCase {
       let remote = SeSACRemoteAPI()
       remote.signIn(idToken: idToken) { result in
         switch result {
-          case .success(()):
+          case .success(let userProfile):
             single(.success(()))
           case .failure(let error):
             single(.failure(error))

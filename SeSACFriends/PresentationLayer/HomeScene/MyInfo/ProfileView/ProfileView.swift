@@ -18,9 +18,23 @@ struct ProfileView: View {
     ScrollView(.vertical, showsIndicators: false) {
       ProfileCardView()
       GenderView()
+        .frame(height: 48)
       FavoriteHobby(hobby: $hobby)
+        .frame(height: 48)
       PhoneSearchOnView(phoneSearchable: $phoneSearchable)
+        .frame(height: 48)
       AgeFilter(leftValue: $viewModel.lowerAge, rightValue: $viewModel.higherAge)
+        .frame(height: 80)
+        .padding(.top, 16)
+      Button {
+        viewModel.requestWithdraw()
+      } label: {
+        Text("탈퇴하기")
+          .font(.callout)
+          .foregroundColor(Color(.seSACBlack))
+          .frame(maxWidth: .infinity, alignment: .leading)
+      }
+      .frame(height: 48)
     }
     .padding(.horizontal, 16)
   }

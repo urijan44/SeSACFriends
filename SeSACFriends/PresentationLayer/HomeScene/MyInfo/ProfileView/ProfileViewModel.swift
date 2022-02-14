@@ -11,6 +11,9 @@ import SeSACFriendsUIKit
 
 final class ProfileViewModel: ObservableObject {
 
+  let useCase = 0
+  weak var coordinator: Coordinator?
+
   @Published var title: [ConvertedTitle] =
   [
     .init(title: "좋은 매너"),
@@ -23,4 +26,8 @@ final class ProfileViewModel: ObservableObject {
 
   @Published var lowerAge: Int = 18
   @Published var higherAge: Int = 65
+
+  func requestWithdraw() {
+
+  }
 }

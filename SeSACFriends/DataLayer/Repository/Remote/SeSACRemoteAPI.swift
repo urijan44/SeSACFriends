@@ -26,14 +26,19 @@ final class SeSACRemoteAPI {
   private let domain = "http://test.monocoding.com:35484"
   private let session = URLSession.shared
 
-  func signIn(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+  func signIn(idToken: String, completion: @escaping (Result<UserProfile, APIError>) -> Void) {
 
     let request = requestContainer.signInRequest(
       url: endPoint.signInURL(),
       idToken: idToken
     )
     task(request: request, requestType: .signIn) { result in
-      completion(result)
+      switch result {
+        case .success(let userSession):
+          completion(.success(userSession.toDomain()))
+        case .failure(let error):
+          completion(.failure(error))
+      }
     }
 //    updateFCMtoken(idToken: idToken) { [unowned self] updateResult in
 //      switch updateResult {
@@ -44,7 +49,7 @@ final class SeSACRemoteAPI {
 //    }
   }
 
-  func signUp(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+  func signUp(idToken: String, completion: @escaping (Result<SignInRemoteUserDTO, APIError>) -> Void) {
 
     let request = requestContainer.signUpRequest(
       url: endPoint.signUpURL(),
@@ -56,7 +61,7 @@ final class SeSACRemoteAPI {
     }
   }
 
-  func withdraw(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+  func withdraw(idToken: String, completion: @escaping (Result<SignInRemoteUserDTO, APIError>) -> Void) {
     let request = requestContainer.withdrawRequst(
       url: endPoint.withdrawURL(),
       idToken: idToken)
@@ -66,7 +71,7 @@ final class SeSACRemoteAPI {
     }
   }
 
-  func updateFCMtoken(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+  func updateFCMtoken(idToken: String, completion: @escaping (Result<SignInRemoteUserDTO, APIError>) -> Void) {
     let request = requestContainer
       .updateFCMTokenRequest(
         url: endPoint.updateFCMTokenURL(),
@@ -78,7 +83,7 @@ final class SeSACRemoteAPI {
     }
   }
 
-  private func task(request: URLRequest, requestType: RequestType, completion: @escaping (Result<Void, APIError>) -> Void) {
+  private func task(request: URLRequest, requestType: RequestType, completion: @escaping (Result<SignInRemoteUserDTO, APIError>) -> Void) {
     let task = session.dataTask(with: request) { data, response, error in
       DispatchQueue.main.async { 
         if error != nil {
@@ -98,9 +103,9 @@ final class SeSACRemoteAPI {
 
         if let data = data {
           do {
-            try self.dataHandling(data: data, requestType: requestType)
+            let userDTO = try self.dataHandling(data: data, requestType: requestType)
             UserSession.shared.sessionState = .login
-            completion(.success(()))
+            completion(.success((userDTO!)))
           } catch {
             //invalid data
             completion(.failure(APIError.unknown))
@@ -115,21 +120,41 @@ final class SeSACRemoteAPI {
     task.resume()
   }
 
-  private func dataHandling(data: Data, requestType: RequestType) throws {
+  @discardableResult
+  private func dataHandling(data: Data, requestType: RequestType) throws -> SignInRemoteUserDTO? {
     switch requestType {
       case .signIn:
         do {
           let payload = try JSONDecoder().decode(SignInRemoteUserDTO.self, from: data)
+          return payload
           UserSession.shared.signIn(signInUserDTO: payload)
         } catch {
           throw APIError.unknown
         }
       case .signUp:
-        let _ = "OK"
+        do {
+          let payload = try JSONDecoder().decode(SignInRemoteUserDTO.self, from: data)
+          return payload
+//          UserSession.shared.signIn(signInUserDTO: payload)
+        } catch {
+          throw APIError.unknown
+        }
       case .withdraw:
-        let _ = "delete"
+        do {
+          let payload = try JSONDecoder().decode(SignInRemoteUserDTO.self, from: data)
+          return payload
+//          UserSession.shared.signIn(signInUserDTO: payload)
+        } catch {
+          throw APIError.unknown
+        }
       case .updateFCMToken:
-        let _ = "OK"
+        do {
+          let payload = try JSONDecoder().decode(SignInRemoteUserDTO.self, from: data)
+          return payload
+//          UserSession.shared.signIn(signInUserDTO: payload)
+        } catch {
+          throw APIError.unknown
+        }
     }
   }
 

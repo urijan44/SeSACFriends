@@ -37,3 +37,22 @@ struct SignInRemoteUserDTO: Codable {
     case reviewedBefore, reportedNum, reportedUser, dodgepenalty, dodgeNum, ageMin, ageMax, searchable, createdAt
   }
 }
+
+extension SignInRemoteUserDTO {
+  func toDomain() -> UserProfile {
+    UserProfile(idToken: id,
+                nickname: nick,
+                birthday: birth.birthday,
+                gender: gender,
+                phoneNumber: phoneNumber,
+                fcmToken: fcMtoken,
+                hobby: hobby,
+                comment: comment,
+                reputation: reputation,
+                sesacFace: sesac,
+                backgroundImage: background,
+                searchable: searchable == 1,
+                ageMin: ageMin,
+                ageMax: ageMax)
+  }
+}
