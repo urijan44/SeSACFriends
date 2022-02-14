@@ -7,30 +7,19 @@
 
 import SwiftUI
 
-final class DoubleSliderViewModel: ObservableObject {
-  @Published var leftValue: Int {
-    didSet {
-      translateMinValue = leftValue.description
-    }
-  }
-  @Published var rightValue: Int {
-    didSet {
-      translateMaxValue = rightValue.description
-    }
-  }
-  @Published private var leftPreviousOffsetX: CGFloat
-  @Published private var rightPreviousOffsetX: CGFloat
+final public class DoubleSliderViewModel: ObservableObject {
+  @Binding var leftValue: Int
+  @Binding var rightValue: Int
+  @State private var leftPreviousOffsetX: CGFloat = 0
+  @State private var rightPreviousOffsetX: CGFloat = 0
   @Published private var leftTransform: Transform
   @Published private var rightTransform: Transform
 
   private let minValue: Int
   private let maxValue: Int
 
-  @State var translateMinValue: String = ""
-  @State var translateMaxValue: String = ""
-
-  let inactiveColor = Color("SeSACGray2")
-  let activeColor = Color("SeSACGreen")
+  let inactiveColor = Color(.seSACGray2)
+  let activeColor = Color(.seSACGreen)
   let ballSize: CGFloat = 22
   let viewSize: CGFloat
 
@@ -38,22 +27,19 @@ final class DoubleSliderViewModel: ObservableObject {
     (viewSize - ballSize * 2) / CGFloat(maxValue - minValue)
   }
 
-  init(minValue: Int, maxValue: Int, leftValue: Int, rightValue: Int, viewSize: CGFloat) {
+  public init(minValue: Int, maxValue: Int, leftValue: Binding<Int>, rightValue: Binding<Int>, viewSize: CGFloat) {
 
     self.minValue = minValue
     self.maxValue = maxValue
 
-    self.leftValue = leftValue
-    self.rightValue = rightValue
+    self._leftValue = leftValue
+    self._rightValue = rightValue
     self.viewSize = viewSize
-
     let unit = (viewSize - ballSize * 2) / CGFloat(maxValue - minValue)
-    self.leftTransform = Transform(ballSize: 22, xOffset: unit * CGFloat(leftValue - minValue))
-    self.rightTransform = Transform(ballSize: 22, xOffset: -(unit * CGFloat(maxValue - rightValue)))
-    self.leftPreviousOffsetX = unit * CGFloat(leftValue - minValue)
-    self.rightPreviousOffsetX = -(unit * CGFloat(maxValue - rightValue))
-    self.translateMinValue = leftValue.description
-    self.translateMinValue = rightValue.description
+    self.leftTransform = Transform(ballSize: 22, xOffset: unit * CGFloat(leftValue.wrappedValue - minValue))
+    self.rightTransform = Transform(ballSize: 22, xOffset: -(unit * CGFloat(maxValue - rightValue.wrappedValue)))
+    self.leftPreviousOffsetX = unit * CGFloat(leftValue.wrappedValue - minValue)
+    self.rightPreviousOffsetX = -(unit * CGFloat(maxValue - rightValue.wrappedValue))
   }
 
   func leftDragOnChaned(_ value: DragGesture.Value) {
@@ -133,7 +119,6 @@ final class DoubleSliderViewModel: ObservableObject {
   var rightBallXOffset: CGFloat {
     rightTransform.xOffset
   }
-
 
   enum Direction {
     case left

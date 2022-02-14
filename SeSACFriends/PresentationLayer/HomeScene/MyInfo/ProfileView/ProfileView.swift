@@ -9,25 +9,20 @@ import SwiftUI
 import SeSACFriendsUIKit
 
 struct ProfileView: View {
-  @State var title: [ConvertedTitle] =
-  [
-    .init(title: "좋은 매너"),
-    .init(title: "정확한 시간 약속"),
-    .init(title: "빠른 응답"),
-    .init(title: "친절한 성격"),
-    .init(title: "능숙한 취미 실력"),
-    .init(title: "유익한 시간"),
-  ]
-
   @State var gender: Int = 0
+  @State var hobby: String = "뜨개질"
+  @State var phoneSearchable: Bool = true
+  @ObservedObject var viewModel = ProfileViewModel()
 
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
       ProfileCardView()
-        .padding(.horizontal, 16)
       GenderView()
-        .padding(.horizontal, 16)
+      FavoriteHobby(hobby: $hobby)
+      PhoneSearchOnView(phoneSearchable: $phoneSearchable)
+      AgeFilter(leftValue: $viewModel.lowerAge, rightValue: $viewModel.higherAge)
     }
+    .padding(.horizontal, 16)
   }
 
   @ViewBuilder
@@ -36,7 +31,7 @@ struct ProfileView: View {
       backgroundImage: Image(uiImage: AssetImage.sesacBackground1.image),
       faceImage: Image(uiImage: AssetImage.sesacFace1.image),
       name: "김새싹",
-      title: $title,
+      title: $viewModel.title,
       hobbies: [],
       reviews: [],
     isSearchView: false)

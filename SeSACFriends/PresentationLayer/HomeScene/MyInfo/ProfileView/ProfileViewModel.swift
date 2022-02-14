@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import SeSACFriendsUIKit
 
-final class ProfileViewModel {
+final class ProfileViewModel: ObservableObject {
 
   @Published var title: [ConvertedTitle] =
   [
@@ -20,4 +20,7 @@ final class ProfileViewModel {
     .init(title: "능숙한 취미 실력"),
     .init(title: "유익한 시간"),
   ]
+
+  @Published var lowerAge: Int = 18
+  @Published var higherAge: Int = 65
 }
