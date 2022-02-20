@@ -9,55 +9,93 @@ import SwiftUI
 
 public struct DoubleSlider: View {
 
-  @ObservedObject var viewModel: DoubleSliderViewModel
+  @Binding var leftValue: Int
+  @Binding var rightValue: Int
+
+  @State var leftPreviousOffsetX: CGFloat = 0
+  @State var rightPreviousOffsetX: CGFloat = 0
+  @State var leftTransform: Transform = Transform(ballSize: 0, xOffset: 0)
+  @State var rightTransform: Transform = Transform(ballSize: 0, xOffset: 0)
+
+  let minValue: Int = 18
+  let maxValue: Int = 65
+
+  let inactiveColor = Color(.seSACGray2)
+  let activeColor = Color(.seSACGreen)
+  let ballSize: CGFloat = 22
+
+  var unit: CGFloat
+
+  @State var viewSize: CGFloat
+
+  @State private var leftOnce = true
+  @State private var rightOnce = true
 
   public var body: some View {
     let leftDrag = DragGesture()
       .onChanged { value in
-        viewModel.leftDragOnChaned(value)
+        leftDragOnChaned(value)
       }
       .onEnded { _ in
-        viewModel.leftDragEnd()
+        leftDragEnd()
       }
 
     let rightDrag = DragGesture()
       .onChanged {
-        viewModel.rightDragOnChanged($0)
+        rightDragOnChanged($0)
       }
       .onEnded { _ in
-        viewModel.rightDragEnded()
+        rightDragEnded()
       }
     VStack {
       ZStack {
         HStack(spacing: 0) {
           Rectangle()
-            .frame(width: viewModel.leftbarWidth, height: 4, alignment: .leading)
-            .foregroundColor(viewModel.inactiveColor)
+            .frame(width: leftbarWidth, height: 4, alignment: .leading)
+            .foregroundColor(inactiveColor)
           Rectangle()
             .frame(maxWidth: .infinity, maxHeight: 4)
-            .foregroundColor(viewModel.activeColor)
+            .foregroundColor(activeColor)
           Rectangle()
-            .frame(width: viewModel.rightBarWidth, height: 4)
-            .foregroundColor(viewModel.inactiveColor)
+            .frame(width: rightBarWidth, height: 4)
+            .foregroundColor(inactiveColor)
         }
         HStack {
           Ball()
-            .frame(width: viewModel.ballSize, height: viewModel.ballSize)
-            .offset(x: viewModel.leftBallXOffset, y: 0)
+            .frame(width: ballSize, height: ballSize)
+            .offset(x: leftBallXOffset, y: 0)
             .gesture(leftDrag)
           Spacer()
           Ball()
-            .frame(width: viewModel.ballSize, height: viewModel.ballSize)
-            .offset(x: viewModel.rightBallXOffset, y: 0)
+            .frame(width: ballSize, height: ballSize)
+            .offset(x: rightBallXOffset, y: 0)
             .gesture(rightDrag)
         }
+      }
+    }
+    .onChange(of: leftValue) { newValue in
+      if leftOnce {
+        self.leftTransform = Transform(ballSize: 22, xOffset: unit * CGFloat(leftValue - minValue))
+        self.leftPreviousOffsetX = unit * CGFloat(leftValue - minValue)
+        leftOnce = false
+      }
+
+    }
+    .onChange(of: rightValue) { newValue in
+      if rightOnce {
+        self.rightTransform = Transform(ballSize: 22, xOffset: -(unit * CGFloat(maxValue - rightValue)))
+        self.rightPreviousOffsetX = -(unit * CGFloat(maxValue - rightValue))
+        rightOnce = false
       }
     }
   }
 
   public init(leftValue: Binding<Int>, rightValue: Binding<Int>, viewSize: CGFloat) {
-    let viewModel = DoubleSliderViewModel(minValue: 18, maxValue: 65, leftValue: leftValue, rightValue: rightValue, viewSize: viewSize)
-    self.viewModel = viewModel
+    self._leftValue = leftValue
+    self._rightValue = rightValue
+    self.viewSize = viewSize
+
+    unit = (viewSize - ballSize * 2) / CGFloat(maxValue - minValue)
   }
 }
 
