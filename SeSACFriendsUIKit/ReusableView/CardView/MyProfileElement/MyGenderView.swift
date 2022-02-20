@@ -24,33 +24,41 @@ public struct MyGenderView: View {
 }
 
 fileprivate struct GenderContol: View {
+  @Binding var gender: Int {
+    didSet {
+      if gender == 1 {
+        isFemail = false
+        isMail = true
+      } else if gender == 0 {
+        isFemail = true
+        isMail = false
+      }
+    }
+  }
+  @State var isMail: Bool = false
+  @State var isFemail: Bool = false
 
-  @Binding var gender: Int
-
-  @State var mail: Bool
-  @State var femail: Bool
   var body: some View {
     HStack(spacing: 8) {
-      GenderButton(text: "남자", isSelected: $mail)
+      GenderButton(text: "남자", isSelected: $isMail)
         .frame(width: 56, height: 48)
         .onTapGesture {
           gender = 1
-          femail = false
-          mail = true
         }
-      GenderButton(text: "여자", isSelected: $femail)
+      GenderButton(text: "여자", isSelected: $isFemail)
         .frame(width: 56, height: 48)
         .onTapGesture {
           gender = 0
-          femail = true
-          mail = false
         }
     }
+    .onChange(of: gender) { newValue in
+      isMail = newValue == 1
+      isFemail = newValue == 0
+    }
   }
+
   init(gender: Binding<Int>) {
     self._gender = gender
-    mail = gender.wrappedValue == 1
-    femail = gender.wrappedValue == 0
   }
 }
 
@@ -66,6 +74,11 @@ fileprivate struct GenderButton: View {
           .font(Font(uiFont: .body3r))
           .foregroundColor(isSelected ? Color(.seSACWhite) : Color(.seSACBlack))
       )
+  }
+
+  init(text: String, isSelected: Binding<Bool>) {
+    self.text = text
+    self._isSelected = isSelected
   }
 }
 
