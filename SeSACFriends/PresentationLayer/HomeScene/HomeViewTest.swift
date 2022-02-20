@@ -16,9 +16,9 @@ struct HomeViewTest: View {
       TabView {
         VStack {
           Text("Welcome SeSAC Friends!!")
-          Text(user.phoneNumber ?? "")
-          Text(user.nickname ?? "")
-          Text(user.fcmToken ?? "")
+          Text(user.phoneNumber)
+          Text(user.nickname)
+          Text(user.fcmToken)
           Button {
             let api = SeSACRemoteAPI()
             api.withdraw(

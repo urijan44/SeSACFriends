@@ -8,14 +8,14 @@
 import Foundation
 
 struct UserProfile: Codable {
-  var idToken: String?
-  var nickname: String?
-  var birthday: Date?
-  var email: String?
-  var gender: Int?
-  var phoneNumber: String?
-  var fcmToken: String?
-  var hobby: String?
+  var idToken: String = ""
+  var nickname: String = ""
+  var birthday: Date = Date()
+  var email: String = ""
+  var gender: Int = -1
+  var phoneNumber: String = ""
+  var fcmToken: String = ""
+  var hobby: String = ""
   var comment: [String] = []
   var reputation: [Int] = .init(repeating: 6, count: 0)
   var sesacFace: Int = 0

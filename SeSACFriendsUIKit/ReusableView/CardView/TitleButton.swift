@@ -11,16 +11,12 @@ struct TitleButton: View {
   @Binding var check: Bool
   @Binding var text: String
   var body: some View {
-    Button {
-      check.toggle()
-    } label: {
-      SeSACButtonSU(check: $check)
-        .overlay(
-          Text(text)
-            .font(Font(uiFont: .title4r))
-            .foregroundColor(check ? Color(.seSACWhite) : Color(.seSACBlack))
-        )
-    }
+    SeSACButtonSU(check: $check)
+      .overlay(
+        Text(text)
+          .font(Font(uiFont: .title4r))
+          .foregroundColor(check ? Color(.seSACWhite) : Color(.seSACBlack))
+      )
   }
 
   init(check: Binding<Bool>, text: Binding<String>) {

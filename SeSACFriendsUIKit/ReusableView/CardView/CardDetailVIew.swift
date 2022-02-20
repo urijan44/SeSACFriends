@@ -8,10 +8,11 @@
 import SwiftUI
 
 internal struct CardDetailView: View {
+  @Binding var nickname: String
   @State var isDetailOpen: Bool = false
   @Binding var titles: [ConvertedTitle]
-  var hobbies: [String]
-  var reviews: [String]
+  @Binding var hobbies: [String]
+  @Binding var reviews: [String]
   private var arrowDegree: Double {
     isDetailOpen ? 270 : 90
   }
@@ -21,7 +22,7 @@ internal struct CardDetailView: View {
   var body: some View {
     VStack(spacing: 0) {
       HStack{
-        Text("김새싹")
+        Text(nickname)
           .padding(16)
         Spacer()
         Button {
@@ -43,6 +44,7 @@ internal struct CardDetailView: View {
             .padding(EdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0))
         }
         ReviewView(review: reviews.first ?? "")
+          .padding(.bottom, 16)
         Spacer()
       }
     }
@@ -51,13 +53,6 @@ internal struct CardDetailView: View {
         .strokeBorder(Color(.seSACGray1), lineWidth: 1)
     )
   }
-
-  func ShowDetailView() -> some View {
-    VStack {
-
-    }
-    .frame(maxHeight: isDetailOpen ? .infinity : .zero)
-  }
 }
 
 struct CardDetailView_Previews: PreviewProvider {
@@ -65,10 +60,10 @@ struct CardDetailView_Previews: PreviewProvider {
     CardView(
       backgroundImage: Image(uiImage: AssetImage.sesacBackground1.image),
       faceImage: Image(uiImage: AssetImage.sesacFace1.image),
-      name: "김새싹",
-      title: .constant([]),
-      hobbies: ["달리기", "뜨개질", "산책"],
-      reviews: [],
+      name: .constant("김새싹"),
+      title: .constant(Reputation.mockReputation()),
+      hobbies: .constant(["달리기", "뜨개질", "산책"]),
+      reviews: .constant([]),
       isSearchView: true
     )
   }

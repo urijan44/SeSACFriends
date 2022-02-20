@@ -9,17 +9,6 @@ import Foundation
 
 final class SeSACRemoteAPI {
 
-  enum APIError: Error {
-    case unknown
-    case unregistered
-    case tokenError
-    case alreadyRegistered
-    case cannotUseNickname
-    case serverError
-    case clientError
-    case alreadyWithdraw
-  }
-
   private lazy var endPoint = EndPointContainer(domain: domain)
   private lazy var requestContainer = RequestContainer()
 
@@ -126,8 +115,8 @@ final class SeSACRemoteAPI {
       case .signIn:
         do {
           let payload = try JSONDecoder().decode(SignInRemoteUserDTO.self, from: data)
-          return payload
           UserSession.shared.signIn(signInUserDTO: payload)
+          return payload
         } catch {
           throw APIError.unknown
         }

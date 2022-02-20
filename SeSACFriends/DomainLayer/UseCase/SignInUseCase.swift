@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 final class SignInUseCase {
+
   func signIn(idToken: String) -> Single<Void> {
     return Single<Void>
       .create { single in
@@ -25,8 +26,8 @@ final class SignInUseCase {
     }
   }
 
-  func errorHandling(_ error: Error) -> SeSACRemoteAPI.APIError {
-    guard let error = error as? SeSACRemoteAPI.APIError else { return .unknown }
+  func errorHandling(_ error: Error) -> APIError {
+    guard let error = error as? APIError else { return .unknown }
     return error
   }
 }

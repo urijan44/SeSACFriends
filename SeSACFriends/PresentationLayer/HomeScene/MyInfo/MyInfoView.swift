@@ -17,7 +17,12 @@ struct MyInfoView: View {
     NavigationView {
       VStack {
         NavigationLink {
-          ProfileView()
+          ProfileView(
+            viewModel: ProfileViewModel(
+              useCase: DefaultProfileUseCase(
+                serverRepository: DefaultServerRepository(
+                  remoteAPIService: SeSACRemoteAPI())),
+              coordinator: nil))
         } label: {
           HStack(alignment: .center, spacing: 13) {
             Image(uiImage: AssetImage.profileImg.image)

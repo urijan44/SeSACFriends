@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-public struct ConvertedTitle: SeSACTitle, Identifiable, Hashable {
+public struct ConvertedTitle: Identifiable, Hashable {
 
-  public init(title: String, check: Bool) {
+  public init(title: String = "", count: Int = 0) {
     self.title = title
-    self.check = check
-  }
+    self.count = count
 
-  public init(title: String) {
-    self.init(title: title, check: false)
+    self.check = count > 0
   }
 
   public var id = UUID().uuidString
-  public var title: String
+  public var title: String = ""
   public var check: Bool = false
+  public var count: Int = 0
 }
 
 internal struct SeSACTitleView: View {
@@ -40,6 +39,7 @@ internal struct SeSACTitleView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 16)
       LazyVGrid(columns: titleColumns) {
+
         ForEach($titles, id: \.self) { sesacTitle in
           TitleButton(check: sesacTitle.check, text: sesacTitle.title)
             .frame(height: 32)

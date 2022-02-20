@@ -34,7 +34,7 @@ final class UserSession {
   private init() {
     userProfile = UserProfile()
     userProfile = load()
-    userProfile.fcmToken = UserDefaults.standard.string(forKey: "FCMToken")
+    userProfile.fcmToken = UserDefaults.standard.string(forKey: "FCMToken") ?? ""
   }
 
   public var sessionState: SessionState = .logout
@@ -113,21 +113,25 @@ final class UserSession {
     userProfile.fcmToken = signInUserDTO.fcMtoken
   }
 
+  func saveUserProfile(userProfile: UserProfile) {
+    self.userProfile = userProfile
+  }
+
   func removeUserSession() {
     userProfile = UserProfile()
-    userProfile.fcmToken = UserDefaults.standard.string(forKey: "FCMToken")
+    userProfile.fcmToken = UserDefaults.standard.string(forKey: "FCMToken") ?? ""
     save()
   }
 
   func signUpBody() -> Data {
     var body = RequestBody()
     body.append(contentsOf: [
-      .init(key: "phoneNumber", value: userProfile.phoneNumber ?? ""),
-      .init(key: "FCMtoken", value: userProfile.fcmToken ?? ""),
-      .init(key: "nick", value: userProfile.nickname ?? ""),
-      .init(key: "birth", value: userProfile.birthday?.birthday ?? ""),
-      .init(key: "email", value: userProfile.email ?? ""),
-      .init(key: "gender", value: userProfile.gender?.description ?? "")
+      .init(key: "phoneNumber", value: userProfile.phoneNumber),
+      .init(key: "FCMtoken", value: userProfile.fcmToken),
+      .init(key: "nick", value: userProfile.nickname),
+      .init(key: "birth", value: userProfile.birthday.birthday),
+      .init(key: "email", value: userProfile.email),
+      .init(key: "gender", value: userProfile.gender.description)
     ])
 
     return body.convertData()
@@ -136,7 +140,7 @@ final class UserSession {
   func updateFMCBody() -> Data {
     var body = RequestBody()
     body.append(contentsOf: [
-      .init(key: "FCMtoken", value: userProfile.fcmToken ?? "")
+      .init(key: "FCMtoken", value: userProfile.fcmToken)
     ])
     return body.convertData()
   }

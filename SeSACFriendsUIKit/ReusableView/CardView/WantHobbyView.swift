@@ -93,10 +93,10 @@ struct WantHobbyView_Previews: PreviewProvider {
     CardView(
       backgroundImage: Image(uiImage: AssetImage.sesacBackground1.image),
       faceImage: Image(uiImage: AssetImage.sesacFace1.image),
-      name: "김새싹",
+      name: .constant("김새싹"),
       title: .constant([]),
-      hobbies: ["달리기", "뜨개질", "산책"],
-      reviews: ["나이키 에어맥스 96 운동화 구매후기 데일리룩 리뷰 이번주는 정말 상당히 추운 날씨가 계속해서 이어지고... 신발 리뷰입니다 구매는 사실 2021년도 7월에 해주게 되었던 제품인데 언제 올려야 하나 고민고민했다."],
+      hobbies: .constant(["달리기", "뜨개질", "산책"]),
+      reviews: .constant(["나이키 에어맥스 96 운동화 구매후기 데일리룩 리뷰 이번주는 정말 상당히 추운 날씨가 계속해서 이어지고... 신발 리뷰입니다 구매는 사실 2021년도 7월에 해주게 되었던 제품인데 언제 올려야 하나 고민고민했다."]),
       isSearchView: true
     )
   }

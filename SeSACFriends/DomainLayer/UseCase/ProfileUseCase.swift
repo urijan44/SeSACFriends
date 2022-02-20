@@ -8,10 +8,31 @@
 import Foundation
 
 protocol ProfileUseCase {
+  func requestSignIn(completion: @escaping (Result<UserProfile, APIError>) -> Void)
   func execute()
 }
 
 final class DefaultProfileUseCase: ProfileUseCase {
+
+  private let serverRepository: ServerRepository
+
+  init(serverRepository: ServerRepository) {
+    self.serverRepository = serverRepository
+  }
+
+  func requestSignIn(completion: @escaping (Result<UserProfile, APIError>) -> Void) {
+    serverRepository.fetchUserProfile { _ in
+
+    } completion: { result in
+      switch result {
+        case .success(let profile):
+          completion(.success(profile))
+        case .failure(let error):
+          completion(.failure(error))
+      }
+    }
+  }
+
   func execute() {
 
   }

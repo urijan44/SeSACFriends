@@ -8,26 +8,54 @@
 import Foundation
 import SwiftUI
 import SeSACFriendsUIKit
+import RxSwift
+import RxRelay
 
 final class ProfileViewModel: ObservableObject {
 
-  let useCase = 0
+  private let useCase: ProfileUseCase
   weak var coordinator: Coordinator?
+  private let bag = DisposeBag()
 
-  @Published var title: [ConvertedTitle] =
-  [
-    .init(title: "좋은 매너"),
-    .init(title: "정확한 시간 약속"),
-    .init(title: "빠른 응답"),
-    .init(title: "친절한 성격"),
-    .init(title: "능숙한 취미 실력"),
-    .init(title: "유익한 시간"),
-  ]
+  @Published var userProfile = UserProfile() {
+    didSet {
+      nickname = userProfile.nickname
+      reputationConvert()
+    }
+  }
 
-  @Published var lowerAge: Int = 18
-  @Published var higherAge: Int = 65
+  @Published var showToast: (state: Bool, message: String) = (false, "")
+
+  @Published var nickname = ""
+  @Published var hobbies: [String] = []
+  @Published var reputation: [ConvertedTitle] = .init(repeating: .init(), count: 6)
+
+  init(useCase: ProfileUseCase, coordinator: Coordinator?) {
+    self.useCase = useCase
+    self.coordinator = coordinator
+  }
 
   func requestWithdraw() {
 
+  }
+
+  func loadUserProfile() {
+    useCase.requestSignIn { [weak self] result in
+      switch result {
+        case .success(let profile):
+          self?.userProfile = profile
+        case .failure(let error):
+          self?.showToast = (true, error.localizedDescription)
+      }
+    }
+  }
+
+  func reputationConvert() {
+    var reputation: [ConvertedTitle] = []
+    for (count, title) in zip(userProfile.reputation, Reputation.allCases) {
+      let convertedTitle = ConvertedTitle(title: title.rawValue, count: count)
+      reputation.append(convertedTitle)
+    }
+    self.reputation = reputation
   }
 }

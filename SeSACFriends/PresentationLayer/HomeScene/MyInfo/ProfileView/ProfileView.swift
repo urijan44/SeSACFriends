@@ -7,23 +7,30 @@
 
 import SwiftUI
 import SeSACFriendsUIKit
+import RxSwift
+import RxCocoa
 
 struct ProfileView: View {
-  @State var gender: Int = 0
-  @State var hobby: String = "뜨개질"
-  @State var phoneSearchable: Bool = true
-  @ObservedObject var viewModel = ProfileViewModel()
+  @ObservedObject var viewModel: ProfileViewModel
 
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
-      ProfileCardView()
-      GenderView()
+      CardView(
+        backgroundImage: Image(uiImage: AssetImage.sesacBackground1.image),
+        faceImage: Image(uiImage: AssetImage.sesacFace1.image),
+        name: $viewModel.nickname,
+        title: $viewModel.reputation,
+        hobbies: $viewModel.hobbies,
+        reviews: $viewModel.userProfile.comment,
+        isSearchView: false)
+        .padding(.bottom, 16)
+      MyGenderView(gender: $viewModel.userProfile.gender)
         .frame(height: 48)
-      FavoriteHobby(hobby: $hobby)
+      FavoriteHobby(hobby: $viewModel.userProfile.hobby)
         .frame(height: 48)
-      PhoneSearchOnView(phoneSearchable: $phoneSearchable)
+      PhoneSearchOnView(phoneSearchable: $viewModel.userProfile.searchable)
         .frame(height: 48)
-      AgeFilter(leftValue: $viewModel.lowerAge, rightValue: $viewModel.higherAge)
+      AgeFilter(leftValue: $viewModel.userProfile.ageMin, rightValue: $viewModel.userProfile.ageMax)
         .frame(height: 80)
         .padding(.top, 16)
       Button {
@@ -37,28 +44,17 @@ struct ProfileView: View {
       .frame(height: 48)
     }
     .padding(.horizontal, 16)
-  }
-
-  @ViewBuilder
-  func ProfileCardView() -> some View {
-    CardView(
-      backgroundImage: Image(uiImage: AssetImage.sesacBackground1.image),
-      faceImage: Image(uiImage: AssetImage.sesacFace1.image),
-      name: "김새싹",
-      title: $viewModel.title,
-      hobbies: [],
-      reviews: [],
-    isSearchView: false)
-  }
-
-  @ViewBuilder
-  func GenderView() -> some View {
-    MyGenderView(gender: $gender)
+    .onAppear {
+      viewModel.loadUserProfile()
+    }
+    .alert(isPresented: $viewModel.showToast.state) {
+      Alert(title: Text("알람"), message: Text(viewModel.showToast.message))
+    }
   }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-  static var previews: some View {
-    ProfileView()
-  }
-}
+//struct ProfileView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    ProfileView(viewModel: ProfileViewModel(useCase: , coordinator: <#T##Coordinator#>))
+//  }
+//}
