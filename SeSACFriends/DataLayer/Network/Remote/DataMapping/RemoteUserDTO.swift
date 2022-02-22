@@ -40,7 +40,7 @@ struct SignInRemoteUserDTO: Codable {
 
 extension SignInRemoteUserDTO {
   func toDomain() -> UserProfile {
-    UserProfile(idToken: id,
+    UserProfile(id: id,
                 nickname: nick,
                 birthday: birth.birthday,
                 gender: gender,

@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol UserStorage {
-  var idToken: String { get set }
+  var id: String { get set }
   var nickname: String { get set }
   var birthday: Date { get set }
   var email: String { get set }

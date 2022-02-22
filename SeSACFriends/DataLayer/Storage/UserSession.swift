@@ -114,7 +114,9 @@ final class UserSession {
   }
 
   func saveUserProfile(userProfile: UserProfile) {
+    let idToken = loadIdToken() ?? ""
     self.userProfile = userProfile
+    saveIdToken(idToken: idToken)
   }
 
   func removeUserSession() {
@@ -141,6 +143,18 @@ final class UserSession {
     var body = RequestBody()
     body.append(contentsOf: [
       .init(key: "FCMtoken", value: userProfile.fcmToken)
+    ])
+    return body.convertData()
+  }
+
+  func updateMyPage() -> Data {
+    var body = RequestBody()
+    body.append(contentsOf: [
+      .init(key: "searchable", value: userProfile.searchable ? "1" : "0"),
+      .init(key: "ageMin", value: userProfile.ageMin.description),
+      .init(key: "ageMax", value: userProfile.ageMax.description),
+      .init(key: "gender", value: userProfile.gender.description),
+      .init(key: "hobby", value: userProfile.hobby)
     ])
     return body.convertData()
   }

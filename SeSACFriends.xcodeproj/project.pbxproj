@@ -68,6 +68,9 @@
 		8A97EBD327A6ECBE00C33BDE /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97EBD227A6ECBE00C33BDE /* EmailViewModel.swift */; };
 		8AA528BC27C25D83000D7C0C /* Reputation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA528BA27C25B72000D7C0C /* Reputation.swift */; };
 		8AA528DF27C29A6D000D7C0C /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA528DE27C29A6D000D7C0C /* UserStorage.swift */; };
+		8AA528E127C2B5C2000D7C0C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA528E027C2B5C2000D7C0C /* UIView+Extension.swift */; };
+		8AA528E327C2B5DA000D7C0C /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA528E227C2B5DA000D7C0C /* UIApplication+Extension.swift */; };
+		8AA528E527C2B617000D7C0C /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA528E427C2B617000D7C0C /* View+Extension.swift */; };
 		8AA697B827A3F30D002A6638 /* SeSACUnitField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */; };
 		8AAB114727BBA21100AF578E /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB114627BBA21100AF578E /* ServerRepository.swift */; };
 		8AB37F9F27A94AE20053D0A9 /* SeSACRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37F9E27A94AE20053D0A9 /* SeSACRemoteAPI.swift */; };
@@ -220,6 +223,9 @@
 		8A97EBD227A6ECBE00C33BDE /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		8AA528BA27C25B72000D7C0C /* Reputation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reputation.swift; sourceTree = "<group>"; };
 		8AA528DE27C29A6D000D7C0C /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		8AA528E027C2B5C2000D7C0C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8AA528E227C2B5DA000D7C0C /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		8AA528E427C2B617000D7C0C /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACUnitField.swift; sourceTree = "<group>"; };
 		8AAB114627BBA21100AF578E /* ServerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRepository.swift; sourceTree = "<group>"; };
 		8AB37F9E27A94AE20053D0A9 /* SeSACRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACRemoteAPI.swift; sourceTree = "<group>"; };
@@ -448,6 +454,9 @@
 				8A09E6E22796B24E005D98BF /* UILabel+extension.swift */,
 				8A6DB1F0279944B900477705 /* UIColor+Extension.swift */,
 				8A6DB1F8279948C600477705 /* CGColor+Extension.swift */,
+				8AA528E027C2B5C2000D7C0C /* UIView+Extension.swift */,
+				8AA528E227C2B5DA000D7C0C /* UIApplication+Extension.swift */,
+				8AA528E427C2B617000D7C0C /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -993,6 +1002,7 @@
 				8AD6ADCC27A3028B002A0283 /* SeSACBirthField.swift in Sources */,
 				8A6DB20027995F7A00477705 /* UIColor+Extension.swift in Sources */,
 				8A961B25279DC65500CC2163 /* RepresentableViewController.swift in Sources */,
+				8AA528E327C2B5DA000D7C0C /* UIApplication+Extension.swift in Sources */,
 				8A59483827B6C63200043001 /* AgeFilter.swift in Sources */,
 				8AA528DF27C29A6D000D7C0C /* UserStorage.swift in Sources */,
 				8A6DB1F42799484400477705 /* UIFont+Extension.swift in Sources */,
@@ -1011,6 +1021,7 @@
 				8AC281FC27B58BE900C83223 /* WantHobbyView.swift in Sources */,
 				8AC2822127B6885500C83223 /* FavoriteHobby.swift in Sources */,
 				8AC281EC27B5228600C83223 /* CardView.swift in Sources */,
+				8AA528E527C2B617000D7C0C /* View+Extension.swift in Sources */,
 				8A1A10D927AA426100E57106 /* MyInfoListView.swift in Sources */,
 				8A59481C27B6AC7400043001 /* SeSACToggleSwitch.swift in Sources */,
 				8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */,
@@ -1020,6 +1031,7 @@
 				8A063BBE27AA6E14007F446B /* Images+Generated.swift in Sources */,
 				8AC281F627B58B4C00C83223 /* CardDetailVIew.swift in Sources */,
 				8AC317FB279F0BF100646711 /* ValidateNumberTextField.swift in Sources */,
+				8AA528E127C2B5C2000D7C0C /* UIView+Extension.swift in Sources */,
 				8A6DB1FC27995ED300477705 /* SeSACTextField.swift in Sources */,
 				8A6DB1FF27995F7700477705 /* CGColor+Extension.swift in Sources */,
 				8A674BCD279D844B00EDEA3F /* RepresentableView.swift in Sources */,
