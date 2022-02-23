@@ -21,6 +21,8 @@
 		8A1A10D727AA40A500E57106 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D627AA40A500E57106 /* MyInfoView.swift */; };
 		8A1A10D927AA426100E57106 /* MyInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D827AA426100E57106 /* MyInfoListView.swift */; };
 		8A1A10DB27AA45D900E57106 /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */; };
+		8A24D84C27C528EA0012CAE2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8A24D84B27C528EA0012CAE2 /* Moya */; };
+		8A24D84E27C529280012CAE2 /* MoyaSeSACAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A24D84D27C529280012CAE2 /* MoyaSeSACAPI.swift */; };
 		8A4103A927985B270039C9FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4103A827985B270039C9FA /* Assets.xcassets */; };
 		8A4103E32798EA7D0039C9FA /* SeSACFriendsUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4103E22798EA7D0039C9FA /* SeSACFriendsUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A4103E62798EA7D0039C9FA /* SeSACFriendsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4103E02798EA7D0039C9FA /* SeSACFriendsUIKit.framework */; };
@@ -185,6 +187,7 @@
 		8A1A10D627AA40A500E57106 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		8A1A10D827AA426100E57106 /* MyInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoListView.swift; sourceTree = "<group>"; };
 		8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
+		8A24D84D27C529280012CAE2 /* MoyaSeSACAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaSeSACAPI.swift; sourceTree = "<group>"; };
 		8A4103A827985B270039C9FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4103AC27985FC10039C9FA /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		8A4103AE279869630039C9FA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -317,6 +320,7 @@
 				8A09E6DC2796A30A005D98BF /* SnapKit in Frameworks */,
 				8AD1305D27A599E200E482BC /* RxGesture in Frameworks */,
 				8AC3180F27A0309400646711 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				8A24D84C27C528EA0012CAE2 /* Moya in Frameworks */,
 				8AC3180D27A0309400646711 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,6 +695,7 @@
 			isa = PBXGroup;
 			children = (
 				8AB37F9E27A94AE20053D0A9 /* SeSACRemoteAPI.swift */,
+				8A24D84D27C529280012CAE2 /* MoyaSeSACAPI.swift */,
 				8A18A8BC27BD2B9000275456 /* DataMapping */,
 				8ACB7FC627A983210068125B /* EndPointContainer.swift */,
 				8ACB7FC827A9847A0068125B /* RequestContainer.swift */,
@@ -862,6 +867,7 @@
 				8AD1305C27A599E200E482BC /* RxGesture */,
 				8AF5DA9427A6FB8700AE3537 /* RxKeyboard */,
 				8ACB7FD027A99D710068125B /* FirebaseAnalytics */,
+				8A24D84B27C528EA0012CAE2 /* Moya */,
 			);
 			productName = SeSACFriends;
 			productReference = 8AD2131927965316003DEC53 /* SeSACFriends.app */;
@@ -903,6 +909,7 @@
 				8AC3180B27A0309400646711 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8AD1305B27A599E200E482BC /* XCRemoteSwiftPackageReference "RxGesture" */,
 				8AF5DA9327A6FB8700AE3537 /* XCRemoteSwiftPackageReference "RxKeyboard" */,
+				8A24D84A27C528EA0012CAE2 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 8AD2131A27965316003DEC53 /* Products */;
 			projectDirPath = "";
@@ -1102,6 +1109,7 @@
 				8AB37FA827A967850053D0A9 /* HomeViewTest.swift in Sources */,
 				8A191CA927ADA2C800723FD8 /* MyInfoViewController.swift in Sources */,
 				8ABD81B827B9EDD70050FAC9 /* ProfileUseCase.swift in Sources */,
+				8A24D84E27C529280012CAE2 /* MoyaSeSACAPI.swift in Sources */,
 				8A674BD5279DAF8A00EDEA3F /* WelcomeImageView.swift in Sources */,
 				8A674BC2279D7EEA00EDEA3F /* WelcomeViewController.swift in Sources */,
 				8AF5DA9B27A706DD00AE3537 /* UserSessionUseCase.swift in Sources */,
@@ -1561,6 +1569,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8A24D84A27C528EA0012CAE2 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 		8AC317FC279F13F900646711 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -1613,6 +1629,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A09E6DA2796A30A005D98BF /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8A24D84B27C528EA0012CAE2 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A24D84A27C528EA0012CAE2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 		8A6DB1EC2799374C00477705 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

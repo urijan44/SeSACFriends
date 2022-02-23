@@ -51,4 +51,10 @@ final class RequestContainer {
     request.httpBody = requestBody
     return request
   }
+
+  func updateMyPageRequest(url: URL, idToken: String, requestBody: Data) -> URLRequest {
+    var request = defaultRequest(url: url, method: .POST, idToken: idToken)
+    request.httpBody = requestBody
+    return request
+  }
 }

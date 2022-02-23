@@ -14,6 +14,7 @@ final class EndPointContainer {
     case user
     case withdraw
     case updateFCMToken = "update_fcm_token"
+    case updateMyPage = "update/mypage"
   }
 
   init(domain: String) {
@@ -37,5 +38,9 @@ final class EndPointContainer {
     domain
       .appendingPathComponent(EndPoint.user.rawValue)
       .appendingPathComponent(EndPoint.updateFCMToken.rawValue)
+  }
+
+  func updateMyPageURL() -> URL {
+    signInURL().appendingPathComponent(EndPoint.updateMyPage.rawValue)
   }
 }

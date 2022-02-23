@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Moya
 
 final class SeSACRemoteAPI {
 
@@ -14,6 +15,8 @@ final class SeSACRemoteAPI {
 
   private let domain = "http://test.monocoding.com:35484"
   private let session = URLSession.shared
+  private let user = UserSession.shared
+  private let provider = MoyaProvider<SeSACAPI>()
 
   func signIn(idToken: String, completion: @escaping (Result<UserProfile, APIError>) -> Void) {
 
@@ -21,6 +24,7 @@ final class SeSACRemoteAPI {
       url: endPoint.signInURL(),
       idToken: idToken
     )
+
     task(request: request, requestType: .signIn) { result in
       switch result {
         case .success(let userSession):
@@ -29,13 +33,6 @@ final class SeSACRemoteAPI {
           completion(.failure(error))
       }
     }
-//    updateFCMtoken(idToken: idToken) { [unowned self] updateResult in
-//      switch updateResult {
-//        case .success:
-//        case .failure(let error):
-//          completion(.failure(error))
-//      }
-//    }
   }
 
   func signUp(idToken: String, completion: @escaping (Result<SignInRemoteUserDTO, APIError>) -> Void) {
@@ -65,10 +62,42 @@ final class SeSACRemoteAPI {
       .updateFCMTokenRequest(
         url: endPoint.updateFCMTokenURL(),
         idToken: idToken,
-        requestBody: UserSession.shared.updateFMCBody())
+        requestBody: user.updateFMCBody())
 
     self.task(request: request, requestType: .updateFCMToken) { result in
       completion(result)
+    }
+  }
+
+  func updateMyPage(idToken: String, completion: @escaping (Result<Void, APIError>) -> Void) {
+    let request = requestContainer
+      .updateMyPageRequest(
+        url: endPoint.updateMyPageURL(),
+        idToken: idToken,
+        requestBody: user.updateMyPage())
+
+    self.task(request: request, requestType: .updateMypage) { result in
+      switch result {
+        case .success:
+          completion(.success(()))
+        case .failure(let error):
+          completion(.failure(error))
+      }
+    }
+  }
+
+  func updateMyPage(completion: @escaping (Result<Void, APIError>) -> Void) {
+    provider.request(.updateMyPage(user.userProfile)) { result in
+      switch result {
+        case .success:
+          completion(.success(()))
+        case .failure(let error):
+          let serviceError = self.reponseCodeHandling(
+            statusCode: error.response?.statusCode ?? 501,
+            requestType: .updateMypage)!
+
+          completion(.failure(serviceError))
+      }
     }
   }
 
@@ -144,6 +173,8 @@ final class SeSACRemoteAPI {
         } catch {
           throw APIError.unknown
         }
+      case .updateMypage:
+        return nil
     }
   }
 
@@ -152,6 +183,7 @@ final class SeSACRemoteAPI {
     case signUp
     case withdraw
     case updateFCMToken
+    case updateMypage
   }
 
   private func reponseCodeHandling(statusCode: Int, requestType: RequestType) -> APIError? {
@@ -165,6 +197,8 @@ final class SeSACRemoteAPI {
         return withdrawErrorContainer(code: statusCode)
       case .updateFCMToken:
         return updateFCMTokenErrorContainer(code: statusCode)
+      case .updateMypage:
+        return updateMyPageErrorContainer(code: statusCode)
     }
   }
 
@@ -226,6 +260,23 @@ final class SeSACRemoteAPI {
   }
 
   private func updateFCMTokenErrorContainer(code: Int) -> APIError? {
+    switch code {
+      case 200:
+        return nil
+      case 401:
+        return .tokenError
+      case 406:
+        return .unregistered
+      case 500:
+        return .serverError
+      case 501:
+        return .clientError
+      default:
+        return .unknown
+    }
+  }
+
+  private func updateMyPageErrorContainer(code: Int) -> APIError? {
     switch code {
       case 200:
         return nil

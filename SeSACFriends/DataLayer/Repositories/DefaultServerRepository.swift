@@ -33,4 +33,14 @@ extension DefaultServerRepository: ServerRepository {
       }
     }
   }
+
+  func updateMyPage(completion: @escaping (Result<Void, APIError>) -> Void) {
+    remoteAPIService.updateMyPage { result in
+      completion(result)
+    }
+  }
+
+  func withdraw(completion: @escaping (Result<Void, APIError>) -> Void) {
+    
+  }
 }
