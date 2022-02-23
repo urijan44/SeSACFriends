@@ -12,7 +12,7 @@ import RxCocoa
 
 struct ProfileView: View {
   @Environment(\.presentationMode) var presentation
-  @ObservedObject var viewModel: ProfileViewModel
+  @StateObject var viewModel: ProfileViewModel
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
       CardView(
@@ -74,8 +74,10 @@ struct ProfileView: View {
       }
     }
     .padding(.horizontal, 16)
-    .onReceive(viewModel.$dismissSignal) { _ in
-      presentation.wrappedValue.dismiss()
+    .onReceive(viewModel.$dismissSignal) { signal in
+      if signal {
+        presentation.wrappedValue.dismiss()
+      }
     }
     .onAppear {
       viewModel.loadUserProfile()
@@ -84,6 +86,9 @@ struct ProfileView: View {
           tabBar.center.y += 88
         }
       }
+    }
+    .onDisappear {
+      print("ProfileView Disappear")
     }
     .alert(isPresented: $viewModel.showToast.state) {
       Alert(title: Text("알람"), message: Text(viewModel.showToast.message))

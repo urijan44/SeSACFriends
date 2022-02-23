@@ -34,9 +34,16 @@ extension DefaultServerRepository: ServerRepository {
     }
   }
 
-  func updateMyPage(completion: @escaping (Result<Void, APIError>) -> Void) {
-    remoteAPIService.updateMyPage { result in
-      completion(result)
+  func updateMyPage(userProfile: UserProfile,
+                    completion: @escaping (Result<Void, APIError>) -> Void) {
+    remoteAPIService.updateMyPage(userProfile: userProfile) { result in
+      switch result {
+        case .success(()):
+          self.cache.saveUserProfile(userProfile: userProfile)
+          completion(.success(()))
+        case .failure:
+          completion(result)
+      }
     }
   }
 

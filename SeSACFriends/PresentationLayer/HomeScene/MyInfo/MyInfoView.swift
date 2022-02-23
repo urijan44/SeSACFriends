@@ -17,7 +17,7 @@ struct MyInfoView: View {
       VStack {
         NavigationLink {
           ProfileView(
-            viewModel: ProfileViewModel(
+            viewModel: ProfileView.ProfileViewModel(
               useCase: DefaultProfileUseCase(
                 serverRepository: DefaultServerRepository(
                   remoteAPIService: SeSACRemoteAPI())),

@@ -39,7 +39,6 @@ extension SeSACAPI: TargetType {
     switch self {
       case .updateMyPage(let user):
         return .requestParameters(parameters: user.updateMyPage(), encoding: URLEncoding.httpBody)
-//        return .uploadCompositeMultipart([], urlParameters: user.updateMyPage())
     }
   }
 

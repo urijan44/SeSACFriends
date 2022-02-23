@@ -10,7 +10,7 @@ import RxSwift
 
 protocol ProfileUseCase {
   func requestSignIn(completion: @escaping (Result<UserProfile, APIError>) -> Void)
-  func update(completion: @escaping (Result<Void, APIError>) -> Void)
+  func update(userProfile: UserProfile, completion: @escaping (Result<Void, APIError>) -> Void)
   func withdraw(completion: @escaping (Result<Void, APIError>) -> Void)
 }
 
@@ -35,8 +35,8 @@ final class DefaultProfileUseCase: ProfileUseCase {
     }
   }
 
-  func update(completion: @escaping (Result<Void, APIError>) -> Void) {
-    serverRepository.updateMyPage { result in
+  func update(userProfile: UserProfile, completion: @escaping (Result<Void, APIError>) -> Void) {
+    serverRepository.updateMyPage(userProfile: userProfile) { result in
       switch result {
         case .success:
           completion(.success(()))

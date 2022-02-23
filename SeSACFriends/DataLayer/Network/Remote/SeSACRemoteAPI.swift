@@ -86,8 +86,10 @@ final class SeSACRemoteAPI {
     }
   }
 
-  func updateMyPage(completion: @escaping (Result<Void, APIError>) -> Void) {
-    provider.request(.updateMyPage(user.userProfile)) { result in
+  func updateMyPage(userProfile: UserProfile, completion: @escaping (Result<Void, APIError>) -> Void) {
+    var copyUserProfile = userProfile
+    copyUserProfile.idToken = user.loadIdToken() ?? ""
+    provider.request(.updateMyPage(copyUserProfile)) { result in
       switch result {
         case .success:
           completion(.success(()))
