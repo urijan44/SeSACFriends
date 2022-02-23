@@ -10,4 +10,7 @@ import Foundation
 protocol ServerRepository {
   func fetchUserProfile(cached: @escaping (UserProfile) -> Void,
                         completion: @escaping (Result<UserProfile, APIError>) -> Void)
+
+  func updateMyPage(completion: @escaping (Result<Void, APIError>) -> Void)
+  func withdraw(completion: @escaping (Result<Void, APIError>) -> Void)
 }

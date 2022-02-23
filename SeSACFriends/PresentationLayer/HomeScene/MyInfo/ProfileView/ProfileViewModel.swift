@@ -29,6 +29,8 @@ final class ProfileViewModel: ObservableObject {
   @Published var nickname = ""
   @Published var hobbies: [String] = []
   @Published var reputation: [ConvertedTitle] = .init(repeating: .init(), count: 6)
+  @Published var isProgressing: Bool = false
+  @Published var dismissSignal: Void = ()
 
   init(useCase: ProfileUseCase, coordinator: Coordinator?) {
     self.useCase = useCase
@@ -39,13 +41,27 @@ final class ProfileViewModel: ObservableObject {
 
   }
 
+  func update() {
+    isProgressing = true
+    useCase.update { [unowned self] result in
+      switch result {
+        case .success(()):
+          dismissSignal = ()
+          isProgressing = false
+        case .failure(let error):
+          showToast = (true, error.localizedDescription)
+          isProgressing = false
+      }
+    }
+  }
+
   func loadUserProfile() {
     useCase.requestSignIn { [weak self] result in
       switch result {
         case .success(let profile):
           self?.userProfile = profile
-        case .failure(let error):
-          self?.showToast = (true, error.localizedDescription)
+        case .failure:
+          self?.showToast = (true, "정보를 가져오는데 실패했습니다.")
       }
     }
   }

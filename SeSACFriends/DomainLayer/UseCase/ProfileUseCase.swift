@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol ProfileUseCase {
   func requestSignIn(completion: @escaping (Result<UserProfile, APIError>) -> Void)
-  func execute()
+  func update(completion: @escaping (Result<Void, APIError>) -> Void)
+  func withdraw(completion: @escaping (Result<Void, APIError>) -> Void)
 }
 
 final class DefaultProfileUseCase: ProfileUseCase {
@@ -33,8 +35,26 @@ final class DefaultProfileUseCase: ProfileUseCase {
     }
   }
 
-  func execute() {
+  func update(completion: @escaping (Result<Void, APIError>) -> Void) {
+    serverRepository.updateMyPage { result in
+      switch result {
+        case .success:
+          completion(.success(()))
+        case .failure(let error):
+          completion(.failure(error))
+      }
+    }
+  }
 
+  func withdraw(completion: @escaping (Result<Void, APIError>) -> Void) {
+    serverRepository.withdraw { result in
+      switch result {
+        case .success:
+          completion(.success(()))
+        case .failure(let error):
+          completion(.failure(error))
+      }
+    }
   }
 }
 

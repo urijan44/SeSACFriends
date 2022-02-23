@@ -22,7 +22,6 @@ class AppDelegateRouter: Router {
       duration: 0.5,
       options: .transitionCrossDissolve,
       animations: nil)
-    
   }
 
   func present(_ viewController: UIViewController, animated: Bool, onDismissed: (() -> Void)?) {

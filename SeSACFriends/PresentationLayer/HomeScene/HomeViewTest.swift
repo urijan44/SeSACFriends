@@ -50,7 +50,7 @@ struct HomeViewTest: View {
             Image(uiImage: AssetImage.tabFriends.image)
             Text("새싹친구")
           }
-        MyInfoViewControllerRP()
+        MyInfoView()
           .tabItem {
             Image(uiImage: AssetImage.tabMyinfo.image)
             Text("내정보")

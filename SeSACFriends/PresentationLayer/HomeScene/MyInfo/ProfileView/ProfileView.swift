@@ -11,8 +11,8 @@ import RxSwift
 import RxCocoa
 
 struct ProfileView: View {
+  @Environment(\.presentationMode) var presentation
   @ObservedObject var viewModel: ProfileViewModel
-
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
       CardView(
@@ -42,14 +42,54 @@ struct ProfileView: View {
           .frame(maxWidth: .infinity, alignment: .leading)
       }
       .frame(height: 48)
+      .toolbar {
+        ToolbarItemGroup(placement: .navigationBarLeading) {
+          Button {
+            presentation.wrappedValue.dismiss()
+            if let tabBar = tabBar(), tabBar.center.y > UIScreen.main.bounds.height - 44 {
+              UIView.animate(withDuration: 0.3) {
+                tabBar.center.y -= 88
+              }
+            }
+          } label : {
+            Image(uiImage: AssetImage.arrow.image)
+          }
+        }
+        ToolbarItemGroup(placement: .navigationBarTrailing) {
+          Button {
+            viewModel.update()
+          } label: {
+            if viewModel.isProgressing {
+              ProgressView()
+                .progressViewStyle(.circular)
+            } else {
+              Text("저장")
+                .font(Font(uiFont: .title3m))
+                .foregroundColor(Color(.seSACBlack))
+            }
+          }
+          .disabled(viewModel.isProgressing)
+          .frame(width: 26, height: 22)
+        }
+      }
     }
     .padding(.horizontal, 16)
+    .onReceive(viewModel.$dismissSignal) { _ in
+      presentation.wrappedValue.dismiss()
+    }
     .onAppear {
       viewModel.loadUserProfile()
+      if let tabBar = tabBar() {
+        UIView.animate(withDuration: 0.3) {
+          tabBar.center.y += 88
+        }
+      }
     }
     .alert(isPresented: $viewModel.showToast.state) {
       Alert(title: Text("알람"), message: Text(viewModel.showToast.message))
     }
+    .navigationTitle("정보 관리")
+    .navigationBarBackButtonHidden(true)
   }
 }
 

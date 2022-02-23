@@ -22,6 +22,7 @@ extension DefaultToastMessage {
 }
 
 struct ToastMessage {
+
   struct PhoneNumberAuthencication: DefaultToastMessage {
     enum MessageType: String {
       case valideType = "전화 번호 인증 시작"

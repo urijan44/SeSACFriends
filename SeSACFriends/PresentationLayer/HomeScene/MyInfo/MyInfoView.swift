@@ -12,7 +12,6 @@ import SeSACFriendsUIKit
 struct MyInfoView: View {
 
   var viewModel = MyInfoViewModel()
-
   var body: some View {
     NavigationView {
       VStack {

@@ -26,3 +26,15 @@ struct UserProfile: Codable, UserStorage {
   var ageMin: Int = 18
   var ageMax: Int = 65
 }
+
+extension UserProfile {
+  func updateMyPage() -> [String: Any] {
+    [
+      "searchable": searchable ? 1 : 0,
+      "ageMin": ageMin,
+      "ageMax": ageMax,
+      "gender": gender,
+      "hobby": hobby
+    ]
+  }
+}
