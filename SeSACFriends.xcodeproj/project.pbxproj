@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A0004B127B0092000C288E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0004B027B0092000C288E0 /* HomeViewController.swift */; };
+		8A03E7EA27C6A3C600B6AEB2 /* SeSACAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03E7E927C6A3C600B6AEB2 /* SeSACAlertView.swift */; };
 		8A063BBE27AA6E14007F446B /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A063BBD27AA6E14007F446B /* Images+Generated.swift */; };
 		8A09E6D92796A2FE005D98BF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6D82796A2FE005D98BF /* Then */; };
 		8A09E6DC2796A30A005D98BF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A09E6DB2796A30A005D98BF /* SnapKit */; };
@@ -171,6 +172,7 @@
 
 /* Begin PBXFileReference section */
 		8A0004B027B0092000C288E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8A03E7E927C6A3C600B6AEB2 /* SeSACAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACAlertView.swift; sourceTree = "<group>"; };
 		8A063BBD27AA6E14007F446B /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		8A09E6C9279699C5005D98BF /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		8A09E6CA279699C5005D98BF /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				8AC281F427B58B2D00C83223 /* CardView */,
 				8AC281ED27B5229700C83223 /* CardViewButton.swift */,
 				8A7A72ED27B94C2D00692051 /* DoubleSlider */,
+				8A03E7E927C6A3C600B6AEB2 /* SeSACAlertView.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 				8A15287627A7849D00B958EB /* SeSACGenderIndicator.swift in Sources */,
 				8AC281EE27B5229700C83223 /* CardViewButton.swift in Sources */,
 				8A7A72EF27B94C4200692051 /* DoubleSlider.swift in Sources */,
+				8A03E7EA27C6A3C600B6AEB2 /* SeSACAlertView.swift in Sources */,
 				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
 				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
 				8A6DB20427995F9E00477705 /* Colors+Generated.swift in Sources */,

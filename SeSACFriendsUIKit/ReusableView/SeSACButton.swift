@@ -34,7 +34,7 @@ final public class SeSACButton: UIControl {
     $0.font = .body3r
   }
 
-  private lazy var style: Style = .fill
+  lazy var style: Style = .fill
 
   public var isInactive: Bool = false {
     didSet {
@@ -102,6 +102,10 @@ final public class SeSACButton: UIControl {
       case .cancel:
         updateCancel()
     }
+  }
+
+  public func swiftUIBridge() {
+    uiStyleUpdate()
   }
 
   private func updateFillView() {
@@ -205,22 +209,30 @@ public extension Reactive where Base: SeSACButton {
 import SwiftUI
 internal struct SeSACButtonRP: UIViewRepresentable {
   let title: String
+  let style: SeSACButton.Style
+
   func makeUIView(context: UIViewRepresentableContext<SeSACButtonRP>) -> SeSACButton {
-    SeSACButton(title: title)
+    let button = SeSACButton(style: style)
+    button.title = self.title
+    return button
   }
 
   func updateUIView(_ uiView: SeSACButton, context: Context) {
-    uiView.title = "버튼 내용"
+//    uiView.title = self.title
+//    uiView.style = self.style
+//    uiView.swiftUIBridge()
+
   }
 
-  init(title: String = "") {
+  init(title: String = "", style: SeSACButton.Style) {
     self.title = title
+    self.style = style
   }
 }
 
 fileprivate struct MyPreviewProvider_Previews: PreviewProvider {
   static var previews: some View {
-    SeSACButtonRP()
+    SeSACButtonRP(style: .fill)
       .frame(width: 343, height: 48)
   }
 }
