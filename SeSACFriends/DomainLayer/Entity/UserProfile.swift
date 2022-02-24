@@ -9,7 +9,7 @@ import Foundation
 import SeSACFriendsUIKit
 
 struct UserProfile: Codable, UserStorage {
-  var idToken: String = ""
+  var idToken: String?
   var id: String = ""
   var nickname: String = ""
   var birthday: Date = Date()

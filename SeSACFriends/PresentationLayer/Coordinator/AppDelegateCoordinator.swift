@@ -21,7 +21,7 @@ final class AppDelegateCoordinator: Coordinator {
 
     //어캐 처리하지...
     //계정 정보가 있으면 홈탭!
-    if let idToken = UserSession.shared.loadIdToken() {
+    if let idToken = UserSession.shared.loadIdToken(), !idToken.isEmpty {
       let useCase = SignInUseCase()
       useCase.signIn(idToken: idToken)
         .subscribe(onSuccess: { [weak self] _ in

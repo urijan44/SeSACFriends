@@ -21,18 +21,7 @@ struct HomeViewTest: View {
           Text(user.nickname)
           Text(user.fcmToken)
           Button {
-            let api = SeSACRemoteAPI()
-            api.withdraw(
-              idToken: UserSession.shared.loadIdToken() ?? "") { result in
-                switch result {
-                  case .success:
-                    UserSession.shared.removeUserSession()
-                    UserSession.shared.sessionState = .logout
-                    fatalError("app down")
-                  case .failure(let error):
-                    print(error)
-                }
-              }
+            
           } label: {
             Text("탈퇴하기")
           }

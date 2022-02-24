@@ -34,6 +34,7 @@ extension ProfileView {
     @Published var isProgressing: Bool = false
     @Published var dismissSignal: Bool = false
     @Published var showWithdrawAlert = false
+    @Published var withdrawSuccessSignal = false
 
     init(useCase: ProfileUseCase, coordinator: Coordinator?) {
       self.useCase = useCase
@@ -45,7 +46,8 @@ extension ProfileView {
       useCase.withdraw { [weak self] result in
         switch result {
           case .success(()):
-            self?.dismissSignal = true
+            (self?.coordinator as? AppDelegateCoordinator)?.startOnBoardingCoordinator()
+            self?.withdrawSuccessSignal = true
           case .failure(let error):
             self?.showToast = (true, error.localizedDescription)
             self?.isProgressing = false

@@ -97,13 +97,14 @@ struct ProfileView: View {
       }
       .navigationTitle("정보 관리")
       .navigationBarBackButtonHidden(true)
+
       Color.clear
         .allowsHitTesting(false)
         .sesacAlert(isPresenting: $viewModel.showWithdrawAlert) {
           SeSACAlert(title: "정말 탈퇴하시겠습니까?", message: "탈퇴하시면 새싹 프렌즈를 이용할 수 없어요ㅠ") {
             viewModel.showWithdrawAlert.toggle()
           } confirmAction: {
-            presentation.wrappedValue.dismiss()
+            viewModel.requestWithdraw()
             tabBarReset()
           }
         }
@@ -118,9 +119,3 @@ struct ProfileView: View {
     }
   }
 }
-
-//struct ProfileView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    ProfileView(viewModel: .init(useCase: DefaultProfileUseCase(serverRepository: DefaultServerRepository(remoteAPIService: SeSACRemoteAPI())), coordinator: nil))
-//  }
-//}

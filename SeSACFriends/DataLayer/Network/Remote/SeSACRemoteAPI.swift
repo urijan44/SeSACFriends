@@ -103,6 +103,20 @@ final class SeSACRemoteAPI {
     }
   }
 
+  func withdraw(userProfile: UserProfile, completion: @escaping (Result<Void, APIError>) -> Void) {
+    provider.request(.withdraw(user.userProfile)) { result in
+      switch result {
+        case .success:
+          completion(.success(()))
+        case .failure(let error):
+          let serviceError = self.reponseCodeHandling(
+            statusCode: error.response?.statusCode ?? 501,
+            requestType: .withdraw)!
+          completion(.failure(serviceError))
+      }
+    }
+  }
+
   private func task(request: URLRequest, requestType: RequestType, completion: @escaping (Result<SignInRemoteUserDTO, APIError>) -> Void) {
     let task = session.dataTask(with: request) { data, response, error in
       DispatchQueue.main.async { 

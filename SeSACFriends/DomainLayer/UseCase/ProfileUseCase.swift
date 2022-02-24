@@ -56,6 +56,10 @@ final class DefaultProfileUseCase: ProfileUseCase {
       }
     }
   }
+
+  deinit {
+    print("ProfileUseCase Deinit")
+  }
 }
 
 struct ProfileUseCaseRequest {

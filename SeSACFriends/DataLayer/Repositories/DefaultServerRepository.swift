@@ -48,6 +48,14 @@ extension DefaultServerRepository: ServerRepository {
   }
 
   func withdraw(completion: @escaping (Result<Void, APIError>) -> Void) {
-    
+    remoteAPIService.withdraw(userProfile: cache.userProfile) { [weak self] result in
+      switch result {
+        case .success(()):
+          self?.cache.removeUserSession()
+          completion(.success(()))
+        case .failure:
+          completion(result)
+      }
+    }
   }
 }
