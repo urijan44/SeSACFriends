@@ -11,7 +11,8 @@ import SeSACFriendsUIKit
 
 struct MyInfoView: View {
 
-  var viewModel = MyInfoViewModel()
+  var viewModel: MyInfoViewModel
+  weak var coordinator: Coordinator?
   var body: some View {
     NavigationView {
       VStack {
@@ -21,7 +22,7 @@ struct MyInfoView: View {
               useCase: DefaultProfileUseCase(
                 serverRepository: DefaultServerRepository(
                   remoteAPIService: SeSACRemoteAPI())),
-              coordinator: nil))
+              coordinator: coordinator))
         } label: {
           HStack(alignment: .center, spacing: 13) {
             Image(uiImage: AssetImage.profileImg.image)
@@ -50,10 +51,9 @@ struct MyInfoView: View {
       .navigationBarTitleDisplayMode(.inline)
     }
   }
-}
 
-struct MyInfoView_Previews: PreviewProvider {
-  static var previews: some View {
-    MyInfoView()
+  init(viewModel: MyInfoViewModel, coordinator: Coordinator?) {
+    self.viewModel = viewModel
+    self.coordinator = coordinator
   }
 }

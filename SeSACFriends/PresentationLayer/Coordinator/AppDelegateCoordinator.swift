@@ -69,10 +69,6 @@ final class AppDelegateCoordinator: Coordinator {
     guard let router = (self.router as? AppDelegateRouter) else { return }
     navigationController = router.navigationController
     navigationController.viewControllers = []
-    router.start()
-    let childRouter = OnBoardingNavigationRouter(navigationController: navigationController)
-    let coordinator = HomeCoordinator(router: childRouter)
-    presentChild(coordinator, animated: true)
-    
+    router.start(coordinator: self)
   }
 }

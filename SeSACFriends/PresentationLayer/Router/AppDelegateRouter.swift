@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class AppDelegateRouter: Router {
   let window: UIWindow
@@ -16,6 +17,16 @@ class AppDelegateRouter: Router {
 
   func start() {
     window.rootViewController = navigationController
+    window.makeKeyAndVisible()
+    UIView.transition(
+      with: window,
+      duration: 0.5,
+      options: .transitionCrossDissolve,
+      animations: nil)
+  }
+
+  func start(coordinator: Coordinator) {
+    window.rootViewController = UIHostingController(rootView: TabContentView(coordinator: coordinator))
     window.makeKeyAndVisible()
     UIView.transition(
       with: window,

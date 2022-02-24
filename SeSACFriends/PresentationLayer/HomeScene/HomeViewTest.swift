@@ -10,6 +10,7 @@ import SeSACFriendsUIKit
 
 struct HomeViewTest: View {
   @Environment(\.presentationMode) var presentationMode
+  weak var coordinator: Coordinator?
   let user = UserSession.shared.userProfile
   var body: some View {
     ZStack {
@@ -50,7 +51,10 @@ struct HomeViewTest: View {
             Image(uiImage: AssetImage.tabFriends.image)
             Text("새싹친구")
           }
-        MyInfoView()
+        MyInfoView(
+          viewModel: MyInfoViewModel(),
+          coordinator: coordinator
+        )
           .tabItem {
             Image(uiImage: AssetImage.tabMyinfo.image)
             Text("내정보")
@@ -58,6 +62,10 @@ struct HomeViewTest: View {
       }
       .tabViewTintColor(tintColor: .seSACGreen)
     }
+  }
+
+  init(coordinator: Coordinator? = nil) {
+    self.coordinator = coordinator
   }
 }
 

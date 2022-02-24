@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 import SeSACFriendsUIKit
-import RxSwift
-import RxRelay
 
 extension ProfileView {
   final class ProfileViewModel: ObservableObject {
@@ -20,7 +18,6 @@ extension ProfileView {
 
     private let useCase: ProfileUseCase
     weak var coordinator: Coordinator?
-    private let bag = DisposeBag()
 
     @Published var userProfile = UserProfile() {
       didSet {
@@ -36,6 +33,7 @@ extension ProfileView {
     @Published var reputation: [ConvertedTitle] = .init(repeating: .init(), count: 6)
     @Published var isProgressing: Bool = false
     @Published var dismissSignal: Bool = false
+    @Published var showWithdrawAlert = false
 
     init(useCase: ProfileUseCase, coordinator: Coordinator?) {
       self.useCase = useCase
@@ -43,20 +41,29 @@ extension ProfileView {
     }
 
     func requestWithdraw() {
-
+      isProgressing = true
+      useCase.withdraw { [weak self] result in
+        switch result {
+          case .success(()):
+            self?.dismissSignal = true
+          case .failure(let error):
+            self?.showToast = (true, error.localizedDescription)
+            self?.isProgressing = false
+        }
+      }
     }
 
     func update() {
       isProgressing = true
 
-      useCase.update(userProfile: userProfile) { [unowned self] result in
+      useCase.update(userProfile: userProfile) { [weak self] result in
         switch result {
           case .success(()):
-            dismissSignal = true
-            isProgressing = false
+            self?.dismissSignal = true
+            self?.isProgressing = false
           case .failure(let error):
-            showToast = (true, error.localizedDescription)
-            isProgressing = false
+            self?.showToast = (true, error.localizedDescription)
+            self?.isProgressing = false
         }
       }
     }

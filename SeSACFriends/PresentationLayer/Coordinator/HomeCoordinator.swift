@@ -9,16 +9,24 @@ import UIKit
 import SwiftUI
 
 final class HomeCoordinator: Coordinator {
-  var children: [Coordinator] = []
   var router: Router
 
-  lazy var homeView = HomeViewController()
+  var children: [Coordinator] = []
+  var rootView: UINavigationController?
 
-  init(router: Router) {
+//  lazy var homeView = HomeViewController()
+  lazy var homeView = UIHostingController(rootView: HomeViewTest())
+
+  init(router: Router, rootView: UINavigationController) {
+    self.rootView = rootView
     self.router = router
   }
 
   func present(animated: Bool, onDismissed: (() -> Void)?) {
-    router.present(homeView, animated: animated)
+    guard let router = router as? OnBoardingNavigationRouter else { return }
+    router.start(homeView, animated: true, onDismissed: nil)
+    router.navigationController.navigationBar.isHidden = true
+    router.navigationController.isNavigationBarHidden = true
+    router.navigationController.setNavigationBarHidden(true, animated: false)
   }
 }

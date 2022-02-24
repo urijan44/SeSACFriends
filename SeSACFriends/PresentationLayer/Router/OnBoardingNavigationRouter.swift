@@ -8,7 +8,7 @@
 import UIKit
 
 final class OnBoardingNavigationRouter: NSObject {
-  private let navigationController: UINavigationController
+  let navigationController: UINavigationController
   private var routerRootController: UIViewController?
   private var onDismissForViewController: [UIViewController: (() -> Void)] = [:]
 
