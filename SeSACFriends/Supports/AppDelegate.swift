@@ -12,6 +12,7 @@ import Firebase
 import FirebaseMessaging
 import FirebaseAnalytics
 import Toast
+import NMapsMap
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,6 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     Messaging.messaging().delegate = self
+
+    if let nmCliendKey = Bundle.main.infoDictionary?["NMClient"] as? String {
+      NMFAuthManager.shared().clientId = nmCliendKey
+    } else {
+      fatalError("Error: NMClientKey Can Not Found!!")
+    }
 
     Thread.sleep(forTimeInterval: 2.0)
     return true
