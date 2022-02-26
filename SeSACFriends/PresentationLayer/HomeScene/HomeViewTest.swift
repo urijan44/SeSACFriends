@@ -15,17 +15,7 @@ struct HomeViewTest: View {
   var body: some View {
     ZStack {
       TabView {
-        VStack {
-          Text("Welcome SeSAC Friends!!")
-          Text(user.phoneNumber)
-          Text(user.nickname)
-          Text(user.fcmToken)
-          Button {
-            
-          } label: {
-            Text("탈퇴하기")
-          }
-        }
+        HomeMapViewRepresentable()
         .tabItem {
           Image(uiImage: AssetImage.tabHome.image)
           Text("홈")
