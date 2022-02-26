@@ -103,6 +103,9 @@ SeSACFriends.entitlements
 
 NMapsMap.framework/
 /*.xcconfig
+./*.xcconfig
+*.xcconfig
+Config.*
 
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods
 
