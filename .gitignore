@@ -102,6 +102,7 @@ GoogleService-Info.plist
 SeSACFriends.entitlements
 
 NMapsMap.framework/
+/*.xcconfig
 
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods
 
