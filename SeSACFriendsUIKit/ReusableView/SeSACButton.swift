@@ -6,10 +6,6 @@
 //
 
 import UIKit
-import SnapKit
-import Then
-import RxSwift
-import RxCocoa
 
 final public class SeSACButton: UIControl {
 
@@ -24,15 +20,19 @@ final public class SeSACButton: UIControl {
     case disabled
   }
 
-  private lazy var containerView = UIView().then {
-    $0.layer.cornerRadius = radius
-    $0.clipsToBounds = true
-  }
+  private lazy var containerView: UIView = {
+    let view = UIView()
+    view.layer.cornerRadius = radius
+    view.clipsToBounds = true
+    return view
+  }()
 
-  private lazy var textLabel = UILabel().then {
-    $0.textAlignment = .center
-    $0.font = .body3r
-  }
+  private lazy var textLabel: UILabel = {
+    let label = UILabel()
+    label.textAlignment = .center
+    label.font = .body3r
+    return label
+  }()
 
   lazy var style: Style = .fill
 
@@ -84,13 +84,8 @@ final public class SeSACButton: UIControl {
   }
 
   private func layoutSetup() {
-    containerView.snp.makeConstraints { make in
-      make.edges.equalTo(self)
-    }
-
-    textLabel.snp.makeConstraints { make in
-      make.edges.equalTo(containerView)
-    }
+    containerView.autoresizingMask = [.flexibleHeight ,.flexibleWidth]
+    textLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
   }
 
   private func uiStyleUpdate() {
@@ -197,42 +192,5 @@ public extension SeSACButton {
     self.init()
     self.style = style
     uiStyleUpdate()
-  }
-}
-
-public extension Reactive where Base: SeSACButton {
-  var tap: ControlEvent<Void> {
-    controlEvent(.touchUpInside)
-  }
-}
-
-import SwiftUI
-internal struct SeSACButtonRP: UIViewRepresentable {
-  let title: String
-  let style: SeSACButton.Style
-
-  func makeUIView(context: UIViewRepresentableContext<SeSACButtonRP>) -> SeSACButton {
-    let button = SeSACButton(style: style)
-    button.title = self.title
-    return button
-  }
-
-  func updateUIView(_ uiView: SeSACButton, context: Context) {
-//    uiView.title = self.title
-//    uiView.style = self.style
-//    uiView.swiftUIBridge()
-
-  }
-
-  init(title: String = "", style: SeSACButton.Style) {
-    self.title = title
-    self.style = style
-  }
-}
-
-fileprivate struct MyPreviewProvider_Previews: PreviewProvider {
-  static var previews: some View {
-    SeSACButtonRP(style: .fill)
-      .frame(width: 343, height: 48)
   }
 }

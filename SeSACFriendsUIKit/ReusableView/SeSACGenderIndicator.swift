@@ -6,10 +6,6 @@
 //
 
 import UIKit
-import Then
-import SnapKit
-import RxSwift
-import RxCocoa
 
 final public class SeSACGenderIndicator: UIControl {
 
@@ -24,13 +20,17 @@ final public class SeSACGenderIndicator: UIControl {
     }
   }
 
-  private let genderImage = UIImageView().then {
-    $0.contentMode = .scaleAspectFit
-  }
+  private let genderImage: UIImageView = {
+    let view = UIImageView()
+    view.contentMode = .scaleAspectFit
+    return view
+  }()
 
-  private let label = UILabel(typoStyle: .title2).then {
-    $0.textAlignment = .center
-  }
+  private let label: UILabel = {
+    let label = UILabel(typoStyle: .title2)
+    label.textAlignment = .center
+    return label
+  }()
   private var gender: Gender {
     didSet {
       updateUI()
@@ -83,29 +83,27 @@ final public class SeSACGenderIndicator: UIControl {
   }
 
   private func layoutConfigure() {
-    genderImage.snp.makeConstraints { make in
-      make.size.equalTo(snp.height).multipliedBy(0.55)
-      make.centerX.equalToSuperview()
-      make.top.equalToSuperview().offset(14)
-    }
+    genderImage.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      genderImage.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.55),
+      genderImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.55),
+      genderImage.centerXAnchor.constraint(equalTo: centerXAnchor),
+      genderImage.topAnchor.constraint(equalTo: topAnchor, constant: 14)
+    ])
 
-    label.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview()
-      make.centerX.equalToSuperview()
-      make.top.equalTo(genderImage.snp.bottom).offset(2)
-    }
+    label.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      label.leadingAnchor.constraint(equalTo: leadingAnchor),
+      label.trailingAnchor.constraint(equalTo: trailingAnchor),
+      label.centerXAnchor.constraint(equalTo: centerXAnchor),
+      label.topAnchor.constraint(equalTo: genderImage.bottomAnchor, constant: 2)
+    ])
   }
 
   public override func layoutSubviews() {
     super.layoutSubviews()
     layer.cornerRadius = 8
     layer.borderColor = .seSACGray3
-  }
-}
-
-extension Reactive where Base: SeSACGenderIndicator {
-  public var tap: ControlEvent<Void> {
-    return base.rx.controlEvent(.touchUpInside)
   }
 }
 

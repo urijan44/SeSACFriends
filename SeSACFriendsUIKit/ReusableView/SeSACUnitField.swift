@@ -7,12 +7,7 @@
 
 import UIKit
 
-import UIKit
-import SnapKit
-import RxSwift
-import RxCocoa
-
-public class SeSACUnitField: UIControl {
+open class SeSACUnitField: UIControl {
 
   public enum FieldState {
     case inactive
@@ -23,19 +18,25 @@ public class SeSACUnitField: UIControl {
     case success
   }
 
-  private lazy var textField = UITextField().then {
-    $0.isEnabled = false
-    $0.font = .title4r
-  }
+  public lazy var textField: UITextField = {
+    let view = UITextField()
+    view.isEnabled = false
+    view.font = .title4r
+    return view
+  }()
 
-  private lazy var subTextLabel = UILabel().then {
-    $0.font = .body4r
-    $0.isHidden = false
-  }
+  private lazy var subTextLabel: UILabel = {
+    let view = UILabel()
+    view.font = .body4r
+    view.isHidden = false
+    return view
+  }()
 
-  private lazy var unitLabel = UILabel().then {
-    $0.font = .title2r
-  }
+  private lazy var unitLabel: UILabel = {
+    let label = UILabel()
+    label.font = .title2r
+    return label
+  }()
 
   private var bottomBorder = UIView()
   private var bottomBorderWidth: CGFloat = 1
@@ -68,10 +69,6 @@ public class SeSACUnitField: UIControl {
     }
   }
 
-  public lazy var rxText: ControlProperty<String?> = {
-    self.textField.rx.text
-  }()
-
   public var placeholder: String = "" {
     didSet {
       textField.placeholder = placeholder
@@ -101,7 +98,7 @@ public class SeSACUnitField: UIControl {
     setupView()
   }
 
-  required init?(coder: NSCoder) {
+  public required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -129,28 +126,34 @@ public class SeSACUnitField: UIControl {
   }
 
   private func layoutSetup() {
-    unitLabel.snp.makeConstraints { make in
-      make.centerY.equalToSuperview()
-      make.trailing.equalToSuperview().priority(.low)
-    }
+    unitLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      unitLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+      unitLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+    ])
+    unitLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
 
-    textField.snp.makeConstraints { make in
-      make.leading.equalToSuperview().inset(12)
-      make.trailing.equalTo(unitLabel.snp.leading).offset(-12)
-      make.centerY.equalToSuperview()
-    }
+    textField.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      unitLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+      unitLabel.trailingAnchor.constraint(equalTo: unitLabel.leadingAnchor, constant: -12),
+      unitLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+    ])
 
-    bottomBorder.snp.makeConstraints { make in
-      make.leading.equalToSuperview()
-      make.trailing.equalTo(unitLabel.snp.leading).offset(-4)
-      make.height.equalTo(1)
-      make.top.equalTo(textField.snp.bottom).offset(12)
-    }
+    bottomBorder.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      bottomBorder.leadingAnchor.constraint(equalTo: leadingAnchor),
+      bottomBorder.trailingAnchor.constraint(equalTo: unitLabel.leadingAnchor, constant: -4),
+      bottomBorder.heightAnchor.constraint(equalToConstant: 1),
+      bottomBorder.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 12)
+    ])
 
-    subTextLabel.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview().inset(12)
-      make.top.equalTo(bottomBorder.snp.bottom).offset(4)
-    }
+    subTextLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      subTextLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+      subTextLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+      subTextLabel.topAnchor.constraint(equalTo: bottomBorder.bottomAnchor, constant: 4)
+    ])
   }
 
   private func uiStateUpdate() {

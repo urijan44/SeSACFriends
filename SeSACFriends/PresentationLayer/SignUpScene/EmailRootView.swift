@@ -34,7 +34,7 @@ final class EmailRootView: RepresentableView {
     $0.text = "휴대폰 번호 변경 시 인증을 위해 사용해요"
   }
 
-  let emailTextField = SeSACTextField().then {
+  let emailTextField = SeSACTextFieldRx().then {
     $0.keyboardType = .emailAddress
     $0.placeholder = "SeSAC@email.com"
   }

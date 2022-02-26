@@ -6,32 +6,31 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
-final public class SeSACGenderPicker: UIControl {
+open class SeSACGenderPicker: UIControl {
   public enum Gender: Int {
     case male = 1
     case female = 0
     case none = -1
   }
 
-  public var selectedGender: Gender = .none {
+  open var selectedGender: Gender = .none {
     didSet {
-      gender.accept(selectedGender.rawValue)
       updateUI()
     }
   }
 
-  public lazy var gender: BehaviorRelay<Int> = .init(value: -1)
+  private lazy var manIndicator: SeSACGenderIndicator = {
+    let view = SeSACGenderIndicator(gender: .male)
+    view.addTarget(self, action: #selector(tapManIndicator), for: .touchUpInside)
+    return view
+  }()
 
-  private lazy var manIndicator = SeSACGenderIndicator(gender: .male).then {
-    $0.addTarget(self, action: #selector(tapManIndicator), for: .touchUpInside)
-  }
-
-  private lazy var womanIndicator = SeSACGenderIndicator(gender: .female).then {
-    $0.addTarget(self, action: #selector(tapWomanIndicator), for: .touchUpInside)
-  }
+  private lazy var womanIndicator: SeSACGenderIndicator = {
+    let view = SeSACGenderIndicator(gender: .female)
+    view.addTarget(self, action: #selector(tapWomanIndicator), for: .touchUpInside)
+    return view
+  }()
 
   public func setGender(_ gender: Gender) {
     self.selectedGender = gender
@@ -74,15 +73,21 @@ final public class SeSACGenderPicker: UIControl {
   }
 
   private func layoutConfigure() {
-    manIndicator.snp.makeConstraints { make in
-      make.leading.top.bottom.equalToSuperview()
-      make.trailing.equalTo(snp.centerX).offset(-6)
-    }
+    manIndicator.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      manIndicator.leadingAnchor.constraint(equalTo: leadingAnchor),
+      manIndicator.topAnchor.constraint(equalTo: topAnchor),
+      manIndicator.bottomAnchor.constraint(equalTo: bottomAnchor),
+      manIndicator.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -6)
+    ])
 
-    womanIndicator.snp.makeConstraints { make in
-      make.trailing.top.bottom.equalToSuperview()
-      make.leading.equalTo(snp.centerX).offset(6)
-    }
+    womanIndicator.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      womanIndicator.trailingAnchor.constraint(equalTo: trailingAnchor),
+      womanIndicator.topAnchor.constraint(equalTo: topAnchor),
+      womanIndicator.bottomAnchor.constraint(equalTo: bottomAnchor),
+      womanIndicator.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 6)
+    ])
   }
 
   private func updateUI() {

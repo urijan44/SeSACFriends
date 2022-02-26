@@ -6,10 +6,6 @@
 //
 
 import UIKit
-import SnapKit
-import Then
-import RxSwift
-import RxCocoa
 
 final public class SeSACBirthField: UIControl {
 
@@ -24,15 +20,17 @@ final public class SeSACBirthField: UIControl {
     }
   }
 
-  private lazy var containerView = UIStackView().then {
-    $0.addArrangedSubview(yearTextField)
-    $0.addArrangedSubview(monthTextField)
-    $0.addArrangedSubview(dayTextField)
-    $0.distribution = .fillEqually
-    $0.spacing = 10
-    $0.alignment = .fill
-    $0.isUserInteractionEnabled = true
-  }
+  private lazy var containerView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.addArrangedSubview(yearTextField)
+    stackView.addArrangedSubview(monthTextField)
+    stackView.addArrangedSubview(dayTextField)
+    stackView.distribution = .fillEqually
+    stackView.spacing = 10
+    stackView.alignment = .fill
+    stackView.isUserInteractionEnabled = true
+    return stackView
+  }()
 
   private let yearTextField = SeSACUnitField(unitText: "년")
   private let monthTextField = SeSACUnitField(unitText: "월")
@@ -59,11 +57,13 @@ final public class SeSACBirthField: UIControl {
   }
 
   private func setupLayout() {
-    containerView.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview()
-      make.height.equalTo(48)
-      make.centerY.equalToSuperview()
-    }
+    containerView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      containerView.heightAnchor.constraint(equalToConstant: 48),
+      containerView.centerYAnchor.constraint(equalTo: centerYAnchor)
+    ])
   }
 
   private func updateUI() {
@@ -86,12 +86,6 @@ final public class SeSACBirthField: UIControl {
     yearTextField.text = String(components.year ?? 2022)
     monthTextField.text = String(components.month ?? 1)
     dayTextField.text = String(components.day ?? 1)
-  }
-}
-
-public extension Reactive where Base: SeSACBirthField {
-  var tap: ControlEvent<Void> {
-    controlEvent(.touchUpInside)
   }
 }
 

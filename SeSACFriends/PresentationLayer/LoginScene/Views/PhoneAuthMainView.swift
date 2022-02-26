@@ -32,7 +32,7 @@ class PhoneAuthMainView: RepresentableView {
     $0.title = ""
   }
 
-  lazy var textField = SeSACTextField().then {
+  lazy var textField = SeSACTextFieldRx().then {
     $0.placeholder = ""
   }
 

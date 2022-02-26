@@ -6,11 +6,8 @@
 //
 
 import UIKit
-import SnapKit
-import RxSwift
-import RxCocoa
 
-public class ValidateNumberTextField: UIControl {
+open class ValidateNumberTextField: UIControl {
 
   public enum FieldState {
     case inactive
@@ -21,21 +18,27 @@ public class ValidateNumberTextField: UIControl {
     case success
   }
 
-  private lazy var textField = UITextField().then {
-    $0.keyboardType = .decimalPad
-    $0.font = .title4r
-  }
+  public lazy var textField: UITextField = {
+    let textField = UITextField()
+    textField.keyboardType = .decimalPad
+    textField.font = .title4r
+    return textField
+  }()
 
-  private lazy var subTextLabel = UILabel().then {
-    $0.font = .body4r
-    $0.isHidden = false
-  }
+  private lazy var subTextLabel: UILabel = {
+    let label = UILabel()
+    label.font = .body4r
+    label.isHidden = false
+    return label
+  }()
 
-  public lazy var timeOutLabel = UILabel().then {
-    $0.font = .title3m
-    $0.textColor = .seSACGreen
-    $0.text = "01:00"
-  }
+  public lazy var timeOutLabel: UILabel = {
+    let label = UILabel()
+    label.font = .title3m
+    label.textColor = .seSACGreen
+    label.text = "01:00"
+    return label
+  }()
 
   private var bottomBorder = UIView()
   private var bottomBorderWidth: CGFloat = 1
@@ -68,10 +71,6 @@ public class ValidateNumberTextField: UIControl {
     }
   }
 
-  public lazy var rxText: ControlProperty<String?> = {
-    self.textField.rx.text
-  }()
-
   public var placeholder: String = "" {
     didSet {
       textField.placeholder = placeholder
@@ -95,7 +94,7 @@ public class ValidateNumberTextField: UIControl {
     setupView()
   }
 
-  required init?(coder: NSCoder) {
+  public required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -118,28 +117,32 @@ public class ValidateNumberTextField: UIControl {
   }
 
   private func layoutSetup() {
+    timeOutLabel.translatesAutoresizingMaskIntoConstraints = false
+    timeOutLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+    timeOutLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
 
-    timeOutLabel.snp.makeConstraints { make in
-      make.trailing.equalToSuperview().offset(-12)
-      make.centerY.equalToSuperview()
-    }
+    textField.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+      textField.trailingAnchor.constraint(equalTo: timeOutLabel.leadingAnchor, constant: -8),
+      textField.centerYAnchor.constraint(equalTo: centerYAnchor)
+    ])
+    textField.setContentHuggingPriority(.defaultLow, for: .horizontal)
 
-    textField.snp.makeConstraints { make in
-      make.leading.equalToSuperview().inset(12)
-      make.trailing.equalTo(timeOutLabel.snp.leading).offset(8).priority(.low)
-      make.centerY.equalToSuperview()
-    }
+    bottomBorder.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      bottomBorder.leadingAnchor.constraint(equalTo: leadingAnchor),
+      bottomBorder.trailingAnchor.constraint(equalTo: trailingAnchor),
+      bottomBorder.heightAnchor.constraint(equalToConstant: 1),
+      bottomBorder.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 12)
+    ])
 
-    bottomBorder.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview()
-      make.height.equalTo(1)
-      make.top.equalTo(textField.snp.bottom).offset(12)
-    }
-
-    subTextLabel.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview().inset(12)
-      make.top.equalTo(bottomBorder.snp.bottom).offset(4)
-    }
+    subTextLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      subTextLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+      subTextLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+      subTextLabel.topAnchor.constraint(equalTo: bottomBorder.bottomAnchor, constant: 4)
+    ])
   }
 
   private func uiStateUpdate() {
@@ -207,24 +210,3 @@ public class ValidateNumberTextField: UIControl {
     self.text = sender.text ?? ""
   }
 }
-
-#if DEBUG
-import SwiftUI
-fileprivate struct ValidateNumberTextFieldRP: UIViewRepresentable {
-  func makeUIView(context: UIViewRepresentableContext<ValidateNumberTextFieldRP>) -> ValidateNumberTextField {
-    ValidateNumberTextField()
-  }
-
-  func updateUIView(_ uiView: ValidateNumberTextField, context: Context) {
-    uiView.subText = "출력 메시지 입력"
-    uiView.placeholder = "인증번호 입력"
-    uiView.fieldState = .error
-  }
-}
-
-struct ValidateNumberTextField_Previews: PreviewProvider {
-  static var previews: some View {
-    ValidateNumberTextFieldRP()
-  }
-}
-#endif

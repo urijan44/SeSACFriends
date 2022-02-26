@@ -6,11 +6,8 @@
 //
 
 import UIKit
-import SnapKit
-import RxSwift
-import RxCocoa
 
-public class SeSACTextField: UIControl {
+open class SeSACTextField: UIControl {
 
   public enum FieldState {
     case inactive
@@ -21,15 +18,19 @@ public class SeSACTextField: UIControl {
     case success
   }
 
-  private lazy var textField = UITextField().then {
-    $0.keyboardType = .decimalPad
-    $0.font = .title4r
-  }
+  public lazy var textField: UITextField = {
+    let textField = UITextField()
+    textField.keyboardType = .decimalPad
+    textField.font = .title4r
+    return textField
+  }()
 
-  private lazy var subTextLabel = UILabel().then {
-    $0.font = .body4r
-    $0.isHidden = false
-  }
+  private lazy var subTextLabel: UILabel = {
+    let label = UILabel()
+    label.font = .body4r
+    label.isHidden = false
+    return label
+  }()
 
   private var bottomBorder = UIView()
   private var bottomBorderWidth: CGFloat = 1
@@ -62,10 +63,6 @@ public class SeSACTextField: UIControl {
     }
   }
 
-  public lazy var rxText: ControlProperty<String?> = {
-    self.textField.rx.text
-  }()
-
   public var placeholder: String = "" {
     didSet {
       textField.placeholder = placeholder
@@ -89,7 +86,7 @@ public class SeSACTextField: UIControl {
     setupView()
   }
 
-  required init?(coder: NSCoder) {
+  public required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -111,21 +108,28 @@ public class SeSACTextField: UIControl {
   }
 
   private func layoutSetup() {
-    textField.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview().inset(12)
-      make.centerY.equalToSuperview()
-    }
 
-    bottomBorder.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview()
-      make.height.equalTo(1)
-      make.top.equalTo(textField.snp.bottom).offset(12)
-    }
+    textField.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+      textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+      textField.centerYAnchor.constraint(equalTo: centerYAnchor)
+    ])
 
-    subTextLabel.snp.makeConstraints { make in
-      make.leading.trailing.equalToSuperview().inset(12)
-      make.top.equalTo(bottomBorder.snp.bottom).offset(4)
-    }
+    bottomBorder.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      bottomBorder.leadingAnchor.constraint(equalTo: leadingAnchor),
+      bottomBorder.trailingAnchor.constraint(equalTo: trailingAnchor),
+      bottomBorder.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 12),
+      bottomBorder.heightAnchor.constraint(equalToConstant: 1)
+    ])
+
+    subTextLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      subTextLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+      subTextLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+      subTextLabel.topAnchor.constraint(equalTo: bottomBorder.bottomAnchor, constant: 4)
+    ])
   }
 
   private func uiStateUpdate() {
@@ -216,23 +220,3 @@ public class SeSACTextField: UIControl {
     return true
   }
 }
-
-#if DEBUG
-import SwiftUI
-fileprivate struct SeSACTextFieldRP: UIViewRepresentable {
-  func makeUIView(context: UIViewRepresentableContext<SeSACTextFieldRP>) -> SeSACTextField {
-    SeSACTextField()
-  }
-
-  func updateUIView(_ uiView: SeSACTextField, context: Context) {
-    uiView.text = "내용을 입력"
-    uiView.placeholder = "휴대폰 번호(-없이 숫자만 입력)"
-  }
-}
-
-struct SeSACTextFieldRP_Previews: PreviewProvider {
-  static var previews: some View {
-    SeSACTextFieldRP()
-  }
-}
-#endif

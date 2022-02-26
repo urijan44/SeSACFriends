@@ -37,7 +37,7 @@ class ValidateCodeCheckView: RepresentableView {
     $0.title = "인증하고 시작하기"
   }
 
-  lazy var textField = ValidateNumberTextField().then {
+  lazy var textField = ValidateNumberTextFieldRx().then {
     $0.placeholder = "인증번호 입력"
     $0.keyboardType = .decimalPad
   }

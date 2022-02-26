@@ -24,7 +24,7 @@ final class NicknameRootView: RepresentableView {
     $0.text = "닉네임을 입력해 주세요"
   }
 
-  lazy var nickNameTextField = SeSACTextField().then {
+  lazy var nickNameTextField = SeSACTextFieldRx().then {
     $0.placeholder = "10자 이내로 입력"
   }
 

@@ -33,7 +33,7 @@ final class GenderRootView: RepresentableView {
     $0.text = "새싹 찾기 기능을 이용하기 위해서 필요해요!"
   }
 
-  let genderPicker = SeSACGenderPicker()
+  let genderPicker = SeSACGenderPickerRx()
 
   let nextButton = SeSACButton(style: .fill).then {
     $0.title = "다음"
