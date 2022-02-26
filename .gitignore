@@ -101,4 +101,7 @@ iOSInjectionProject/
 GoogleService-Info.plist
 SeSACFriends.entitlements
 
+NMapsMap.framework/
+
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods
+
