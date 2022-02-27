@@ -18,6 +18,7 @@
 		8A098EFF27CA8C8D00A6F175 /* LeafLayoutMake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A098EFE27CA8C8D00A6F175 /* LeafLayoutMake.swift */; };
 		8A098F0127CA8CA800A6F175 /* LeafLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A098F0027CA8CA800A6F175 /* LeafLayout.swift */; };
 		8A098F0327CA8CDE00A6F175 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A098F0227CA8CDE00A6F175 /* View+Extension.swift */; };
+		8A098F0727CA9A9100A6F175 /* VerticalGenderIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A098F0627CA9A9100A6F175 /* VerticalGenderIndicator.swift */; };
 		8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A09E6DE2796A328005D98BF /* PhoneAuthMainView.swift */; };
 		8A12FAA927A2307100DD362A /* ValidateCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A12FAA827A2307100DD362A /* ValidateCodeUseCase.swift */; };
 		8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A15287327A7840800B958EB /* SeSACGenderPicker.swift */; };
@@ -153,6 +154,7 @@
 		8AD6ADD927A310FA002A0283 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD6ADD827A310FA002A0283 /* UserProfile.swift */; };
 		8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */; };
 		8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */; };
+		8AF23BAA27CBCCE200AD9A56 /* Observerble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF23BA927CBCCE200AD9A56 /* Observerble.swift */; };
 		8AF5DA9227A6F61A00AE3537 /* OnBoardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9127A6F61A00AE3537 /* OnBoardingContainer.swift */; };
 		8AF5DA9927A7068A00AE3537 /* EmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */; };
 		8AF5DA9B27A706DD00AE3537 /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */; };
@@ -202,6 +204,7 @@
 		8A098F0027CA8CA800A6F175 /* LeafLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafLayout.swift; sourceTree = "<group>"; };
 		8A098F0227CA8CDE00A6F175 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		8A098F0427CA8D4100A6F175 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8A098F0627CA9A9100A6F175 /* VerticalGenderIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGenderIndicator.swift; sourceTree = "<group>"; };
 		8A09E6C9279699C5005D98BF /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		8A09E6CA279699C5005D98BF /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		8A09E6D327969B66005D98BF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -327,6 +330,7 @@
 		8AD6ADD827A310FA002A0283 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedNavigationRouter.swift; sourceTree = "<group>"; };
 		8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		8AF23BA927CBCCE200AD9A56 /* Observerble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observerble.swift; sourceTree = "<group>"; };
 		8AF5DA9127A6F61A00AE3537 /* OnBoardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainer.swift; sourceTree = "<group>"; };
 		8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUseCase.swift; sourceTree = "<group>"; };
 		8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
@@ -390,6 +394,15 @@
 				8A098F0427CA8D4100A6F175 /* README.md */,
 			);
 			path = LeafLayoutKit;
+			sourceTree = "<group>";
+		};
+		8A098F0527CA9A7E00A6F175 /* VerticalGenderPicker */ = {
+			isa = PBXGroup;
+			children = (
+				8AAAEFC327CA28DA002EBC64 /* VerticalGenderPicker.swift */,
+				8A098F0627CA9A9100A6F175 /* VerticalGenderIndicator.swift */,
+			);
+			path = VerticalGenderPicker;
 			sourceTree = "<group>";
 		};
 		8A09E6C227969960005D98BF /* Resources */ = {
@@ -484,6 +497,7 @@
 		8A4103E12798EA7D0039C9FA /* SeSACFriendsUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8AF23BA827CBCCD500AD9A56 /* Model */,
 				8AA528DD27C29A62000D7C0C /* Protocol */,
 				8AA528BA27C25B72000D7C0C /* Reputation.swift */,
 				8A09E6D527969E05005D98BF /* Constant.swift */,
@@ -513,7 +527,7 @@
 				8AC281ED27B5229700C83223 /* CardViewButton.swift */,
 				8A7A72ED27B94C2D00692051 /* DoubleSlider */,
 				8A03E7E927C6A3C600B6AEB2 /* SeSACAlertView.swift */,
-				8AAAEFC327CA28DA002EBC64 /* VerticalGenderPicker.swift */,
+				8A098F0527CA9A7E00A6F175 /* VerticalGenderPicker */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -876,6 +890,14 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		8AF23BA827CBCCD500AD9A56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8AF23BA927CBCCE200AD9A56 /* Observerble.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1158,6 +1180,7 @@
 				8A15287427A7840800B958EB /* SeSACGenderPicker.swift in Sources */,
 				8A55168027CA0E080075B68D /* SeSACButtonRP.swift in Sources */,
 				8AC2821327B5F31900C83223 /* ReviewView.swift in Sources */,
+				8A098F0727CA9A9100A6F175 /* VerticalGenderIndicator.swift in Sources */,
 				8AC281F827B58B7A00C83223 /* SeSACTitleView.swift in Sources */,
 				8A59481A27B6AA3600043001 /* PhoneSearchOnView.swift in Sources */,
 				8A063BBE27AA6E14007F446B /* Images+Generated.swift in Sources */,
@@ -1169,6 +1192,7 @@
 				8A674BCD279D844B00EDEA3F /* RepresentableView.swift in Sources */,
 				8AC2821527B65DD000C83223 /* MyGenderView.swift in Sources */,
 				8AC2821727B660D900C83223 /* SeSACButtonSU.swift in Sources */,
+				8AF23BAA27CBCCE200AD9A56 /* Observerble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1297,6 +1321,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1306,6 +1331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GookBob.LeafLayoutKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1329,6 +1355,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1338,6 +1365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GookBob.LeafLayoutKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1361,6 +1389,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1370,6 +1399,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GookBob.LeafLayoutKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
