@@ -59,7 +59,7 @@ final public class SeSACButton: UIControl {
 
   public var animateOn: Bool = true
 
-  public var radius: CGFloat = 8
+  public var radius: CGFloat = Constant.cornerRadius
 
   public override init(frame: CGRect) {
     super.init(frame: frame)

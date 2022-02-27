@@ -40,9 +40,8 @@ public struct CardViewButton: View {
     Button {
       action?()
     } label: {
-      Rectangle()
+      RoundedRectangle(cornerRadius: Constant.cornerRadius)
         .foregroundColor(color)
-        .cornerRadius(8)
         .overlay(
           Text(text)
             .font(Font(uiFont: .title3m))

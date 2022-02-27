@@ -49,7 +49,7 @@ internal struct CardDetailView: View {
       }
     }
     .background(
-      RoundedRectangle(cornerRadius: 8)
+      RoundedRectangle(cornerRadius: Constant.cornerRadius)
         .strokeBorder(Color(.seSACGray1), lineWidth: 1)
     )
   }

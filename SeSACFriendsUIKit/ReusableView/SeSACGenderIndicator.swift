@@ -75,7 +75,7 @@ final public class SeSACGenderIndicator: UIControl {
   }
 
   private func createView() {
-    layer.cornerRadius = 8
+    layer.cornerRadius = Constant.cornerRadius
     layer.borderWidth = 1
     addSubview(genderImage)
     addSubview(label)

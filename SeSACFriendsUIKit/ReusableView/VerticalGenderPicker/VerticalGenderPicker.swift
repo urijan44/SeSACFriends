@@ -113,7 +113,7 @@ final public class VerticalGenderPicker: UIControl {
 
   public override func draw(_ rect: CGRect) {
     guard let context = UIGraphicsGetCurrentContext() else { return }
-    let clipPath = UIBezierPath(roundedRect: rect, cornerRadius: 8.0).cgPath
+    let clipPath = UIBezierPath(roundedRect: rect, cornerRadius: Constant.cornerRadius).cgPath
     context.addPath(clipPath)
     context.setFillColor(UIColor.seSACError.cgColor)
     context.closePath()
