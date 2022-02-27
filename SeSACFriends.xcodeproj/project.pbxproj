@@ -155,6 +155,7 @@
 		8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */; };
 		8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */; };
 		8AF23BAA27CBCCE200AD9A56 /* Observerble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF23BA927CBCCE200AD9A56 /* Observerble.swift */; };
+		8AF23BAC27CBE2C300AD9A56 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF23BAB27CBE2C300AD9A56 /* LocationButton.swift */; };
 		8AF5DA9227A6F61A00AE3537 /* OnBoardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9127A6F61A00AE3537 /* OnBoardingContainer.swift */; };
 		8AF5DA9927A7068A00AE3537 /* EmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */; };
 		8AF5DA9B27A706DD00AE3537 /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */; };
@@ -331,6 +332,7 @@
 		8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedNavigationRouter.swift; sourceTree = "<group>"; };
 		8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		8AF23BA927CBCCE200AD9A56 /* Observerble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observerble.swift; sourceTree = "<group>"; };
+		8AF23BAB27CBE2C300AD9A56 /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		8AF5DA9127A6F61A00AE3537 /* OnBoardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainer.swift; sourceTree = "<group>"; };
 		8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUseCase.swift; sourceTree = "<group>"; };
 		8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 				8AC281ED27B5229700C83223 /* CardViewButton.swift */,
 				8A7A72ED27B94C2D00692051 /* DoubleSlider */,
 				8A03E7E927C6A3C600B6AEB2 /* SeSACAlertView.swift */,
+				8AF23BAB27CBE2C300AD9A56 /* LocationButton.swift */,
 				8A098F0527CA9A7E00A6F175 /* VerticalGenderPicker */,
 			);
 			path = ReusableView;
@@ -1166,6 +1169,7 @@
 				8AC281EE27B5229700C83223 /* CardViewButton.swift in Sources */,
 				8A7A72EF27B94C4200692051 /* DoubleSlider.swift in Sources */,
 				8A03E7EA27C6A3C600B6AEB2 /* SeSACAlertView.swift in Sources */,
+				8AF23BAC27CBE2C300AD9A56 /* LocationButton.swift in Sources */,
 				8A6DB1F52799484700477705 /* UILabel+extension.swift in Sources */,
 				8A6DB1FB27995ED000477705 /* SeSACButton.swift in Sources */,
 				8AAAEFC427CA28DA002EBC64 /* VerticalGenderPicker.swift in Sources */,
