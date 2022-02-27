@@ -13,6 +13,8 @@ public enum LeafLayoutMake {
   case bottom(constant: CGFloat, target: UIView? = nil, anchor: LeafLayout.Anchor? = nil)
   case height(constant: CGFloat, target: UIView? = nil, anchor: LeafLayout.Anchor? = nil)
   case width(constant: CGFloat, target: UIView? = nil, anchor: LeafLayout.Anchor? = nil)
+  case centerX(constant: CGFloat, target: UIView? = nil, anchor: LeafLayout.Anchor? = nil)
+  case centerY(constant: CGFloat, target: UIView? = nil, anchor: LeafLayout.Anchor? = nil)
 
   var anchor: LeafLayout.Anchor {
     switch self {
@@ -28,6 +30,10 @@ public enum LeafLayoutMake {
         return .height
       case .width:
         return .width
+      case .centerX:
+        return .centerX
+      case .centerY:
+        return .centerY
     }
   }
 
@@ -41,7 +47,10 @@ public enum LeafLayoutMake {
         return constant
       case .bottom(let constant, _, _):
         return constant
-      case .height(let constant, _, _), .width(let constant, _, _):
+      case .height(let constant, _, _),
+          .width(let constant, _, _),
+          .centerX(let constant, _, _),
+          .centerY(let constant, _, _):
         return constant
     }
   }
@@ -56,7 +65,11 @@ public enum LeafLayoutMake {
         return target
       case .bottom(_, let target, _):
         return target
-      case .height(_, let target, _), .width(_, let target, _):
+      case .height(_, let target, _),
+          .width(_, let target, _),
+          .centerX(_, let target, _),
+          .centerY(_, let target, _)
+        :
         return target
     }
   }
@@ -68,7 +81,9 @@ public enum LeafLayoutMake {
           .top(_, _, let anchor),
           .bottom(_, _, let anchor),
           .width(_, _, let anchor),
-          .height(_, _, let anchor)
+          .height(_, _, let anchor),
+          .centerX(_, _, let anchor),
+          .centerY(_, _, let anchor)
         :
         return anchor
     }
