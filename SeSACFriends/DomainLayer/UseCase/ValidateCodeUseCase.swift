@@ -21,6 +21,7 @@ final class ValidateCodeUseCase: UseCase {
   var verificationToastMessage: PublishSubject<ToastMessage.VerificationCode> = .init()
   var present: PublishSubject<Void> = .init()
   var login: PublishSubject<Void> = .init()
+  var inProgress: BehaviorRelay<Bool> = .init(value: false)
 
   private lazy var time: Int = initializeTime
 
@@ -64,6 +65,7 @@ final class ValidateCodeUseCase: UseCase {
 
   func codeVerify(_ receivedVerifyCode: String?) {
     tryButtonEnabled.accept(false)
+    inProgress.accept(true)
     let preVerifyCode = UserSession.loadPreReceiveVerifId() ?? ""
 
     let credential = PhoneAuthProvider.provider().credential(withVerificationID: preVerifyCode, verificationCode: receivedVerifyCode ?? "")
@@ -97,6 +99,7 @@ final class ValidateCodeUseCase: UseCase {
           }
         })
       }
+      self?.inProgress.accept(false)
       self?.tryButtonEnabled.accept(true)
     }
   }

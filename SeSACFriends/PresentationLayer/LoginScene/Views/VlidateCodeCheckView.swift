@@ -157,6 +157,11 @@ class ValidateCodeCheckView: RepresentableView {
       .subscribe(onNext: { [weak self] _ in
         self?.delegate?.presentLogin()
       }).disposed(by: bag)
+
+    output.inPprogress
+      .asDriver()
+      .drive(checkButton.rx.isProgress)
+      .disposed(by: bag)
   }
 }
 #if DEBUG

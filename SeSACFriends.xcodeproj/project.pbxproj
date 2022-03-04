@@ -101,6 +101,7 @@
 		8AAF54D627C9281700384406 /* RxKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 8AAF54D527C9281700384406 /* RxKeyboard */; };
 		8AAF54D927C9285200384406 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8AAF54D827C9285200384406 /* Moya */; };
 		8AAF54E627C9290300384406 /* HomeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF54E527C9290300384406 /* HomeMapView.swift */; };
+		8AAF7A6427D24E7B00D7C819 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAF7A6327D24E7B00D7C819 /* FriendListViewController.swift */; };
 		8AB37F9F27A94AE20053D0A9 /* SeSACRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37F9E27A94AE20053D0A9 /* SeSACRemoteAPI.swift */; };
 		8AB37FA127A94C330053D0A9 /* RemoteUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA027A94C330053D0A9 /* RemoteUserDTO.swift */; };
 		8AB37FA327A958110053D0A9 /* SignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA227A958110053D0A9 /* SignInUseCase.swift */; };
@@ -156,6 +157,7 @@
 		8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */; };
 		8AF23BAA27CBCCE200AD9A56 /* Observerble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF23BA927CBCCE200AD9A56 /* Observerble.swift */; };
 		8AF23BAC27CBE2C300AD9A56 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF23BAB27CBE2C300AD9A56 /* LocationButton.swift */; };
+		8AF23BAF27CBEB1900AD9A56 /* HomeMapRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF23BAE27CBEB1900AD9A56 /* HomeMapRootView.swift */; };
 		8AF5DA9227A6F61A00AE3537 /* OnBoardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9127A6F61A00AE3537 /* OnBoardingContainer.swift */; };
 		8AF5DA9927A7068A00AE3537 /* EmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */; };
 		8AF5DA9B27A706DD00AE3537 /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */; };
@@ -275,6 +277,7 @@
 		8AAAEFC327CA28DA002EBC64 /* VerticalGenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGenderPicker.swift; sourceTree = "<group>"; };
 		8AAB114627BBA21100AF578E /* ServerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRepository.swift; sourceTree = "<group>"; };
 		8AAF54E527C9290300384406 /* HomeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapView.swift; sourceTree = "<group>"; };
+		8AAF7A6327D24E7B00D7C819 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		8AB37F9E27A94AE20053D0A9 /* SeSACRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACRemoteAPI.swift; sourceTree = "<group>"; };
 		8AB37FA027A94C330053D0A9 /* RemoteUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserDTO.swift; sourceTree = "<group>"; };
 		8AB37FA227A958110053D0A9 /* SignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCase.swift; sourceTree = "<group>"; };
@@ -333,6 +336,7 @@
 		8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		8AF23BA927CBCCE200AD9A56 /* Observerble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observerble.swift; sourceTree = "<group>"; };
 		8AF23BAB27CBE2C300AD9A56 /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
+		8AF23BAE27CBEB1900AD9A56 /* HomeMapRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapRootView.swift; sourceTree = "<group>"; };
 		8AF5DA9127A6F61A00AE3537 /* OnBoardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainer.swift; sourceTree = "<group>"; };
 		8AF5DA9827A7068A00AE3537 /* EmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUseCase.swift; sourceTree = "<group>"; };
 		8AF5DA9A27A706DD00AE3537 /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
@@ -668,14 +672,23 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
+		8AAF7A6227D24E6600D7C819 /* FriendListView */ = {
+			isa = PBXGroup;
+			children = (
+				8AAF7A6327D24E7B00D7C819 /* FriendListViewController.swift */,
+			);
+			path = FriendListView;
+			sourceTree = "<group>";
+		};
 		8AB37FA427A9671D0053D0A9 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
 				8A1D8D1727C7DD8900C9E962 /* TabContentView.swift */,
 				8AB37FA727A967850053D0A9 /* HomeViewTest.swift */,
-				8AAF54E527C9290300384406 /* HomeMapView.swift */,
+				8AF23BAD27CBEAE500AD9A56 /* HomeMapView */,
 				8A1D8CF327C7D7BD00C9E962 /* TabViewController.swift */,
 				8A0004B027B0092000C288E0 /* HomeViewController.swift */,
+				8AAF7A6227D24E6600D7C819 /* FriendListView */,
 				8A1A10D127AA3F4300E57106 /* MyInfo */,
 			);
 			path = HomeScene;
@@ -899,6 +912,15 @@
 				8AF23BA927CBCCE200AD9A56 /* Observerble.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8AF23BAD27CBEAE500AD9A56 /* HomeMapView */ = {
+			isa = PBXGroup;
+			children = (
+				8AAF54E527C9290300384406 /* HomeMapView.swift */,
+				8AF23BAE27CBEB1900AD9A56 /* HomeMapRootView.swift */,
+			);
+			path = HomeMapView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1226,6 +1248,7 @@
 				8AC3181E27A06D0300646711 /* UserSession.swift in Sources */,
 				8A97EBD327A6ECBE00C33BDE /* EmailViewModel.swift in Sources */,
 				8A961B21279DB9C900CC2163 /* AppDelegateCoordinator.swift in Sources */,
+				8AAF7A6427D24E7B00D7C819 /* FriendListViewController.swift in Sources */,
 				8AC2821927B66C3300C83223 /* ProfileViewModel.swift in Sources */,
 				8A09E6DF2796A328005D98BF /* PhoneAuthMainView.swift in Sources */,
 				8A1D8D1B27C7DE9C00C9E962 /* DIContainer.swift in Sources */,
@@ -1266,6 +1289,7 @@
 				8AB37FA327A958110053D0A9 /* SignInUseCase.swift in Sources */,
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
 				8A1A10DB27AA45D900E57106 /* MyInfoViewModel.swift in Sources */,
+				8AF23BAF27CBEB1900AD9A56 /* HomeMapRootView.swift in Sources */,
 				8AB37FA827A967850053D0A9 /* HomeViewTest.swift in Sources */,
 				8A191CA927ADA2C800723FD8 /* MyInfoViewController.swift in Sources */,
 				8ABD81B827B9EDD70050FAC9 /* ProfileUseCase.swift in Sources */,

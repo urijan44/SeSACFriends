@@ -35,6 +35,7 @@ final class ValidateCodeCheckViewModel: CommonViewModel {
     let showToast: PublishRelay<ToastMessage.VerificationCode> = .init()
     let present: PublishSubject<Void> = .init()
     let login: PublishSubject<Void> = .init()
+    let inPprogress: BehaviorRelay<Bool> = .init(value: false)
   }
 
   func transform(_ input: Input) -> Output {
@@ -59,12 +60,17 @@ final class ValidateCodeCheckViewModel: CommonViewModel {
 //      .subscribe(onNext: { [weak self] tap, code in
 //        self?.useCase.codeVerify(code)
 //    }).disposed(by: bag)
+
+    let output = Output()
+
     input.tryAuthentication.withLatestFrom(input.codeInput)
       .subscribe(onNext: { [weak self] code in
         self?.useCase.codeVerify(code)
       }).disposed(by: bag)
 
-    let output = Output()
+    useCase.inProgress.subscribe(onNext: {
+      output.inPprogress.accept($0)
+    }).disposed(by: bag)
 
     useCase.timeOut.subscribe(onNext: {
       output.timer.accept($0)
