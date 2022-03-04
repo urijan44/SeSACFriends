@@ -58,6 +58,13 @@ final public class SeSACButton: UIControl {
   }
 
   public var animateOn: Bool = true
+  public var isProgress: Bool = false {
+    didSet {
+      activityIndicatorHandler()
+    }
+  }
+
+  private var progressView = UIActivityIndicatorView(style: .medium)
 
   public var radius: CGFloat = Constant.cornerRadius
 
@@ -184,6 +191,24 @@ final public class SeSACButton: UIControl {
 
   public override func addAction(_ action: UIAction, for controlEvents: UIControl.Event) {
     super.addAction(action, for: controlEvents)
+  }
+
+  private func activityIndicatorHandler() {
+    if isProgress {
+      containerView.addSubview(progressView)
+      activityIndicatorLayoutConfigure()
+      progressView.startAnimating()
+    } else {
+      progressView.stopAnimating()
+      progressView.removeFromSuperview()
+    }
+  }
+
+  private func activityIndicatorLayoutConfigure() {
+    progressView.customLayout(containerView, [
+      .centerX(constant: 0),
+      .centerY(constant: 0)
+    ])
   }
 }
 
