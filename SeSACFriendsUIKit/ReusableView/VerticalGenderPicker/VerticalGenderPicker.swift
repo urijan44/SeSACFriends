@@ -69,7 +69,7 @@ final public class VerticalGenderPicker: UIControl {
   private var selectIndicatorTopConstraint: NSLayoutConstraint!
   private var selectIndicatorHeightConstraint: NSLayoutConstraint!
 
-  private func updateUI() {
+  private func updateUI(animate: Bool = true) {
     isUserInteractionEnabled = false
     switch gender {
       case .none:
@@ -80,12 +80,17 @@ final public class VerticalGenderPicker: UIControl {
         selectIndicatorTopConstraint.constant = height * 2
     }
 
-    UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseIn) { [unowned self] in
-      layoutIfNeeded()
-    } completion: { [unowned self] _ in
-      [noneIndicator, maleIndicator, femaleIndicator].forEach { indicator in
-        indicator.onSelected = indicator.gender == gender
+    if animate {
+      UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseIn) { [unowned self] in
+        layoutIfNeeded()
+      } completion: { [unowned self] _ in
+        [noneIndicator, maleIndicator, femaleIndicator].forEach { indicator in
+          indicator.onSelected = indicator.gender == gender
+        }
+        self.isUserInteractionEnabled = true
       }
+    } else {
+      layoutIfNeeded()
       self.isUserInteractionEnabled = true
     }
   }
@@ -104,7 +109,7 @@ final public class VerticalGenderPicker: UIControl {
     layer.shadowRadius = 1
     layer.shadowOffset = .init(width: 0, height: 1)
     layer.shadowOpacity = 0.5
-    updateUI()
+    updateUI(animate: false)
   }
 
   public required init?(coder: NSCoder) {
