@@ -131,13 +131,13 @@ open class SeSACUnitField: UIControl {
       unitLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
       unitLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
     ])
-    unitLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+    unitLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 250), for: .horizontal)
 
     textField.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      unitLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-      unitLabel.trailingAnchor.constraint(equalTo: unitLabel.leadingAnchor, constant: -12),
-      unitLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+      textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+      textField.trailingAnchor.constraint(equalTo: unitLabel.leadingAnchor, constant: -12),
+      textField.centerYAnchor.constraint(equalTo: centerYAnchor)
     ])
 
     bottomBorder.translatesAutoresizingMaskIntoConstraints = false
