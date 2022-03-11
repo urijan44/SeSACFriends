@@ -31,6 +31,7 @@ final class BirthdayRootView: RepresentableView {
   }
 
   let datePicker = UIDatePicker().then {
+    $0.locale = Locale(identifier: "ko-KR")
     $0.preferredDatePickerStyle = .wheels
     $0.datePickerMode = .date
     $0.setValue(UIColor.systemGray, forKey: "BackgroundColor")
