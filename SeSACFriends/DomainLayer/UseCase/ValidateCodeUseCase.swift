@@ -51,7 +51,7 @@ final class ValidateCodeUseCase: UseCase {
   private func timeConvert() -> String {
     let formatter = DateComponentsFormatter()
     formatter.allowedUnits = [.minute, .second]
-    formatter.unitsStyle = .full
+    formatter.unitsStyle = .positional
     let string = formatter.string(from: TimeInterval(time)) ?? ""
     return string
   }
