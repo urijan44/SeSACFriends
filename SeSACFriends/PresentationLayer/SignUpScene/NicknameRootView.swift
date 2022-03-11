@@ -26,6 +26,7 @@ final class NicknameRootView: RepresentableView {
 
   lazy var nickNameTextField = SeSACTextFieldRx().then {
     $0.placeholder = "10자 이내로 입력"
+    $0.keyboardType = .default
   }
 
   lazy var nextButton = SeSACButton(style: .fill).then {
