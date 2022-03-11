@@ -6,23 +6,23 @@
 //
 
 import UIKit
+import SeSACFriendsUIKit
 import NMapsMap
 import SnapKit
 import SwiftUI
 
 final class HomeMapView: UIViewController {
 
-  lazy var mapView = NMFMapView()
+  lazy var rootView = RootView()
+
+  override func loadView() {
+    view = rootView
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
-    view.addSubview(mapView)
 
-    mapView.snp.makeConstraints { make in
-      make.leading.top.trailing.equalToSuperview().inset(12)
-      make.height.equalTo(mapView.snp.width)
-    }
   }
 }
 

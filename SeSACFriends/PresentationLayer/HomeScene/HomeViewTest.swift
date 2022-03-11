@@ -16,6 +16,7 @@ struct HomeViewTest: View {
     ZStack {
       TabView {
         HomeMapViewRepresentable()
+          .ignoresSafeArea()
         .tabItem {
           Image(uiImage: AssetImage.tabHome.image)
           Text("홈")
@@ -25,7 +26,7 @@ struct HomeViewTest: View {
             Image(uiImage: AssetImage.tabShop.image)
             Text("새싹샵")
           }
-        Text("새싹친구")
+        FriendListViewSU()
           .tabItem {
             Image(uiImage: AssetImage.tabFriends.image)
             Text("새싹친구")
