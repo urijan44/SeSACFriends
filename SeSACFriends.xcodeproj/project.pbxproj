@@ -155,6 +155,7 @@
 		8AD6ADD927A310FA002A0283 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD6ADD827A310FA002A0283 /* UserProfile.swift */; };
 		8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */; };
 		8AEDF7DC279DD35C00E3B16F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */; };
+		8AF2344827DB049D00F19584 /* MatchingStateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF2344727DB049D00F19584 /* MatchingStateButton.swift */; };
 		8AF23BAA27CBCCE200AD9A56 /* Observerble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF23BA927CBCCE200AD9A56 /* Observerble.swift */; };
 		8AF23BAC27CBE2C300AD9A56 /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF23BAB27CBE2C300AD9A56 /* LocationButton.swift */; };
 		8AF23BAF27CBEB1900AD9A56 /* HomeMapRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF23BAE27CBEB1900AD9A56 /* HomeMapRootView.swift */; };
@@ -334,6 +335,7 @@
 		8AD6ADD827A310FA002A0283 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		8AEDF7D7279DCFCB00E3B16F /* EmbedNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedNavigationRouter.swift; sourceTree = "<group>"; };
 		8AEDF7DB279DD35C00E3B16F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		8AF2344727DB049D00F19584 /* MatchingStateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStateButton.swift; sourceTree = "<group>"; };
 		8AF23BA927CBCCE200AD9A56 /* Observerble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observerble.swift; sourceTree = "<group>"; };
 		8AF23BAB27CBE2C300AD9A56 /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		8AF23BAE27CBEB1900AD9A56 /* HomeMapRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapRootView.swift; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 		8A4103EF2798EAA10039C9FA /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
+				8AF2344627DB047D00F19584 /* HomeMapViewComponents */,
 				8A4103F02798EAC00039C9FA /* SeSACButton.swift */,
 				8A55167F27CA0E080075B68D /* SeSACButtonRP.swift */,
 				8A4103F8279926730039C9FA /* SeSACTextField.swift */,
@@ -533,8 +536,6 @@
 				8AC281ED27B5229700C83223 /* CardViewButton.swift */,
 				8A7A72ED27B94C2D00692051 /* DoubleSlider */,
 				8A03E7E927C6A3C600B6AEB2 /* SeSACAlertView.swift */,
-				8AF23BAB27CBE2C300AD9A56 /* LocationButton.swift */,
-				8A098F0527CA9A7E00A6F175 /* VerticalGenderPicker */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -906,6 +907,16 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		8AF2344627DB047D00F19584 /* HomeMapViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				8AF23BAB27CBE2C300AD9A56 /* LocationButton.swift */,
+				8A098F0527CA9A7E00A6F175 /* VerticalGenderPicker */,
+				8AF2344727DB049D00F19584 /* MatchingStateButton.swift */,
+			);
+			path = HomeMapViewComponents;
+			sourceTree = "<group>";
+		};
 		8AF23BA827CBCCD500AD9A56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1185,6 +1196,7 @@
 				8AC281FA27B58BCF00C83223 /* TitleButton.swift in Sources */,
 				8AC2821E27B6701A00C83223 /* TitleProtocol.swift in Sources */,
 				8AA697B827A3F30D002A6638 /* SeSACUnitField.swift in Sources */,
+				8AF2344827DB049D00F19584 /* MatchingStateButton.swift in Sources */,
 				8A7A72F127B94C5200692051 /* DoubleSliderLogic.swift in Sources */,
 				8A6DB1F72799485E00477705 /* Constant.swift in Sources */,
 				8A15287627A7849D00B958EB /* SeSACGenderIndicator.swift in Sources */,

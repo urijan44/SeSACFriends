@@ -19,6 +19,7 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum AssetImage {
+  public static let antenna = ImageAsset(name: "antenna")
   public static let arrow = ImageAsset(name: "arrow")
   public static let cancelMatch = ImageAsset(name: "cancel_match")
   public static let closeBig = ImageAsset(name: "close_big")
