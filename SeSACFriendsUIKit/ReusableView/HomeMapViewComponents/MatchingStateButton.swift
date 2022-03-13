@@ -66,7 +66,7 @@ final public class MatchingStateButton: UIControl {
       case .matching:
         imageView.image = StateImage.antennaImage
       case .matched:
-        imageView.image = StateImage.defaultImage
+        imageView.image = StateImage.matchedImage
     }
   }
 
