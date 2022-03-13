@@ -54,7 +54,7 @@ final public class MatchingStateButton: UIControl {
   private var imageView: UIImageView = {
     let view = UIImageView()
     view.tintColor = .white
-    view.image = StateImage.antennaImage
+    view.image = StateImage.defaultImage
     view.contentMode = .scaleAspectFit
     return view
   }()
