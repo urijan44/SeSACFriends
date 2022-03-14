@@ -13,7 +13,7 @@ import SwiftUI
 
 final class HomeMapView: UIViewController {
 
-  lazy var rootView = RootView()
+  lazy var rootView = RootView(viewModel: .init())
 
   override func loadView() {
     view = rootView
