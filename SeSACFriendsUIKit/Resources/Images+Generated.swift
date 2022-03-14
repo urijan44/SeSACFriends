@@ -28,6 +28,7 @@ public enum AssetImage {
   public static let friendsPlus = ImageAsset(name: "friends_plus")
   public static let logout = ImageAsset(name: "logout")
   public static let man = ImageAsset(name: "man")
+  public static let mapMarker = ImageAsset(name: "map_marker")
   public static let message = ImageAsset(name: "message")
   public static let more = ImageAsset(name: "more")
   public static let moreArrow = ImageAsset(name: "more_arrow")
