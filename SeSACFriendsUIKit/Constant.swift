@@ -15,4 +15,10 @@ public struct Constant {
     static let notoSansKRr = "NotoSansKR-Regular"
     static let notoSansKRm = "NotoSansKR-Medium"
   }
+
+  public struct Map {
+    public static let minZoomLevel: Double = 5
+    public static let maxZoomLevel: Double = 15
+    public static let defaultZoomLevel: Double = 14
+  }
 }

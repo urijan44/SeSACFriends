@@ -18,7 +18,13 @@ extension HomeMapView {
     private var bag = DisposeBag()
     weak var viewController: UIViewController?
 
-    lazy var mapView = NMFMapView()
+    lazy var mapView: NMFMapView = {
+      let mapView = NMFMapView()
+      mapView.minZoomLevel = Constant.Map.minZoomLevel
+      mapView.maxZoomLevel = Constant.Map.maxZoomLevel
+      return mapView
+    }()
+
     private let genderFilter = VerticalGenderPicker(viewWidth: 48)
     private let currentLocationButton = LocationButton()
     private let matchButton = MatchingStateButton()
@@ -102,6 +108,19 @@ extension HomeMapView {
       output.markerCoordinator
         .subscribe(onNext: { [unowned self] in
           centerMarker.position = NMGLatLng(lat: $0.0, lng: $0.1)
+        }).disposed(by: bag)
+
+      output.currentLocation
+        .distinctUntilChanged({ lhs, rhs in
+          lhs.longitude == rhs.longitude &&
+          lhs.latitude == rhs.latitude
+        })
+        .subscribe(onNext: { [unowned self] location in
+          let cameraUpdate = NMFCameraUpdate(
+            scrollTo: NMGLatLng(lat: location.latitude, lng: location.longitude)
+            , zoomTo: Constant.Map.defaultZoomLevel)
+          cameraUpdate.animation = .easeIn
+          mapView.moveCamera(cameraUpdate)
         }).disposed(by: bag)
 
       output.showLocationAlert
