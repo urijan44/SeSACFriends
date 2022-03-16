@@ -16,6 +16,7 @@ extension HomeMapView {
 
     let viewModel: ViewModel
     private var bag = DisposeBag()
+    weak var viewController: UIViewController?
 
     lazy var mapView = NMFMapView()
     private let genderFilter = VerticalGenderPicker(viewWidth: 48)
@@ -83,7 +84,8 @@ extension HomeMapView {
 
     override func bind() {
       let input = ViewModel.Input(
-        tapCenterButton: mapCenterMarkerButton.rx.tap.asObservable()
+        tapCenterButton: mapCenterMarkerButton.rx.tap.asObservable(),
+        currentUserButton: currentLocationButton.rx.tap.asObservable()
       )
 
       let output = viewModel.transform(input)
@@ -101,6 +103,13 @@ extension HomeMapView {
         .subscribe(onNext: { [unowned self] in
           centerMarker.position = NMGLatLng(lat: $0.0, lng: $0.1)
         }).disposed(by: bag)
+
+      output.showLocationAlert
+        .share(replay: 1)
+        .observe(on: MainScheduler.asyncInstance)
+        .subscribe(onNext: { [weak self] alert in
+          self?.viewController?.present(alert, animated: true)
+        }).disposed(by: bag)
     }
   }
 }
@@ -109,8 +118,19 @@ extension HomeMapView {
 
 import SwiftUI
 struct HomeMapRootViewUI: UIViewRepresentable {
+
+  class CoreLocationUseCaseSpy: CoreLocationUseCase {
+    func requestUserLocation(completion: @escaping (CLLocationCoordinate2D?, CLAuthorizationStatus) -> Void) {
+
+    }
+
+    func requestPermission() {
+
+    }
+  }
+
   func makeUIView(context: Context) -> HomeMapView.RootView {
-    HomeMapView.RootView(viewModel: .init())
+    HomeMapView.RootView(viewModel: .init(useCase: CoreLocationUseCaseSpy()))
   }
 
   func updateUIView(_ uiView: UIViewType, context: Context) {

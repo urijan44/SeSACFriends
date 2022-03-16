@@ -39,8 +39,3 @@ final class SeSACGenderPickerRx: SeSACGenderPicker {
   public lazy var gender: BehaviorRelay<Int> = .init(value: -1)
 }
 
-extension Reactive where Base: SeSACGenderIndicator {
-  public var tap: ControlEvent<Void> {
-    return base.rx.controlEvent(.touchUpInside)
-  }
-}

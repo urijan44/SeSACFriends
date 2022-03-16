@@ -11,9 +11,9 @@ import NMapsMap
 import SnapKit
 import SwiftUI
 
-final class HomeMapView: UIViewController {
+final class HomeMapView: RepresentableViewController {
 
-  lazy var rootView = RootView(viewModel: .init())
+  let rootView: RootView
 
   override func loadView() {
     view = rootView
@@ -22,16 +22,32 @@ final class HomeMapView: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
+    rootView.viewController = self
+  }
 
+  init(rootView: RootView) {
+    self.rootView = rootView
+    super.init()
   }
 }
 
 struct HomeMapViewRepresentable: UIViewControllerRepresentable {
   func makeUIViewController(context: Context) -> HomeMapView {
-    HomeMapView()
+    configureView()
   }
 
   func updateUIViewController(_ uiViewController: HomeMapView, context: Context) {
     
+  }
+}
+
+extension HomeMapViewRepresentable {
+  func configureView() -> HomeMapView {
+    let repository = DefaultCoreLocationRepository()
+    let useCase = DefaultCoreLocationUseCase(coreLocationRepository: repository)
+    let viewModel = HomeMapView.RootView.ViewModel(useCase: useCase)
+    let rootView = HomeMapView.RootView(viewModel: viewModel)
+    let homeMapView = HomeMapView(rootView: rootView)
+    return homeMapView
   }
 }

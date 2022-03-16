@@ -17,14 +17,23 @@ extension HomeMapView.RootView {
     private var bag = DisposeBag()
     private var logic = HomeMapViewLogic()
 
+    private let useCase: CoreLocationUseCase
+
+    init(useCase: CoreLocationUseCase) {
+      self.useCase = useCase
+    }
+
     struct Input {
       let tapCenterButton: Observable<Void>
+      let currentUserButton: Observable<Void>
     }
 
     struct Output{
       let centerButtonHidden: BehaviorRelay<Bool> = .init(value: false)
       let showCenterMarker: BehaviorRelay<Bool> = .init(value: false)
       let markerCoordinator: BehaviorRelay<(Double, Double)> = .init(value: (0, 0))
+      let currentLocation: BehaviorRelay<CLLocationCoordinate2D> = .init(value: .init())
+      let showLocationAlert: PublishRelay<UIAlertController> = .init()
     }
 
     func transform(_ input: Input) -> Output {
@@ -32,6 +41,20 @@ extension HomeMapView.RootView {
 
       input.tapCenterButton.subscribe(onNext: { [unowned self] _ in
         logic.tapCenterButtonSignal()
+      }).disposed(by: bag)
+
+      input.currentUserButton.subscribe(onNext: { [unowned self] _ in
+        useCase.requestUserLocation { [unowned self] location, status in
+          switch status {
+            case .restricted, .denied:
+              output.showLocationAlert.accept(showLocationServiceEnableAlert())
+            case .authorizedAlways, .authorizedWhenInUse:
+              guard let location = location else { return }
+              output.currentLocation.accept(location)
+            default:
+              useCase.requestPermission()
+          }
+        }
       }).disposed(by: bag)
 
       logic.centerButtonHidden.subscribe(onNext: {
@@ -52,6 +75,23 @@ extension HomeMapView.RootView {
     func mapMarkerTouchHandler(overlay: NMFOverlay) -> Bool {
       logic.mapMarkerTouchHandler()
       return true
+    }
+
+    func showLocationServiceEnableAlert() -> UIAlertController {
+      let alert = UIAlertController(
+        title: "Location Services Disabled",
+        message: "Please enable location services for this app in Settings",
+        preferredStyle: .alert)
+
+      let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+      }
+      alert.addAction(okAction)
+
+      let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+      alert.addAction(cancel)
+      return alert
     }
   }
 }
