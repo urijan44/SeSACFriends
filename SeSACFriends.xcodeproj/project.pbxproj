@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A0004B127B0092000C288E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0004B027B0092000C288E0 /* HomeViewController.swift */; };
 		8A03E7EA27C6A3C600B6AEB2 /* SeSACAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A03E7E927C6A3C600B6AEB2 /* SeSACAlertView.swift */; };
 		8A063BBE27AA6E14007F446B /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A063BBD27AA6E14007F446B /* Images+Generated.swift */; };
 		8A082DFD27C92EE000EC9888 /* NMapsMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A082DFC27C92EE000EC9888 /* NMapsMap.framework */; };
@@ -29,7 +28,6 @@
 		8A1A10D727AA40A500E57106 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D627AA40A500E57106 /* MyInfoView.swift */; };
 		8A1A10D927AA426100E57106 /* MyInfoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10D827AA426100E57106 /* MyInfoListView.swift */; };
 		8A1A10DB27AA45D900E57106 /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */; };
-		8A1D8CF427C7D7BD00C9E962 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1D8CF327C7D7BD00C9E962 /* TabViewController.swift */; };
 		8A1D8D1827C7DD8900C9E962 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1D8D1727C7DD8900C9E962 /* TabContentView.swift */; };
 		8A1D8D1B27C7DE9C00C9E962 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1D8D1A27C7DE9C00C9E962 /* DIContainer.swift */; };
 		8A24D84E27C529280012CAE2 /* MoyaSeSACAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A24D84D27C529280012CAE2 /* MoyaSeSACAPI.swift */; };
@@ -43,8 +41,7 @@
 		8A59481A27B6AA3600043001 /* PhoneSearchOnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A59481927B6AA3600043001 /* PhoneSearchOnView.swift */; };
 		8A59481C27B6AC7400043001 /* SeSACToggleSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A59481B27B6AC7400043001 /* SeSACToggleSwitch.swift */; };
 		8A59483827B6C63200043001 /* AgeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A59483727B6C63200043001 /* AgeFilter.swift */; };
-		8A5AE29A27E2246B00462C6F /* CoreLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5AE29927E2246B00462C6F /* CoreLocationRepository.swift */; };
-		8A5AE29C27E224AA00462C6F /* CoreLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5AE29B27E224AA00462C6F /* CoreLocationUseCase.swift */; };
+		8A5AE29C27E224AA00462C6F /* DefaultHomeMapUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5AE29B27E224AA00462C6F /* DefaultHomeMapUseCase.swift */; };
 		8A5AE29E27E23B6D00462C6F /* SeSACFriendsUIKit+Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5AE29D27E23B6D00462C6F /* SeSACFriendsUIKit+Rx+Extension.swift */; };
 		8A5C6AD627DF8F1800F89A59 /* HomeMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5C6AD527DF8F1800F89A59 /* HomeMapViewModel.swift */; };
 		8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A674BB0279C30EF00EDEA3F /* Router.swift */; };
@@ -90,7 +87,6 @@
 		8AA528E527C2B617000D7C0C /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA528E427C2B617000D7C0C /* View+Extension.swift */; };
 		8AA697B827A3F30D002A6638 /* SeSACUnitField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */; };
 		8AAAEFC427CA28DA002EBC64 /* VerticalGenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAAEFC327CA28DA002EBC64 /* VerticalGenderPicker.swift */; };
-		8AAB114727BBA21100AF578E /* ServerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB114627BBA21100AF578E /* ServerRepository.swift */; };
 		8AAF54BC27C9269A00384406 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8AAF54BB27C9269A00384406 /* Then */; };
 		8AAF54BF27C926A500384406 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8AAF54BE27C926A500384406 /* SnapKit */; };
 		8AAF54C227C926C500384406 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8AAF54C127C926C500384406 /* RxCocoa */; };
@@ -108,7 +104,7 @@
 		8AB37F9F27A94AE20053D0A9 /* SeSACRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37F9E27A94AE20053D0A9 /* SeSACRemoteAPI.swift */; };
 		8AB37FA127A94C330053D0A9 /* RemoteUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA027A94C330053D0A9 /* RemoteUserDTO.swift */; };
 		8AB37FA327A958110053D0A9 /* SignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA227A958110053D0A9 /* SignInUseCase.swift */; };
-		8AB37FA827A967850053D0A9 /* HomeViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA727A967850053D0A9 /* HomeViewTest.swift */; };
+		8AB37FA827A967850053D0A9 /* HomeTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA727A967850053D0A9 /* HomeTapView.swift */; };
 		8AB37FAA27A9697C0053D0A9 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB37FA927A9697C0053D0A9 /* HomeCoordinator.swift */; };
 		8ABD81B827B9EDD70050FAC9 /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABD81B727B9EDD70050FAC9 /* ProfileUseCase.swift */; };
 		8AC281EC27B5228600C83223 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC281EB27B5228600C83223 /* CardView.swift */; };
@@ -200,7 +196,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8A0004B027B0092000C288E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A03E7E927C6A3C600B6AEB2 /* SeSACAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACAlertView.swift; sourceTree = "<group>"; };
 		8A063BBD27AA6E14007F446B /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		8A082DFC27C92EE000EC9888 /* NMapsMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMapsMap.framework; sourceTree = "<group>"; };
@@ -226,7 +221,6 @@
 		8A1A10D627AA40A500E57106 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		8A1A10D827AA426100E57106 /* MyInfoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoListView.swift; sourceTree = "<group>"; };
 		8A1A10DA27AA45D800E57106 /* MyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
-		8A1D8CF327C7D7BD00C9E962 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		8A1D8D1727C7DD8900C9E962 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
 		8A1D8D1A27C7DE9C00C9E962 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		8A24D84D27C529280012CAE2 /* MoyaSeSACAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaSeSACAPI.swift; sourceTree = "<group>"; };
@@ -244,8 +238,7 @@
 		8A59481927B6AA3600043001 /* PhoneSearchOnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSearchOnView.swift; sourceTree = "<group>"; };
 		8A59481B27B6AC7400043001 /* SeSACToggleSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACToggleSwitch.swift; sourceTree = "<group>"; };
 		8A59483727B6C63200043001 /* AgeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeFilter.swift; sourceTree = "<group>"; };
-		8A5AE29927E2246B00462C6F /* CoreLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationRepository.swift; sourceTree = "<group>"; };
-		8A5AE29B27E224AA00462C6F /* CoreLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationUseCase.swift; sourceTree = "<group>"; };
+		8A5AE29B27E224AA00462C6F /* DefaultHomeMapUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeMapUseCase.swift; sourceTree = "<group>"; };
 		8A5AE29D27E23B6D00462C6F /* SeSACFriendsUIKit+Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeSACFriendsUIKit+Rx+Extension.swift"; sourceTree = "<group>"; };
 		8A5C6AD527DF8F1800F89A59 /* HomeMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapViewModel.swift; sourceTree = "<group>"; };
 		8A674BB0279C30EF00EDEA3F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -281,13 +274,12 @@
 		8AA697B727A3F30D002A6638 /* SeSACUnitField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACUnitField.swift; sourceTree = "<group>"; };
 		8AAAEFC127CA20B4002EBC64 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		8AAAEFC327CA28DA002EBC64 /* VerticalGenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGenderPicker.swift; sourceTree = "<group>"; };
-		8AAB114627BBA21100AF578E /* ServerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRepository.swift; sourceTree = "<group>"; };
 		8AAF54E527C9290300384406 /* HomeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMapView.swift; sourceTree = "<group>"; };
 		8AAF7A6327D24E7B00D7C819 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		8AB37F9E27A94AE20053D0A9 /* SeSACRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACRemoteAPI.swift; sourceTree = "<group>"; };
 		8AB37FA027A94C330053D0A9 /* RemoteUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserDTO.swift; sourceTree = "<group>"; };
 		8AB37FA227A958110053D0A9 /* SignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCase.swift; sourceTree = "<group>"; };
-		8AB37FA727A967850053D0A9 /* HomeViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTest.swift; sourceTree = "<group>"; };
+		8AB37FA727A967850053D0A9 /* HomeTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTapView.swift; sourceTree = "<group>"; };
 		8AB37FA927A9697C0053D0A9 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		8ABD81B727B9EDD70050FAC9 /* ProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUseCase.swift; sourceTree = "<group>"; };
 		8AC281EB27B5228600C83223 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -671,8 +663,6 @@
 		8AAB114527BBA1E100AF578E /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				8AAB114627BBA21100AF578E /* ServerRepository.swift */,
-				8A5AE29927E2246B00462C6F /* CoreLocationRepository.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -689,10 +679,8 @@
 			isa = PBXGroup;
 			children = (
 				8A1D8D1727C7DD8900C9E962 /* TabContentView.swift */,
-				8AB37FA727A967850053D0A9 /* HomeViewTest.swift */,
+				8AB37FA727A967850053D0A9 /* HomeTapView.swift */,
 				8AF23BAD27CBEAE500AD9A56 /* HomeMapView */,
-				8A1D8CF327C7D7BD00C9E962 /* TabViewController.swift */,
-				8A0004B027B0092000C288E0 /* HomeViewController.swift */,
 				8AAF7A6227D24E6600D7C819 /* FriendListView */,
 				8A1A10D127AA3F4300E57106 /* MyInfo */,
 			);
@@ -760,7 +748,7 @@
 				8AC5D7C827A7EE0800FE83BF /* GenderUseCase.swift */,
 				8AB37FA227A958110053D0A9 /* SignInUseCase.swift */,
 				8ABD81B727B9EDD70050FAC9 /* ProfileUseCase.swift */,
-				8A5AE29B27E224AA00462C6F /* CoreLocationUseCase.swift */,
+				8A5AE29B27E224AA00462C6F /* DefaultHomeMapUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1243,7 +1231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AAB114727BBA21100AF578E /* ServerRepository.swift in Sources */,
 				8AAF54E627C9290300384406 /* HomeMapView.swift in Sources */,
 				8AEDF7D8279DCFCB00E3B16F /* EmbedNavigationRouter.swift in Sources */,
 				8AD2132127965316003DEC53 /* PhoneAuthViewController.swift in Sources */,
@@ -1262,7 +1249,7 @@
 				8AC5D7C527A7D8FA00FE83BF /* GenderViewController.swift in Sources */,
 				8AD1305F27A59C9F00E482BC /* BirthdayViewModel.swift in Sources */,
 				8AC3182427A0F3D500646711 /* ValidateCodeCheckViewController.swift in Sources */,
-				8A5AE29C27E224AA00462C6F /* CoreLocationUseCase.swift in Sources */,
+				8A5AE29C27E224AA00462C6F /* DefaultHomeMapUseCase.swift in Sources */,
 				8AD6ADD927A310FA002A0283 /* UserProfile.swift in Sources */,
 				8AC3181E27A06D0300646711 /* UserSession.swift in Sources */,
 				8A97EBD327A6ECBE00C33BDE /* EmailViewModel.swift in Sources */,
@@ -1275,7 +1262,6 @@
 				8A5163F627E20F6F008A1C67 /* DefaultCoreLocationRepository.swift in Sources */,
 				8A674BCA279D823A00EDEA3F /* WelcomeRootView.swift in Sources */,
 				8AD6ADCA27A2FB9F002A0283 /* NicknameViewModel.swift in Sources */,
-				8A1D8CF427C7D7BD00C9E962 /* TabViewController.swift in Sources */,
 				8AC317F2279ED7CC00646711 /* PhoneAuthUseCase.swift in Sources */,
 				8ACB7FC727A983210068125B /* EndPointContainer.swift in Sources */,
 				8A8CDD0127A1BA13006144EA /* CommonViewModelProtocol.swift in Sources */,
@@ -1298,7 +1284,6 @@
 				8A97EBCD27A6E52700C33BDE /* BirthdayUseCase.swift in Sources */,
 				8A12FAA927A2307100DD362A /* ValidateCodeUseCase.swift in Sources */,
 				8AC3181827A0604900646711 /* FirebaseErrorHandling.swift in Sources */,
-				8A5AE29A27E2246B00462C6F /* CoreLocationRepository.swift in Sources */,
 				8AC3182027A0716800646711 /* OnBoardingNavigationRouter.swift in Sources */,
 				8A1A10D727AA40A500E57106 /* MyInfoView.swift in Sources */,
 				8AC3182227A0758900646711 /* OnBoardingCoordinator.swift in Sources */,
@@ -1310,7 +1295,7 @@
 				8A674BB1279C30EF00EDEA3F /* Router.swift in Sources */,
 				8A1A10DB27AA45D900E57106 /* MyInfoViewModel.swift in Sources */,
 				8AF23BAF27CBEB1900AD9A56 /* HomeMapRootView.swift in Sources */,
-				8AB37FA827A967850053D0A9 /* HomeViewTest.swift in Sources */,
+				8AB37FA827A967850053D0A9 /* HomeTapView.swift in Sources */,
 				8A191CA927ADA2C800723FD8 /* MyInfoViewController.swift in Sources */,
 				8ABD81B827B9EDD70050FAC9 /* ProfileUseCase.swift in Sources */,
 				8A24D84E27C529280012CAE2 /* MoyaSeSACAPI.swift in Sources */,
@@ -1320,7 +1305,6 @@
 				8AC5D7C727A7D8FE00FE83BF /* GenderViewModel.swift in Sources */,
 				8AC31805279FFF8500646711 /* View+Extension.swift in Sources */,
 				8A97EBCF27A6EC4C00C33BDE /* EmailViewController.swift in Sources */,
-				8A0004B127B0092000C288E0 /* HomeViewController.swift in Sources */,
 				8AD6ADC627A2FB4D002A0283 /* NicknameViewController.swift in Sources */,
 				8A6C29AB279A52DB004EC855 /* PhoneAuthViewModel.swift in Sources */,
 				8A674BD7279DB2D700EDEA3F /* WelcomePageView.swift in Sources */,

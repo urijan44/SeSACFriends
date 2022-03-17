@@ -97,4 +97,14 @@ struct ToastMessage {
     var success: Bool = false
     var message: MessageType = .invalidEmail
   }
+
+  struct HomeView: DefaultToastMessage {
+    enum MessageType: String {
+      case requestValidGenderState = "새싹 찾기 기능을 이용하기 위해서는 성별이 필요해요!"
+    }
+
+    var messageState: Bool = true
+    var success: Bool = false
+    var message: MessageType = .requestValidGenderState
+  }
 }
