@@ -7,6 +7,15 @@
 
 import Foundation
 
+protocol ServerRepository {
+  func fetchUserProfile(cached: @escaping (UserProfile) -> Void,
+                        completion: @escaping (Result<UserProfile, APIError>) -> Void)
+  func loadUserProfile() -> UserProfile
+
+  func updateMyPage(userProfile: UserProfile, completion: @escaping (Result<Void, APIError>) -> Void)
+  func withdraw(completion: @escaping (Result<Void, APIError>) -> Void)
+}
+
 final class DefaultServerRepository {
   private let remoteAPIService: SeSACRemoteAPI
   private let cache = UserSession.shared
@@ -32,6 +41,10 @@ extension DefaultServerRepository: ServerRepository {
           completion(.failure(error))
       }
     }
+  }
+
+  func loadUserProfile() -> UserProfile {
+    return cache.userProfile
   }
 
   func updateMyPage(userProfile: UserProfile,

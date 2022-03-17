@@ -9,6 +9,12 @@ import Foundation
 import RxSwift
 import CoreLocation
 
+protocol CoreLocationRepository {
+  func currentUserLocation(handler: @escaping (([CLLocation], CLAuthorizationStatus) -> Void))
+  func requestPermission()
+  func locationPermission() -> CLAuthorizationStatus
+}
+
 final class DefaultCoreLocationRepository: NSObject, CoreLocationRepository {
   private let locationManager = CLLocationManager()
   private var locations: [CLLocation] = []
