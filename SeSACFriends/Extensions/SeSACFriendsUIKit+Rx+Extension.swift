@@ -33,3 +33,9 @@ extension Reactive where Base: SeSACBirthField {
     controlEvent(.touchUpInside)
   }
 }
+
+extension Reactive where Base: MatchingStateButton {
+  var tap: ControlEvent<Void> {
+    controlEvent(.touchUpInside)
+  }
+}
