@@ -7,45 +7,69 @@
 
 import SwiftUI
 import SeSACFriendsUIKit
+import RxSwift
+import Combine
 
-struct HomeViewTest: View {
+struct HomeTapView: View {
+
   @Environment(\.presentationMode) var presentationMode
-  weak var coordinator: Coordinator?
-  let user = UserSession.shared.userProfile
+  @ObservedObject var router: Router
+  var coordinator: Coordinator?
   var body: some View {
     ZStack {
-      TabView {
-        HomeMapViewRepresentable()
+      TabView(selection: $router.tab) {
+        HomeMapViewRepresentable(router: router)
           .ignoresSafeArea()
         .tabItem {
           Image(uiImage: AssetImage.tabHome.image)
           Text("홈")
         }
+        .tag(Router.Tab.home)
         Text("새싹샵")
           .tabItem {
             Image(uiImage: AssetImage.tabShop.image)
             Text("새싹샵")
           }
+          .tag(Router.Tab.shop)
         FriendListViewSU()
           .tabItem {
             Image(uiImage: AssetImage.tabFriends.image)
             Text("새싹친구")
           }
+          .tag(Router.Tab.freinds)
         MyInfoView(
           viewModel: MyInfoViewModel(),
-          coordinator: coordinator
+          coordinator: coordinator,
+          router: router
         )
-          .tabItem {
-            Image(uiImage: AssetImage.tabMyinfo.image)
-            Text("내정보")
-          }
+        .tabItem {
+          Image(uiImage: AssetImage.tabMyinfo.image)
+          Text("내정보")
+        }
+        .tag(Router.Tab.myInfo)
       }
       .tabViewTintColor(tintColor: .seSACGreen)
     }
   }
 
-  init(coordinator: Coordinator? = nil) {
+  init(router: HomeTapView.Router, coordinator: Coordinator?) {
+    self.router = router
     self.coordinator = coordinator
+  }
+}
+protocol SwiftUIRouter { }
+extension HomeTapView {
+  final class Router: SwiftUIRouter, ObservableObject {
+
+    enum Tab {
+      case home
+      case shop
+      case freinds
+      case myInfo
+    }
+
+    @Published var tab: Tab = .home
+    @Published var showProfileView = false
   }
 }
 
@@ -67,6 +91,7 @@ extension View {
 
 struct HomeViewTest_Previews: PreviewProvider {
   static var previews: some View {
-    HomeViewTest()
+    let routerSpy = HomeTapView.Router()
+    HomeTapView(router: routerSpy, coordinator: nil)
   }
 }

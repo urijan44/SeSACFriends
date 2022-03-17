@@ -12,11 +12,12 @@ import SeSACFriendsUIKit
 struct MyInfoView: View {
 
   var viewModel: MyInfoViewModel
-  weak var coordinator: Coordinator?
+  var coordinator: Coordinator?
+  @ObservedObject var router: HomeTapView.Router
   var body: some View {
     NavigationView {
       VStack {
-        NavigationLink {
+        NavigationLink(isActive: $router.showProfileView) {
           ProfileView(
             viewModel: ProfileView.ProfileViewModel(
               useCase: DefaultProfileUseCase(
@@ -52,8 +53,9 @@ struct MyInfoView: View {
     }
   }
 
-  init(viewModel: MyInfoViewModel, coordinator: Coordinator?) {
+  init(viewModel: MyInfoViewModel, coordinator: Coordinator?, router: HomeTapView.Router) {
     self.viewModel = viewModel
     self.coordinator = coordinator
+    self.router = router
   }
 }

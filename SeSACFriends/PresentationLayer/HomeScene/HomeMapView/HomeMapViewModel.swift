@@ -17,17 +17,19 @@ extension HomeMapView.RootView {
 
     private var bag = DisposeBag()
     private var logic = HomeMapViewLogic()
+    private let router: SwiftUIRouter
+    private let useCase: HomeMapUseCase
 
-    private let useCase: CoreLocationUseCase
-
-    init(useCase: CoreLocationUseCase) {
+    init(useCase: HomeMapUseCase, router: SwiftUIRouter) {
       self.useCase = useCase
+      self.router = router
     }
 
     struct Input {
       let tapCenterButton: Observable<Void>
       let currentUserButton: Observable<Void>
       let viewDidMove: Observable<Void>
+      let tapMatchButton: Observable<Void>
     }
 
     struct Output{
@@ -36,6 +38,7 @@ extension HomeMapView.RootView {
       let markerCoordinator: BehaviorRelay<(Double, Double)> = .init(value: (0,0))
       let currentLocation: BehaviorRelay<CLLocationCoordinate2D> = .init(value: .init())
       let showLocationAlert: PublishRelay<UIAlertController> = .init()
+      let showToast: PublishRelay<ToastMessage.HomeView> = .init()
     }
 
     func transform(_ input: Input) -> Output {
@@ -59,11 +62,26 @@ extension HomeMapView.RootView {
         }
       }).disposed(by: bag)
 
-      input.viewDidMove.subscribe(onNext: {
+      input.viewDidMove.subscribe(onNext: { 
         let makeCoordinate2d = CLLocationCoordinate2DMake(
           Constant.Map.initialLocation.latitude,
           Constant.Map.initialLocation.longitude)
         output.currentLocation.accept(makeCoordinate2d)
+      }).disposed(by: bag)
+
+      input.tapMatchButton.subscribe(onNext: { [unowned self] in
+        useCase.requestInputHobbyField { [unowned self] state, toast in
+          if state {
+            print("present HobbyView")
+          } else if let toast = toast {
+            output.showToast.accept(toast)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [unowned self] in
+              guard let homeTapViewRouter = router as? HomeTapView.Router else { return }
+              homeTapViewRouter.tab = .myInfo
+              homeTapViewRouter.showProfileView = true
+            }
+          }
+        }
       }).disposed(by: bag)
 
       logic.centerButtonHidden.subscribe(onNext: {

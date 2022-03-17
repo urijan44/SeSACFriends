@@ -18,7 +18,6 @@ extension ProfileView {
 
     private let useCase: ProfileUseCase
     weak var coordinator: Coordinator?
-
     @Published var userProfile = UserProfile() {
       didSet {
         nickname = userProfile.nickname

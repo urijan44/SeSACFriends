@@ -32,8 +32,9 @@ final class HomeMapView: RepresentableViewController {
 }
 
 struct HomeMapViewRepresentable: UIViewControllerRepresentable {
+  let router: SwiftUIRouter
   func makeUIViewController(context: Context) -> HomeMapView {
-    configureView()
+    configureView(router: router)
   }
 
   func updateUIViewController(_ uiViewController: HomeMapView, context: Context) {
@@ -42,10 +43,11 @@ struct HomeMapViewRepresentable: UIViewControllerRepresentable {
 }
 
 extension HomeMapViewRepresentable {
-  func configureView() -> HomeMapView {
-    let repository = DefaultCoreLocationRepository()
-    let useCase = DefaultCoreLocationUseCase(coreLocationRepository: repository)
-    let viewModel = HomeMapView.RootView.ViewModel(useCase: useCase)
+  func configureView(router: SwiftUIRouter) -> HomeMapView {
+    let coreLocationRepository = DefaultCoreLocationRepository()
+    let serverRepository = DefaultServerRepository(remoteAPIService: .init())
+    let useCase = DefaultHomeMapUseCase(coreLocationRepository: coreLocationRepository, serverRepository: serverRepository)
+    let viewModel = HomeMapView.RootView.ViewModel(useCase: useCase, router: router)
     let rootView = HomeMapView.RootView(viewModel: viewModel)
     let homeMapView = HomeMapView(rootView: rootView)
     return homeMapView

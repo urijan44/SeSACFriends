@@ -15,7 +15,7 @@ final class HomeCoordinator: Coordinator {
   var rootView: UINavigationController?
 
 //  lazy var homeView = HomeViewController()
-  lazy var homeView = UIHostingController(rootView: HomeViewTest())
+  lazy var homeView = UIHostingController(rootView: HomeTapView(router: .init(), coordinator: self))
 
   init(router: Router, rootView: UINavigationController) {
     self.rootView = rootView

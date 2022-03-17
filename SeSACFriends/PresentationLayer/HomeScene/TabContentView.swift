@@ -12,7 +12,7 @@ struct TabContentView: View {
   weak var coordinator: Coordinator?
 
     var body: some View {
-        HomeViewTest(coordinator: coordinator)
+      HomeTapView(router: HomeTapView.Router(),coordinator: coordinator)
     }
 
   init(coordinator: Coordinator) {

@@ -87,7 +87,8 @@ extension HomeMapView {
       let input = ViewModel.Input(
         tapCenterButton: mapCenterMarkerButton.rx.tap.asObservable(),
         currentUserButton: currentLocationButton.rx.tap.asObservable(),
-        viewDidMove: self.rx.methodInvoked(#selector(UIView.didMoveToWindow)).map{_ in}
+        viewDidMove: self.rx.methodInvoked(#selector(UIView.didMoveToWindow)).map{_ in},
+        tapMatchButton: matchButton.rx.tap.asObservable()
       )
 
       let output = viewModel.transform(input)
@@ -125,6 +126,11 @@ extension HomeMapView {
         .subscribe(onNext: { [weak self] alert in
           self?.viewController?.present(alert, animated: true)
         }).disposed(by: bag)
+
+      output.showToast.subscribe(onNext: { [unowned self] toast in
+        let message = toast.sendingMessage
+        showToast(message)
+      }).disposed(by: bag)
     }
   }
 }
@@ -134,18 +140,21 @@ extension HomeMapView {
 import SwiftUI
 struct HomeMapRootViewUI: UIViewRepresentable {
 
-  class CoreLocationUseCaseSpy: CoreLocationUseCase {
-    func requestUserLocation(completion: @escaping (CLLocationCoordinate2D?, CLAuthorizationStatus) -> Void) {
+  class CoreLocationUseCaseSpy: HomeMapUseCase {
+    func requestInputHobbyField(completion: @escaping (Bool, ToastMessage.HomeView?) -> Void) {
 
     }
+    func requestUserLocation(completion: @escaping (CLLocationCoordinate2D?, CLAuthorizationStatus) -> Void) { }
 
-    func requestPermission() {
+    func requestPermission() { }
 
-    }
+    func requestAuthStatus() { }
   }
 
+  final class HomeMapRouterSpy: SwiftUIRouter { }
+
   func makeUIView(context: Context) -> HomeMapView.RootView {
-    HomeMapView.RootView(viewModel: .init(useCase: CoreLocationUseCaseSpy()))
+    HomeMapView.RootView(viewModel: .init(useCase: CoreLocationUseCaseSpy(), router: HomeMapRouterSpy()))
   }
 
   func updateUIView(_ uiView: UIViewType, context: Context) {
