@@ -18,12 +18,7 @@ extension HomeMapView {
     private var bag = DisposeBag()
     weak var viewController: UIViewController?
 
-    lazy var mapView: NMFMapView = {
-      let mapView = NMFMapView()
-      mapView.minZoomLevel = Constant.Map.minZoomLevel
-      mapView.maxZoomLevel = Constant.Map.maxZoomLevel
-      return mapView
-    }()
+    let mapView = NMFMapView()
 
     private let genderFilter = VerticalGenderPicker(viewWidth: 48)
     private let currentLocationButton = LocationButton()
@@ -91,7 +86,8 @@ extension HomeMapView {
     override func bind() {
       let input = ViewModel.Input(
         tapCenterButton: mapCenterMarkerButton.rx.tap.asObservable(),
-        currentUserButton: currentLocationButton.rx.tap.asObservable()
+        currentUserButton: currentLocationButton.rx.tap.asObservable(),
+        viewDidMove: self.rx.methodInvoked(#selector(UIView.didMoveToWindow)).map{_ in}
       )
 
       let output = viewModel.transform(input)

@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxRelay
 import NMapsMap
+import SeSACFriendsUIKit
 
 extension HomeMapView.RootView {
   final class ViewModel: NSObject {
@@ -26,12 +27,13 @@ extension HomeMapView.RootView {
     struct Input {
       let tapCenterButton: Observable<Void>
       let currentUserButton: Observable<Void>
+      let viewDidMove: Observable<Void>
     }
 
     struct Output{
       let centerButtonHidden: BehaviorRelay<Bool> = .init(value: false)
       let showCenterMarker: BehaviorRelay<Bool> = .init(value: false)
-      let markerCoordinator: BehaviorRelay<(Double, Double)> = .init(value: (0, 0))
+      let markerCoordinator: BehaviorRelay<(Double, Double)> = .init(value: (0,0))
       let currentLocation: BehaviorRelay<CLLocationCoordinate2D> = .init(value: .init())
       let showLocationAlert: PublishRelay<UIAlertController> = .init()
     }
@@ -55,6 +57,13 @@ extension HomeMapView.RootView {
               useCase.requestPermission()
           }
         }
+      }).disposed(by: bag)
+
+      input.viewDidMove.subscribe(onNext: {
+        let makeCoordinate2d = CLLocationCoordinate2DMake(
+          Constant.Map.initialLocation.latitude,
+          Constant.Map.initialLocation.longitude)
+        output.currentLocation.accept(makeCoordinate2d)
       }).disposed(by: bag)
 
       logic.centerButtonHidden.subscribe(onNext: {
