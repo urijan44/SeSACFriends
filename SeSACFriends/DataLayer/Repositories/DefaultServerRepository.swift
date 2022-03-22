@@ -32,7 +32,16 @@ extension DefaultServerRepository: ServerRepository {
 
     let idToken = cache.loadIdToken() ?? ""
 
-    remoteAPIService.signIn(idToken: idToken) { [unowned self] result in
+//    remoteAPIService.signIn(idToken: idToken) { [unowned self] result in
+//      switch result {
+//        case .success(let profile):
+//          cache.saveUserProfile(userProfile: profile)
+//          completion(.success(profile))
+//        case .failure(let error):
+//          completion(.failure(error))
+//      }
+//    }
+    remoteAPIService.signIn(userProfile: cache.userProfile) { [unowned self] result in
       switch result {
         case .success(let profile):
           cache.saveUserProfile(userProfile: profile)

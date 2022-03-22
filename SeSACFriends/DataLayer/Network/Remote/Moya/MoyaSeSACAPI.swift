@@ -9,6 +9,7 @@ import Foundation
 import Moya
 
 enum SeSACAPI {
+  case signIn(_ user: UserProfile)
   case updateMyPage(_ user: UserProfile)
   case withdraw(_ user: UserProfile)
 }
@@ -20,6 +21,8 @@ extension SeSACAPI: TargetType {
 
   var path: String {
     switch self {
+      case .signIn(_):
+        return "/user"
       case .updateMyPage(_):
         return "/user/update/mypage"
       case .withdraw(_):
@@ -29,6 +32,8 @@ extension SeSACAPI: TargetType {
 
   var method: Moya.Method {
     switch self {
+      case .signIn(_):
+        return Moya.Method.get
       case .updateMyPage(_):
         return Moya.Method.post
       case .withdraw(_):
@@ -42,6 +47,8 @@ extension SeSACAPI: TargetType {
 
   var task: Task {
     switch self {
+      case .signIn(_):
+        return .requestPlain
       case .updateMyPage(let user):
         return .requestParameters(parameters: user.updateMyPage(), encoding: URLEncoding.httpBody)
       case .withdraw(_):
@@ -51,7 +58,7 @@ extension SeSACAPI: TargetType {
 
   var headers: [String: String]? {
     switch self {
-      case .updateMyPage(let user), .withdraw(let user):
+      case .signIn(let user), .updateMyPage(let user), .withdraw(let user):
         return [
           "idtoken": "\(user.idToken ?? "")",
           "Content-Type": "application/x-www-form-urlencoded"
@@ -61,5 +68,11 @@ extension SeSACAPI: TargetType {
 
   var validationType: ValidationType {
     return .successCodes
+  }
+}
+
+extension SeSACAPI: CachePolicyGettable {
+  var cachePolicy: URLRequest.CachePolicy {
+    return .useProtocolCachePolicy
   }
 }

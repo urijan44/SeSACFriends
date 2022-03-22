@@ -16,7 +16,7 @@ final class SeSACRemoteAPI {
   private let domain = "http://test.monocoding.com:35484"
   private let session = URLSession.shared
   private let user = UserSession.shared
-  private let provider = MoyaProvider<SeSACAPI>()
+  private let provider = MoyaProvider<SeSACAPI>(plugins: [CachePolicyPlugin()])
 
   func signIn(idToken: String, completion: @escaping (Result<UserProfile, APIError>) -> Void) {
 
@@ -31,6 +31,26 @@ final class SeSACRemoteAPI {
           completion(.success(userSession.toDomain()))
         case .failure(let error):
           completion(.failure(error))
+      }
+    }
+  }
+
+  func signIn(userProfile: UserProfile, completion: @escaping (Result<UserProfile, APIError>) -> Void) {
+    var copyUserProfile = userProfile
+    copyUserProfile.idToken = user.loadIdToken() ?? ""
+    provider.request(.signIn(copyUserProfile)) { result in
+      switch result {
+        case .success(let response):
+          if let userDTO = try? self.dataHandling(data: response.data, requestType: .signIn) {
+            UserSession.shared.sessionState = .login
+            completion(.success(userDTO.toDomain()))
+          }
+        case .failure(let error):
+          let serviceError = self.reponseCodeHandling(
+            statusCode: error.response?.statusCode ?? 501,
+            requestType: .signIn)!
+
+          completion(.failure(serviceError))
       }
     }
   }
@@ -136,6 +156,8 @@ final class SeSACRemoteAPI {
         }
 
         if let data = data {
+
+          print(response)
           do {
             let userDTO = try self.dataHandling(data: data, requestType: requestType)
             UserSession.shared.sessionState = .login
