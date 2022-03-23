@@ -15,4 +15,5 @@ enum APIError: Error {
   case serverError
   case clientError
   case alreadyWithdraw
+  case notModified
 }
