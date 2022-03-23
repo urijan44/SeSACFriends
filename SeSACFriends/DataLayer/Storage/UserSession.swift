@@ -159,6 +159,14 @@ final class UserSession {
     return body.convertData()
   }
 
+  func saveETag(eTag: String?) {
+    UserSession.userDefault.set(eTag, forKey: "eTag")
+  }
+
+  func loadETag() -> String {
+    UserSession.userDefault.string(forKey: "eTag") ?? ""
+  }
+
   private func save() {
     guard let data = try? JSONEncoder().encode(userProfile) else { return }
     try? data.write(to: userProfileURL, options: .atomic)
